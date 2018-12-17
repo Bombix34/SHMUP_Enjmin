@@ -35,12 +35,12 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4936623818346586}
+  - component: {fileID: 114284520931702002}
   - component: {fileID: 58790875477006094}
   - component: {fileID: 50095769234116576}
-  - component: {fileID: 114284520931702002}
   m_Layer: 0
   m_Name: Buble
-  m_TagString: Untagged
+  m_TagString: Buble
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -84,9 +84,9 @@ Rigidbody2D:
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 1
-  m_LinearDrag: 0
+  m_LinearDrag: 2
   m_AngularDrag: 0.05
-  m_GravityScale: 0
+  m_GravityScale: -0.1
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
