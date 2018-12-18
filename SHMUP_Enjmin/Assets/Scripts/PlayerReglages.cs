@@ -35,7 +35,7 @@ public class PlayerReglages : ScriptableObject {
 	public float speedGrow=0.01f;
 
 	
-	[Range(5f,20f)]
+	[Range(5f,60f)]
 	[Tooltip("La vitesse a laquelle la bulle est tirée")]
 	public float speedBuble=5f;
 
