@@ -10,6 +10,7 @@ public class PlayerManager : MonoBehaviour {
 
 	//controlles a la manette gràce au package InControl ( manette 360, one, ps4, ps3, nvidia... )
 	ControllerManager controller;
+	KeyboardController keyboard;
 	Rigidbody2D rb2D;
 	CircleCollider2D colider;
 
@@ -24,6 +25,7 @@ public class PlayerManager : MonoBehaviour {
 	{
 		colider=GetComponent<CircleCollider2D>();
 		controller=GetComponent<ControllerManager>();
+		keyboard=GetComponent<KeyboardController>();
 		rb2D=GetComponent<Rigidbody2D>();
 		transform.localScale=new Vector2(reglages.sizePlayer,reglages.sizePlayer);
 	}
@@ -40,7 +42,10 @@ public class PlayerManager : MonoBehaviour {
 	public void MovePlayer()
 	{
 		Vector2 controlWithSpeed = controller.getLeftStickDirection()*reglages.speedPlayer;
+		if(controlWithSpeed==Vector2.zero)
+			controlWithSpeed=keyboard.GetMovement()*reglages.speedPlayer;
 		rb2D.MovePosition(new Vector2(transform.position.x+controlWithSpeed.x,transform.position.y+controlWithSpeed.y));
+		Debug.Log(rb2D.velocity);
 	}
 
 //POUR LES TESTS____________________________________________________________________________________
@@ -59,11 +64,11 @@ public class PlayerManager : MonoBehaviour {
 		UpdateCurBublePosition();
 
 		//controlles a la manette
-		if(controller.pressButtonA())
+		if(controller.pressButtonA()||keyboard.PressFireBouton())
 			CreateBuble();
-		if(controller.usingButtonA())
+		if(controller.usingButtonA()||keyboard.UseFireBouton())
 			GrowBuble();
-		if(controller.releasedButtonA())
+		if(controller.releasedButtonA()||keyboard.ReleaseFireBouton())
 			ShootBuble();
 	}
 

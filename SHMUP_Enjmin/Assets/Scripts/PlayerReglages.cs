@@ -4,7 +4,8 @@ using UnityEngine;
 
 
 [CreateAssetMenu(menuName="SHMUP/PlayerReglages")]
-public class PlayerReglages : ScriptableObject {
+public class PlayerReglages : ScriptableObject 
+{
 
 	[Header("Taille du personnage")]
 	[Range(0.4f,2f)]
@@ -35,7 +36,7 @@ public class PlayerReglages : ScriptableObject {
 	public float speedGrow=0.01f;
 
 	
-	[Range(5f,60f)]
+	[Range(5f,100f)]
 	[Tooltip("La vitesse a laquelle la bulle est tirée")]
 	public float speedBuble=5f;
 
