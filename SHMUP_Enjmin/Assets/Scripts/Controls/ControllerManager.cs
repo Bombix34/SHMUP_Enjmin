@@ -14,6 +14,8 @@ public class ControllerManager : MonoBehaviour {
 	int playerNum;
 
 	InputDevice inputDevice;
+
+	#pragma warning disable 0414 // private field assigned but not used.
 	InputControl control;
 
 	public int PlayerNum{

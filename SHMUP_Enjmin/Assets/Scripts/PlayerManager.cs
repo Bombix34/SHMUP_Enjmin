@@ -45,7 +45,6 @@ public class PlayerManager : MonoBehaviour {
 		if(controlWithSpeed==Vector2.zero)
 			controlWithSpeed=keyboard.GetMovement()*reglages.speedPlayer;
 		rb2D.MovePosition(new Vector2(transform.position.x+controlWithSpeed.x,transform.position.y+controlWithSpeed.y));
-		Debug.Log(rb2D.velocity);
 	}
 
 //POUR LES TESTS____________________________________________________________________________________
@@ -78,9 +77,9 @@ public class PlayerManager : MonoBehaviour {
 		{
 			Vector2 bublePosition= new Vector2(transform.position.x+(reglages.initialSize*2f), transform.position.y);
 			curBuble = Instantiate(bublePrefab, bublePosition,Quaternion.identity) as GameObject;
+			curBuble.GetComponent<BubleManager>().SetIsCreate(true);
 			curBuble.transform.localScale=new Vector2(reglages.initialSize,reglages.initialSize);
 			curBuble.GetComponent<BubleManager>().GetRigidbody().drag=reglages.velocityDecrease;
-			curBuble.GetComponent<BubleManager>().SetIsCreate(true);
 		}
 	}
 
@@ -113,6 +112,7 @@ public class PlayerManager : MonoBehaviour {
 		curBuble.GetComponent<Rigidbody2D>().gravityScale=-reglages.archimedEffect;
 		//knockback du personnage
 		rb2D.AddForce(new Vector2(-100f,0f)*reglages.knockback);
+
 		curBuble=null;
 	}
 

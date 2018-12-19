@@ -5,7 +5,6 @@ using UnityEngine;
 public class BubleManager : MonoBehaviour {
 
 	Rigidbody2D rb2D;
-	CircleCollider2D colider;
 
 	//pour différencier la bulle dans l'état de création par le player
 	bool curIsCreate=false;
@@ -15,8 +14,20 @@ public class BubleManager : MonoBehaviour {
 	void Awake () 
 	{
 		rb2D=GetComponent<Rigidbody2D>();	
-		colider=GetComponent<CircleCollider2D>();
 		objectInTheBuble=new List<GameObject>();
+	}
+
+	void Update()
+	{
+		if(curIsCreate)
+			return;
+		transform.Translate(-LevelManager.instance.GetScrollingSpeed()*Time.deltaTime,0f,0f);
+	}
+
+
+	public void DestroyBuble()
+	{
+		Destroy(this.gameObject);
 	}
 
 
@@ -68,14 +79,14 @@ public class BubleManager : MonoBehaviour {
     {
 		if(col.gameObject.tag=="DeathBuble")
 		{
-			Destroy(this.gameObject);
+			DestroyBuble();
 		}
 		else if(col.gameObject.tag=="Buble")
 		{
 			if(curIsCreate)
 			{
 				//détruit la bulle que le personnage est en train de créer 
-				Destroy(this.gameObject);
+				DestroyBuble();
 			}
 		}
     }
@@ -84,9 +95,10 @@ public class BubleManager : MonoBehaviour {
     {
 		if(col.gameObject.tag=="DeathBuble")
 		{
-			Destroy(this.gameObject);
+			DestroyBuble();
 		}
 	}
+
 	void OnTriggerStay2D(Collider2D col)
     {
 		if(col.gameObject.tag=="ToSave")
@@ -95,6 +107,7 @@ public class BubleManager : MonoBehaviour {
 			objectInTheBuble.Add(col.gameObject);
 		}
 	}
+	
 	void OnTriggerExit2D(Collider2D col)
 	{
 	}

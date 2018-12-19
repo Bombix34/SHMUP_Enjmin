@@ -8,28 +8,19 @@ public class LevelManager : MonoBehaviour
     float rightMostSituationBound;
     List<GameObject> situations;
 
-    public float scrollingSpeed;
 
-    public GameObject iterableSituation1;
-    public GameObject iterableSituation2;
-    public GameObject iterableSituation3;
-    public GameObject iterableSituation4;
+    public LevelReglages reglages;
 
-    // Use this for initialization
+
     void Start ()
     {
         rightMostSituationBound = Camera.main.orthographicSize * Camera.main.aspect;
         situations = new List<GameObject>();
 	}
 
-    // Update is called once per frame
     void Update ()
     {
-        foreach (GameObject situation in situations)
-        {
-            situation.transform.position -= new Vector3 (scrollingSpeed, 0.0f, 0.0f);
-        }
-        rightMostSituationBound -= scrollingSpeed;
+        ScrollLevels();
         
         if (situations.Count != 0)
         {
@@ -44,27 +35,21 @@ public class LevelManager : MonoBehaviour
         FillScreenWithSituations();
 	}
 
+    void ScrollLevels()
+    {
+        foreach (GameObject situation in situations)
+        {
+            situation.transform.Translate(-reglages.scrollingSpeed*Time.deltaTime,0f,0f);
+        }
+        rightMostSituationBound -= reglages.scrollingSpeed*Time.deltaTime;
+    }
+
     void FillScreenWithSituations()
     {
         while (rightMostSituationBound < Camera.main.orthographicSize * Camera.main.aspect)
         {
-            int situationId = Random.Range(0, 4);
-            if (situationId == 0)
-            {
-                situations.Add((GameObject)Instantiate(iterableSituation1, new Vector3(rightMostSituationBound, 0), transform.rotation));
-            }
-            else if (situationId == 1)
-            {
-                situations.Add((GameObject)Instantiate(iterableSituation2, new Vector3(rightMostSituationBound, 0), transform.rotation));
-            }
-            else if (situationId == 2)
-            {
-                situations.Add((GameObject)Instantiate(iterableSituation3, new Vector3(rightMostSituationBound, 0), transform.rotation));
-            }
-            else if (situationId == 3)
-            {
-                situations.Add((GameObject)Instantiate(iterableSituation4, new Vector3(rightMostSituationBound, 0), transform.rotation));
-            }
+            GameObject nextLevel = reglages.GetLevelAtRandom();
+            situations.Add((GameObject)Instantiate(nextLevel, new Vector3(rightMostSituationBound, 0), transform.rotation));
             situations.Last().transform.Translate(new Vector3 (Camera.main.orthographicSize * Camera.main.aspect - GetSituationLeftMostBound(situations.Last()), 0));
             rightMostSituationBound = GetSituationRightMostBound(situations.Last());
         }
@@ -79,10 +64,10 @@ public class LevelManager : MonoBehaviour
         }
         if (elements.Count != 0)
         {
-            float situationLeftMostBound = elements.Min(element => element.gameObject.GetComponent<Renderer>().bounds.min.x);
+            float situationLeftMostBound = elements.Min(element => element.gameObject.GetComponentInChildren<Renderer>().bounds.min.x);
             for (int i = 0; i < elements.Count; i++)
             {
-                print(elements[i].gameObject.GetComponent<Renderer>().bounds.min.x);
+                //print(elements[i].gameObject.GetComponent<Renderer>().bounds.min.x);
             }
             return situationLeftMostBound;
         }
@@ -101,7 +86,7 @@ public class LevelManager : MonoBehaviour
         }
         if (elements.Count != 0)
         {
-            float situationRightMostBound = elements.Max(element => element.gameObject.GetComponent<Renderer>().bounds.max.x);
+            float situationRightMostBound = elements.Max(element => element.gameObject.GetComponentInChildren<Renderer>().bounds.max.x);
             return situationRightMostBound;
         }
         else
@@ -109,4 +94,38 @@ public class LevelManager : MonoBehaviour
             return 0.0f;
         }
     }
+
+    public float GetScrollingSpeed()
+    {
+        return reglages.scrollingSpeed;
+    }
+
+//SINGLETON________________________________________________________________________________________________
+	private static LevelManager s_Instance = null;
+
+    // This defines a static instance property that attempts to find the manager object in the scene and
+    // returns it to the caller.
+    public static LevelManager instance
+    {
+        get
+        {
+            if (s_Instance == null)
+            {
+                // This is where the magic happens.
+                //  FindObjectOfType(...) returns the first AManager object in the scene.
+                s_Instance = FindObjectOfType(typeof(LevelManager)) as LevelManager;
+            }
+
+            // If it is still null, create a new instance
+            if (s_Instance == null)
+            {
+                Debug.Log("error");
+                GameObject obj = new GameObject("Error");
+                s_Instance = obj.AddComponent(typeof(LevelManager)) as LevelManager;
+            }
+
+            return s_Instance;
+        }
+    }
+
 }

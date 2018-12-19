@@ -13,7 +13,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sizePlayer: 0.8
   speedPlayer: 0.18
-  knockback: 14
+  knockback: 2
   initialSize: 0.5
   maxSizeBuble: 2
   speedGrow: 0.02
