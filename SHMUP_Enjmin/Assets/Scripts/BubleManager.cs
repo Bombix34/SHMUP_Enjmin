@@ -97,14 +97,25 @@ public class BubleManager : MonoBehaviour {
 		{
 			DestroyBuble();
 		}
-	}
+        if (col.gameObject.tag == "ToSave")
+        {
+            if (curIsCreate)
+            {
+                //détruit la bulle que le personnage est en train de créer 
+                DestroyBuble();
+            } else
+            {
+                StartCoroutine(SetObjectInTheBuble(col.gameObject));
+                objectInTheBuble.Add(col.gameObject);
+            }
+        }
+    }
 
 	void OnTriggerStay2D(Collider2D col)
     {
 		if(col.gameObject.tag=="ToSave")
 		{
-			StartCoroutine(SetObjectInTheBuble(col.gameObject));
-			objectInTheBuble.Add(col.gameObject);
+
 		}
 	}
 	

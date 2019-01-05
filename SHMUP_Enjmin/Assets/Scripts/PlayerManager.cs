@@ -21,7 +21,15 @@ public class PlayerManager : MonoBehaviour {
 	//bulle que le joueur est en train de créer
 	GameObject curBuble;
 
-	void Start () 
+    private void Awake()
+    {
+        if(reglages == null)
+        {
+            Debug.LogError("error PlayerManager : PlayerReglages not instanciated through editor");
+        }
+    }
+
+    void Start () 
 	{
 		colider=GetComponent<CapsuleCollider2D>();
 		controller=GetComponent<ControllerManager>();
