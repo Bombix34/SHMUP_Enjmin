@@ -27,10 +27,14 @@ public class BubleManager : MonoBehaviour {
 
 	public void DestroyBuble()
 	{
+        foreach(GameObject bleble in objectInTheBuble)
+        {
+            bleble.transform.parent = null;
+        }
+        Debug.Log("fck");
 		Destroy(this.gameObject);
         // enelever les bulles ui éclatent sortis d'écran
       //  AkSoundEngine.PostEvent("Play_Bubble_Explode_Os", gameObject);
-        Debug.Log("fck");
 	}
 
 
@@ -80,26 +84,32 @@ public class BubleManager : MonoBehaviour {
 
 	void OnCollisionEnter2D(Collision2D col)
     {
-		if(col.gameObject.tag=="DeathBuble")
-		{
-			DestroyBuble();
-		}
-		else if(col.gameObject.tag=="Buble")
-		{
+    if(col.gameObject.tag=="Buble")
+	{
 			if(curIsCreate)
 			{
 				//détruit la bulle que le personnage est en train de créer 
 				DestroyBuble();
 			}
-		}
+	}
+    // on detruit la bulle au contact d'un oursin
+    else if(col.gameObject.tag == "oursin")
+        {
+            DestroyBuble();
+
+            // si la bulle est déjà créée, on retracte l'oursin
+            if(!curIsCreate)
+                col.gameObject.GetComponent<UrchinManager>().retract();
+        } 
     }
 
-	void OnTriggerEnter2D(Collider2D col)
+    private void OnCollisionExit2D(Collision2D collision)
     {
-		if(col.gameObject.tag=="DeathBuble")
-		{
-			DestroyBuble();
-		}
+    }
+
+    void OnTriggerEnter2D(Collider2D col)
+    {
+
         if (col.gameObject.tag == "ToSave")
         {
             if (curIsCreate)
@@ -125,7 +135,11 @@ public class BubleManager : MonoBehaviour {
 	
 	void OnTriggerExit2D(Collider2D col)
 	{
-	}
+        if (col.gameObject.tag == "DeathBuble")
+        {
+            DestroyBuble();
+        }
+    }
 
 //GETTER & SETTER____________________________________________________________________________________________
 

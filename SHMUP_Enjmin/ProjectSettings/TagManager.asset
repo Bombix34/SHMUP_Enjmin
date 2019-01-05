@@ -7,6 +7,7 @@ TagManager:
   - DeathBuble
   - Buble
   - ToSave
+  - oursin
   layers:
   - Default
   - TransparentFX
