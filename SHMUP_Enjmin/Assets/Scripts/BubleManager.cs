@@ -13,7 +13,7 @@ public class BubleManager : MonoBehaviour {
 
 	void Awake () 
 	{
-		rb2D=GetComponent<Rigidbody2D>();	
+		rb2D=GetComponent<Rigidbody2D>();
 		objectInTheBuble=new List<GameObject>();
 	}
 

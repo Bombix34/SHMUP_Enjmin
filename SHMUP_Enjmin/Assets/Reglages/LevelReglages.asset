@@ -13,5 +13,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   scrollingSpeed: 1.2
   levelParts:
-  - {fileID: 1986963624511760, guid: 659161bafe031e640976a4f463555129, type: 2}
-  - {fileID: 1566157091674536, guid: a1e1924a3f652c449801c69ab69e9b44, type: 2}
+  - {fileID: 1434480537015046, guid: 23f5e9bd2f298274193525d6acfe9f68, type: 2}

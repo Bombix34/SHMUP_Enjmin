@@ -12,7 +12,7 @@ public class PlayerManager : MonoBehaviour {
 	ControllerManager controller;
 	KeyboardController keyboard;
 	Rigidbody2D rb2D;
-	CircleCollider2D colider;
+	CapsuleCollider2D colider;
 
 	[SerializeField]
 	//prefab pour la création des bulles
@@ -23,7 +23,7 @@ public class PlayerManager : MonoBehaviour {
 
 	void Start () 
 	{
-		colider=GetComponent<CircleCollider2D>();
+		colider=GetComponent<CapsuleCollider2D>();
 		controller=GetComponent<ControllerManager>();
 		keyboard=GetComponent<KeyboardController>();
 		rb2D=GetComponent<Rigidbody2D>();
@@ -32,7 +32,7 @@ public class PlayerManager : MonoBehaviour {
 	
 	void Update () 
 	{
-		SetPlayerSize();
+		//SetPlayerSize();
 
 		//Core mechanics
 		MovePlayer();	
@@ -44,12 +44,22 @@ public class PlayerManager : MonoBehaviour {
 		Vector2 controlWithSpeed = controller.getLeftStickDirection()*reglages.speedPlayer;
 		if(controlWithSpeed==Vector2.zero)
 			controlWithSpeed=keyboard.GetMovement()*reglages.speedPlayer;
-		rb2D.MovePosition(new Vector2(transform.position.x+controlWithSpeed.x,transform.position.y+controlWithSpeed.y));
-	}
+        transform.Translate(new Vector2(controlWithSpeed.x, controlWithSpeed.y));
 
-//POUR LES TESTS____________________________________________________________________________________
+    }
 
-	public void SetPlayerSize()
+    void OnCollisionEnter2D(Collision2D col)
+    {
+        if (col.gameObject.tag == "ToSave")
+        {
+            Physics2D.IgnoreCollision(colider, col.collider);
+        }
+    }
+
+
+    //POUR LES TESTS____________________________________________________________________________________
+
+    public void SetPlayerSize()
 	{
 		//dans le update pour pouvoir tester sans devoir relancer le jeu
 		//a supprimer lorsque la taille est définitivement choisie
@@ -75,7 +85,7 @@ public class PlayerManager : MonoBehaviour {
 	{
 		if((curBuble==null))
 		{
-			Vector2 bublePosition= new Vector2(transform.position.x+(reglages.initialSize*2f), transform.position.y);
+			Vector2 bublePosition= new Vector2(transform.position.x + transform.localScale.x +(reglages.initialSize*2f), transform.position.y);
 			curBuble = Instantiate(bublePrefab, bublePosition,Quaternion.identity) as GameObject;
 			curBuble.GetComponent<BubleManager>().SetIsCreate(true);
 			curBuble.transform.localScale=new Vector2(reglages.initialSize,reglages.initialSize);
@@ -97,7 +107,7 @@ public class PlayerManager : MonoBehaviour {
 		//quand je laisse appuyer, il faut que la bulle suive le personnage
 		if(curBuble==null)
 			return;
-		Vector2 newPos = new Vector2(transform.position.x+curBuble.transform.localScale.x+0.5f, transform.position.y);
+		Vector2 newPos = new Vector2(transform.position.x+curBuble.transform.localScale.x+ 0.5f + 1, transform.position.y);
 		curBuble.transform.position=newPos;
 	}
 
@@ -107,18 +117,18 @@ public class PlayerManager : MonoBehaviour {
 			return;
 		curBuble.GetComponent<BubleManager>().SetIsCreate(false);
 		//tir de la bulle
-		curBuble.GetComponent<Rigidbody2D>().AddForce(new Vector2(100f,0f)*reglages.speedBuble);
+		curBuble.GetComponent<Rigidbody2D>().AddForce(new Vector2(1.0f,0f)*reglages.speedBuble);
 		//effet des bulles a remonter vers la surface
 		curBuble.GetComponent<Rigidbody2D>().gravityScale=-reglages.archimedEffect;
 		//knockback du personnage
-		rb2D.AddForce(new Vector2(-100f,0f)*reglages.knockback);
+		rb2D.AddForce(new Vector2(-1.0f, 0f)*reglages.knockback);
 
 		curBuble=null;
 	}
 
 //GETTER & SETTER____________________________________________________________________________________________
 
-	public CircleCollider2D GetColider()
+	public CapsuleCollider2D GetColider()
 	{
 		return colider;
 	}

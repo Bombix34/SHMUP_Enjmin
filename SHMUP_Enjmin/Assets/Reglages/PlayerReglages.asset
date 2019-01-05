@@ -19,4 +19,4 @@ MonoBehaviour:
   speedGrow: 0.02
   speedBuble: 70
   velocityDecrease: 1.5
-  archimedEffect: 0.05
+  archimedEffect: 0.2
