@@ -1,0 +1,495 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WwiseDocument Type="WorkUnit" ID="{BFB9B95C-F19D-4A69-AD4E-5BA087B198AF}" SchemaVersion="89">
+	<AudioObjects>
+		<WorkUnit Name="Default Work Unit" ID="{BFB9B95C-F19D-4A69-AD4E-5BA087B198AF}" PersistMode="Standalone">
+			<ChildrenList>
+				<ActorMixer Name="Amb" ID="{3234919D-1F90-4A28-B278-CF15AC65D90D}" ShortID="13862137">
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{2BD389C3-9EC6-4637-949C-1D4A4B674147}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Amb" ID="{A82F35BC-A9C9-4EF5-8166-4091D089E415}" WorkUnitID="{D1B724BB-66B6-4F55-9CB7-851DFB74B0CF}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<Sound Name="Underwater_lp" ID="{C5914DA8-300A-42D4-8B19-63A133F499C5}" ShortID="893977857">
+							<PropertyList>
+								<Property Name="MakeUpGain" Type="Real64">
+									<ValueList>
+										<Value>11</Value>
+									</ValueList>
+								</Property>
+								<Property Name="Volume" Type="Real64">
+									<ValueList>
+										<Value>-5</Value>
+									</ValueList>
+								</Property>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{2BD389C3-9EC6-4637-949C-1D4A4B674147}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{D1B724BB-66B6-4F55-9CB7-851DFB74B0CF}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="Underwater_lp" ID="{AAD92BC8-5276-4CF7-95A4-5B02D3E46C1D}" ShortID="881670788">
+									<Language>SFX</Language>
+									<AudioFile>Underwater_lp.wav</AudioFile>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="Underwater_lp" ID="{AAD92BC8-5276-4CF7-95A4-5B02D3E46C1D}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<RandomSequenceContainer Name="Underwater_Rnd" ID="{4A79B598-056A-4864-B6F3-A6B4B2D28ED5}" ShortID="1024983819">
+							<PropertyList>
+								<Property Name="Lowpass" Type="int16">
+									<ValueList>
+										<Value>50</Value>
+									</ValueList>
+								</Property>
+								<Property Name="MakeUpGain" Type="Real64">
+									<ValueList>
+										<Value>13</Value>
+									</ValueList>
+								</Property>
+								<Property Name="Pitch" Type="int32">
+									<ValueList>
+										<Value>-610</Value>
+									</ValueList>
+								</Property>
+								<Property Name="PlayMechanismLoop" Type="bool" Value="True"/>
+								<Property Name="PlayMechanismSpecialTransitions" Type="bool" Value="True"/>
+								<Property Name="PlayMechanismStepOrContinuous" Type="int16" Value="0"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{2BD389C3-9EC6-4637-949C-1D4A4B674147}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{D1B724BB-66B6-4F55-9CB7-851DFB74B0CF}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<Sound Name="Underwater_01_Os" ID="{780C9EC7-F6A0-4096-8C97-5A4974FBC6AC}" ShortID="948069531">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{2BD389C3-9EC6-4637-949C-1D4A4B674147}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{D1B724BB-66B6-4F55-9CB7-851DFB74B0CF}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="Underwater_01_Os" ID="{A94EABC9-B8D6-4D38-BBCF-0D6D18A4C31A}" ShortID="1010897979">
+											<Language>SFX</Language>
+											<AudioFile>Underwater_01_Os.wav</AudioFile>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="Underwater_01_Os" ID="{A94EABC9-B8D6-4D38-BBCF-0D6D18A4C31A}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="Underwater_03_Os" ID="{EC49BA5F-3748-4BF8-B818-EC4EE0E133DC}" ShortID="536863652">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{2BD389C3-9EC6-4637-949C-1D4A4B674147}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{D1B724BB-66B6-4F55-9CB7-851DFB74B0CF}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="Underwater_03_Os" ID="{453F088A-F2EF-4006-AF39-662C6ACE3AAA}" ShortID="182596096">
+											<Language>SFX</Language>
+											<AudioFile>Underwater_03_Os.wav</AudioFile>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="Underwater_03_Os" ID="{453F088A-F2EF-4006-AF39-662C6ACE3AAA}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="Underwater_05_Os" ID="{BF1D218C-FB10-4327-9A99-D09DE5779292}" ShortID="358059134">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{2BD389C3-9EC6-4637-949C-1D4A4B674147}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{D1B724BB-66B6-4F55-9CB7-851DFB74B0CF}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="Underwater_05_Os" ID="{F4DD8D70-C5E3-4610-A6B5-A46D8787DA0A}" ShortID="476708979">
+											<Language>SFX</Language>
+											<AudioFile>Underwater_05_Os.wav</AudioFile>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="Underwater_05_Os" ID="{F4DD8D70-C5E3-4610-A6B5-A46D8787DA0A}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+							</ChildrenList>
+						</RandomSequenceContainer>
+						<RandomSequenceContainer Name="Test_Silence" ID="{B44F229F-5E0D-4B35-A974-895A5A57A172}" ShortID="991516804">
+							<PropertyList>
+								<Property Name="IgnoreParentMaxSoundInstance" Type="bool" Value="True"/>
+								<Property Name="MakeUpGain" Type="Real64">
+									<ValueList>
+										<Value>8</Value>
+									</ValueList>
+								</Property>
+								<Property Name="MaxSoundPerInstance" Type="int16">
+									<ValueList>
+										<Value>1</Value>
+									</ValueList>
+								</Property>
+								<Property Name="PlayMechanismLoop" Type="bool" Value="True"/>
+								<Property Name="PlayMechanismStepOrContinuous" Type="int16" Value="0"/>
+								<Property Name="UseMaxSoundPerInstance" Type="bool">
+									<ValueList>
+										<Value>True</Value>
+									</ValueList>
+								</Property>
+								<Property Name="Volume" Type="Real64">
+									<ValueList>
+										<Value>-1</Value>
+									</ValueList>
+								</Property>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{2BD389C3-9EC6-4637-949C-1D4A4B674147}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{D1B724BB-66B6-4F55-9CB7-851DFB74B0CF}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<RandomSequenceContainer Name="Underwater_Parasites_Rnd" ID="{DBBD9715-ABAC-4C02-B80A-C37416B3B643}" ShortID="285352394">
+									<PropertyList>
+										<Property Name="Volume" Type="Real64">
+											<ValueList>
+												<Value>-6</Value>
+											</ValueList>
+										</Property>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{2BD389C3-9EC6-4637-949C-1D4A4B674147}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{D1B724BB-66B6-4F55-9CB7-851DFB74B0CF}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<Sound Name="Underwater_Parasites_01_Os" ID="{FABB2472-6311-41B9-AC28-4E42C7CB8509}" ShortID="693002532">
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{2BD389C3-9EC6-4637-949C-1D4A4B674147}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{D1B724BB-66B6-4F55-9CB7-851DFB74B0CF}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="Underwater_Parasites_01_Os" ID="{EB973B09-19A3-4DFD-B592-FB5707A6647E}" ShortID="186136371">
+													<Language>SFX</Language>
+													<AudioFile>Underwater_Parasites_01_Os.wav</AudioFile>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="Underwater_Parasites_01_Os" ID="{EB973B09-19A3-4DFD-B592-FB5707A6647E}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+										<Sound Name="Underwater_Parasites_02_Os" ID="{D9336C8B-6676-4043-B625-5DF04ED70137}" ShortID="595444233">
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{2BD389C3-9EC6-4637-949C-1D4A4B674147}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{D1B724BB-66B6-4F55-9CB7-851DFB74B0CF}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="Underwater_Parasites_02_Os" ID="{D83327B5-7E56-418F-9BB4-C50A3E1C4E9D}" ShortID="498771420">
+													<Language>SFX</Language>
+													<AudioFile>Underwater_Parasites_02_Os.wav</AudioFile>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="Underwater_Parasites_02_Os" ID="{D83327B5-7E56-418F-9BB4-C50A3E1C4E9D}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+										<Sound Name="Underwater_Parasites_03_Os" ID="{E97ED643-4E36-4C3B-83E9-C2E44A281061}" ShortID="647235306">
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{2BD389C3-9EC6-4637-949C-1D4A4B674147}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{D1B724BB-66B6-4F55-9CB7-851DFB74B0CF}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="Underwater_Parasites_03_Os" ID="{D84BBA0A-28B3-4BBA-A037-8696DB76733F}" ShortID="512970095">
+													<Language>SFX</Language>
+													<AudioFile>Underwater_Parasites_03_Os.wav</AudioFile>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="Underwater_Parasites_03_Os" ID="{D84BBA0A-28B3-4BBA-A037-8696DB76733F}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+										<Sound Name="Underwater_Parasites_04_Os" ID="{817B131B-8902-4E80-81CF-6EF7AE047736}" ShortID="627779018">
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{2BD389C3-9EC6-4637-949C-1D4A4B674147}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{D1B724BB-66B6-4F55-9CB7-851DFB74B0CF}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="Underwater_Parasites_04_Os" ID="{AF0743F1-8538-479C-BCB4-EF5FB8E03616}" ShortID="842027309">
+													<Language>SFX</Language>
+													<AudioFile>Underwater_Parasites_04_Os.wav</AudioFile>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="Underwater_Parasites_04_Os" ID="{AF0743F1-8538-479C-BCB4-EF5FB8E03616}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+										<Sound Name="New Sound SFX" ID="{838DDCE3-9990-4116-AAFE-BC12A24CA117}" ShortID="414973254">
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{2BD389C3-9EC6-4637-949C-1D4A4B674147}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{D1B724BB-66B6-4F55-9CB7-851DFB74B0CF}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<SourcePlugin Name="Wwise Silence" ID="{A303ED43-75A7-4C0D-A707-6F4F67593C5B}" ShortID="92729707" PluginName="Wwise Silence" CompanyID="0" PluginID="101">
+													<Language>SFX</Language>
+												</SourcePlugin>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="Wwise Silence" ID="{A303ED43-75A7-4C0D-A707-6F4F67593C5B}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+									</ChildrenList>
+								</RandomSequenceContainer>
+								<Sound Name="New Sound SFX" ID="{FDBFD35A-F7BD-4800-BBA8-5AF629D6A740}" ShortID="69765085">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{2BD389C3-9EC6-4637-949C-1D4A4B674147}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{D1B724BB-66B6-4F55-9CB7-851DFB74B0CF}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<SourcePlugin Name="Wwise Silence" ID="{39508071-5CEB-4890-929E-E9438C398465}" ShortID="973197771" PluginName="Wwise Silence" CompanyID="0" PluginID="101">
+											<Language>SFX</Language>
+										</SourcePlugin>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="Wwise Silence" ID="{39508071-5CEB-4890-929E-E9438C398465}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="New Sound SFX_01" ID="{C4CD3E4F-F350-4308-A8DE-6EF40B201316}" ShortID="150832811">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{2BD389C3-9EC6-4637-949C-1D4A4B674147}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{D1B724BB-66B6-4F55-9CB7-851DFB74B0CF}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<SourcePlugin Name="Wwise Silence" ID="{587189FF-07C8-47E1-8096-3C10D1DD96A9}" ShortID="1056852937" PluginName="Wwise Silence" CompanyID="0" PluginID="101">
+											<PropertyList>
+												<Property Name="Length" Type="Real32" Value="0.5"/>
+											</PropertyList>
+											<Language>SFX</Language>
+										</SourcePlugin>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="Wwise Silence" ID="{587189FF-07C8-47E1-8096-3C10D1DD96A9}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+							</ChildrenList>
+						</RandomSequenceContainer>
+					</ChildrenList>
+				</ActorMixer>
+				<ActorMixer Name="Sfx" ID="{B9D39B3F-1D55-400C-89D9-72DF0F9C4A28}" ShortID="665323189">
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{2BD389C3-9EC6-4637-949C-1D4A4B674147}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Sfx" ID="{F2A0E619-BE8F-40E5-AAC0-7BD9305E608D}" WorkUnitID="{D1B724BB-66B6-4F55-9CB7-851DFB74B0CF}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<Sound Name="Impact_Player_Bubble_Os" ID="{33211A7E-B67F-49D6-83EA-E04AB424CA30}" ShortID="467596033">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{2BD389C3-9EC6-4637-949C-1D4A4B674147}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Sfx" ID="{F2A0E619-BE8F-40E5-AAC0-7BD9305E608D}" WorkUnitID="{D1B724BB-66B6-4F55-9CB7-851DFB74B0CF}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="Player_Dash_Bubble_Os" ID="{6A5A1A10-F156-4277-9884-0FA2A0157380}" ShortID="661801471">
+									<Language>SFX</Language>
+									<AudioFile>Player_Dash_Bubble_Os.wav</AudioFile>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="Player_Dash_Bubble_Os" ID="{6A5A1A10-F156-4277-9884-0FA2A0157380}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<ActorMixer Name="Player" ID="{13492AED-C558-481E-869B-F232CAB55C50}" ShortID="157162136">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{2BD389C3-9EC6-4637-949C-1D4A4B674147}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Sfx" ID="{F2A0E619-BE8F-40E5-AAC0-7BD9305E608D}" WorkUnitID="{D1B724BB-66B6-4F55-9CB7-851DFB74B0CF}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<Sound Name="Player_Dash_os" ID="{4C68E278-7F4B-4F1F-9BCB-2686317EC842}" ShortID="520441988">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{2BD389C3-9EC6-4637-949C-1D4A4B674147}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{D1B724BB-66B6-4F55-9CB7-851DFB74B0CF}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="Player_Dash_os" ID="{60A277E6-C992-4A7B-A762-D19A09DCB4E4}" ShortID="681287260">
+											<Language>SFX</Language>
+											<AudioFile>Player_Dash_os.wav</AudioFile>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="Player_Dash_os" ID="{60A277E6-C992-4A7B-A762-D19A09DCB4E4}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="Player_Load_Shot_Os" ID="{0E55A0A6-949B-4556-83A5-EF1E533EFD82}" ShortID="778998682">
+									<PropertyList>
+										<Property Name="IgnoreParentMaxSoundInstance" Type="bool" Value="True"/>
+										<Property Name="MakeUpGain" Type="Real64">
+											<ValueList>
+												<Value>8</Value>
+											</ValueList>
+										</Property>
+										<Property Name="MaxReachedBehavior" Type="int16" Value="1"/>
+										<Property Name="MaxSoundPerInstance" Type="int16">
+											<ValueList>
+												<Value>1</Value>
+											</ValueList>
+										</Property>
+										<Property Name="UseMaxSoundPerInstance" Type="bool">
+											<ValueList>
+												<Value>True</Value>
+											</ValueList>
+										</Property>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{2BD389C3-9EC6-4637-949C-1D4A4B674147}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Sfx" ID="{F2A0E619-BE8F-40E5-AAC0-7BD9305E608D}" WorkUnitID="{D1B724BB-66B6-4F55-9CB7-851DFB74B0CF}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="Player_Load_Shot_Os" ID="{3E4F8D39-6119-4563-B261-801BA67A72B5}" ShortID="841916853">
+											<PropertyList>
+												<Property Name="FadeOutDuration" Type="Real64" Value="0.391681415929204"/>
+												<Property Name="TrimEnd" Type="Real64" Value="0.656339478014116"/>
+											</PropertyList>
+											<Language>SFX</Language>
+											<AudioFile>Player_Load_Shot_Os.wav</AudioFile>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="Player_Load_Shot_Os" ID="{3E4F8D39-6119-4563-B261-801BA67A72B5}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="Player_Shot_Os" ID="{07DBD407-FEB0-4F6A-8A8B-F58665966334}" ShortID="946304183">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{2BD389C3-9EC6-4637-949C-1D4A4B674147}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Sfx" ID="{F2A0E619-BE8F-40E5-AAC0-7BD9305E608D}" WorkUnitID="{D1B724BB-66B6-4F55-9CB7-851DFB74B0CF}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="Player_Shot_Os" ID="{9E2BEAA8-7AC8-4E85-A3A9-6790B23CEDCF}" ShortID="418855876">
+											<PropertyList>
+												<Property Name="FadeOutDuration" Type="Real64" Value="0.127927277105532"/>
+												<Property Name="TrimEnd" Type="Real64" Value="1.54399246113599"/>
+											</PropertyList>
+											<Language>SFX</Language>
+											<AudioFile>Player_Shot_Os.wav</AudioFile>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="Player_Shot_Os" ID="{9E2BEAA8-7AC8-4E85-A3A9-6790B23CEDCF}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+							</ChildrenList>
+						</ActorMixer>
+						<Sound Name="Bubble_Explode_Os" ID="{41AECBA7-521A-4479-8430-27010A018346}" ShortID="760234228">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{2BD389C3-9EC6-4637-949C-1D4A4B674147}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{D1B724BB-66B6-4F55-9CB7-851DFB74B0CF}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="Bubble_Explode_Os" ID="{7C4A9868-7E4E-44BC-999B-84D758A9A5A4}" ShortID="913403206">
+									<Language>SFX</Language>
+									<AudioFile>Bubble_Explode_Os.wav</AudioFile>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="Bubble_Explode_Os" ID="{7C4A9868-7E4E-44BC-999B-84D758A9A5A4}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="Impact_Pnj_Bubble_Os" ID="{BF441B5F-F4BB-428A-85FB-CEB608C971AD}" ShortID="916484568">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{2BD389C3-9EC6-4637-949C-1D4A4B674147}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{D1B724BB-66B6-4F55-9CB7-851DFB74B0CF}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="Impact_Pnj_Bubble_Os" ID="{EC86B0F9-DA60-4CEA-A8DD-A0C4A560082D}" ShortID="174964560">
+									<Language>SFX</Language>
+									<AudioFile>Impact_Pnj_Bubble_Os.wav</AudioFile>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="Impact_Pnj_Bubble_Os" ID="{EC86B0F9-DA60-4CEA-A8DD-A0C4A560082D}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+					</ChildrenList>
+				</ActorMixer>
+			</ChildrenList>
+		</WorkUnit>
+	</AudioObjects>
+</WwiseDocument>

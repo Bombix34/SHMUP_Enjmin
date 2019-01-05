@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<SoundBanksInfo Platform="Windows" BasePlatform="Windows" SchemaVersion="11" SoundbankVersion="132">
+	<RootPaths>
+		<ProjectRoot>C:\Users\Florian\Documents\Programmation\SHMUP_Enjmin\SHMUP_Enjmin\Bloup'themup\</ProjectRoot>
+		<SourceFilesRoot>C:\Users\Florian\Documents\Programmation\SHMUP_Enjmin\SHMUP_Enjmin\Bloup'themup\.cache\Windows\</SourceFilesRoot>
+		<SoundBanksRoot>C:\Users\Florian\Documents\Programmation\SHMUP_Enjmin\SHMUP_Enjmin\Bloup'themup\GeneratedSoundBanks\Windows\</SoundBanksRoot>
+		<ExternalSourcesInputFile></ExternalSourcesInputFile>
+		<ExternalSourcesOutputRoot>C:\Users\Florian\Documents\Programmation\SHMUP_Enjmin\SHMUP_Enjmin\Bloup'themup\GeneratedSoundBanks\Windows</ExternalSourcesOutputRoot>
+	</RootPaths>
+	<DialogueEvents/>
+	<StreamedFiles/>
+	<MediaFilesNotInAnyBank/>
+	<SoundBanks>
+		<SoundBank Id="984691642" Language="SFX">
+			<ObjectPath>\SoundBanks\Default Work Unit\Ingame</ObjectPath>
+			<ShortName>Ingame</ShortName>
+			<Path>Ingame.bnk</Path>
+			<IncludedEvents>
+				<Event Id="2999869044" Name="Innit_Amb" ObjectPath="\Events\Default Work Unit\Ingame\Innit_Amb"/>
+				<Event Id="3726773303" Name="Play_Bubble_Explode_Os" ObjectPath="\Events\Default Work Unit\Ingame\Play_Bubble_Explode_Os"/>
+				<Event Id="1056746695" Name="Play_Impact_Pnj_Bubble_Os" ObjectPath="\Events\Default Work Unit\Ingame\Play_Impact_Pnj_Bubble_Os"/>
+				<Event Id="2139305897" Name="Play_Load_Shot" ObjectPath="\Events\Default Work Unit\Ingame\Play_Load_Shot"/>
+				<Event Id="206418435" Name="Play_Musique" ObjectPath="\Events\Default Work Unit\Ingame\Play_Musique"/>
+				<Event Id="3837926945" Name="Play_Player_Dash_os" ObjectPath="\Events\Default Work Unit\Ingame\Play_Player_Dash_os"/>
+				<Event Id="4135433440" Name="Play_Player_Shot" ObjectPath="\Events\Default Work Unit\Ingame\Play_Player_Shot"/>
+			</IncludedEvents>
+			<IncludedMemoryFiles>
+				<File Id="174964560" Language="SFX">
+					<ShortName>Impact_Pnj_Bubble_Os.wav</ShortName>
+					<Path>SFX\Impact_Pnj_Bubble_Os_56D34C19.wem</Path>
+				</File>
+				<File Id="182596096" Language="SFX">
+					<ShortName>Underwater_03_Os.wav</ShortName>
+					<Path>SFX\Underwater_03_Os_56D34C19.wem</Path>
+				</File>
+				<File Id="186136371" Language="SFX">
+					<ShortName>Underwater_Parasites_01_Os.wav</ShortName>
+					<Path>SFX\Underwater_Parasites_01_Os_56D34C19.wem</Path>
+				</File>
+				<File Id="418855876" Language="SFX">
+					<ShortName>Player_Shot_Os.wav</ShortName>
+					<Path>SFX\Player_Shot_Os_A6E97EA5.wem</Path>
+				</File>
+				<File Id="476708979" Language="SFX">
+					<ShortName>Underwater_05_Os.wav</ShortName>
+					<Path>SFX\Underwater_05_Os_56D34C19.wem</Path>
+				</File>
+				<File Id="498771420" Language="SFX">
+					<ShortName>Underwater_Parasites_02_Os.wav</ShortName>
+					<Path>SFX\Underwater_Parasites_02_Os_56D34C19.wem</Path>
+				</File>
+				<File Id="512970095" Language="SFX">
+					<ShortName>Underwater_Parasites_03_Os.wav</ShortName>
+					<Path>SFX\Underwater_Parasites_03_Os_56D34C19.wem</Path>
+				</File>
+				<File Id="662933205" Language="SFX">
+					<ShortName>Music_Facile_Lp.wav</ShortName>
+					<Path>SFX\Music_Facile_Lp_8956FC97.wem</Path>
+				</File>
+				<File Id="681287260" Language="SFX">
+					<ShortName>Player_Dash_os.wav</ShortName>
+					<Path>SFX\Player_Dash_os_56D34C19.wem</Path>
+				</File>
+				<File Id="841916853" Language="SFX">
+					<ShortName>Player_Load_Shot_Os.wav</ShortName>
+					<Path>SFX\Player_Load_Shot_Os_2E764FBE.wem</Path>
+				</File>
+				<File Id="842027309" Language="SFX">
+					<ShortName>Underwater_Parasites_04_Os.wav</ShortName>
+					<Path>SFX\Underwater_Parasites_04_Os_56D34C19.wem</Path>
+				</File>
+				<File Id="881670788" Language="SFX">
+					<ShortName>Underwater_lp.wav</ShortName>
+					<Path>SFX\Underwater_lp_56D34C19.wem</Path>
+				</File>
+				<File Id="913403206" Language="SFX">
+					<ShortName>Bubble_Explode_Os.wav</ShortName>
+					<Path>SFX\Bubble_Explode_Os_56D34C19.wem</Path>
+				</File>
+				<File Id="1010897979" Language="SFX">
+					<ShortName>Underwater_01_Os.wav</ShortName>
+					<Path>SFX\Underwater_01_Os_56D34C19.wem</Path>
+				</File>
+				<File Id="1052246024" Language="SFX">
+					<ShortName>Music_Intro_Os.wav</ShortName>
+					<Path>SFX\Music_Intro_Os_8956FC97.wem</Path>
+				</File>
+			</IncludedMemoryFiles>
+		</SoundBank>
+		<SoundBank Id="1355168291" Language="SFX">
+			<ObjectPath>Init</ObjectPath>
+			<ShortName>Init</ShortName>
+			<Path>Init.bnk</Path>
+		</SoundBank>
+	</SoundBanks>
+</SoundBanksInfo>

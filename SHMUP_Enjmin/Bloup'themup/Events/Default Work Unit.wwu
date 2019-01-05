@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WwiseDocument Type="WorkUnit" ID="{1336847C-65CD-4BDE-82E7-88B2522FBB1A}" SchemaVersion="89">
+	<Events>
+		<WorkUnit Name="Default Work Unit" ID="{1336847C-65CD-4BDE-82E7-88B2522FBB1A}" PersistMode="Standalone">
+			<ChildrenList>
+				<Folder Name="Ingame" ID="{EB7AC41D-E963-4B93-84A7-3F55920B98E4}" ShortID="827655296">
+					<ChildrenList>
+						<Event Name="Innit_Amb" ID="{13CC4609-4F81-4BF6-9092-68618D042F1C}">
+							<ChildrenList>
+								<Action Name="" ID="{0627FF2E-8956-4D52-8C2A-3FBB50DD96C8}" ShortID="61801196">
+									<PropertyList>
+										<Property Name="ActionType" Type="int16" Value="1"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Underwater_lp" ID="{C5914DA8-300A-42D4-8B19-63A133F499C5}" WorkUnitID="{BFB9B95C-F19D-4A69-AD4E-5BA087B198AF}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+								<Action Name="" ID="{A72FF3D2-6164-4651-8BF9-C7EA5E151E8F}" ShortID="852244351">
+									<PropertyList>
+										<Property Name="ActionType" Type="int16" Value="1"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Underwater_Rnd" ID="{4A79B598-056A-4864-B6F3-A6B4B2D28ED5}" WorkUnitID="{BFB9B95C-F19D-4A69-AD4E-5BA087B198AF}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+								<Action Name="" ID="{CE583C53-46B7-4E2C-BC95-DF578AE5E896}" ShortID="682573410">
+									<PropertyList>
+										<Property Name="ActionType" Type="int16" Value="1"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Test_Silence" ID="{B44F229F-5E0D-4B35-A974-895A5A57A172}" WorkUnitID="{BFB9B95C-F19D-4A69-AD4E-5BA087B198AF}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+								<Action Name="" ID="{60CFC823-8218-413C-995F-1EDFD1C93202}" ShortID="872867227">
+									<PropertyList>
+										<Property Name="ActionType" Type="int16" Value="1"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Musique" ID="{C8FB359D-BE44-4223-B13B-B097C732393E}" WorkUnitID="{4E5A65E5-C56F-495A-AB58-65CC0CC32273}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="Play_Impact_Pnj_Bubble_Os" ID="{D472FD05-8C49-461A-BFA9-3248D30CB7C2}">
+							<ChildrenList>
+								<Action Name="" ID="{3A30F8EA-0D1C-4C69-B716-C4D55B0B1380}" ShortID="345196227">
+									<PropertyList>
+										<Property Name="ActionType" Type="int16" Value="1"/>
+										<Property Name="Delay" Type="Real64" Value="0.85"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Impact_Pnj_Bubble_Os" ID="{BF441B5F-F4BB-428A-85FB-CEB608C971AD}" WorkUnitID="{BFB9B95C-F19D-4A69-AD4E-5BA087B198AF}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="Play_Player_Shot" ID="{4F6015C0-0C9E-45B0-BCE5-B0C978078CE4}">
+							<ChildrenList>
+								<Action Name="" ID="{9A50FCC9-71AF-47F3-AEED-CBF8DB8EB1CE}" ShortID="290704560">
+									<PropertyList>
+										<Property Name="ActionType" Type="int16" Value="1"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Player_Shot_Os" ID="{07DBD407-FEB0-4F6A-8A8B-F58665966334}" WorkUnitID="{BFB9B95C-F19D-4A69-AD4E-5BA087B198AF}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+								<Action Name="" ID="{42EFD582-2DD5-45F2-94F7-4BFEF0D88003}" ShortID="221015208">
+									<PropertyList>
+										<Property Name="ActionType" Type="int16" Value="2"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Player_Load_Shot_Os" ID="{0E55A0A6-949B-4556-83A5-EF1E533EFD82}" WorkUnitID="{BFB9B95C-F19D-4A69-AD4E-5BA087B198AF}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="Play_Bubble_Explode_Os" ID="{54F2F68E-297D-4491-81F8-973496A0B5BB}">
+							<ChildrenList>
+								<Action Name="" ID="{FD2312F8-E795-4201-B7C9-2EF4251973EB}" ShortID="307099259">
+									<PropertyList>
+										<Property Name="ActionType" Type="int16" Value="1"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Bubble_Explode_Os" ID="{41AECBA7-521A-4479-8430-27010A018346}" WorkUnitID="{BFB9B95C-F19D-4A69-AD4E-5BA087B198AF}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+								<Action Name="" ID="{649B35F8-8E52-437A-AEC1-5EF914D2D1C9}" ShortID="4295943">
+									<PropertyList>
+										<Property Name="ActionType" Type="int16" Value="2"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Player_Load_Shot_Os" ID="{0E55A0A6-949B-4556-83A5-EF1E533EFD82}" WorkUnitID="{BFB9B95C-F19D-4A69-AD4E-5BA087B198AF}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+								<Action Name="" ID="{CDFE1BC4-8B83-4C8A-A235-B437DFC7243A}" ShortID="590800649">
+									<PropertyList>
+										<Property Name="ActionType" Type="int16" Value="2"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Player_Shot_Os" ID="{07DBD407-FEB0-4F6A-8A8B-F58665966334}" WorkUnitID="{BFB9B95C-F19D-4A69-AD4E-5BA087B198AF}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="Play_Load_Shot" ID="{C387B0CB-78EE-45C4-87CF-AC51E456CBEB}">
+							<ChildrenList>
+								<Action Name="" ID="{722E7194-E05C-47EE-B3ED-2689D98D17DE}" ShortID="331472408">
+									<PropertyList>
+										<Property Name="ActionType" Type="int16" Value="1"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Player_Load_Shot_Os" ID="{0E55A0A6-949B-4556-83A5-EF1E533EFD82}" WorkUnitID="{BFB9B95C-F19D-4A69-AD4E-5BA087B198AF}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="Play_Player_Dash_os" ID="{A2D9AC26-78D1-4B75-9285-563016BEFE0A}">
+							<ChildrenList>
+								<Action Name="" ID="{5E375402-9225-4693-A17C-B0726134D510}" ShortID="1072813461">
+									<PropertyList>
+										<Property Name="ActionType" Type="int16" Value="1"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Player_Dash_os" ID="{4C68E278-7F4B-4F1F-9BCB-2686317EC842}" WorkUnitID="{BFB9B95C-F19D-4A69-AD4E-5BA087B198AF}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="Play_Musique" ID="{A3FDAEB7-7E5C-4B07-98AD-15B83474C0B1}">
+							<ChildrenList>
+								<Action Name="" ID="{0FF4BEE7-2F74-4FA4-8EF7-541711940DEC}" ShortID="367403443">
+									<PropertyList>
+										<Property Name="ActionType" Type="int16" Value="1"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Musique" ID="{C8FB359D-BE44-4223-B13B-B097C732393E}" WorkUnitID="{4E5A65E5-C56F-495A-AB58-65CC0CC32273}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+					</ChildrenList>
+				</Folder>
+			</ChildrenList>
+		</WorkUnit>
+	</Events>
+</WwiseDocument>

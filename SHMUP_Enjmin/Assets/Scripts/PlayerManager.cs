@@ -108,7 +108,8 @@ public class PlayerManager : MonoBehaviour {
 		if(curBuble.transform.localScale.x>=reglages.maxSizeBuble)
 			return;
 		curBuble.transform.localScale=new Vector2(curBuble.transform.localScale.x+reglages.speedGrow,curBuble.transform.localScale.y+reglages.speedGrow);
-	}
+        AkSoundEngine.PostEvent("Play_Load_Shot", gameObject);
+    }
 
 	public void UpdateCurBublePosition()
 	{
@@ -126,8 +127,9 @@ public class PlayerManager : MonoBehaviour {
 		curBuble.GetComponent<BubleManager>().SetIsCreate(false);
 		//tir de la bulle
 		curBuble.GetComponent<Rigidbody2D>().AddForce(new Vector2(1.0f,0f)*reglages.speedBuble);
-		//effet des bulles a remonter vers la surface
-		curBuble.GetComponent<Rigidbody2D>().gravityScale=-reglages.archimedEffect;
+        AkSoundEngine.PostEvent("Play_Player_Shot", gameObject);
+        //effet des bulles a remonter vers la surface
+        curBuble.GetComponent<Rigidbody2D>().gravityScale=-reglages.archimedEffect;
 		//knockback du personnage
 		rb2D.AddForce(new Vector2(-1.0f, 0f)*reglages.knockback);
 

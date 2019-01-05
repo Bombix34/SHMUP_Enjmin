@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WwiseDocument Type="WorkUnit" ID="{D1B724BB-66B6-4F55-9CB7-851DFB74B0CF}" SchemaVersion="89">
+	<Busses>
+		<WorkUnit Name="Default Work Unit" ID="{D1B724BB-66B6-4F55-9CB7-851DFB74B0CF}" PersistMode="Standalone">
+			<ChildrenList>
+				<Bus Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}">
+					<ReferenceList>
+						<Reference Name="AudioDevice">
+							<ObjectRef Name="System" ID="{FCC4F067-1568-403E-89A3-9BEF15909053}" WorkUnitID="{1CBB7E6F-55CF-43D8-AC73-66564D458B7D}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<Bus Name="Sfx" ID="{F2A0E619-BE8F-40E5-AAC0-7BD9305E608D}">
+							<DuckingList>
+								<DuckItem>
+									<BusRef Name="Music" ID="{22627215-F271-45F9-A24D-6AB466AF1237}"/>
+									<DuckingParam>
+										<Volume>-3</Volume>
+										<FadeInTime>0.100000001490116</FadeInTime>
+										<FadeOutTime>0.100000001490116</FadeOutTime>
+										<FadeCurve>FadeInvSCurve</FadeCurve>
+									</DuckingParam>
+								</DuckItem>
+							</DuckingList>
+						</Bus>
+						<Bus Name="Amb" ID="{A82F35BC-A9C9-4EF5-8166-4091D089E415}"/>
+						<Bus Name="Music" ID="{22627215-F271-45F9-A24D-6AB466AF1237}"/>
+					</ChildrenList>
+				</Bus>
+				<Bus Name="Motion Factory Bus" ID="{2AF9B9C6-6EF1-46E9-B5F2-E30C9E602C74}">
+					<ReferenceList>
+						<Reference Name="AudioDevice">
+							<ObjectRef Name="Default_Motion_Device" ID="{B94CCCB5-DDB5-4AEC-9960-09B4166D46ED}" WorkUnitID="{1CBB7E6F-55CF-43D8-AC73-66564D458B7D}"/>
+						</Reference>
+					</ReferenceList>
+				</Bus>
+			</ChildrenList>
+		</WorkUnit>
+	</Busses>
+</WwiseDocument>

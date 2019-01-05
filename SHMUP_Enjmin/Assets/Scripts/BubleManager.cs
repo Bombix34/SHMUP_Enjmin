@@ -28,6 +28,9 @@ public class BubleManager : MonoBehaviour {
 	public void DestroyBuble()
 	{
 		Destroy(this.gameObject);
+        // enelever les bulles ui éclatent sortis d'écran
+      //  AkSoundEngine.PostEvent("Play_Bubble_Explode_Os", gameObject);
+        Debug.Log("fck");
 	}
 
 
@@ -107,6 +110,7 @@ public class BubleManager : MonoBehaviour {
             {
                 StartCoroutine(SetObjectInTheBuble(col.gameObject));
                 objectInTheBuble.Add(col.gameObject);
+                AkSoundEngine.PostEvent("Play_Impact_Pnj_Bubble_Os", gameObject);
             }
         }
     }
