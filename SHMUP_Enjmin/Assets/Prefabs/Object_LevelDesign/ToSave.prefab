@@ -20,6 +20,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4389253817506752}
   - component: {fileID: 70002941608815336}
+  - component: {fileID: 114597675016877000}
   m_Layer: 0
   m_Name: ToSave
   m_TagString: ToSave
@@ -85,6 +86,17 @@ CapsuleCollider2D:
   m_Offset: {x: 0, y: -0}
   m_Size: {x: 0.35, y: 1}
   m_Direction: 0
+--- !u!114 &114597675016877000
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1196394181121924}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 65535634a3daba24cadef691cf9c032c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!212 &212576977329778324
 SpriteRenderer:
   m_ObjectHideFlags: 1
