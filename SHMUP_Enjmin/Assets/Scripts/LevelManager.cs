@@ -52,6 +52,10 @@ public class LevelManager : MonoBehaviour
             situations.Add((GameObject)Instantiate(nextLevel, new Vector3(rightMostSituationBound, 0), transform.rotation));
             situations.Last().transform.Translate(new Vector3 (Camera.main.orthographicSize * Camera.main.aspect - GetSituationLeftMostBound(situations.Last()), 0));
             rightMostSituationBound = GetSituationRightMostBound(situations.Last());
+            foreach (Transform child in situations.Last().transform)
+            {
+                child.parent = null;
+            }
         }
     }
 
