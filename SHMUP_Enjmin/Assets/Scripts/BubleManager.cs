@@ -7,6 +7,8 @@ public class BubleManager : MonoBehaviour {
 	Rigidbody2D rb2D;
     CircleCollider2D colider;
 
+	BubleSize bubleSize=BubleSize.init;
+
 	//pour différencier la bulle dans l'état de création par le player
 	bool curIsCreate=false;
 
@@ -14,10 +16,10 @@ public class BubleManager : MonoBehaviour {
 
 	void Awake () 
 	{
-		rb2D=GetComponent<Rigidbody2D>();
+		rb2D = GetComponent<Rigidbody2D>();
         colider = GetComponent<CircleCollider2D>();
-		objectInTheBuble=new List<GameObject>();
-		colider= GetComponent<CircleCollider2D>();
+		objectInTheBuble = new List<GameObject>();
+		colider = GetComponent<CircleCollider2D>();
 	}
 
 	void Update()
@@ -31,13 +33,26 @@ public class BubleManager : MonoBehaviour {
 
 	public void DestroyBuble()
 	{
-        foreach(GameObject bleble in objectInTheBuble)
+        foreach(GameObject pote in objectInTheBuble)
         {
-            bleble.transform.parent = null;
+            // on decroche les potes dans les bulles, et on réactive leur scrollable
+            pote.transform.parent = null;
+            pote.GetComponent<ScrollScript>().enabled = true;
         }
 		Destroy(this.gameObject);
-        // enelever les bulles ui éclatent sortis d'écran
+        // enlever les bulles ui éclatent sortis d'écran
       //  AkSoundEngine.PostEvent("Play_Bubble_Explode_Os", gameObject);
+	}
+
+	public IEnumerator ShakeBuble()
+	{
+		Transform sprite = this.transform.Find("sprite");
+		if(curIsCreate)
+		{
+			sprite.transform.position=new Vector2(this.transform.position.x+Random.Range(0f,0.1f),this.transform.position.y+Random.Range(0f,0.1f));
+			yield return new WaitForSeconds(0.05f);
+		}
+		sprite.transform.position=this.transform.position;
 	}
 
 
@@ -58,7 +73,9 @@ public class BubleManager : MonoBehaviour {
 
 	IEnumerator SetObjectInTheBuble(GameObject obj)
 	{
-		obj.transform.parent=this.transform;
+        // on desactive le scrollable des potes emprisonnés dans la bulle
+        obj.GetComponent<ScrollScript>().enabled = false;
+        obj.transform.parent=this.transform;
 
 		Vector2 forceDirection = new Vector2(this.transform.position.x-obj.transform.position.x,this.transform.position.y-obj.transform.position.y);
 		float distanceFromCenter = GetDistanceFromBubleCenter(obj.transform.position);
@@ -87,11 +104,7 @@ public class BubleManager : MonoBehaviour {
 
 	void OnCollisionEnter2D(Collision2D col)
     {
-        if (col.gameObject.tag=="DeathBuble")
-		{
-			DestroyBuble();
-		}
-		else if(col.gameObject.tag=="Buble")
+        if(col.gameObject.tag=="Buble")
 		{
 			if(curIsCreate)
 			{
@@ -110,21 +123,17 @@ public class BubleManager : MonoBehaviour {
 
 	void OnTriggerEnter2D(Collider2D col)
     {
-		if(col.gameObject.tag=="DeathBuble")
-        {
-            DestroyBuble();
-        }
-		else if(col.gameObject.tag == "oursin")
+		if(col.gameObject.tag == "oursin")
 		{
 			// si la bulle est déjà créée, on retracte l'oursin
 			if(!curIsCreate)
-				col.gameObject.GetComponent<UrchinManager>().retract();
-
+				col.gameObject.GetComponent<UrchinManager>().retract();	
 			DestroyBuble();
 		} 
 		else if(col.gameObject.tag=="Player")
 		{
-		} else if (col.gameObject.tag == "ToSave")
+		}
+        else if (col.gameObject.tag == "ToSave")
         {
             if (curIsCreate)
             {
@@ -133,6 +142,9 @@ public class BubleManager : MonoBehaviour {
             }
             else
             {
+				//on vérifie si on peut ajouter un personnage dans cette bulle en fonction de sa taille
+				if((objectInTheBuble.Count==(int)bubleSize)||(objectInTheBuble.Contains(col.gameObject)))
+					return;
                 StartCoroutine(SetObjectInTheBuble(col.gameObject));
                 objectInTheBuble.Add(col.gameObject);
 
@@ -140,24 +152,24 @@ public class BubleManager : MonoBehaviour {
             }
         }
     }
-
-    private void OnCollisionExit2D(Collision2D collision)
-    {
-    }
-
-	void OnTriggerStay2D(Collider2D col)
-    {
-		if(col.gameObject.tag=="ToSave")
-		{
-
-		}
-	}
 	
 	void OnTriggerExit2D(Collider2D col)
 	{
         if (col.gameObject.tag == "DeathBuble")
         {
             DestroyBuble();
+        }
+
+        if(col.gameObject.tag == "upBuble")
+        {
+            foreach(GameObject pote in objectInTheBuble)
+            {
+                // TODO : +1 au score
+                Debug.Log("JE SUIS SAUVE !");
+                Destroy(pote);
+            }
+            TentaclesManager.instance.MoveBackward();
+            Destroy(this.gameObject);
         }
     }
 
@@ -183,5 +195,19 @@ public class BubleManager : MonoBehaviour {
 	public CircleCollider2D GetCollider()
 	{
 		return colider;
+	}
+
+	public void IncrementBubleSize()
+	{
+		if(bubleSize==BubleSize.final)
+			return;
+		bubleSize++;
+	}
+
+	enum BubleSize
+	{
+		init=1,
+		intermediate=2,
+		final=3
 	}
 }

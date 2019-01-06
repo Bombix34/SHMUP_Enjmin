@@ -4,14 +4,27 @@ using UnityEngine;
 
 public class TentaclesManager : MonoBehaviour {
 
-    public GameObject tentacles;
+    public static TentaclesManager instance;
 
-    private float distanceDone = 0;
+    public GameObject[] tentacles;
+
+    public float distanceAtEachCapture = 2f;
+    public float moveSpeedForward = 0.1f;
+
+    public float distanceAtEachSave = 2f;
+    public float moveSpeedBackward = 0.1f;
+
+    private Coroutine deplacement;
+
+    public float distanceDone = 0;
 
 
     private void Awake()
     {
-        
+        if(instance == null)
+        {
+            instance = this;
+        }
     }
 
     // Use this for initialization
@@ -25,10 +38,10 @@ public class TentaclesManager : MonoBehaviour {
         Vector3 pos;
 
         //bordure Gauche
-        tentacles.transform.position = hg;
+        transform.position = hg;
         pos = bg - hg;
-        tentacles.transform.position.Scale(new Vector3(0.5F, 0.5F, 0.5F));
-        tentacles.transform.Translate(pos / 2);
+        transform.position.Scale(new Vector3(0.5F, 0.5F, 0.5F));
+        transform.Translate(pos / 2);
 
     }
 
@@ -37,4 +50,50 @@ public class TentaclesManager : MonoBehaviour {
 
 
 	}
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag == "ToSave")
+        {
+            MoveForward();
+        }
+    }
+
+    public void MoveForward()
+    {
+        // TODO : animation de capture
+
+        // deplacement des tentacules
+        distanceDone += distanceAtEachCapture;
+        StartCoroutine(MoveForwardCoroutine());
+    }
+
+    public void MoveBackward()
+    {
+        // deplacement des tentacules
+        distanceDone -= distanceAtEachSave;
+        StartCoroutine(MoveBackwardCoroutine());
+    }
+
+    IEnumerator MoveForwardCoroutine()
+    {
+        float dist = 0;
+        while(distanceAtEachCapture > dist)
+        {
+            transform.position = new Vector3(transform.position.x + moveSpeedForward, transform.position.y, transform.position.z);
+            dist += moveSpeedForward;
+            yield return null;
+        }
+    }
+
+    IEnumerator MoveBackwardCoroutine()
+    {
+        float dist = 0;
+        while (distanceAtEachSave > dist && distanceDone >= 0)
+        {
+            transform.position = new Vector3(transform.position.x - moveSpeedBackward, transform.position.y, transform.position.z);
+            dist += moveSpeedBackward;
+            yield return null;
+        }
+    }
 }

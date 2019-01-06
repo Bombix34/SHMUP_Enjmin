@@ -6,10 +6,14 @@ using UnityEngine;
 public class BubleReglages : ScriptableObject {
 
 	[Header("Reglages taille des bulles")]
-	[Range(0.1f,1f)]
-	public float initialSize=0.5f;
-	[Range(0.5f,6f)]
-	public float maxSizeBuble=0.5f;
+	[Range(0.1f,3f)]
+	public float initialSize=0.1f;
+
+	[Range(0.1f,3f)]
+	public float intermediateSize=0.1f;
+
+	[Range(0.1f,3f)]
+	public float maxSizeBuble=0.1f;
 
 	[Space]
 

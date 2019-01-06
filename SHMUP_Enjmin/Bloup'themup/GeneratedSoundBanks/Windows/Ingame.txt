@@ -23,6 +23,9 @@ Custom State	ID	Name	State Group	Owner		Notes
 	392142303	Lvl_03	Profondeur	\Actor-Mixer Hierarchy\Default Work Unit\Sfx\Player\Bulles_Turfu		
 	406051133	Lvl_02	Profondeur	\Actor-Mixer Hierarchy\Default Work Unit\Sfx\Player\Bulles_Turfu		
 
+Game Parameter	ID	Name			Wwise Object Path	Notes
+	215492731	Profondeur			\Default Work Unit\Profondeur	
+
 Effect plug-ins	ID	Name	Type				Notes
 	3948262040	Octave_Down	Wwise Pitch Shifter			
 
