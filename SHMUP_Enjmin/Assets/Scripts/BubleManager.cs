@@ -103,39 +103,23 @@ public class BubleManager : MonoBehaviour {
     {
 		if(col.gameObject.tag=="Buble")
 		{
-			DestroyBuble();
-		}
-		else if(col.gameObject.tag=="Buble")
-		{
 			if(curIsCreate)
 			{
 				//détruit la bulle que le personnage est en train de créer 
 				DestroyBuble();
 			}
-		}
-        else if (col.gameObject.tag == "Player")
-        {
-            if (curIsCreate)
-            {
-                //Physics2D.IgnoreCollision(colider, col.collider);
-            }
-        }
-    }
-
-	void OnTriggerEnter2D(Collider2D col)
-    {
-		if(col.gameObject.tag=="DeathBuble")
-        {
-            DestroyBuble();
-        }
-		else if(col.gameObject.tag == "oursin")
+		}else if(col.gameObject.tag == "oursin")
 		{
 			// si la bulle est déjà créée, on retracte l'oursin
 			if(!curIsCreate)
 				col.gameObject.GetComponent<UrchinManager>().retract();	
 			DestroyBuble();
 		} 
-		else if (col.gameObject.tag == "ToSave")
+    }
+
+	void OnTriggerEnter2D(Collider2D col)
+    {
+		if (col.gameObject.tag == "ToSave")
         {
             if (curIsCreate)
             {
