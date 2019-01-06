@@ -53,8 +53,6 @@ public class PlayerManager : MonoBehaviour {
 		keyboard=GetComponent<KeyboardController>();
 		rb2D=GetComponent<Rigidbody2D>();
 		transform.localScale=new Vector2(reglages.sizePlayer,reglages.sizePlayer);
-
- 
     }
 	
 	void Update () 
@@ -68,7 +66,6 @@ public class PlayerManager : MonoBehaviour {
 		
         rtpcValue = transform.position.y;
         AkSoundEngine.SetRTPCValue("Profondeur", rtpcValue, gameObject);
-
 	}
 
 

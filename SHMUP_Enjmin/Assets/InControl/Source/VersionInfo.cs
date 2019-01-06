@@ -28,11 +28,7 @@ namespace InControl
 				Major = 1,
 				Minor = 4,
 				Patch = 4,
-<<<<<<< HEAD
-				Build = 4664
-=======
-				Build = 4665
->>>>>>> jam
+				Build = 4667
 			};
 		}
 
