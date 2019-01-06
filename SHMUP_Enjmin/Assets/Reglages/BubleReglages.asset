@@ -11,9 +11,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9881faf378df9497abc42a1d94d353d0, type: 3}
   m_Name: BubleReglages
   m_EditorClassIdentifier: 
-  initialSize: 0.5
-  maxSizeBuble: 2
-  speedGrow: 0.05
-  speedBuble: 60
+  initialSize: 0.6
+  intermediateSize: 1
+  maxSizeBuble: 1.5
+  speedGrow: 0.0226
+  speedBuble: 40
   velocityDecrease: 1.5
   archimedEffect: 0.05

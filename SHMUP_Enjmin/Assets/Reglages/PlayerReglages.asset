@@ -11,6 +11,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b5b6a23be0d184539b867813c062f4a0, type: 3}
   m_Name: PlayerReglages
   m_EditorClassIdentifier: 
-  sizePlayer: 1.29
-  speedPlayer: 0.18
+  sizePlayer: 1
+  speedPlayer: 4
+  dashPower: 7
+  dashDuration: 0.075
+  dashCoolDown: 0.5
   knockback: 0.5
