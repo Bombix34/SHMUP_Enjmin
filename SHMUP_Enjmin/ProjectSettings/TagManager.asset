@@ -10,6 +10,7 @@ TagManager:
   - niktemor
   - niktarass
   - niktonper
+  - oursin
   layers:
   - Default
   - TransparentFX
