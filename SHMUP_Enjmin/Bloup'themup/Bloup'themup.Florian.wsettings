@@ -4,10 +4,13 @@
 		<UserProjectSettings Name="" ID="{9B4642AD-47FF-45B3-AEC0-90A77833CF67}">
 			<PropertyList>
 				<Property Name="Event Action List\{13CC4609-4F81-4BF6-9092-68618D042F1C}\x64_Expand States" Type="string" Value=""/>
+				<Property Name="Event Action List\{48AF0674-BD61-4BA1-BAF3-FD72F90333AE}\x64_Expand States" Type="string" Value=""/>
 				<Property Name="Event Action List\{4F6015C0-0C9E-45B0-BCE5-B0C978078CE4}\x64_Expand States" Type="string" Value=""/>
 				<Property Name="Event Action List\{54F2F68E-297D-4491-81F8-973496A0B5BB}\x64_Expand States" Type="string" Value=""/>
 				<Property Name="Event Action List\{C387B0CB-78EE-45C4-87CF-AC51E456CBEB}\x64_Expand States" Type="string" Value=""/>
 				<Property Name="Event Action List\{D472FD05-8C49-461A-BFA9-3248D30CB7C2}\x64_Expand States" Type="string" Value=""/>
+				<Property Name="Event Action List\{E243714C-3FA5-4238-9F23-CAB7829C34D7}\x64_Expand States" Type="string" Value=""/>
+				<Property Name="Event Action List\{F74A5FAC-6469-463A-A9D9-58CF8DA9BACD}\x64_Expand States" Type="string" Value=""/>
 				<Property Name="ExternalSourcesInputPath" Type="string">
 					<ValueList>
 						<Value Platform="Windows"></Value>
@@ -21,6 +24,7 @@
 				<Property Name="GenerateSoundBanks\x64_SelectedLanguages" Type="string" Value="BvDMKA=="/>
 				<Property Name="GenerateSoundBanks\x64_SelectedPlatforms" Type="string" Value="Os/2TIyi+Um3wrGxmtq1uA=="/>
 				<Property Name="GenerateSoundBanks\x64_SelectedSoundBanks" Type="string" Value="NQDjm6GrTES4PnMz0CANiw=="/>
+				<Property Name="Interactive Music\x64_{440234E8-8122-4DBC-8247-F9EED713578A} - SegmentEditorZoomInfo" Type="string" Value="AAAAAAAA8D8AAAAAAADwP/CCNvectThAAAAAAAAA8D8AAAAAAAAAAAAAAAAAAAAA"/>
 				<Property Name="MeterView\LastObject1" Type="string" Value="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}"/>
 				<Property Name="MeterView\MeterMode1" Type="int32" Value="1"/>
 				<Property Name="MeterView\MeterMode1Viewpoint0" Type="int32" Value="1"/>

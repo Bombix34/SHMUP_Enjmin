@@ -1958,6 +1958,12 @@
 										<Property Name="DryLevel" Type="Real32" Value="0"/>
 										<Property Name="Pitch" Type="Real32" Value="-1200"/>
 									</PropertyList>
+									<StateInfo>
+										<StatePropertyList>
+											<Property Name="DryLevel"/>
+											<Property Name="WetLevel"/>
+										</StatePropertyList>
+									</StateInfo>
 								</Effect>
 							</ChildrenList>
 						</Folder>

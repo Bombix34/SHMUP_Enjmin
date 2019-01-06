@@ -26,12 +26,17 @@ public class PlayerManager : MonoBehaviour {
 	//chrono pour GrowBuble(), attendre avant de grossir la bulle
 	float chronoIncrementSizeBuble=1;
 
-
 	bool isDashing=false;
 
 	//cooldown du dash
 	float dashChrono=0f;
 	bool canMove=true;
+
+
+    
+    // rtpc value
+    float rtpcValue;
+    int type = 1;
 
     private void Awake()
     {
@@ -48,7 +53,9 @@ public class PlayerManager : MonoBehaviour {
 		keyboard=GetComponent<KeyboardController>();
 		rb2D=GetComponent<Rigidbody2D>();
 		transform.localScale=new Vector2(reglages.sizePlayer,reglages.sizePlayer);
-	}
+
+        AkSoundEngine.GetRTPCValue("Profondeur", gameObject, 0, out rtpcValue, ref type);
+    }
 	
 	void Update () 
 	{
@@ -58,6 +65,10 @@ public class PlayerManager : MonoBehaviour {
 		MovePlayer();	
 		BubleUpdate();
 		Dash();
+		
+        rtpcValue = transform.position.y;
+        AkSoundEngine.SetRTPCValue("Profondeur", rtpcValue, gameObject);
+
 	}
 
 
@@ -124,6 +135,24 @@ public class PlayerManager : MonoBehaviour {
 				forceDirection*=200f;
 				col.gameObject.GetComponent<Rigidbody2D>().AddForce(new Vector2(forceDirection.x,forceDirection.y)*bullesReglages.speedBuble);
 			}
+        }
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag == "niktemor")
+        {
+            print("1");
+            AkSoundEngine.SetState("Profondeur", "Lvl_01");
+        } else if (collision.gameObject.tag == "niktarass")
+        {
+            print("2");
+            AkSoundEngine.SetState("Profondeur", "Lvl_02");
+        }
+        else if (collision.gameObject.tag == "niktonper")
+        {
+            print("3");
+            AkSoundEngine.SetState("Profondeur", "Lvl_03");
         }
     }
 
@@ -223,10 +252,11 @@ public class PlayerManager : MonoBehaviour {
 
 		curBuble.GetComponent<BubleManager>().SetIsCreate(false);
 		//tir de la bulle
+
 		curBuble.GetComponent<Rigidbody2D>().AddForce(new Vector2(500f,0f)*bullesReglages.speedBuble);
 
        // AkSoundEngine.PostEvent("Play_Player_Shot", gameObject);
-
+       
         //effet des bulles a remonter vers la surface
         curBuble.GetComponent<Rigidbody2D>().gravityScale=-bullesReglages.archimedEffect;
 

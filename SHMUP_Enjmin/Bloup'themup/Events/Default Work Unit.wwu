@@ -55,6 +55,11 @@
 									<PropertyList>
 										<Property Name="ActionType" Type="int16" Value="1"/>
 										<Property Name="Delay" Type="Real64" Value="0.85"/>
+										<Property Name="Inclusion" Type="bool">
+											<ValueList>
+												<Value>False</Value>
+											</ValueList>
+										</Property>
 									</PropertyList>
 									<ReferenceList>
 										<Reference Name="Target">
@@ -83,6 +88,16 @@
 									<ReferenceList>
 										<Reference Name="Target">
 											<ObjectRef Name="Player_Load_Shot_Os" ID="{0E55A0A6-949B-4556-83A5-EF1E533EFD82}" WorkUnitID="{BFB9B95C-F19D-4A69-AD4E-5BA087B198AF}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+								<Action Name="" ID="{23C6D900-E317-4251-8055-B24818C24AF6}" ShortID="1042451370">
+									<PropertyList>
+										<Property Name="ActionType" Type="int16" Value="1"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Bulles_Turfu" ID="{2F9B246F-44C2-44DD-9C5C-6DD87F0FEB3E}" WorkUnitID="{BFB9B95C-F19D-4A69-AD4E-5BA087B198AF}"/>
 										</Reference>
 									</ReferenceList>
 								</Action>
@@ -159,6 +174,61 @@
 									<ReferenceList>
 										<Reference Name="Target">
 											<ObjectRef Name="Musique" ID="{C8FB359D-BE44-4223-B13B-B097C732393E}" WorkUnitID="{4E5A65E5-C56F-495A-AB58-65CC0CC32273}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="Set_Profondeur_lvl_01" ID="{48AF0674-BD61-4BA1-BAF3-FD72F90333AE}">
+							<ChildrenList>
+								<Action Name="" ID="{9B4AC60B-2C4E-4E19-A106-1960ADA5A3FE}" ShortID="918935942">
+									<PropertyList>
+										<Property Name="ActionType" Type="int16" Value="22"/>
+										<Property Name="Delay" Type="Real64" Value="0.1"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Lvl_01" ID="{91D3FEAC-34E3-48D7-8D9D-9182B1BAB57F}" WorkUnitID="{171F8C03-12D6-4828-AA7B-71827BD9360D}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="Set_State_Lvl_03" ID="{E243714C-3FA5-4238-9F23-CAB7829C34D7}">
+							<ChildrenList>
+								<Action Name="" ID="{CD583806-D316-41FA-BAA9-D0FD3D824E5D}" ShortID="914768405">
+									<PropertyList>
+										<Property Name="ActionType" Type="int16" Value="22"/>
+										<Property Name="Delay" Type="Real64" Value="0.1"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Lvl_03" ID="{8F0CC4DA-DF60-456D-8E10-4449E74962ED}" WorkUnitID="{171F8C03-12D6-4828-AA7B-71827BD9360D}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="Set_State_Lvl_02" ID="{F74A5FAC-6469-463A-A9D9-58CF8DA9BACD}">
+							<ChildrenList>
+								<Action Name="" ID="{7CC7BC08-C89C-474A-BF66-AD09DC91B3C7}" ShortID="663538373">
+									<PropertyList>
+										<Property Name="ActionType" Type="int16" Value="22"/>
+										<Property Name="Delay" Type="Real64" Value="0.1"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Lvl_02" ID="{E36538E5-14FC-4B48-8F3D-3DF82DBEB51C}" WorkUnitID="{171F8C03-12D6-4828-AA7B-71827BD9360D}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+								<Action Name="" ID="{A4149EC6-B7B4-4BF0-94D5-5832A5A176EA}" ShortID="596390758">
+									<PropertyList>
+										<Property Name="ActionType" Type="int16" Value="1"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Player_Dash_os" ID="{4C68E278-7F4B-4F1F-9BCB-2686317EC842}" WorkUnitID="{BFB9B95C-F19D-4A69-AD4E-5BA087B198AF}"/>
 										</Reference>
 									</ReferenceList>
 								</Action>

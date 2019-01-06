@@ -5,7 +5,7 @@ using UnityEngine;
 public class BubleManager : MonoBehaviour {
 
 	Rigidbody2D rb2D;
-	CircleCollider2D colider;
+    CircleCollider2D colider;
 
 	BubleSize bubleSize=BubleSize.init;
 
@@ -17,6 +17,7 @@ public class BubleManager : MonoBehaviour {
 	void Awake () 
 	{
 		rb2D=GetComponent<Rigidbody2D>();
+        colider = GetComponent<CircleCollider2D>();
 		objectInTheBuble=new List<GameObject>();
 		colider= GetComponent<CircleCollider2D>();
 	}
@@ -25,7 +26,8 @@ public class BubleManager : MonoBehaviour {
 	{
 		if(curIsCreate)
 			return;
-		transform.Translate(-LevelManager.instance.GetScrollingSpeed()*Time.deltaTime,0f,0f);
+
+        //transform.localScale = new Vector3(transform.localScale.x * 1.1f, transform.localScale.y * 1.1f, transform.localScale.z);
 	}
 
 
@@ -101,13 +103,31 @@ public class BubleManager : MonoBehaviour {
     {
 		if(col.gameObject.tag=="Buble")
 		{
+			DestroyBuble();
+		}
+		else if(col.gameObject.tag=="Buble")
+		{
 			if(curIsCreate)
 			{
 				//détruit la bulle que le personnage est en train de créer 
 				DestroyBuble();
 			}
 		}
-		// on detruit la bulle au contact d'un oursin
+        else if (col.gameObject.tag == "Player")
+        {
+            if (curIsCreate)
+            {
+                //Physics2D.IgnoreCollision(colider, col.collider);
+            }
+        }
+    }
+
+	void OnTriggerEnter2D(Collider2D col)
+    {
+		if(col.gameObject.tag=="DeathBuble")
+        {
+            DestroyBuble();
+        }
 		else if(col.gameObject.tag == "oursin")
 		{
 			// si la bulle est déjà créée, on retracte l'oursin
@@ -115,21 +135,14 @@ public class BubleManager : MonoBehaviour {
 				col.gameObject.GetComponent<UrchinManager>().retract();	
 			DestroyBuble();
 		} 
-		else if(col.gameObject.tag=="Player")
-		{
-		}
-    }
-
-    void OnTriggerEnter2D(Collider2D col)
-    {
-
-        if (col.gameObject.tag == "ToSave")
+		else if (col.gameObject.tag == "ToSave")
         {
             if (curIsCreate)
             {
                 //détruit la bulle que le personnage est en train de créer 
                 DestroyBuble();
-            } else
+            }
+            else
             {
 				//on vérifie si on peut ajouter un personnage dans cette bulle en fonction de sa taille
 				if((objectInTheBuble.Count==(int)bubleSize)||(objectInTheBuble.Contains(col.gameObject)))
@@ -137,7 +150,7 @@ public class BubleManager : MonoBehaviour {
                 StartCoroutine(SetObjectInTheBuble(col.gameObject));
                 objectInTheBuble.Add(col.gameObject);
 
-             //   AkSoundEngine.PostEvent("Play_Impact_Pnj_Bubble_Os", gameObject);
+                //   AkSoundEngine.PostEvent("Play_Impact_Pnj_Bubble_Os", gameObject);
             }
         }
     }

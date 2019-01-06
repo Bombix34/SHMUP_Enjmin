@@ -2,6 +2,7 @@
 <PluginInfo Project="Bloup'themup" Platform="Windows" BasePlatform="Windows">
 	<Plugins>
 		<Plugin Name="Wwise Silence" ID="6619138" DLL="AkSilenceGenerator"/>
+		<Plugin Name="Wwise Pitch Shifter" ID="8912899" DLL="AkPitchShifter"/>
 		<Plugin Name="System" ID="11403271" DLL="DefaultSink"/>
 		<Plugin Name="No Output" ID="11862023" DLL="DefaultSink"/>
 		<Plugin Name="Wwise Motion" ID="33226759" DLL="AkMotion"/>

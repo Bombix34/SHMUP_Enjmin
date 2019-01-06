@@ -180,7 +180,7 @@ MonoBehaviour:
   - PhysicalPath: Master-Mixer Hierarchy\Default Work Unit.wwu
     ParentPhysicalPath: 
     guid: bb24b7d1b666554f9cb7851dfb74b0cf
-    m_lastTime: -8586550794964775808
+    m_lastTime: -8586548766818668746
     List: []
   BankWwu:
   - PhysicalPath: SoundBanks\Default Work Unit.wwu
@@ -201,7 +201,7 @@ MonoBehaviour:
   - PhysicalPath: Events\Default Work Unit.wwu
     ParentPhysicalPath: 
     guid: 7c843613cd65de4b82e788b2522fbb1a
-    m_lastTime: -8586548829595463767
+    m_lastTime: -8586548738486800342
     List:
     - name: Innit_Amb
       guid: 0946cc13814ff64b909268618d042f1c
@@ -301,12 +301,63 @@ MonoBehaviour:
       maxAttenuation: 0
       maxDuration: 0
       minDuration: 0
+    - name: Set_Profondeur_lvl_01
+      guid: 7406af4861bda14bbaf3fd72f90333ae
+      id: 4291492979
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Ingame
+        ObjectType: 4
+      - ElementName: Set_Profondeur_lvl_01
+        ObjectType: 3
+      Path: Default Work Unit\Ingame\Set_Profondeur_lvl_01
+      maxAttenuation: 0
+      maxDuration: 0
+      minDuration: 0
+    - name: Set_State_Lvl_02
+      guid: ac5f4af769643a46a9d958cf8da9bacd
+      id: 2942235191
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Ingame
+        ObjectType: 4
+      - ElementName: Set_State_Lvl_02
+        ObjectType: 3
+      Path: Default Work Unit\Ingame\Set_State_Lvl_02
+      maxAttenuation: 0
+      maxDuration: 0
+      minDuration: 0
+    - name: Set_State_Lvl_03
+      guid: 4c7143e2a53f38429f23cab7829c34d7
+      id: 2942235190
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Ingame
+        ObjectType: 4
+      - ElementName: Set_State_Lvl_03
+        ObjectType: 3
+      Path: Default Work Unit\Ingame\Set_State_Lvl_03
+      maxAttenuation: 0
+      maxDuration: 0
+      minDuration: 0
   RtpcWwu:
   - PhysicalPath: Game Parameters\Default Work Unit.wwu
     ParentPhysicalPath: 
     guid: bee0b53b9a5d654a8a2c3017e9e6dea0
-    m_lastTime: -8586550891674775808
-    List: []
+    m_lastTime: -8586548772883379201
+    List:
+    - name: Profondeur
+      guid: 7f69b427dd9f5d4fb7f0b5a24ff86796
+      id: 215492731
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Profondeur
+        ObjectType: 13
+      Path: Default Work Unit\Profondeur
   - PhysicalPath: Game Parameters\Factory Motion.wwu
     ParentPhysicalPath: 
     guid: 225213d7dbd1d042adc0930743567776
@@ -429,8 +480,42 @@ MonoBehaviour:
   - PhysicalPath: States\Default Work Unit.wwu
     ParentPhysicalPath: 
     guid: 038c1f17d6122848aa7b71827bd9360d
-    m_lastTime: -8586550891674775808
-    List: []
+    m_lastTime: -8586548763889469607
+    List:
+    - name: Profondeur
+      guid: 50183dcb10168f44a889060899cfbbb4
+      id: 215492731
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Profondeur
+        ObjectType: 9
+      Path: Default Work Unit\Profondeur
+      values:
+      - name: Lvl_01
+        guid: acfed391e334d7488d9d9182b1bab57f
+        id: 2147068365
+        PathAndIcons:
+        - ElementName: Lvl_01
+          ObjectType: 8
+      - name: Lvl_02
+        guid: e53865e3fc14484b8f3d3df82dbeb51c
+        id: 2147068366
+        PathAndIcons:
+        - ElementName: Lvl_02
+          ObjectType: 8
+      - name: Lvl_03
+        guid: dac40c8f60df6d458e104449e74962ed
+        id: 2147068367
+        PathAndIcons:
+        - ElementName: Lvl_03
+          ObjectType: 8
+      - name: None
+        guid: 9035a2eb3c2e35469050242263ef47da
+        id: 748895195
+        PathAndIcons:
+        - ElementName: None
+          ObjectType: 8
   SwitchWwu:
   - PhysicalPath: Switches\Default Work Unit.wwu
     ParentPhysicalPath: 
@@ -445,8 +530,8 @@ MonoBehaviour:
     List: []
   ExpandedItems:
   - /Bloup'themup
-  - /Bloup'themup/Events
-  - /Bloup'themup/Events/Default Work Unit
-  - /Bloup'themup/Events/Default Work Unit/Ingame
+  - /Bloup'themup/States
+  - /Bloup'themup/States/Default Work Unit
+  - /Bloup'themup/States/Default Work Unit/Profondeur
   autoPopulateEnabled: 1
   CurrentPluginConfig: 

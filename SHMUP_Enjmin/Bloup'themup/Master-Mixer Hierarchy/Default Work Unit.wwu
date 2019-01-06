@@ -11,6 +11,9 @@
 					</ReferenceList>
 					<ChildrenList>
 						<Bus Name="Sfx" ID="{F2A0E619-BE8F-40E5-AAC0-7BD9305E608D}">
+							<PropertyList>
+								<Property Name="UseGameAuxSends" Type="bool" Value="True"/>
+							</PropertyList>
 							<DuckingList>
 								<DuckItem>
 									<BusRef Name="Music" ID="{22627215-F271-45F9-A24D-6AB466AF1237}"/>
@@ -23,8 +26,16 @@
 								</DuckItem>
 							</DuckingList>
 						</Bus>
-						<Bus Name="Amb" ID="{A82F35BC-A9C9-4EF5-8166-4091D089E415}"/>
-						<Bus Name="Music" ID="{22627215-F271-45F9-A24D-6AB466AF1237}"/>
+						<Bus Name="Amb" ID="{A82F35BC-A9C9-4EF5-8166-4091D089E415}">
+							<PropertyList>
+								<Property Name="UseGameAuxSends" Type="bool" Value="True"/>
+							</PropertyList>
+						</Bus>
+						<Bus Name="Music" ID="{22627215-F271-45F9-A24D-6AB466AF1237}">
+							<PropertyList>
+								<Property Name="UseGameAuxSends" Type="bool" Value="True"/>
+							</PropertyList>
+						</Bus>
 					</ChildrenList>
 				</Bus>
 				<Bus Name="Motion Factory Bus" ID="{2AF9B9C6-6EF1-46E9-B5F2-E30C9E602C74}">

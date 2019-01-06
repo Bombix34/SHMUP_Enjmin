@@ -6,8 +6,6 @@ using UnityEngine;
 public class LevelManager : MonoBehaviour
 {
     float rightMostSituationBound;
-    List<GameObject> situations;
-
 
     public LevelReglages reglages;
 
@@ -15,43 +13,22 @@ public class LevelManager : MonoBehaviour
     void Start ()
     {
         rightMostSituationBound = Camera.main.orthographicSize * Camera.main.aspect;
-        situations = new List<GameObject>();
 	}
 
     void Update ()
     {
-        ScrollLevels();
-        
-        if (situations.Count != 0)
-        {
-            while (GetSituationRightMostBound(situations.First()) < -1 * Camera.main.orthographicSize * Camera.main.aspect)
-            {
-                GameObject situationToDestroy = situations.First();
-                situations.RemoveAt(0);
-                Destroy(situationToDestroy);
-            }
-        }
+        rightMostSituationBound -= reglages.scrollingSpeed * Time.deltaTime;
 
-        FillScreenWithSituations();
-	}
-
-    void ScrollLevels()
-    {
-        foreach (GameObject situation in situations)
-        {
-            situation.transform.Translate(-reglages.scrollingSpeed*Time.deltaTime,0f,0f);
-        }
-        rightMostSituationBound -= reglages.scrollingSpeed*Time.deltaTime;
-    }
-
-    void FillScreenWithSituations()
-    {
         while (rightMostSituationBound < Camera.main.orthographicSize * Camera.main.aspect)
         {
-            GameObject nextLevel = reglages.GetLevelAtRandom();
-            situations.Add((GameObject)Instantiate(nextLevel, new Vector3(rightMostSituationBound, 0), transform.rotation));
-            situations.Last().transform.Translate(new Vector3 (Camera.main.orthographicSize * Camera.main.aspect - GetSituationLeftMostBound(situations.Last()), 0));
-            rightMostSituationBound = GetSituationRightMostBound(situations.Last());
+            GameObject newSituation = (GameObject)Instantiate(reglages.GetLevelAtRandom(), new Vector3(rightMostSituationBound, 0), transform.rotation);
+            newSituation.transform.Translate(new Vector3(Camera.main.orthographicSize * Camera.main.aspect - GetSituationLeftMostBound(newSituation), 0));
+            rightMostSituationBound = GetSituationRightMostBound(newSituation);
+            for (int i = newSituation.transform.childCount - 1; i >= 0; i--)
+            {
+                newSituation.transform.GetChild(i).parent = null;
+            }
+            Destroy(newSituation);
         }
     }
 
@@ -65,10 +42,6 @@ public class LevelManager : MonoBehaviour
         if (elements.Count != 0)
         {
             float situationLeftMostBound = elements.Min(element => element.gameObject.GetComponentInChildren<Renderer>().bounds.min.x);
-            for (int i = 0; i < elements.Count; i++)
-            {
-                //print(elements[i].gameObject.GetComponent<Renderer>().bounds.min.x);
-            }
             return situationLeftMostBound;
         }
         else

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ValidationCache Version="1" SchemaVersion="89">
-	<ValidationCacheItem File="C:\Users\Florian\Documents\Programmation\SHMUP_Enjmin\SHMUP_Enjmin\Bloup'themup\Actor-Mixer Hierarchy\Default Work Unit.wwu" DateLow="1546723778" DateHigh="0"/>
+	<ValidationCacheItem File="C:\Users\Florian\Documents\Programmation\SHMUP_Enjmin\SHMUP_Enjmin\Bloup'themup\Actor-Mixer Hierarchy\Default Work Unit.wwu" DateLow="1546731176" DateHigh="0"/>
 	<ValidationCacheItem File="C:\Users\Florian\Documents\Programmation\SHMUP_Enjmin\SHMUP_Enjmin\Bloup'themup\Attenuations\Default Work Unit.wwu" DateLow="1546517718" DateHigh="0"/>
 	<ValidationCacheItem File="C:\Users\Florian\Documents\Programmation\SHMUP_Enjmin\SHMUP_Enjmin\Bloup'themup\Audio Devices\Default Work Unit.wwu" DateLow="1546517753" DateHigh="0"/>
 	<ValidationCacheItem File="C:\Users\Florian\Documents\Programmation\SHMUP_Enjmin\SHMUP_Enjmin\Bloup'themup\Bloup'themup.wproj" DateLow="1546721587" DateHigh="0"/>
@@ -10,7 +10,7 @@
 	<ValidationCacheItem File="C:\Users\Florian\Documents\Programmation\SHMUP_Enjmin\SHMUP_Enjmin\Bloup'themup\Dynamic Dialogue\Default Work Unit.wwu" DateLow="1546517718" DateHigh="0"/>
 	<ValidationCacheItem File="C:\Users\Florian\Documents\Programmation\SHMUP_Enjmin\SHMUP_Enjmin\Bloup'themup\Effects\Default Work Unit.wwu" DateLow="1546517718" DateHigh="0"/>
 	<ValidationCacheItem File="C:\Users\Florian\Documents\Programmation\SHMUP_Enjmin\SHMUP_Enjmin\Bloup'themup\Effects\Factory Auro Headphone.wwu" DateLow="1543926110" DateHigh="0"/>
-	<ValidationCacheItem File="C:\Users\Florian\Documents\Programmation\SHMUP_Enjmin\SHMUP_Enjmin\Bloup'themup\Effects\Factory Effects.wwu" DateLow="1543926110" DateHigh="0"/>
+	<ValidationCacheItem File="C:\Users\Florian\Documents\Programmation\SHMUP_Enjmin\SHMUP_Enjmin\Bloup'themup\Effects\Factory Effects.wwu" DateLow="1546730886" DateHigh="0"/>
 	<ValidationCacheItem File="C:\Users\Florian\Documents\Programmation\SHMUP_Enjmin\SHMUP_Enjmin\Bloup'themup\Effects\Factory iZotope Box Modeler.wwu" DateLow="1543926110" DateHigh="0"/>
 	<ValidationCacheItem File="C:\Users\Florian\Documents\Programmation\SHMUP_Enjmin\SHMUP_Enjmin\Bloup'themup\Effects\Factory iZotope Delay.wwu" DateLow="1543926110" DateHigh="0"/>
 	<ValidationCacheItem File="C:\Users\Florian\Documents\Programmation\SHMUP_Enjmin\SHMUP_Enjmin\Bloup'themup\Effects\Factory iZotope Dynamics.wwu" DateLow="1543926110" DateHigh="0"/>
@@ -19,20 +19,20 @@
 	<ValidationCacheItem File="C:\Users\Florian\Documents\Programmation\SHMUP_Enjmin\SHMUP_Enjmin\Bloup'themup\Effects\Factory iZotope Multiband Distortion.wwu" DateLow="1543926110" DateHigh="0"/>
 	<ValidationCacheItem File="C:\Users\Florian\Documents\Programmation\SHMUP_Enjmin\SHMUP_Enjmin\Bloup'themup\Effects\Factory iZotope Singleband Distortion.wwu" DateLow="1543926110" DateHigh="0"/>
 	<ValidationCacheItem File="C:\Users\Florian\Documents\Programmation\SHMUP_Enjmin\SHMUP_Enjmin\Bloup'themup\Effects\Factory McDSP Effects.wwu" DateLow="1543926110" DateHigh="0"/>
-	<ValidationCacheItem File="C:\Users\Florian\Documents\Programmation\SHMUP_Enjmin\SHMUP_Enjmin\Bloup'themup\Events\Default Work Unit.wwu" DateLow="1546723925" DateHigh="0"/>
-	<ValidationCacheItem File="C:\Users\Florian\Documents\Programmation\SHMUP_Enjmin\SHMUP_Enjmin\Bloup'themup\Game Parameters\Default Work Unit.wwu" DateLow="1546517718" DateHigh="0"/>
+	<ValidationCacheItem File="C:\Users\Florian\Documents\Programmation\SHMUP_Enjmin\SHMUP_Enjmin\Bloup'themup\Events\Default Work Unit.wwu" DateLow="1546733036" DateHigh="0"/>
+	<ValidationCacheItem File="C:\Users\Florian\Documents\Programmation\SHMUP_Enjmin\SHMUP_Enjmin\Bloup'themup\Game Parameters\Default Work Unit.wwu" DateLow="1546729597" DateHigh="0"/>
 	<ValidationCacheItem File="C:\Users\Florian\Documents\Programmation\SHMUP_Enjmin\SHMUP_Enjmin\Bloup'themup\Game Parameters\Factory Motion.wwu" DateLow="1543926110" DateHigh="0"/>
 	<ValidationCacheItem File="C:\Users\Florian\Documents\Programmation\SHMUP_Enjmin\SHMUP_Enjmin\Bloup'themup\Game Parameters\Factory SoundSeed Air Game Syncs.wwu" DateLow="1543926110" DateHigh="0"/>
-	<ValidationCacheItem File="C:\Users\Florian\Documents\Programmation\SHMUP_Enjmin\SHMUP_Enjmin\Bloup'themup\Interactive Music Hierarchy\Default Work Unit.wwu" DateLow="1546723421" DateHigh="0"/>
-	<ValidationCacheItem File="C:\Users\Florian\Documents\Programmation\SHMUP_Enjmin\SHMUP_Enjmin\Bloup'themup\Master-Mixer Hierarchy\Default Work Unit.wwu" DateLow="1546527389" DateHigh="0"/>
+	<ValidationCacheItem File="C:\Users\Florian\Documents\Programmation\SHMUP_Enjmin\SHMUP_Enjmin\Bloup'themup\Interactive Music Hierarchy\Default Work Unit.wwu" DateLow="1546726561" DateHigh="0"/>
+	<ValidationCacheItem File="C:\Users\Florian\Documents\Programmation\SHMUP_Enjmin\SHMUP_Enjmin\Bloup'themup\Master-Mixer Hierarchy\Default Work Unit.wwu" DateLow="1546730203" DateHigh="0"/>
 	<ValidationCacheItem File="C:\Users\Florian\Documents\Programmation\SHMUP_Enjmin\SHMUP_Enjmin\Bloup'themup\Mixing Sessions\Default Work Unit.wwu" DateLow="1546517718" DateHigh="0"/>
 	<ValidationCacheItem File="C:\Users\Florian\Documents\Programmation\SHMUP_Enjmin\SHMUP_Enjmin\Bloup'themup\Modulators\Default Work Unit.wwu" DateLow="1546517718" DateHigh="0"/>
 	<ValidationCacheItem File="C:\Users\Florian\Documents\Programmation\SHMUP_Enjmin\SHMUP_Enjmin\Bloup'themup\Presets\Default Work Unit.wwu" DateLow="1546517718" DateHigh="0"/>
 	<ValidationCacheItem File="C:\Users\Florian\Documents\Programmation\SHMUP_Enjmin\SHMUP_Enjmin\Bloup'themup\Queries\Default Work Unit.wwu" DateLow="1546517718" DateHigh="0"/>
 	<ValidationCacheItem File="C:\Users\Florian\Documents\Programmation\SHMUP_Enjmin\SHMUP_Enjmin\Bloup'themup\Queries\Factory Queries.wwu" DateLow="1543926110" DateHigh="0"/>
 	<ValidationCacheItem File="C:\Users\Florian\Documents\Programmation\SHMUP_Enjmin\SHMUP_Enjmin\Bloup'themup\SoundBanks\Default Work Unit.wwu" DateLow="1546722079" DateHigh="0"/>
-	<ValidationCacheItem File="C:\Users\Florian\Documents\Programmation\SHMUP_Enjmin\SHMUP_Enjmin\Bloup'themup\Soundcaster Sessions\Default Work Unit.wwu" DateLow="1546722079" DateHigh="0"/>
-	<ValidationCacheItem File="C:\Users\Florian\Documents\Programmation\SHMUP_Enjmin\SHMUP_Enjmin\Bloup'themup\States\Default Work Unit.wwu" DateLow="1546517718" DateHigh="0"/>
+	<ValidationCacheItem File="C:\Users\Florian\Documents\Programmation\SHMUP_Enjmin\SHMUP_Enjmin\Bloup'themup\Soundcaster Sessions\Default Work Unit.wwu" DateLow="1546732849" DateHigh="0"/>
+	<ValidationCacheItem File="C:\Users\Florian\Documents\Programmation\SHMUP_Enjmin\SHMUP_Enjmin\Bloup'themup\States\Default Work Unit.wwu" DateLow="1546730496" DateHigh="0"/>
 	<ValidationCacheItem File="C:\Users\Florian\Documents\Programmation\SHMUP_Enjmin\SHMUP_Enjmin\Bloup'themup\Switches\Default Work Unit.wwu" DateLow="1546517718" DateHigh="0"/>
 	<ValidationCacheItem File="C:\Users\Florian\Documents\Programmation\SHMUP_Enjmin\SHMUP_Enjmin\Bloup'themup\Triggers\Default Work Unit.wwu" DateLow="1546517718" DateHigh="0"/>
 	<ValidationCacheItem File="C:\Users\Florian\Documents\Programmation\SHMUP_Enjmin\SHMUP_Enjmin\Bloup'themup\Virtual Acoustics\Default Work Unit.wwu" DateLow="1546517718" DateHigh="0"/>
