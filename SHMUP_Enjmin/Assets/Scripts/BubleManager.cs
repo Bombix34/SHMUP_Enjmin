@@ -5,6 +5,7 @@ using UnityEngine;
 public class BubleManager : MonoBehaviour {
 
 	Rigidbody2D rb2D;
+    CircleCollider2D colider;
 
 	//pour différencier la bulle dans l'état de création par le player
 	bool curIsCreate=false;
@@ -14,6 +15,7 @@ public class BubleManager : MonoBehaviour {
 	void Awake () 
 	{
 		rb2D=GetComponent<Rigidbody2D>();
+        colider = GetComponent<CircleCollider2D>();
 		objectInTheBuble=new List<GameObject>();
 	}
 
@@ -22,6 +24,8 @@ public class BubleManager : MonoBehaviour {
 		if(curIsCreate)
 			return;
 		transform.Translate(-LevelManager.instance.GetScrollingSpeed()*Time.deltaTime,0f,0f);
+
+        //transform.localScale = new Vector3(transform.localScale.x * 1.1f, transform.localScale.y * 1.1f, transform.localScale.z);
 	}
 
 
@@ -30,7 +34,6 @@ public class BubleManager : MonoBehaviour {
 		Destroy(this.gameObject);
         // enelever les bulles ui éclatent sortis d'écran
       //  AkSoundEngine.PostEvent("Play_Bubble_Explode_Os", gameObject);
-        Debug.Log("fck");
 	}
 
 
@@ -80,6 +83,7 @@ public class BubleManager : MonoBehaviour {
 
 	void OnCollisionEnter2D(Collision2D col)
     {
+        print("collision ! :"+col.gameObject.tag);
 		if(col.gameObject.tag=="DeathBuble")
 		{
 			DestroyBuble();
@@ -92,6 +96,13 @@ public class BubleManager : MonoBehaviour {
 				DestroyBuble();
 			}
 		}
+        else if (col.gameObject.tag == "Player")
+        {
+            if (curIsCreate)
+            {
+                //Physics2D.IgnoreCollision(colider, col.collider);
+            }
+        }
     }
 
 	void OnTriggerEnter2D(Collider2D col)

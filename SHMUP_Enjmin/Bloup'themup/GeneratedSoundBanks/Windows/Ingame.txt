@@ -2,10 +2,29 @@ Event	ID	Name			Wwise Object Path	Notes
 	206418435	Play_Musique			\Default Work Unit\Ingame\Play_Musique	
 	1056746695	Play_Impact_Pnj_Bubble_Os			\Default Work Unit\Ingame\Play_Impact_Pnj_Bubble_Os	
 	2139305897	Play_Load_Shot			\Default Work Unit\Ingame\Play_Load_Shot	
+	2942235190	Set_State_Lvl_03			\Default Work Unit\Ingame\Set_State_Lvl_03	
+	2942235191	Set_State_Lvl_02			\Default Work Unit\Ingame\Set_State_Lvl_02	
 	2999869044	Innit_Amb			\Default Work Unit\Ingame\Innit_Amb	
 	3726773303	Play_Bubble_Explode_Os			\Default Work Unit\Ingame\Play_Bubble_Explode_Os	
 	3837926945	Play_Player_Dash_os			\Default Work Unit\Ingame\Play_Player_Dash_os	
 	4135433440	Play_Player_Shot			\Default Work Unit\Ingame\Play_Player_Shot	
+	4291492979	Set_Profondeur_lvl_01			\Default Work Unit\Ingame\Set_Profondeur_lvl_01	
+
+State Group	ID	Name			Wwise Object Path	Notes
+	215492731	Profondeur			\Default Work Unit\Profondeur	
+
+State	ID	Name	State Group			Notes
+	0	None	Profondeur			
+	2147068365	Lvl_01	Profondeur			
+	2147068366	Lvl_02	Profondeur			
+	2147068367	Lvl_03	Profondeur			
+
+Custom State	ID	Name	State Group	Owner		Notes
+	392142303	Lvl_03	Profondeur	\Actor-Mixer Hierarchy\Default Work Unit\Sfx\Player\Bulles_Turfu		
+	406051133	Lvl_02	Profondeur	\Actor-Mixer Hierarchy\Default Work Unit\Sfx\Player\Bulles_Turfu		
+
+Effect plug-ins	ID	Name	Type				Notes
+	3948262040	Octave_Down	Wwise Pitch Shifter			
 
 Source plug-ins	ID	Name	Type		Wwise Object Path	Notes
 	92729707	Wwise Silence	Wwise Silence		\Actor-Mixer Hierarchy\Default Work Unit\Amb\Test_Silence\Underwater_Parasites_Rnd\New Sound SFX\Wwise Silence	
@@ -13,10 +32,9 @@ Source plug-ins	ID	Name	Type		Wwise Object Path	Notes
 	1056852937	Wwise Silence	Wwise Silence		\Actor-Mixer Hierarchy\Default Work Unit\Amb\Test_Silence\New Sound SFX_01\Wwise Silence	
 
 In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
-	174964560	Impact_Pnj_Bubble_Os	C:\Users\Florian\Documents\Programmation\SHMUP_Enjmin\SHMUP_Enjmin\Bloup'themup\.cache\Windows\SFX\Impact_Pnj_Bubble_Os_56D34C19.wem		\Actor-Mixer Hierarchy\Default Work Unit\Sfx\Impact_Pnj_Bubble_Os		1020144
 	182596096	Underwater_03_Os	C:\Users\Florian\Documents\Programmation\SHMUP_Enjmin\SHMUP_Enjmin\Bloup'themup\.cache\Windows\SFX\Underwater_03_Os_56D34C19.wem		\Actor-Mixer Hierarchy\Default Work Unit\Amb\Underwater_Rnd\Underwater_03_Os		441144
 	186136371	Underwater_Parasites_01_Os	C:\Users\Florian\Documents\Programmation\SHMUP_Enjmin\SHMUP_Enjmin\Bloup'themup\.cache\Windows\SFX\Underwater_Parasites_01_Os_56D34C19.wem		\Actor-Mixer Hierarchy\Default Work Unit\Amb\Test_Silence\Underwater_Parasites_Rnd\Underwater_Parasites_01_Os		882192
-	418855876	Player_Shot_Os	C:\Users\Florian\Documents\Programmation\SHMUP_Enjmin\SHMUP_Enjmin\Bloup'themup\.cache\Windows\SFX\Player_Shot_Os_A6E97EA5.wem		\Actor-Mixer Hierarchy\Default Work Unit\Sfx\Player\Player_Shot_Os		272504
+	418855876	Player_Shot_Os	C:\Users\Florian\Documents\Programmation\SHMUP_Enjmin\SHMUP_Enjmin\Bloup'themup\.cache\Windows\SFX\Player_Shot_Os_AD5E93A6.wem		\Actor-Mixer Hierarchy\Default Work Unit\Sfx\Player\Player_Shot_Os		67164
 	476708979	Underwater_05_Os	C:\Users\Florian\Documents\Programmation\SHMUP_Enjmin\SHMUP_Enjmin\Bloup'themup\.cache\Windows\SFX\Underwater_05_Os_56D34C19.wem		\Actor-Mixer Hierarchy\Default Work Unit\Amb\Underwater_Rnd\Underwater_05_Os		308844
 	498771420	Underwater_Parasites_02_Os	C:\Users\Florian\Documents\Programmation\SHMUP_Enjmin\SHMUP_Enjmin\Bloup'themup\.cache\Windows\SFX\Underwater_Parasites_02_Os_56D34C19.wem		\Actor-Mixer Hierarchy\Default Work Unit\Amb\Test_Silence\Underwater_Parasites_Rnd\Underwater_Parasites_02_Os		882192
 	512970095	Underwater_Parasites_03_Os	C:\Users\Florian\Documents\Programmation\SHMUP_Enjmin\SHMUP_Enjmin\Bloup'themup\.cache\Windows\SFX\Underwater_Parasites_03_Os_56D34C19.wem		\Actor-Mixer Hierarchy\Default Work Unit\Amb\Test_Silence\Underwater_Parasites_Rnd\Underwater_Parasites_03_Os		882192
@@ -25,6 +43,7 @@ In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
 	841916853	Player_Load_Shot_Os	C:\Users\Florian\Documents\Programmation\SHMUP_Enjmin\SHMUP_Enjmin\Bloup'themup\.cache\Windows\SFX\Player_Load_Shot_Os_2E764FBE.wem		\Actor-Mixer Hierarchy\Default Work Unit\Sfx\Player\Player_Load_Shot_Os		115924
 	842027309	Underwater_Parasites_04_Os	C:\Users\Florian\Documents\Programmation\SHMUP_Enjmin\SHMUP_Enjmin\Bloup'themup\.cache\Windows\SFX\Underwater_Parasites_04_Os_56D34C19.wem		\Actor-Mixer Hierarchy\Default Work Unit\Amb\Test_Silence\Underwater_Parasites_Rnd\Underwater_Parasites_04_Os		882192
 	881670788	Underwater_lp	C:\Users\Florian\Documents\Programmation\SHMUP_Enjmin\SHMUP_Enjmin\Bloup'themup\.cache\Windows\SFX\Underwater_lp_56D34C19.wem		\Actor-Mixer Hierarchy\Default Work Unit\Amb\Underwater_lp		9702240
+	905875478	Bulles_Turfu	C:\Users\Florian\Documents\Programmation\SHMUP_Enjmin\SHMUP_Enjmin\Bloup'themup\.cache\Windows\SFX\Bulles_Turfu_56D34C19.wem		\Actor-Mixer Hierarchy\Default Work Unit\Sfx\Player\Bulles_Turfu		233712
 	913403206	Bubble_Explode_Os	C:\Users\Florian\Documents\Programmation\SHMUP_Enjmin\SHMUP_Enjmin\Bloup'themup\.cache\Windows\SFX\Bubble_Explode_Os_56D34C19.wem		\Actor-Mixer Hierarchy\Default Work Unit\Sfx\Bubble_Explode_Os		495904
 	1010897979	Underwater_01_Os	C:\Users\Florian\Documents\Programmation\SHMUP_Enjmin\SHMUP_Enjmin\Bloup'themup\.cache\Windows\SFX\Underwater_01_Os_56D34C19.wem		\Actor-Mixer Hierarchy\Default Work Unit\Amb\Underwater_Rnd\Underwater_01_Os		529392
 	1052246024	Music_Intro_Os	C:\Users\Florian\Documents\Programmation\SHMUP_Enjmin\SHMUP_Enjmin\Bloup'themup\.cache\Windows\SFX\Music_Intro_Os_8956FC97.wem		\Interactive Music Hierarchy\Default Work Unit\Musique\Intro\Music_Intro_Os		1806624

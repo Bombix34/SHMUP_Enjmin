@@ -20,11 +20,31 @@ namespace AK
         static const AkUniqueID PLAY_MUSIQUE = 206418435U;
         static const AkUniqueID PLAY_PLAYER_DASH_OS = 3837926945U;
         static const AkUniqueID PLAY_PLAYER_SHOT = 4135433440U;
+        static const AkUniqueID SET_PROFONDEUR_LVL_01 = 4291492979U;
+        static const AkUniqueID SET_STATE_LVL_02 = 2942235191U;
+        static const AkUniqueID SET_STATE_LVL_03 = 2942235190U;
     } // namespace EVENTS
+
+    namespace STATES
+    {
+        namespace PROFONDEUR
+        {
+            static const AkUniqueID GROUP = 215492731U;
+
+            namespace STATE
+            {
+                static const AkUniqueID LVL_01 = 2147068365U;
+                static const AkUniqueID LVL_02 = 2147068366U;
+                static const AkUniqueID LVL_03 = 2147068367U;
+            } // namespace STATE
+        } // namespace PROFONDEUR
+
+    } // namespace STATES
 
     namespace GAME_PARAMETERS
     {
         static const AkUniqueID PLAYBACK_RATE = 1524500807U;
+        static const AkUniqueID PROFONDEUR = 215492731U;
         static const AkUniqueID RPM = 796049864U;
         static const AkUniqueID SS_AIR_FEAR = 1351367891U;
         static const AkUniqueID SS_AIR_FREEFALL = 3002758120U;

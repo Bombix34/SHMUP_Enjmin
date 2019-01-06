@@ -79,8 +79,14 @@
 							<GameParameterRef Name="SS_Air_Fear" ID="{F72E0659-4346-4E1C-A1B1-DAB46A05101E}"/>
 							<Value>50</Value>
 						</RTPCValue>
+						<RTPCValue>
+							<GameParameterRef Name="Profondeur" ID="{27B4697F-9FDD-4F5D-B7F0-B5A24FF86796}"/>
+							<Value>-1.23456790123457E-02</Value>
+						</RTPCValue>
 					</RTPCValueList>
-					<CurrentStateList ShowAll="true"/>
+					<CurrentStateList ShowAll="true">
+						<CurrentStateRef Name="Lvl_02" ID="{E36538E5-14FC-4B48-8F3D-3DF82DBEB51C}"/>
+					</CurrentStateList>
 					<CurrentSwitchList ShowAll="true"/>
 				</SoundcasterSession>
 			</ChildrenList>

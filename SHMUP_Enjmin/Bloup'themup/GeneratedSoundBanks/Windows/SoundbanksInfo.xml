@@ -18,17 +18,16 @@
 			<IncludedEvents>
 				<Event Id="2999869044" Name="Innit_Amb" ObjectPath="\Events\Default Work Unit\Ingame\Innit_Amb"/>
 				<Event Id="3726773303" Name="Play_Bubble_Explode_Os" ObjectPath="\Events\Default Work Unit\Ingame\Play_Bubble_Explode_Os"/>
-				<Event Id="1056746695" Name="Play_Impact_Pnj_Bubble_Os" ObjectPath="\Events\Default Work Unit\Ingame\Play_Impact_Pnj_Bubble_Os"/>
+				<Event Id="1056746695" Name="Play_Impact_Pnj_Bubble_Os" ObjectPath="\Events\Default Work Unit\Ingame\Play_Impact_Pnj_Bubble_Os" MaxAttenuation="0.000000"/>
 				<Event Id="2139305897" Name="Play_Load_Shot" ObjectPath="\Events\Default Work Unit\Ingame\Play_Load_Shot"/>
 				<Event Id="206418435" Name="Play_Musique" ObjectPath="\Events\Default Work Unit\Ingame\Play_Musique"/>
 				<Event Id="3837926945" Name="Play_Player_Dash_os" ObjectPath="\Events\Default Work Unit\Ingame\Play_Player_Dash_os"/>
 				<Event Id="4135433440" Name="Play_Player_Shot" ObjectPath="\Events\Default Work Unit\Ingame\Play_Player_Shot"/>
+				<Event Id="4291492979" Name="Set_Profondeur_lvl_01" ObjectPath="\Events\Default Work Unit\Ingame\Set_Profondeur_lvl_01" MaxAttenuation="0.000000"/>
+				<Event Id="2942235191" Name="Set_State_Lvl_02" ObjectPath="\Events\Default Work Unit\Ingame\Set_State_Lvl_02"/>
+				<Event Id="2942235190" Name="Set_State_Lvl_03" ObjectPath="\Events\Default Work Unit\Ingame\Set_State_Lvl_03" MaxAttenuation="0.000000"/>
 			</IncludedEvents>
 			<IncludedMemoryFiles>
-				<File Id="174964560" Language="SFX">
-					<ShortName>Impact_Pnj_Bubble_Os.wav</ShortName>
-					<Path>SFX\Impact_Pnj_Bubble_Os_56D34C19.wem</Path>
-				</File>
 				<File Id="182596096" Language="SFX">
 					<ShortName>Underwater_03_Os.wav</ShortName>
 					<Path>SFX\Underwater_03_Os_56D34C19.wem</Path>
@@ -39,7 +38,7 @@
 				</File>
 				<File Id="418855876" Language="SFX">
 					<ShortName>Player_Shot_Os.wav</ShortName>
-					<Path>SFX\Player_Shot_Os_A6E97EA5.wem</Path>
+					<Path>SFX\Player_Shot_Os_AD5E93A6.wem</Path>
 				</File>
 				<File Id="476708979" Language="SFX">
 					<ShortName>Underwater_05_Os.wav</ShortName>
@@ -72,6 +71,10 @@
 				<File Id="881670788" Language="SFX">
 					<ShortName>Underwater_lp.wav</ShortName>
 					<Path>SFX\Underwater_lp_56D34C19.wem</Path>
+				</File>
+				<File Id="905875478" Language="SFX">
+					<ShortName>Bulles_Turfu.wav</ShortName>
+					<Path>SFX\Bulles_Turfu_56D34C19.wem</Path>
 				</File>
 				<File Id="913403206" Language="SFX">
 					<ShortName>Bubble_Explode_Os.wav</ShortName>

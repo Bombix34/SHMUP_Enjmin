@@ -22,7 +22,7 @@
 								</Property>
 								<Property Name="Volume" Type="Real64">
 									<ValueList>
-										<Value>-5</Value>
+										<Value>-3</Value>
 									</ValueList>
 								</Property>
 							</PropertyList>
@@ -425,6 +425,18 @@
 									</ActiveSourceList>
 								</Sound>
 								<Sound Name="Player_Shot_Os" ID="{07DBD407-FEB0-4F6A-8A8B-F58665966334}" ShortID="946304183">
+									<PropertyList>
+										<Property Name="Highpass" Type="int16">
+											<ValueList>
+												<Value>64</Value>
+											</ValueList>
+										</Property>
+										<Property Name="Lowpass" Type="int16">
+											<ValueList>
+												<Value>43</Value>
+											</ValueList>
+										</Property>
+									</PropertyList>
 									<ReferenceList>
 										<Reference Name="Conversion">
 											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{2BD389C3-9EC6-4637-949C-1D4A4B674147}"/>
@@ -436,8 +448,8 @@
 									<ChildrenList>
 										<AudioFileSource Name="Player_Shot_Os" ID="{9E2BEAA8-7AC8-4E85-A3A9-6790B23CEDCF}" ShortID="418855876">
 											<PropertyList>
-												<Property Name="FadeOutDuration" Type="Real64" Value="0.127927277105532"/>
-												<Property Name="TrimEnd" Type="Real64" Value="1.54399246113599"/>
+												<Property Name="FadeOutDuration" Type="Real64" Value="0.379938217994527"/>
+												<Property Name="TrimEnd" Type="Real64" Value="0.379938217994527"/>
 											</PropertyList>
 											<Language>SFX</Language>
 											<AudioFile>Player_Shot_Os.wav</AudioFile>
@@ -445,6 +457,78 @@
 									</ChildrenList>
 									<ActiveSourceList>
 										<ActiveSource Name="Player_Shot_Os" ID="{9E2BEAA8-7AC8-4E85-A3A9-6790B23CEDCF}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="Bulles_Turfu" ID="{2F9B246F-44C2-44DD-9C5C-6DD87F0FEB3E}" ShortID="985219222">
+									<PropertyList>
+										<Property Name="MaxReachedBehavior" Type="int16" Value="1"/>
+										<Property Name="MaxSoundPerInstance" Type="int16">
+											<ValueList>
+												<Value>1</Value>
+											</ValueList>
+										</Property>
+										<Property Name="OverrideEffect" Type="bool" Value="True"/>
+										<Property Name="OverrideGameAuxSends" Type="bool" Value="True"/>
+										<Property Name="UseGameAuxSends" Type="bool" Value="True"/>
+										<Property Name="UseMaxSoundPerInstance" Type="bool">
+											<ValueList>
+												<Value>True</Value>
+											</ValueList>
+										</Property>
+										<Property Name="Volume" Type="Real64">
+											<ValueList>
+												<Value>-3</Value>
+											</ValueList>
+										</Property>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{2BD389C3-9EC6-4637-949C-1D4A4B674147}"/>
+										</Reference>
+										<Reference Name="Effect1" PluginName="Wwise Pitch Shifter" CompanyID="0" PluginID="136" PluginType="3">
+											<ObjectRef Name="Octave_Down" ID="{062EC4B1-5372-4D1E-917B-C757293F2B42}" WorkUnitID="{E8613F7D-BAD3-45CD-A3ED-505576F31277}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{D1B724BB-66B6-4F55-9CB7-851DFB74B0CF}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="Bulles_Turfu" ID="{0D3BB42F-AB0E-4F13-9635-C004A853635A}" ShortID="905875478">
+											<Language>SFX</Language>
+											<AudioFile>Bulles_Turfu.wav</AudioFile>
+										</AudioFileSource>
+									</ChildrenList>
+									<StateInfo>
+										<StateGroupList>
+											<StateGroupInfo>
+												<StateGroupRef Name="Profondeur" ID="{CB3D1850-1610-448F-A889-060899CFBBB4}"/>
+											</StateGroupInfo>
+										</StateGroupList>
+										<CustomStateList>
+											<CustomState>
+												<StateRef Name="Lvl_03" ID="{8F0CC4DA-DF60-456D-8E10-4449E74962ED}"/>
+												<State Name="" ID="{B1AB717F-5450-4C41-99BC-88092C6F5E65}" ShortID="392142303">
+													<PropertyList>
+														<Property Name="Pitch" Type="int32" Value="-1520"/>
+													</PropertyList>
+												</State>
+											</CustomState>
+											<CustomState>
+												<StateRef Name="Lvl_01" ID="{91D3FEAC-34E3-48D7-8D9D-9182B1BAB57F}"/>
+												<State Name="" ID="{76CCC789-DEE5-4AD8-B635-8702836FF83B}" ShortID="553768566"/>
+											</CustomState>
+											<CustomState>
+												<StateRef Name="Lvl_02" ID="{E36538E5-14FC-4B48-8F3D-3DF82DBEB51C}"/>
+												<State Name="" ID="{79EC0A4F-C5BE-4FE8-B049-475D33888884}" ShortID="406051133">
+													<PropertyList>
+														<Property Name="Pitch" Type="int32" Value="-610"/>
+													</PropertyList>
+												</State>
+											</CustomState>
+										</CustomStateList>
+									</StateInfo>
+									<ActiveSourceList>
+										<ActiveSource Name="Bulles_Turfu" ID="{0D3BB42F-AB0E-4F13-9635-C004A853635A}" Platform="Linked"/>
 									</ActiveSourceList>
 								</Sound>
 							</ChildrenList>
