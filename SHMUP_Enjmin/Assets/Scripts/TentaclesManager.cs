@@ -45,7 +45,6 @@ public class TentaclesManager : MonoBehaviour {
 
     }
 
-    // Update is called once per frame
     void Update () {
 
 
@@ -56,6 +55,10 @@ public class TentaclesManager : MonoBehaviour {
         if (collision.gameObject.tag == "ToSave")
         {
             MoveForward();
+        }
+        else if(collision.gameObject.tag=="Player")
+        {
+            GameManager.instance.GameOver();
         }
     }
 

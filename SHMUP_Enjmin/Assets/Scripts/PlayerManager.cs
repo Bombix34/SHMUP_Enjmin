@@ -32,7 +32,7 @@ public class PlayerManager : MonoBehaviour {
 	float dashChrono=0f;
 	bool canMove=true;
 
-
+	bool isDead=false;
     
     // rtpc value
     float rtpcValue = 0.0f;
@@ -57,6 +57,13 @@ public class PlayerManager : MonoBehaviour {
 	
 	void Update () 
 	{
+		if(isDead)
+		{
+			if(controller.pressAnyButton())
+				GameManager.instance.RelaunchGame();
+			return;
+		}
+
 		SetPlayerSize();
 
 		//Core mechanics
@@ -66,6 +73,14 @@ public class PlayerManager : MonoBehaviour {
 		
         rtpcValue = transform.position.y;
         AkSoundEngine.SetRTPCValue("Profondeur", rtpcValue, gameObject);
+	}
+
+	public void Die()
+	{
+		isDead=true;
+		if(curBuble!=null)
+			curBuble.GetComponent<BubleManager>().DestroyBuble();
+		
 	}
 
 
