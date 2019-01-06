@@ -8,9 +8,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b5b6a23be0d184539b867813c062f4a0, type: 3}
-  m_Name: PlayerReglages
+  m_Script: {fileID: 11500000, guid: 9881faf378df9497abc42a1d94d353d0, type: 3}
+  m_Name: BubleReglages
   m_EditorClassIdentifier: 
-  sizePlayer: 1.29
-  speedPlayer: 0.18
-  knockback: 0.5
+  initialSize: 0.5
+  maxSizeBuble: 2
+  speedGrow: 0.05
+  speedBuble: 60
+  velocityDecrease: 1.5
+  archimedEffect: 0.05

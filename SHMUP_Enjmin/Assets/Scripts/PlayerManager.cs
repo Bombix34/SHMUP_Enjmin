@@ -8,6 +8,9 @@ public class PlayerManager : MonoBehaviour {
 	//les différents réglages du personnage contenue dans le dossier Assets/Reglages/PlayerReglages
 	PlayerReglages reglages;
 
+	[SerializeField]
+	BubleReglages bullesReglages;
+
 	//controlles a la manette gràce au package InControl ( manette 360, one, ps4, ps3, nvidia... )
 	ControllerManager controller;
 	KeyboardController keyboard;
@@ -20,6 +23,10 @@ public class PlayerManager : MonoBehaviour {
 
 	//bulle que le joueur est en train de créer
 	GameObject curBuble;
+
+
+	bool isDashing=false;
+	bool canMove=true;
 
     private void Awake()
     {
@@ -49,11 +56,13 @@ public class PlayerManager : MonoBehaviour {
 
 	public void MovePlayer()
 	{
+		if(!canMove)
+			return;
 		Vector2 controlWithSpeed = controller.getLeftStickDirection()*reglages.speedPlayer;
 		if(controlWithSpeed==Vector2.zero)
 			controlWithSpeed=keyboard.GetMovement()*reglages.speedPlayer;
-        transform.Translate(new Vector2(controlWithSpeed.x, controlWithSpeed.y));
-
+       // transform.Translate(new Vector2(controlWithSpeed.x, controlWithSpeed.y));
+		rb2D.MovePosition(new Vector2(transform.position.x+controlWithSpeed.x,transform.position.y+controlWithSpeed.y));
     }
 
     void OnCollisionEnter2D(Collision2D col)
@@ -93,11 +102,11 @@ public class PlayerManager : MonoBehaviour {
 	{
 		if((curBuble==null))
 		{
-			Vector2 bublePosition= new Vector2(transform.position.x + transform.localScale.x +(reglages.initialSize*2f), transform.position.y);
+			Vector2 bublePosition= new Vector2(transform.position.x + transform.localScale.x +(bullesReglages.initialSize), transform.position.y);
 			curBuble = Instantiate(bublePrefab, bublePosition,Quaternion.identity) as GameObject;
 			curBuble.GetComponent<BubleManager>().SetIsCreate(true);
-			curBuble.transform.localScale=new Vector2(reglages.initialSize,reglages.initialSize);
-			curBuble.GetComponent<BubleManager>().GetRigidbody().drag=reglages.velocityDecrease;
+			curBuble.transform.localScale=new Vector2(bullesReglages.initialSize,bullesReglages.initialSize);
+			curBuble.GetComponent<BubleManager>().GetRigidbody().drag=bullesReglages.velocityDecrease;
 		}
 	}
 
@@ -105,10 +114,13 @@ public class PlayerManager : MonoBehaviour {
 	{
 		if(curBuble==null)
 			return;
-		if(curBuble.transform.localScale.x>=reglages.maxSizeBuble)
+		if(curBuble.transform.localScale.x>=bullesReglages.maxSizeBuble)
 			return;
-		curBuble.transform.localScale=new Vector2(curBuble.transform.localScale.x+reglages.speedGrow,curBuble.transform.localScale.y+reglages.speedGrow);
-        AkSoundEngine.PostEvent("Play_Load_Shot", gameObject);
+		curBuble.transform.localScale=new Vector2(curBuble.transform.localScale.x+bullesReglages.speedGrow,curBuble.transform.localScale.y+bullesReglages.speedGrow);
+
+		Physics2D.IgnoreCollision(colider,curBuble.GetComponent<BubleManager>().GetCollider(),true);
+
+       // AkSoundEngine.PostEvent("Play_Load_Shot", gameObject);
     }
 
 	public void UpdateCurBublePosition()
@@ -116,7 +128,7 @@ public class PlayerManager : MonoBehaviour {
 		//quand je laisse appuyer, il faut que la bulle suive le personnage
 		if(curBuble==null)
 			return;
-		Vector2 newPos = new Vector2(transform.position.x+curBuble.transform.localScale.x+ 0.5f + 1, transform.position.y);
+		Vector2 newPos = new Vector2(transform.position.x+curBuble.transform.localScale.x + 1.3f , transform.position.y);
 		curBuble.transform.position=newPos;
 	}
 
@@ -126,14 +138,35 @@ public class PlayerManager : MonoBehaviour {
 			return;
 		curBuble.GetComponent<BubleManager>().SetIsCreate(false);
 		//tir de la bulle
-		curBuble.GetComponent<Rigidbody2D>().AddForce(new Vector2(1.0f,0f)*reglages.speedBuble);
-        AkSoundEngine.PostEvent("Play_Player_Shot", gameObject);
+		curBuble.GetComponent<Rigidbody2D>().AddForce(new Vector2(500f,0f)*bullesReglages.speedBuble);
+
+       // AkSoundEngine.PostEvent("Play_Player_Shot", gameObject);
+
         //effet des bulles a remonter vers la surface
-        curBuble.GetComponent<Rigidbody2D>().gravityScale=-reglages.archimedEffect;
+        curBuble.GetComponent<Rigidbody2D>().gravityScale=-bullesReglages.archimedEffect;
+
+		Physics2D.IgnoreCollision(colider,curBuble.GetComponent<BubleManager>().GetCollider(),false);
+
 		//knockback du personnage
-		rb2D.AddForce(new Vector2(-1.0f, 0f)*reglages.knockback);
+		StartCoroutine(KnockbackPlayer(new Vector2(-30f,0f)));
 
 		curBuble=null;
+	}
+
+	public IEnumerator KnockbackPlayer(Vector2 direction)
+	{
+		//pour empêcher le joueur de bouger pendant le knockback
+		canMove=false;
+		for(int i= 0;i<10;i++)
+		{
+			Vector2 final = new Vector2(direction.x*Time.deltaTime,direction.y*Time.deltaTime)*reglages.knockback;
+			//deceleration de la velocité
+			final*=(0.1f*(10-i));
+			transform.Translate(final);
+			yield return new WaitForSeconds(0.001f);
+		}
+		canMove=true;
+		StopCoroutine(KnockbackPlayer(direction));
 	}
 
 //GETTER & SETTER____________________________________________________________________________________________

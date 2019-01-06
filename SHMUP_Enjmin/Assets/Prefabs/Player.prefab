@@ -55,7 +55,7 @@ Transform:
   m_GameObject: {fileID: 1386503038658854}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.25, y: 0.25, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4842411447763926}
   m_RootOrder: 0
@@ -67,7 +67,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1458314996277038}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -6.5, y: 0, z: 0}
+  m_LocalPosition: {x: -4, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4189575630139646}
@@ -106,8 +106,8 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_Size: {x: 2.0000002, y: 1}
+  m_Offset: {x: 0.05, y: 0}
+  m_Size: {x: 1.1, y: 0.6}
   m_Direction: 1
 --- !u!114 &114783716237184600
 MonoBehaviour:
@@ -132,6 +132,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   reglages: {fileID: 11400000, guid: bb46ea45fc1dc43b3a43617254e7da48, type: 2}
+  bullesReglages: {fileID: 11400000, guid: 952773acbb64e4d3ead3c8a160f173b6, type: 2}
   bublePrefab: {fileID: 1933862619830500, guid: eda4015dcef1946f48f8181ff88db6d1,
     type: 2}
 --- !u!114 &114970156951695922

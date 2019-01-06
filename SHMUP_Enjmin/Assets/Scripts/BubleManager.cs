@@ -5,6 +5,7 @@ using UnityEngine;
 public class BubleManager : MonoBehaviour {
 
 	Rigidbody2D rb2D;
+	CircleCollider2D colider;
 
 	//pour différencier la bulle dans l'état de création par le player
 	bool curIsCreate=false;
@@ -15,6 +16,7 @@ public class BubleManager : MonoBehaviour {
 	{
 		rb2D=GetComponent<Rigidbody2D>();
 		objectInTheBuble=new List<GameObject>();
+		colider= GetComponent<CircleCollider2D>();
 	}
 
 	void Update()
@@ -31,7 +33,6 @@ public class BubleManager : MonoBehaviour {
         {
             bleble.transform.parent = null;
         }
-        Debug.Log("fck");
 		Destroy(this.gameObject);
         // enelever les bulles ui éclatent sortis d'écran
       //  AkSoundEngine.PostEvent("Play_Bubble_Explode_Os", gameObject);
@@ -84,23 +85,27 @@ public class BubleManager : MonoBehaviour {
 
 	void OnCollisionEnter2D(Collision2D col)
     {
-    if(col.gameObject.tag=="Buble")
-	{
+		Debug.Log(col.gameObject.tag);
+
+		if(col.gameObject.tag=="Buble")
+		{
 			if(curIsCreate)
 			{
 				//détruit la bulle que le personnage est en train de créer 
 				DestroyBuble();
 			}
-	}
-    // on detruit la bulle au contact d'un oursin
-    else if(col.gameObject.tag == "oursin")
-        {
-            DestroyBuble();
-
-            // si la bulle est déjà créée, on retracte l'oursin
-            if(!curIsCreate)
-                col.gameObject.GetComponent<UrchinManager>().retract();
-        } 
+		}
+		// on detruit la bulle au contact d'un oursin
+		else if(col.gameObject.tag == "oursin")
+		{
+			DestroyBuble();
+			// si la bulle est déjà créée, on retracte l'oursin
+			if(!curIsCreate)
+				col.gameObject.GetComponent<UrchinManager>().retract();
+		} 
+		else if(col.gameObject.tag=="Player")
+		{
+		}
     }
 
     private void OnCollisionExit2D(Collision2D collision)
@@ -120,7 +125,8 @@ public class BubleManager : MonoBehaviour {
             {
                 StartCoroutine(SetObjectInTheBuble(col.gameObject));
                 objectInTheBuble.Add(col.gameObject);
-                AkSoundEngine.PostEvent("Play_Impact_Pnj_Bubble_Os", gameObject);
+
+             //   AkSoundEngine.PostEvent("Play_Impact_Pnj_Bubble_Os", gameObject);
             }
         }
     }
@@ -158,5 +164,10 @@ public class BubleManager : MonoBehaviour {
 	public bool GetIsCreate()
 	{
 		return curIsCreate;
+	}
+
+	public CircleCollider2D GetCollider()
+	{
+		return colider;
 	}
 }
