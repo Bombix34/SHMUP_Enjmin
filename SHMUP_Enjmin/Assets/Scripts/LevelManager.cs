@@ -8,7 +8,6 @@ public class LevelManager : MonoBehaviour
     float rightMostSituationBound;
     List<GameObject> situations;
 
-
     public LevelReglages reglages;
 
 
@@ -52,6 +51,10 @@ public class LevelManager : MonoBehaviour
             situations.Add((GameObject)Instantiate(nextLevel, new Vector3(rightMostSituationBound, 0), transform.rotation));
             situations.Last().transform.Translate(new Vector3 (Camera.main.orthographicSize * Camera.main.aspect - GetSituationLeftMostBound(situations.Last()), 0));
             rightMostSituationBound = GetSituationRightMostBound(situations.Last());
+            foreach (Transform child in situations.Last().transform)
+            {
+                child.parent = null;
+            }
         }
     }
 
@@ -65,10 +68,6 @@ public class LevelManager : MonoBehaviour
         if (elements.Count != 0)
         {
             float situationLeftMostBound = elements.Min(element => element.gameObject.GetComponentInChildren<Renderer>().bounds.min.x);
-            for (int i = 0; i < elements.Count; i++)
-            {
-                //print(elements[i].gameObject.GetComponent<Renderer>().bounds.min.x);
-            }
             return situationLeftMostBound;
         }
         else
@@ -95,12 +94,7 @@ public class LevelManager : MonoBehaviour
         }
     }
 
-    public float GetScrollingSpeed()
-    {
-        return reglages.scrollingSpeed;
-    }
-
-//SINGLETON________________________________________________________________________________________________
+    //SINGLETON________________________________________________________________________________________________
 	private static LevelManager s_Instance = null;
 
     // This defines a static instance property that attempts to find the manager object in the scene and

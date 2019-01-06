@@ -24,7 +24,6 @@ public class BubleManager : MonoBehaviour {
 	{
 		if(curIsCreate)
 			return;
-		transform.Translate(-LevelManager.instance.GetScrollingSpeed()*Time.deltaTime,0f,0f);
 
         //transform.localScale = new Vector3(transform.localScale.x * 1.1f, transform.localScale.y * 1.1f, transform.localScale.z);
 	}
