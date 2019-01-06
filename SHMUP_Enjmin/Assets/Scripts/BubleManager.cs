@@ -16,10 +16,10 @@ public class BubleManager : MonoBehaviour {
 
 	void Awake () 
 	{
-		rb2D=GetComponent<Rigidbody2D>();
+		rb2D = GetComponent<Rigidbody2D>();
         colider = GetComponent<CircleCollider2D>();
-		objectInTheBuble=new List<GameObject>();
-		colider= GetComponent<CircleCollider2D>();
+		objectInTheBuble = new List<GameObject>();
+		colider = GetComponent<CircleCollider2D>();
 	}
 
 	void Update()
@@ -33,13 +33,14 @@ public class BubleManager : MonoBehaviour {
 
 	public void DestroyBuble()
 	{
-		colider.enabled=false;
-        foreach(GameObject bleble in objectInTheBuble)
+        foreach(GameObject pote in objectInTheBuble)
         {
-            bleble.transform.parent = null;
+            // on decroche les potes dans les bulles, et on réactive leur scrollable
+            pote.transform.parent = null;
+            pote.GetComponent<ScrollScript>().enabled = true;
         }
 		Destroy(this.gameObject);
-        // enelever les bulles qui éclatent sortis d'écran
+        // enlever les bulles ui éclatent sortis d'écran
       //  AkSoundEngine.PostEvent("Play_Bubble_Explode_Os", gameObject);
 	}
 
@@ -72,7 +73,9 @@ public class BubleManager : MonoBehaviour {
 
 	IEnumerator SetObjectInTheBuble(GameObject obj)
 	{
-		obj.transform.parent=this.transform;
+        // on desactive le scrollable des potes emprisonnés dans la bulle
+        obj.GetComponent<ScrollScript>().enabled = false;
+        obj.transform.parent=this.transform;
 
 		Vector2 forceDirection = new Vector2(this.transform.position.x-obj.transform.position.x,this.transform.position.y-obj.transform.position.y);
 		float distanceFromCenter = GetDistanceFromBubleCenter(obj.transform.position);
@@ -101,25 +104,36 @@ public class BubleManager : MonoBehaviour {
 
 	void OnCollisionEnter2D(Collision2D col)
     {
-		if(col.gameObject.tag=="Buble")
+        if(col.gameObject.tag=="Buble")
 		{
 			if(curIsCreate)
 			{
 				//détruit la bulle que le personnage est en train de créer 
 				DestroyBuble();
 			}
-		}else if(col.gameObject.tag == "oursin")
+		}
+        else if (col.gameObject.tag == "Player")
+        {
+            if (curIsCreate)
+            {
+                //Physics2D.IgnoreCollision(colider, col.collider);
+            }
+        }
+    }
+
+	void OnTriggerEnter2D(Collider2D col)
+    {
+		if(col.gameObject.tag == "oursin")
 		{
 			// si la bulle est déjà créée, on retracte l'oursin
 			if(!curIsCreate)
 				col.gameObject.GetComponent<UrchinManager>().retract();	
 			DestroyBuble();
 		} 
-    }
-
-	void OnTriggerEnter2D(Collider2D col)
-    {
-		if (col.gameObject.tag == "ToSave")
+		else if(col.gameObject.tag=="Player")
+		{
+		}
+        else if (col.gameObject.tag == "ToSave")
         {
             if (curIsCreate)
             {
@@ -144,6 +158,18 @@ public class BubleManager : MonoBehaviour {
         if (col.gameObject.tag == "DeathBuble")
         {
             DestroyBuble();
+        }
+
+        if(col.gameObject.tag == "upBuble")
+        {
+            foreach(GameObject pote in objectInTheBuble)
+            {
+                // TODO : +1 au score
+                Debug.Log("JE SUIS SAUVE !");
+                Destroy(pote);
+            }
+            TentaclesManager.instance.MoveBackward();
+            Destroy(this.gameObject);
         }
     }
 
