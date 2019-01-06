@@ -35,7 +35,7 @@ public class PlayerManager : MonoBehaviour {
 
     
     // rtpc value
-    float rtpcValue;
+    float rtpcValue = 0.0f;
     int type = 1;
 
     private void Awake()
@@ -54,7 +54,7 @@ public class PlayerManager : MonoBehaviour {
 		rb2D=GetComponent<Rigidbody2D>();
 		transform.localScale=new Vector2(reglages.sizePlayer,reglages.sizePlayer);
 
-        AkSoundEngine.GetRTPCValue("Profondeur", gameObject, 0, out rtpcValue, ref type);
+ 
     }
 	
 	void Update () 
@@ -255,7 +255,7 @@ public class PlayerManager : MonoBehaviour {
 
 		curBuble.GetComponent<Rigidbody2D>().AddForce(new Vector2(500f,0f)*bullesReglages.speedBuble);
 
-       // AkSoundEngine.PostEvent("Play_Player_Shot", gameObject);
+        AkSoundEngine.PostEvent("Play_Player_Shot", gameObject);
        
         //effet des bulles a remonter vers la surface
         curBuble.GetComponent<Rigidbody2D>().gravityScale=-bullesReglages.archimedEffect;

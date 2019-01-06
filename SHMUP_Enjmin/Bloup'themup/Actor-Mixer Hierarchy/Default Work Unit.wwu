@@ -436,6 +436,39 @@
 												<Value>43</Value>
 											</ValueList>
 										</Property>
+										<Property Name="MakeUpGain" Type="Real64">
+											<ValueList>
+												<Value>19</Value>
+											</ValueList>
+										</Property>
+										<Property Name="Pitch" Type="int32">
+											<RTPCList>
+												<RTPC Name="" ID="{F040700C-5C35-458C-91B1-B904A06E61CD}" ShortID="49765261">
+													<ReferenceList>
+														<Reference Name="ControlInput">
+															<ObjectRef Name="Profondeur" ID="{27B4697F-9FDD-4F5D-B7F0-B5A24FF86796}" WorkUnitID="{3BB5E0BE-5D9A-4A65-8A2C-3017E9E6DEA0}"/>
+														</Reference>
+													</ReferenceList>
+													<Curve Name="" ID="{A4BE1D68-91CC-4D39-8904-FF0FB26A0537}">
+														<PropertyList>
+															<Property Name="Flags" Type="int32" Value="65537"/>
+														</PropertyList>
+														<PointList>
+															<Point>
+																<XPos>-5</XPos>
+																<YPos>-4800</YPos>
+																<Flags>5</Flags>
+															</Point>
+															<Point>
+																<XPos>5</XPos>
+																<YPos>4800</YPos>
+																<Flags>37</Flags>
+															</Point>
+														</PointList>
+													</Curve>
+												</RTPC>
+											</RTPCList>
+										</Property>
 									</PropertyList>
 									<ReferenceList>
 										<Reference Name="Conversion">
