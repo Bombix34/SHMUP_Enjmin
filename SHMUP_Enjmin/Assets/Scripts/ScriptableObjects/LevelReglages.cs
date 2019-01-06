@@ -7,7 +7,7 @@ public class LevelReglages : ScriptableObject
 {
 
 	[Header("Vitesse du scrolling")]
-	[Range(1f,10f)]
+	[Range(0.1f,10f)]
 	public float scrollingSpeed=1f;
 
 

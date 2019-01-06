@@ -23,13 +23,20 @@ public class PlayerManager : MonoBehaviour {
 
 	//bulle que le joueur est en train de créer
 	GameObject curBuble;
+	//chrono pour GrowBuble(), attendre avant de grossir la bulle
+	float chronoIncrementSizeBuble=1;
 
+	bool isDashing=false;
+
+	//cooldown du dash
+	float dashChrono=0f;
+	bool canMove=true;
+
+
+    
     // rtpc value
     float rtpcValue = 0.0f;
     int type = 1;
-
-	bool isDashing=false;
-	bool canMove=true;
 
     private void Awake()
     {
@@ -46,38 +53,85 @@ public class PlayerManager : MonoBehaviour {
 		keyboard=GetComponent<KeyboardController>();
 		rb2D=GetComponent<Rigidbody2D>();
 		transform.localScale=new Vector2(reglages.sizePlayer,reglages.sizePlayer);
-
- 
     }
 	
 	void Update () 
 	{
-		//SetPlayerSize();
+		SetPlayerSize();
 
 		//Core mechanics
 		MovePlayer();	
 		BubleUpdate();
-
+		Dash();
+		
         rtpcValue = transform.position.y;
-        AkSoundEngine.SetRTPCValue("Profondeur", rtpcValue);
+        AkSoundEngine.SetRTPCValue("Profondeur", rtpcValue, gameObject);
 	}
 
+
+//MOVEMENT________________________________________________________________________________
 	public void MovePlayer()
 	{
-		if(!canMove)
+		if((!canMove)||(isDashing))
 			return;
 		Vector2 controlWithSpeed = controller.getLeftStickDirection()*reglages.speedPlayer;
 		if(controlWithSpeed==Vector2.zero)
 			controlWithSpeed=keyboard.GetMovement()*reglages.speedPlayer;
        // transform.Translate(new Vector2(controlWithSpeed.x, controlWithSpeed.y));
-		rb2D.MovePosition(new Vector2(transform.position.x+controlWithSpeed.x,transform.position.y+controlWithSpeed.y));
+	   rb2D.velocity=new Vector2(controlWithSpeed.x,controlWithSpeed.y);
+		//rb2D.MovePosition(new Vector2(transform.position.x+controlWithSpeed.x,transform.position.y+controlWithSpeed.y));
     }
+
+//DASH__________________________________________________________________________________________
+
+	public void Dash()
+	{
+		dashChrono-=Time.deltaTime;
+		if(dashChrono>0)
+			return;
+		if(controller.pressButtonB())
+		{
+			if(curBuble!=null)
+				curBuble.GetComponent<BubleManager>().DestroyBuble();
+			StartCoroutine(DashAction());
+		}
+	}
+
+	IEnumerator DashAction()
+	{
+		isDashing=true;
+
+		if(rb2D.velocity==Vector2.zero)
+			rb2D.velocity=new Vector2(reglages.speedPlayer,0f)*reglages.dashPower;
+		else	
+			rb2D.velocity*=reglages.dashPower;
+		
+		//attendre la fin du dash
+		float dash=reglages.dashDuration;
+		while(dash>0)
+		{
+			dash-=Time.deltaTime;
+			yield return new WaitForSeconds(0.001f);
+		}
+		//_______________________
+		isDashing=false;
+		rb2D.velocity=Vector2.zero;
+		dashChrono=reglages.dashCoolDown;
+	}
+
+//COLLISIONS____________________________________________________________________________________
 
     void OnCollisionEnter2D(Collision2D col)
     {
-        if (col.gameObject.tag == "ToSave")
+        if (col.gameObject.tag == "Buble")
         {
-            Physics2D.IgnoreCollision(colider, col.collider);
+			if(isDashing)
+			//pousser la bulle super fort
+			{
+				Vector2 forceDirection = new Vector2(col.gameObject.transform.position.x-this.transform.position.x,col.gameObject.transform.position.y-this.transform.position.y);
+				forceDirection*=200f;
+				col.gameObject.GetComponent<Rigidbody2D>().AddForce(new Vector2(forceDirection.x,forceDirection.y)*bullesReglages.speedBuble);
+			}
         }
     }
 
@@ -100,7 +154,7 @@ public class PlayerManager : MonoBehaviour {
     }
 
 
-    //POUR LES TESTS____________________________________________________________________________________
+//POUR LES TESTS____________________________________________________________________________________
 
     public void SetPlayerSize()
 	{
@@ -126,13 +180,16 @@ public class PlayerManager : MonoBehaviour {
 
 	public void CreateBuble()
 	{
-		if((curBuble==null))
+		if((curBuble==null)&&(!isDashing))
 		{
+			chronoIncrementSizeBuble=1f;
 			Vector2 bublePosition= new Vector2(transform.position.x + transform.localScale.x +(bullesReglages.initialSize), transform.position.y);
 			curBuble = Instantiate(bublePrefab, bublePosition,Quaternion.identity) as GameObject;
 			curBuble.GetComponent<BubleManager>().SetIsCreate(true);
 			curBuble.transform.localScale=new Vector2(bullesReglages.initialSize,bullesReglages.initialSize);
 			curBuble.GetComponent<BubleManager>().GetRigidbody().drag=bullesReglages.velocityDecrease;
+
+			Physics2D.IgnoreCollision(colider,curBuble.GetComponent<BubleManager>().GetCollider(),true);
 		}
 	}
 
@@ -140,21 +197,48 @@ public class PlayerManager : MonoBehaviour {
 	{
 		if(curBuble==null)
 			return;
-		if(curBuble.transform.localScale.x>=bullesReglages.maxSizeBuble)
-			return;
-		curBuble.transform.localScale=new Vector2(curBuble.transform.localScale.x+bullesReglages.speedGrow,curBuble.transform.localScale.y+bullesReglages.speedGrow);
+		chronoIncrementSizeBuble-=bullesReglages.speedGrow;
+		if(chronoIncrementSizeBuble<=0)
+		{
+			StartCoroutine(ModifyBubleSize());
+		}
+		else //shake de la bulle pendant la création
+			StartCoroutine(curBuble.GetComponent<BubleManager>().ShakeBuble());
+		//OLD VERSION GROW : 
+		//curBuble.transform.localScale=new Vector2(curBuble.transform.localScale.x+bullesReglages.speedGrow,curBuble.transform.localScale.y+bullesReglages.speedGrow);
 
-		Physics2D.IgnoreCollision(colider,curBuble.GetComponent<BubleManager>().GetCollider(),true);
-
-        AkSoundEngine.PostEvent("Play_Load_Shot", gameObject);
+       // AkSoundEngine.PostEvent("Play_Load_Shot", gameObject);
     }
+
+	IEnumerator ModifyBubleSize()
+	//permet de faire une petite animation lorsque la bulle grossie
+	{
+		if(curBuble.transform.localScale.x==bullesReglages.initialSize)
+		{	
+			curBuble.GetComponent<BubleManager>().IncrementBubleSize();
+			curBuble.transform.localScale=new Vector2(bullesReglages.intermediateSize+0.15f,bullesReglages.intermediateSize+0.15f);
+			UpdateCurBublePosition();
+			yield return new WaitForSeconds(0.05f);
+			curBuble.transform.localScale=new Vector2(bullesReglages.intermediateSize,bullesReglages.intermediateSize);
+		}
+		else if(curBuble.transform.localScale.x==bullesReglages.intermediateSize)
+		{
+			curBuble.GetComponent<BubleManager>().IncrementBubleSize();
+			curBuble.transform.localScale=new Vector2(bullesReglages.maxSizeBuble+0.15f,bullesReglages.maxSizeBuble+0.15f);
+			UpdateCurBublePosition();
+			yield return new WaitForSeconds(0.05f);
+			curBuble.transform.localScale=new Vector2(bullesReglages.maxSizeBuble,bullesReglages.maxSizeBuble);
+			ShootBuble();
+		}
+		chronoIncrementSizeBuble=1f;
+	}
 
 	public void UpdateCurBublePosition()
 	{
 		//quand je laisse appuyer, il faut que la bulle suive le personnage
 		if(curBuble==null)
 			return;
-		Vector2 newPos = new Vector2(transform.position.x+curBuble.transform.localScale.x + 1.3f , transform.position.y);
+		Vector2 newPos = new Vector2(transform.position.x + transform.localScale.x + (curBuble.transform.localScale.x*0.9f) , transform.position.y);
 		curBuble.transform.position=newPos;
 	}
 
@@ -162,6 +246,7 @@ public class PlayerManager : MonoBehaviour {
 	{
 		if(curBuble==null)
 			return;
+
 		curBuble.GetComponent<BubleManager>().SetIsCreate(false);
 		//tir de la bulle
 
@@ -193,7 +278,6 @@ public class PlayerManager : MonoBehaviour {
 			yield return new WaitForSeconds(0.001f);
 		}
 		canMove=true;
-		StopCoroutine(KnockbackPlayer(direction));
 	}
 
 //GETTER & SETTER____________________________________________________________________________________________
