@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<SoundBanksInfo Platform="Mac" BasePlatform="Mac" SchemaVersion="11" SoundbankVersion="132">
+	<RootPaths>
+		<ProjectRoot>/Users/benjamindarmon/Library/Application Support/Wwise2018/Bottles/wwise/dosdevices/y:/Desktop/BLOOOOUUUUUUPPPPPPPPPP/SHMUP_Enjmin/SHMUP_Enjmin/Bloup'themup/</ProjectRoot>
+		<SourceFilesRoot>/Users/benjamindarmon/Library/Application Support/Wwise2018/Bottles/wwise/dosdevices/y:/Desktop/BLOOOOUUUUUUPPPPPPPPPP/SHMUP_Enjmin/SHMUP_Enjmin/Bloup'themup/.cache/Mac/</SourceFilesRoot>
+		<SoundBanksRoot>/Users/benjamindarmon/Library/Application Support/Wwise2018/Bottles/wwise/dosdevices/y:/Desktop/BLOOOOUUUUUUPPPPPPPPPP/SHMUP_Enjmin/SHMUP_Enjmin/Bloup'themup/GeneratedSoundBanks/Mac/</SoundBanksRoot>
+		<ExternalSourcesInputFile></ExternalSourcesInputFile>
+		<ExternalSourcesOutputRoot>/Users/benjamindarmon/Library/Application Support/Wwise2018/Bottles/wwise/dosdevices/y:/Desktop/BLOOOOUUUUUUPPPPPPPPPP/SHMUP_Enjmin/SHMUP_Enjmin/Bloup'themup/GeneratedSoundBanks/Mac</ExternalSourcesOutputRoot>
+	</RootPaths>
+	<DialogueEvents/>
+	<StreamedFiles/>
+	<MediaFilesNotInAnyBank/>
+	<SoundBanks>
+		<SoundBank Id="984691642" Language="SFX">
+			<ObjectPath>\SoundBanks\Default Work Unit\Ingame</ObjectPath>
+			<ShortName>Ingame</ShortName>
+			<Path>Ingame.bnk</Path>
+			<IncludedEvents>
+				<Event Id="2999869044" Name="Innit_Amb" ObjectPath="\Events\Default Work Unit\Ingame\Innit_Amb"/>
+				<Event Id="3726773303" Name="Play_Bubble_Explode_Os" ObjectPath="\Events\Default Work Unit\Ingame\Play_Bubble_Explode_Os"/>
+				<Event Id="2139305897" Name="Play_Load_Shot" ObjectPath="\Events\Default Work Unit\Ingame\Play_Load_Shot"/>
+				<Event Id="206418435" Name="Play_Musique" ObjectPath="\Events\Default Work Unit\Ingame\Play_Musique"/>
+				<Event Id="3837926945" Name="Play_Player_Dash_os" ObjectPath="\Events\Default Work Unit\Ingame\Play_Player_Dash_os"/>
+				<Event Id="4135433440" Name="Play_Player_Shot" ObjectPath="\Events\Default Work Unit\Ingame\Play_Player_Shot"/>
+			</IncludedEvents>
+			<IncludedMemoryFiles>
+				<File Id="161089824" Language="SFX">
+					<ShortName>Musique_Lvl_02_Lp.wav</ShortName>
+					<Path>SFX/Musique_Lvl_02_Lp_8956FC97.wem</Path>
+				</File>
+				<File Id="174964560" Language="SFX">
+					<ShortName>Impact_Pnj_Bubble_Os.wav</ShortName>
+					<Path>SFX/Impact_Pnj_Bubble_Os_CDD262F9.wem</Path>
+				</File>
+				<File Id="182596096" Language="SFX">
+					<ShortName>Underwater_03_Os.wav</ShortName>
+					<Path>SFX/Underwater_03_Os_56D34C19.wem</Path>
+				</File>
+				<File Id="186136371" Language="SFX">
+					<ShortName>Underwater_Parasites_01_Os.wav</ShortName>
+					<Path>SFX/Underwater_Parasites_01_Os_56D34C19.wem</Path>
+				</File>
+				<File Id="278502607" Language="SFX">
+					<ShortName>Musique_Lvl_01_Lp.wav</ShortName>
+					<Path>SFX/Musique_Lvl_01_Lp_8956FC97.wem</Path>
+				</File>
+				<File Id="318779871" Language="SFX">
+					<ShortName>Bull_SHot.wav</ShortName>
+					<Path>SFX/Bull_SHot_20817CEF.wem</Path>
+				</File>
+				<File Id="476708979" Language="SFX">
+					<ShortName>Underwater_05_Os.wav</ShortName>
+					<Path>SFX/Underwater_05_Os_56D34C19.wem</Path>
+				</File>
+				<File Id="498771420" Language="SFX">
+					<ShortName>Underwater_Parasites_02_Os.wav</ShortName>
+					<Path>SFX/Underwater_Parasites_02_Os_56D34C19.wem</Path>
+				</File>
+				<File Id="512970095" Language="SFX">
+					<ShortName>Underwater_Parasites_03_Os.wav</ShortName>
+					<Path>SFX/Underwater_Parasites_03_Os_56D34C19.wem</Path>
+				</File>
+				<File Id="570302368" Language="SFX">
+					<ShortName>Bull_Load.wav</ShortName>
+					<Path>SFX/Bull_Load_B4FF3FF8.wem</Path>
+				</File>
+				<File Id="681287260" Language="SFX">
+					<ShortName>Player_Dash_os.wav</ShortName>
+					<Path>SFX/Player_Dash_os_56D34C19.wem</Path>
+				</File>
+				<File Id="689708618" Language="SFX">
+					<ShortName>Musique_Lvl_03_Lp.wav</ShortName>
+					<Path>SFX/Musique_Lvl_03_Lp_8956FC97.wem</Path>
+				</File>
+				<File Id="842027309" Language="SFX">
+					<ShortName>Underwater_Parasites_04_Os.wav</ShortName>
+					<Path>SFX/Underwater_Parasites_04_Os_56D34C19.wem</Path>
+				</File>
+				<File Id="881670788" Language="SFX">
+					<ShortName>Underwater_lp.wav</ShortName>
+					<Path>SFX/Underwater_lp_56D34C19.wem</Path>
+				</File>
+				<File Id="905875478" Language="SFX">
+					<ShortName>Bulles_Turfu.wav</ShortName>
+					<Path>SFX/Bulles_Turfu_56D34C19.wem</Path>
+				</File>
+				<File Id="1010897979" Language="SFX">
+					<ShortName>Underwater_01_Os.wav</ShortName>
+					<Path>SFX/Underwater_01_Os_56D34C19.wem</Path>
+				</File>
+				<File Id="1052246024" Language="SFX">
+					<ShortName>Music_Intro_Os.wav</ShortName>
+					<Path>SFX/Music_Intro_Os_8956FC97.wem</Path>
+				</File>
+			</IncludedMemoryFiles>
+		</SoundBank>
+		<SoundBank Id="1355168291" Language="SFX">
+			<ObjectPath>Init</ObjectPath>
+			<ShortName>Init</ShortName>
+			<Path>Init.bnk</Path>
+		</SoundBank>
+	</SoundBanks>
+</SoundBanksInfo>

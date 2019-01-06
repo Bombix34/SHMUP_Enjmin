@@ -746,10 +746,95 @@
 						</Effect>
 						<Effect Name="Tunnel1" ID="{CC44B890-9865-4157-965F-86FED27BC4C6}" PluginName="Wwise Matrix Reverb" CompanyID="0" PluginID="115" PluginType="3">
 							<PropertyList>
-								<Property Name="HFRatio" Type="Real32" Value="9.5"/>
+								<Property Name="DelayLengthsMode" Type="int32" Value="1"/>
+								<Property Name="DryLevel" Type="Real32">
+									<RTPCList>
+										<RTPC Name="" ID="{169A1B00-4967-489A-93A8-73AD73514033}" ShortID="971224013">
+											<ReferenceList>
+												<Reference Name="ControlInput">
+													<ObjectRef Name="Profondeur" ID="{27B4697F-9FDD-4F5D-B7F0-B5A24FF86796}" WorkUnitID="{3BB5E0BE-5D9A-4A65-8A2C-3017E9E6DEA0}"/>
+												</Reference>
+											</ReferenceList>
+											<Curve Name="" ID="{1F0DBE63-CA30-4152-B14F-212536B86F6C}">
+												<PropertyList>
+													<Property Name="Flags" Type="int32" Value="3"/>
+												</PropertyList>
+												<PointList>
+													<Point>
+														<XPos>-5</XPos>
+														<YPos>8.45856</YPos>
+														<Flags>5</Flags>
+														<SegmentShape>SCurve</SegmentShape>
+													</Point>
+													<Point>
+														<XPos>5</XPos>
+														<YPos>-25.0438</YPos>
+														<Flags>37</Flags>
+													</Point>
+												</PointList>
+											</Curve>
+										</RTPC>
+									</RTPCList>
+								</Property>
+								<Property Name="HFRatio" Type="Real32" Value="9.1"/>
 								<Property Name="NumberOfDelays" Type="int32" Value="12"/>
-								<Property Name="ReverbTime" Type="Real32" Value="5"/>
-								<Property Name="WetLevel" Type="Real32" Value="-30"/>
+								<Property Name="ReverbTime" Type="Real32" Value="4.2">
+									<RTPCList>
+										<RTPC Name="" ID="{E2CA02D1-14D1-4692-8F3C-7E141D7A764A}" ShortID="336464373">
+											<ReferenceList>
+												<Reference Name="ControlInput">
+													<ObjectRef Name="Profondeur" ID="{27B4697F-9FDD-4F5D-B7F0-B5A24FF86796}" WorkUnitID="{3BB5E0BE-5D9A-4A65-8A2C-3017E9E6DEA0}"/>
+												</Reference>
+											</ReferenceList>
+											<Curve Name="" ID="{4CAD8618-2CB4-444B-B6B2-54F9856C2A37}">
+												<PropertyList>
+													<Property Name="Flags" Type="int32" Value="1"/>
+												</PropertyList>
+												<PointList>
+													<Point>
+														<XPos>-5</XPos>
+														<YPos>3.37692</YPos>
+														<Flags>5</Flags>
+														<SegmentShape>Exp1</SegmentShape>
+													</Point>
+													<Point>
+														<XPos>5</XPos>
+														<YPos>1.81923</YPos>
+														<Flags>37</Flags>
+													</Point>
+												</PointList>
+											</Curve>
+										</RTPC>
+									</RTPCList>
+								</Property>
+								<Property Name="WetLevel" Type="Real32" Value="-27">
+									<RTPCList>
+										<RTPC Name="" ID="{4A90FBA2-346C-4935-8873-3798C4A44DA8}" ShortID="574257301">
+											<ReferenceList>
+												<Reference Name="ControlInput">
+													<ObjectRef Name="Profondeur" ID="{27B4697F-9FDD-4F5D-B7F0-B5A24FF86796}" WorkUnitID="{3BB5E0BE-5D9A-4A65-8A2C-3017E9E6DEA0}"/>
+												</Reference>
+											</ReferenceList>
+											<Curve Name="" ID="{A9B0AA58-8B4A-4A19-AE06-D6FC9BF13E01}">
+												<PropertyList>
+													<Property Name="Flags" Type="int32" Value="3"/>
+												</PropertyList>
+												<PointList>
+													<Point>
+														<XPos>-5</XPos>
+														<YPos>-96.3000030517578</YPos>
+														<Flags>5</Flags>
+													</Point>
+													<Point>
+														<XPos>5</XPos>
+														<YPos>0</YPos>
+														<Flags>37</Flags>
+													</Point>
+												</PointList>
+											</Curve>
+										</RTPC>
+									</RTPCList>
+								</Property>
 							</PropertyList>
 						</Effect>
 						<Effect Name="Underground_Parking1" ID="{8DA66AA3-6CA0-41A0-B7A2-BB6FCABFCDA8}" PluginName="Wwise Matrix Reverb" CompanyID="0" PluginID="115" PluginType="3">

@@ -10,10 +10,6 @@
 							<Position X="0" Y="0"/>
 						</Module>
 						<Module>
-							<ObjectRef Name="Play_Impact_Pnj_Bubble_Os" ID="{D472FD05-8C49-461A-BFA9-3248D30CB7C2}" WorkUnitID="{1336847C-65CD-4BDE-82E7-88B2522FBB1A}"/>
-							<Position X="1" Y="2"/>
-						</Module>
-						<Module>
 							<ObjectRef Name="Play_Bubble_Explode_Os" ID="{54F2F68E-297D-4491-81F8-973496A0B5BB}" WorkUnitID="{1336847C-65CD-4BDE-82E7-88B2522FBB1A}"/>
 							<Position X="1" Y="3"/>
 						</Module>
@@ -81,7 +77,7 @@
 						</RTPCValue>
 						<RTPCValue>
 							<GameParameterRef Name="Profondeur" ID="{27B4697F-9FDD-4F5D-B7F0-B5A24FF86796}"/>
-							<Value>-5.22466039707314E-03</Value>
+							<Value>4.34959349593496</Value>
 						</RTPCValue>
 					</RTPCValueList>
 					<CurrentStateList ShowAll="true">
