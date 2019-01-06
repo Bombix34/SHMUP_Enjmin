@@ -23,9 +23,9 @@ public class PlayerManager : MonoBehaviour {
 
 	//bulle que le joueur est en train de créer
 	GameObject curBuble;
-    
+
     // rtpc value
-    float rtpcValue;
+    float rtpcValue = 0.0f;
     int type = 1;
 
 	bool isDashing=false;
@@ -47,7 +47,7 @@ public class PlayerManager : MonoBehaviour {
 		rb2D=GetComponent<Rigidbody2D>();
 		transform.localScale=new Vector2(reglages.sizePlayer,reglages.sizePlayer);
 
-        AkSoundEngine.GetRTPCValue("Profondeur", gameObject, 0, out rtpcValue, ref type);
+ 
     }
 	
 	void Update () 
@@ -59,7 +59,7 @@ public class PlayerManager : MonoBehaviour {
 		BubleUpdate();
 
         rtpcValue = transform.position.y;
-        AkSoundEngine.SetRTPCValue("Profondeur", rtpcValue, gameObject);
+        AkSoundEngine.SetRTPCValue("Profondeur", rtpcValue);
 	}
 
 	public void MovePlayer()
@@ -146,7 +146,7 @@ public class PlayerManager : MonoBehaviour {
 
 		Physics2D.IgnoreCollision(colider,curBuble.GetComponent<BubleManager>().GetCollider(),true);
 
-       // AkSoundEngine.PostEvent("Play_Load_Shot", gameObject);
+        AkSoundEngine.PostEvent("Play_Load_Shot", gameObject);
     }
 
 	public void UpdateCurBublePosition()
@@ -167,7 +167,7 @@ public class PlayerManager : MonoBehaviour {
 
 		curBuble.GetComponent<Rigidbody2D>().AddForce(new Vector2(500f,0f)*bullesReglages.speedBuble);
 
-       // AkSoundEngine.PostEvent("Play_Player_Shot", gameObject);
+        AkSoundEngine.PostEvent("Play_Player_Shot", gameObject);
        
         //effet des bulles a remonter vers la surface
         curBuble.GetComponent<Rigidbody2D>().gravityScale=-bullesReglages.archimedEffect;
