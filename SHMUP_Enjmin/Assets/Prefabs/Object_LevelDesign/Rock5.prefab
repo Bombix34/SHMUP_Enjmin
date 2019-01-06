@@ -19,6 +19,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4171559743022334}
+  - component: {fileID: 114348729598679588}
   m_Layer: 0
   m_Name: Rock5
   m_TagString: Untagged
@@ -69,6 +70,17 @@ Transform:
   m_Father: {fileID: 4171559743022334}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &114348729598679588
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1292293519772636}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 65535634a3daba24cadef691cf9c032c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!212 &212308368414417634
 SpriteRenderer:
   m_ObjectHideFlags: 1

@@ -21,6 +21,7 @@ GameObject:
   - component: {fileID: 4557678039805722}
   - component: {fileID: 58389733653598048}
   - component: {fileID: 114017203677318646}
+  - component: {fileID: 114413613089591994}
   m_Layer: 0
   m_Name: oursin
   m_TagString: oursin
@@ -51,7 +52,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1113471870096402}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.65976393, y: 1.82, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.3, y: 0.3, z: 1}
   m_Children:
   - {fileID: 4756021659359706}
@@ -99,6 +100,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   retractedTime: 3
   isRetracted: 0
+--- !u!114 &114413613089591994
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1113471870096402}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 65535634a3daba24cadef691cf9c032c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!212 &212378554800826068
 SpriteRenderer:
   m_ObjectHideFlags: 1

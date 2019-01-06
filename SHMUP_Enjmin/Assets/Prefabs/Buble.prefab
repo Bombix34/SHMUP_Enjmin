@@ -38,6 +38,7 @@ GameObject:
   - component: {fileID: 114284520931702002}
   - component: {fileID: 58790875477006094}
   - component: {fileID: 50095769234116576}
+  - component: {fileID: 114882198825220966}
   m_Layer: 0
   m_Name: Buble
   m_TagString: Buble
@@ -116,6 +117,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a310c8e12dfc247db9b1d364641f7eca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &114882198825220966
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1933862619830500}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 65535634a3daba24cadef691cf9c032c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!212 &212507716725628774
