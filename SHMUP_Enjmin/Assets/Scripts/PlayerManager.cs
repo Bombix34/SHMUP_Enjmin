@@ -59,7 +59,7 @@ public class PlayerManager : MonoBehaviour {
 	{
 		if(isDead)
 		{
-			if(controller.pressAnyButton())
+			if(controller.pressAnyButton()||keyboard.PressFireBouton()||keyboard.PressDashBouton())
 				GameManager.instance.RelaunchGame();
 			return;
 		}
@@ -80,7 +80,6 @@ public class PlayerManager : MonoBehaviour {
 		isDead=true;
 		if(curBuble!=null)
 			curBuble.GetComponent<BubleManager>().DestroyBuble();
-		
 	}
 
 
@@ -104,7 +103,7 @@ public class PlayerManager : MonoBehaviour {
 		dashChrono-=Time.deltaTime;
 		if(dashChrono>0)
 			return;
-		if(controller.pressButtonB())
+		if(controller.pressButtonB()||keyboard.PressDashBouton())
 		{
 			if(curBuble!=null)
 				curBuble.GetComponent<BubleManager>().DestroyBuble();

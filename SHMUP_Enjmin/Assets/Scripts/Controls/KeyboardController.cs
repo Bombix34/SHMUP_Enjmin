@@ -21,4 +21,9 @@ public class KeyboardController : MonoBehaviour
 		Vector2 keyboardAxis = new Vector2(Input.GetAxis("Horizontal"),Input.GetAxis("Vertical"));
 		return keyboardAxis;
 	}
+
+	public bool PressDashBouton()
+	{
+		return Input.GetButtonDown("Dash");
+	}
 }
