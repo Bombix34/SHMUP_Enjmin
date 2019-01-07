@@ -10,6 +10,10 @@
 							<Position X="0" Y="0"/>
 						</Module>
 						<Module>
+							<ObjectRef Name="Play_Pnj_Oh" ID="{5E27AFCB-5157-43AC-8549-83D7CAEE0F33}" WorkUnitID="{1336847C-65CD-4BDE-82E7-88B2522FBB1A}"/>
+							<Position X="0" Y="2"/>
+						</Module>
+						<Module>
 							<ObjectRef Name="Play_Bubble_Explode_Os" ID="{54F2F68E-297D-4491-81F8-973496A0B5BB}" WorkUnitID="{1336847C-65CD-4BDE-82E7-88B2522FBB1A}"/>
 							<Position X="1" Y="3"/>
 						</Module>
@@ -27,6 +31,10 @@
 						</Module>
 					</ModuleList>
 					<RTPCValueList ShowAll="true">
+						<RTPCValue>
+							<GameParameterRef Name="BubbleSize" ID="{76DDD84F-E5CF-4064-B1CF-03CF0185F858}"/>
+							<Value>0</Value>
+						</RTPCValue>
 						<RTPCValue>
 							<GameParameterRef Name="SS_Air_Turbulence" ID="{EDA87B19-73AA-40A0-9F19-2073606DB710}"/>
 							<Value>6</Value>

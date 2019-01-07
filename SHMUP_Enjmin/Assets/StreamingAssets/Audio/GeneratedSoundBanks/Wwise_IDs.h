@@ -15,10 +15,12 @@ namespace AK
     {
         static const AkUniqueID INNIT_AMB = 2999869044U;
         static const AkUniqueID PLAY_BUBBLE_EXPLODE_OS = 3726773303U;
+        static const AkUniqueID PLAY_BULLES_GROWN = 3777684193U;
         static const AkUniqueID PLAY_LOAD_SHOT = 2139305897U;
         static const AkUniqueID PLAY_MUSIQUE = 206418435U;
         static const AkUniqueID PLAY_PLAYER_DASH_OS = 3837926945U;
         static const AkUniqueID PLAY_PLAYER_SHOT = 4135433440U;
+        static const AkUniqueID PLAY_PNJ_OH = 2311964536U;
     } // namespace EVENTS
 
     namespace STATES
@@ -39,6 +41,7 @@ namespace AK
 
     namespace GAME_PARAMETERS
     {
+        static const AkUniqueID BUBBLESIZE = 4093488308U;
         static const AkUniqueID PLAYBACK_RATE = 1524500807U;
         static const AkUniqueID PROFONDEUR = 215492731U;
         static const AkUniqueID RPM = 796049864U;

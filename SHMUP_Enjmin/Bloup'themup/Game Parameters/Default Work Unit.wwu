@@ -10,6 +10,12 @@
 						<Property Name="Min" Type="Real64" Value="-5"/>
 					</PropertyList>
 				</GameParameter>
+				<GameParameter Name="BubbleSize" ID="{76DDD84F-E5CF-4064-B1CF-03CF0185F858}">
+					<PropertyList>
+						<Property Name="InitialValue" Type="Real64" Value="0"/>
+						<Property Name="Max" Type="Real64" Value="3"/>
+					</PropertyList>
+				</GameParameter>
 			</ChildrenList>
 		</WorkUnit>
 	</GameParameters>

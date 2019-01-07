@@ -14,7 +14,9 @@ public class BubleManager : MonoBehaviour {
 
 	List<GameObject> objectInTheBuble;
 
-	void Awake () 
+    float rtpcValue2 = (float)BubleSize.init;
+
+    void Awake () 
 	{
 		rb2D = GetComponent<Rigidbody2D>();
         colider = GetComponent<CircleCollider2D>();
@@ -24,7 +26,10 @@ public class BubleManager : MonoBehaviour {
 
 	void Update()
 	{
-		if(curIsCreate)
+        rtpcValue2 = (float)bubleSize;
+        AkSoundEngine.SetRTPCValue("BubbleSize", rtpcValue2, gameObject);
+
+        if (curIsCreate)
 			return;
 
         //transform.localScale = new Vector3(transform.localScale.x * 1.1f, transform.localScale.y * 1.1f, transform.localScale.z);
@@ -41,7 +46,6 @@ public class BubleManager : MonoBehaviour {
         }
 		Destroy(this.gameObject);
         // enlever les bulles ui éclatent sortis d'écran
-      //  AkSoundEngine.PostEvent("Play_Bubble_Explode_Os", gameObject);
 	}
 
 	public IEnumerator ShakeBuble()
@@ -110,8 +114,10 @@ public class BubleManager : MonoBehaviour {
 			{
 				//détruit la bulle que le personnage est en train de créer 
 				DestroyBuble();
-			}
-		}
+                AkSoundEngine.PostEvent("Play_Bubble_Explode_Os", gameObject);
+
+            }
+        }
         else if (col.gameObject.tag == "Player")
         {
             if (curIsCreate)
@@ -129,8 +135,10 @@ public class BubleManager : MonoBehaviour {
 			if(!curIsCreate)
 				col.gameObject.GetComponent<UrchinManager>().retract();	
 			DestroyBuble();
-		} 
-		else if(col.gameObject.tag=="Player")
+            AkSoundEngine.PostEvent("Play_Bubble_Explode_Os", gameObject);
+
+        }
+        else if(col.gameObject.tag=="Player")
 		{
 		}
         else if (col.gameObject.tag == "ToSave")
@@ -139,6 +147,8 @@ public class BubleManager : MonoBehaviour {
             {
                 //détruit la bulle que le personnage est en train de créer 
                 DestroyBuble();
+                AkSoundEngine.PostEvent("Play_Bubble_Explode_Os", gameObject);
+
             }
             else
             {
@@ -148,7 +158,7 @@ public class BubleManager : MonoBehaviour {
                 StartCoroutine(SetObjectInTheBuble(col.gameObject));
                 objectInTheBuble.Add(col.gameObject);
 
-                //   AkSoundEngine.PostEvent("Play_Impact_Pnj_Bubble_Os", gameObject);
+                AkSoundEngine.PostEvent("Play_Pnj_Oh", gameObject);
             }
         }
     }
@@ -202,6 +212,7 @@ public class BubleManager : MonoBehaviour {
 		if(bubleSize==BubleSize.final)
 			return;
 		bubleSize++;
+        AkSoundEngine.PostEvent("Play_Bulles_Grown", gameObject);
 	}
 
 	enum BubleSize

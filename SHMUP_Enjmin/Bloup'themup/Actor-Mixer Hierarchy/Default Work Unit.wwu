@@ -17,13 +17,36 @@
 							<PropertyList>
 								<Property Name="MakeUpGain" Type="Real64">
 									<ValueList>
-										<Value>11</Value>
+										<Value>6</Value>
 									</ValueList>
 								</Property>
-								<Property Name="Volume" Type="Real64">
-									<ValueList>
-										<Value>-3</Value>
-									</ValueList>
+								<Property Name="OutputBusVolume" Type="Real64">
+									<RTPCList>
+										<RTPC Name="" ID="{1D6735B9-230F-401B-A861-8D9E94C8A680}" ShortID="551856715">
+											<ReferenceList>
+												<Reference Name="ControlInput">
+													<ObjectRef Name="Profondeur" ID="{27B4697F-9FDD-4F5D-B7F0-B5A24FF86796}" WorkUnitID="{3BB5E0BE-5D9A-4A65-8A2C-3017E9E6DEA0}"/>
+												</Reference>
+											</ReferenceList>
+											<Curve Name="" ID="{9EF7E531-F1DA-4A5D-9319-4A568A8468AA}">
+												<PropertyList>
+													<Property Name="Flags" Type="int32" Value="3"/>
+												</PropertyList>
+												<PointList>
+													<Point>
+														<XPos>-5</XPos>
+														<YPos>0</YPos>
+														<Flags>5</Flags>
+													</Point>
+													<Point>
+														<XPos>5</XPos>
+														<YPos>3</YPos>
+														<Flags>37</Flags>
+													</Point>
+												</PointList>
+											</Curve>
+										</RTPC>
+									</RTPCList>
 								</Property>
 							</PropertyList>
 							<ReferenceList>
@@ -53,7 +76,7 @@
 								</Property>
 								<Property Name="MakeUpGain" Type="Real64">
 									<ValueList>
-										<Value>13</Value>
+										<Value>3</Value>
 									</ValueList>
 								</Property>
 								<Property Name="Pitch" Type="int32">
@@ -64,6 +87,11 @@
 								<Property Name="PlayMechanismLoop" Type="bool" Value="True"/>
 								<Property Name="PlayMechanismSpecialTransitions" Type="bool" Value="True"/>
 								<Property Name="PlayMechanismStepOrContinuous" Type="int16" Value="0"/>
+								<Property Name="Volume" Type="Real64">
+									<ValueList>
+										<Value>-3</Value>
+									</ValueList>
+								</Property>
 							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Conversion">
@@ -155,7 +183,7 @@
 								</Property>
 								<Property Name="Volume" Type="Real64">
 									<ValueList>
-										<Value>-1</Value>
+										<Value>-5</Value>
 									</ValueList>
 								</Property>
 							</PropertyList>
@@ -170,9 +198,10 @@
 							<ChildrenList>
 								<RandomSequenceContainer Name="Underwater_Parasites_Rnd" ID="{DBBD9715-ABAC-4C02-B80A-C37416B3B643}" ShortID="285352394">
 									<PropertyList>
+										<Property Name="OverrideUserAuxSends" Type="bool" Value="True"/>
 										<Property Name="Volume" Type="Real64">
 											<ValueList>
-												<Value>-6</Value>
+												<Value>-13</Value>
 											</ValueList>
 										</Property>
 									</PropertyList>
@@ -182,6 +211,9 @@
 										</Reference>
 										<Reference Name="OutputBus">
 											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{D1B724BB-66B6-4F55-9CB7-851DFB74B0CF}"/>
+										</Reference>
+										<Reference Name="UserAuxSend0">
+											<ObjectRef Name="Rvrb" ID="{0F444CE1-A308-4A0A-BC97-BDAD8C6462AF}" WorkUnitID="{D1B724BB-66B6-4F55-9CB7-851DFB74B0CF}"/>
 										</Reference>
 									</ReferenceList>
 									<ChildrenList>
@@ -363,7 +395,169 @@
 										<ActiveSource Name="Player_Dash_os" ID="{60A277E6-C992-4A7B-A762-D19A09DCB4E4}" Platform="Linked"/>
 									</ActiveSourceList>
 								</Sound>
-								<Sound Name="Bulles_Explodes" ID="{2F9B246F-44C2-44DD-9C5C-6DD87F0FEB3E}" ShortID="985219222">
+								<RandomSequenceContainer Name="Bulles" ID="{24081961-02F5-408D-AF73-6786534BC995}" ShortID="233888459">
+									<PropertyList>
+										<Property Name="RandomOrSequence" Type="int16" Value="0"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{2BD389C3-9EC6-4637-949C-1D4A4B674147}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{D1B724BB-66B6-4F55-9CB7-851DFB74B0CF}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<Sound Name="Bulles_Explodes" ID="{2F9B246F-44C2-44DD-9C5C-6DD87F0FEB3E}" ShortID="985219222">
+											<PropertyList>
+												<Property Name="MaxReachedBehavior" Type="int16" Value="1"/>
+												<Property Name="MaxSoundPerInstance" Type="int16">
+													<ValueList>
+														<Value>1</Value>
+													</ValueList>
+												</Property>
+												<Property Name="OverrideEffect" Type="bool" Value="True"/>
+												<Property Name="OverrideGameAuxSends" Type="bool" Value="True"/>
+												<Property Name="Pitch" Type="int32">
+													<ValueList>
+														<Value>-630</Value>
+													</ValueList>
+													<ModifierList>
+														<ModifierInfo>
+															<Modifier Name="" ID="{ACAD8C83-C468-4CD3-BDE6-8F7859C67A3B}">
+																<PropertyList>
+																	<Property Name="Enabled" Type="bool" Value="True"/>
+																	<Property Name="Max" Type="Real64" Value="783"/>
+																	<Property Name="Min" Type="Real64" Value="-581"/>
+																</PropertyList>
+															</Modifier>
+														</ModifierInfo>
+													</ModifierList>
+												</Property>
+												<Property Name="UseGameAuxSends" Type="bool" Value="True"/>
+												<Property Name="UseMaxSoundPerInstance" Type="bool">
+													<ValueList>
+														<Value>True</Value>
+													</ValueList>
+												</Property>
+												<Property Name="Volume" Type="Real64">
+													<ValueList>
+														<Value>1</Value>
+													</ValueList>
+													<ModifierList>
+														<ModifierInfo>
+															<Modifier Name="" ID="{A1B5D8F6-4D64-4D22-BDAC-67CD80AA04DC}">
+																<PropertyList>
+																	<Property Name="Enabled" Type="bool" Value="True"/>
+																	<Property Name="Max" Type="Real64" Value="1"/>
+																	<Property Name="Min" Type="Real64" Value="-2"/>
+																</PropertyList>
+															</Modifier>
+														</ModifierInfo>
+													</ModifierList>
+												</Property>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{2BD389C3-9EC6-4637-949C-1D4A4B674147}"/>
+												</Reference>
+												<Reference Name="Effect1" PluginName="Wwise Pitch Shifter" CompanyID="0" PluginID="136" PluginType="3">
+													<ObjectRef Name="Octave_Down" ID="{062EC4B1-5372-4D1E-917B-C757293F2B42}" WorkUnitID="{E8613F7D-BAD3-45CD-A3ED-505576F31277}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Sfx" ID="{F2A0E619-BE8F-40E5-AAC0-7BD9305E608D}" WorkUnitID="{D1B724BB-66B6-4F55-9CB7-851DFB74B0CF}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="Bulles_Turfu" ID="{0D3BB42F-AB0E-4F13-9635-C004A853635A}" ShortID="905875478">
+													<Language>SFX</Language>
+													<AudioFile>Bulles_Turfu.wav</AudioFile>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="Bulles_Turfu" ID="{0D3BB42F-AB0E-4F13-9635-C004A853635A}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+										<Sound Name="Bulles_Explodes_02" ID="{BAB38C68-0E36-43ED-BA53-E11D697100F1}" ShortID="355557857">
+											<PropertyList>
+												<Property Name="MaxReachedBehavior" Type="int16" Value="1"/>
+												<Property Name="MaxSoundPerInstance" Type="int16">
+													<ValueList>
+														<Value>1</Value>
+													</ValueList>
+												</Property>
+												<Property Name="OverrideEffect" Type="bool" Value="True"/>
+												<Property Name="OverrideGameAuxSends" Type="bool" Value="True"/>
+												<Property Name="Pitch" Type="int32">
+													<ValueList>
+														<Value>-630</Value>
+													</ValueList>
+													<ModifierList>
+														<ModifierInfo>
+															<Modifier Name="" ID="{6E3BCB7C-72F1-45F9-8CBC-01B0F6023A8B}">
+																<PropertyList>
+																	<Property Name="Enabled" Type="bool" Value="True"/>
+																	<Property Name="Max" Type="Real64" Value="783"/>
+																	<Property Name="Min" Type="Real64" Value="-581"/>
+																</PropertyList>
+															</Modifier>
+														</ModifierInfo>
+													</ModifierList>
+												</Property>
+												<Property Name="UseGameAuxSends" Type="bool" Value="True"/>
+												<Property Name="UseMaxSoundPerInstance" Type="bool">
+													<ValueList>
+														<Value>True</Value>
+													</ValueList>
+												</Property>
+												<Property Name="Volume" Type="Real64">
+													<ValueList>
+														<Value>4</Value>
+													</ValueList>
+													<ModifierList>
+														<ModifierInfo>
+															<Modifier Name="" ID="{DC124305-66C2-41B5-B564-BE7EEB081CE2}">
+																<PropertyList>
+																	<Property Name="Enabled" Type="bool" Value="True"/>
+																	<Property Name="Max" Type="Real64" Value="1"/>
+																	<Property Name="Min" Type="Real64" Value="-2"/>
+																</PropertyList>
+															</Modifier>
+														</ModifierInfo>
+													</ModifierList>
+												</Property>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{2BD389C3-9EC6-4637-949C-1D4A4B674147}"/>
+												</Reference>
+												<Reference Name="Effect1" PluginName="Wwise Pitch Shifter" CompanyID="0" PluginID="136" PluginType="3">
+													<ObjectRef Name="Octave_Down" ID="{062EC4B1-5372-4D1E-917B-C757293F2B42}" WorkUnitID="{E8613F7D-BAD3-45CD-A3ED-505576F31277}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Sfx" ID="{F2A0E619-BE8F-40E5-AAC0-7BD9305E608D}" WorkUnitID="{D1B724BB-66B6-4F55-9CB7-851DFB74B0CF}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="Bulles_Turfu" ID="{A50BA03C-6D89-4CBE-A5EC-D9E24731B8A8}" ShortID="431202116">
+													<Language>SFX</Language>
+													<AudioFile>Bulles_Turfu.wav</AudioFile>
+													<ConvertedFileIDList>
+														<File ID="905875478"/>
+													</ConvertedFileIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="Bulles_Turfu" ID="{A50BA03C-6D89-4CBE-A5EC-D9E24731B8A8}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+									</ChildrenList>
+									<Playlist>
+										<ItemRef Name="Bulles_Explodes" ID="{2F9B246F-44C2-44DD-9C5C-6DD87F0FEB3E}"/>
+										<ItemRef Name="Bulles_Explodes_02" ID="{BAB38C68-0E36-43ED-BA53-E11D697100F1}"/>
+									</Playlist>
+								</RandomSequenceContainer>
+								<Sound Name="Bulles_Explodes_01" ID="{2A3774F6-F26A-4AAD-80EF-EC3A9ACF104A}" ShortID="1015525380">
 									<PropertyList>
 										<Property Name="MaxReachedBehavior" Type="int16" Value="1"/>
 										<Property Name="MaxSoundPerInstance" Type="int16">
@@ -375,11 +569,11 @@
 										<Property Name="OverrideGameAuxSends" Type="bool" Value="True"/>
 										<Property Name="Pitch" Type="int32">
 											<ValueList>
-												<Value>-530</Value>
+												<Value>-1290</Value>
 											</ValueList>
 											<ModifierList>
 												<ModifierInfo>
-													<Modifier Name="" ID="{ACAD8C83-C468-4CD3-BDE6-8F7859C67A3B}">
+													<Modifier Name="" ID="{E59AED2E-AA86-4260-BE55-8C0904941C98}">
 														<PropertyList>
 															<Property Name="Enabled" Type="bool" Value="True"/>
 															<Property Name="Max" Type="Real64" Value="783"/>
@@ -397,11 +591,11 @@
 										</Property>
 										<Property Name="Volume" Type="Real64">
 											<ValueList>
-												<Value>-3</Value>
+												<Value>-5</Value>
 											</ValueList>
 											<ModifierList>
 												<ModifierInfo>
-													<Modifier Name="" ID="{A1B5D8F6-4D64-4D22-BDAC-67CD80AA04DC}">
+													<Modifier Name="" ID="{2DD1CD7F-97DC-4DF4-9607-4219353425F1}">
 														<PropertyList>
 															<Property Name="Enabled" Type="bool" Value="True"/>
 															<Property Name="Max" Type="Real64" Value="1"/>
@@ -420,68 +614,24 @@
 											<ObjectRef Name="Octave_Down" ID="{062EC4B1-5372-4D1E-917B-C757293F2B42}" WorkUnitID="{E8613F7D-BAD3-45CD-A3ED-505576F31277}"/>
 										</Reference>
 										<Reference Name="OutputBus">
-											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{D1B724BB-66B6-4F55-9CB7-851DFB74B0CF}"/>
+											<ObjectRef Name="Sfx" ID="{F2A0E619-BE8F-40E5-AAC0-7BD9305E608D}" WorkUnitID="{D1B724BB-66B6-4F55-9CB7-851DFB74B0CF}"/>
 										</Reference>
 									</ReferenceList>
 									<ChildrenList>
-										<AudioFileSource Name="Bulles_Turfu" ID="{0D3BB42F-AB0E-4F13-9635-C004A853635A}" ShortID="905875478">
+										<AudioFileSource Name="Bulles_Turfu" ID="{708B582A-9EF0-4AD1-8D04-B632F5AF7C96}" ShortID="820945430">
 											<Language>SFX</Language>
 											<AudioFile>Bulles_Turfu.wav</AudioFile>
+											<ConvertedFileIDList>
+												<File ID="905875478"/>
+											</ConvertedFileIDList>
 										</AudioFileSource>
 									</ChildrenList>
 									<ActiveSourceList>
-										<ActiveSource Name="Bulles_Turfu" ID="{0D3BB42F-AB0E-4F13-9635-C004A853635A}" Platform="Linked"/>
+										<ActiveSource Name="Bulles_Turfu" ID="{708B582A-9EF0-4AD1-8D04-B632F5AF7C96}" Platform="Linked"/>
 									</ActiveSourceList>
 								</Sound>
 							</ChildrenList>
 						</ActorMixer>
-						<Sound Name="Bull_Explode" ID="{BF441B5F-F4BB-428A-85FB-CEB608C971AD}" ShortID="916484568">
-							<PropertyList>
-								<Property Name="Lowpass" Type="int16">
-									<ValueList>
-										<Value>77</Value>
-									</ValueList>
-								</Property>
-								<Property Name="OverrideEffect" Type="bool" Value="True"/>
-								<Property Name="Pitch" Type="int32">
-									<ModifierList>
-										<ModifierInfo>
-											<Modifier Name="" ID="{E93A360F-2C16-4BEC-96A7-9F7C92B47FFE}">
-												<PropertyList>
-													<Property Name="Enabled" Type="bool" Value="True"/>
-													<Property Name="Max" Type="Real64" Value="808"/>
-													<Property Name="Min" Type="Real64" Value="-455"/>
-												</PropertyList>
-											</Modifier>
-										</ModifierInfo>
-									</ModifierList>
-								</Property>
-							</PropertyList>
-							<ReferenceList>
-								<Reference Name="Conversion">
-									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{2BD389C3-9EC6-4637-949C-1D4A4B674147}"/>
-								</Reference>
-								<Reference Name="Effect0" PluginName="Wwise Pitch Shifter" CompanyID="0" PluginID="136" PluginType="3">
-									<ObjectRef Name="Monsterize" ID="{99F80B38-1C45-42CE-9BCD-E94F3885DCAA}" WorkUnitID="{E8613F7D-BAD3-45CD-A3ED-505576F31277}"/>
-								</Reference>
-								<Reference Name="OutputBus">
-									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{D1B724BB-66B6-4F55-9CB7-851DFB74B0CF}"/>
-								</Reference>
-							</ReferenceList>
-							<ChildrenList>
-								<AudioFileSource Name="Impact_Pnj_Bubble_Os" ID="{EC86B0F9-DA60-4CEA-A8DD-A0C4A560082D}" ShortID="174964560">
-									<PropertyList>
-										<Property Name="FadeOutDuration" Type="Real64" Value="0.236665462645235"/>
-										<Property Name="TrimEnd" Type="Real64" Value="0.505312744566853"/>
-									</PropertyList>
-									<Language>SFX</Language>
-									<AudioFile>Impact_Pnj_Bubble_Os.wav</AudioFile>
-								</AudioFileSource>
-							</ChildrenList>
-							<ActiveSourceList>
-								<ActiveSource Name="Impact_Pnj_Bubble_Os" ID="{EC86B0F9-DA60-4CEA-A8DD-A0C4A560082D}" Platform="Linked"/>
-							</ActiveSourceList>
-						</Sound>
 						<Sound Name="Bull_SHot" ID="{32A85D79-B99F-4249-8174-37952F2FBB59}" ShortID="526477280">
 							<PropertyList>
 								<Property Name="Pitch" Type="int32">
@@ -502,7 +652,7 @@
 								</Property>
 								<Property Name="Volume" Type="Real64">
 									<ValueList>
-										<Value>-12</Value>
+										<Value>-6</Value>
 									</ValueList>
 								</Property>
 							</PropertyList>
@@ -543,7 +693,7 @@
 								</Property>
 								<Property Name="Volume" Type="Real64">
 									<ValueList>
-										<Value>-6</Value>
+										<Value>-12</Value>
 									</ValueList>
 								</Property>
 							</PropertyList>
@@ -559,9 +709,9 @@
 								<AudioFileSource Name="Bull_Load" ID="{41174FE1-3D9B-4C8B-B042-5C8957F4E4AC}" ShortID="570302368">
 									<PropertyList>
 										<Property Name="FadeInDuration" Type="Real64" Value="0.432475066722854"/>
-										<Property Name="FadeOutDuration" Type="Real64" Value="1.11683121626232"/>
+										<Property Name="FadeOutDuration" Type="Real64" Value="0.831682820620873"/>
 										<Property Name="TrimBegin" Type="Real64" Value="0.114059358256577"/>
-										<Property Name="TrimEnd" Type="Real64" Value="1.54930628298517"/>
+										<Property Name="TrimEnd" Type="Real64" Value="0.94574217887745"/>
 									</PropertyList>
 									<Language>SFX</Language>
 									<AudioFile>Bull_Load.wav</AudioFile>
@@ -569,6 +719,178 @@
 							</ChildrenList>
 							<ActiveSourceList>
 								<ActiveSource Name="Bull_Load" ID="{41174FE1-3D9B-4C8B-B042-5C8957F4E4AC}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="Pnj_Oh" ID="{560CBA5D-A706-471F-9C64-667B5705E419}" ShortID="696575101">
+							<PropertyList>
+								<Property Name="Highpass" Type="int16">
+									<ValueList>
+										<Value>25</Value>
+									</ValueList>
+								</Property>
+								<Property Name="Lowpass" Type="int16">
+									<ValueList>
+										<Value>31</Value>
+									</ValueList>
+								</Property>
+								<Property Name="MakeUpGain" Type="Real64">
+									<ValueList>
+										<Value>3</Value>
+									</ValueList>
+								</Property>
+								<Property Name="Pitch" Type="int32">
+									<ValueList>
+										<Value>1740</Value>
+									</ValueList>
+									<ModifierList>
+										<ModifierInfo>
+											<Modifier Name="" ID="{A9EBB9D3-B976-4813-880E-5F557A62F344}">
+												<PropertyList>
+													<Property Name="Enabled" Type="bool" Value="True"/>
+													<Property Name="Max" Type="Real64" Value="859"/>
+													<Property Name="Min" Type="Real64" Value="-707"/>
+												</PropertyList>
+											</Modifier>
+										</ModifierInfo>
+									</ModifierList>
+								</Property>
+								<Property Name="Volume" Type="Real64">
+									<ModifierList>
+										<ModifierInfo>
+											<Modifier Name="" ID="{5F6FA7F7-610E-4B99-8462-F5C88F5194F1}">
+												<PropertyList>
+													<Property Name="Enabled" Type="bool" Value="True"/>
+													<Property Name="Max" Type="Real64" Value="1"/>
+													<Property Name="Min" Type="Real64" Value="-2"/>
+												</PropertyList>
+											</Modifier>
+										</ModifierInfo>
+									</ModifierList>
+								</Property>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{2BD389C3-9EC6-4637-949C-1D4A4B674147}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{D1B724BB-66B6-4F55-9CB7-851DFB74B0CF}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="Pnj_Oh" ID="{DBD8E4A6-8CDF-4818-BD59-5699B74A88FC}" ShortID="261343137">
+									<PropertyList>
+										<Property Name="FadeInDuration" Type="Real64" Value="0.514106917103125"/>
+										<Property Name="FadeOutDuration" Type="Real64" Value="0.427690084883511"/>
+										<Property Name="TrimEnd" Type="Real64" Value="0.990131840346758"/>
+									</PropertyList>
+									<Language>SFX</Language>
+									<AudioFile>Pnj_Oh.wav</AudioFile>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="Pnj_Oh" ID="{DBD8E4A6-8CDF-4818-BD59-5699B74A88FC}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<RandomSequenceContainer Name="Ploc_Bulles_Explodes" ID="{4F4A4D24-9EB4-4AD5-973C-4E67FEC632C2}" ShortID="79874773">
+							<PropertyList>
+								<Property Name="Volume" Type="Real64">
+									<ValueList>
+										<Value>-4</Value>
+									</ValueList>
+								</Property>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{2BD389C3-9EC6-4637-949C-1D4A4B674147}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{D1B724BB-66B6-4F55-9CB7-851DFB74B0CF}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<Sound Name="Ploc_012" ID="{5C9C835C-2601-43CF-9980-BB8DB33A07EA}" ShortID="129220399">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{2BD389C3-9EC6-4637-949C-1D4A4B674147}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Sfx" ID="{F2A0E619-BE8F-40E5-AAC0-7BD9305E608D}" WorkUnitID="{D1B724BB-66B6-4F55-9CB7-851DFB74B0CF}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="Ploc_012" ID="{83465453-3291-4DE0-BDEB-F5ED6A2E96AA}" ShortID="612824582">
+											<Language>SFX</Language>
+											<AudioFile>Ploc_012.wav</AudioFile>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="Ploc_012" ID="{83465453-3291-4DE0-BDEB-F5ED6A2E96AA}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="Ploc_03" ID="{38958C86-05AD-406B-9515-F544F4A46E30}" ShortID="1032196648">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{2BD389C3-9EC6-4637-949C-1D4A4B674147}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Sfx" ID="{F2A0E619-BE8F-40E5-AAC0-7BD9305E608D}" WorkUnitID="{D1B724BB-66B6-4F55-9CB7-851DFB74B0CF}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="Ploc_03" ID="{D3EF1B77-E2AA-49E7-8E50-3ED2D86209EE}" ShortID="487742245">
+											<Language>SFX</Language>
+											<AudioFile>Ploc_03.wav</AudioFile>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="Ploc_03" ID="{D3EF1B77-E2AA-49E7-8E50-3ED2D86209EE}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="Ploc_01" ID="{27FB440F-A8BE-44D1-8F15-2811D032286F}" ShortID="275988783">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{2BD389C3-9EC6-4637-949C-1D4A4B674147}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Sfx" ID="{F2A0E619-BE8F-40E5-AAC0-7BD9305E608D}" WorkUnitID="{D1B724BB-66B6-4F55-9CB7-851DFB74B0CF}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="Ploc_01" ID="{19C9C8D6-A2AF-4501-AE3F-45BDA2F861B4}" ShortID="1049757686">
+											<Language>SFX</Language>
+											<AudioFile>Ploc_01.wav</AudioFile>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="Ploc_01" ID="{19C9C8D6-A2AF-4501-AE3F-45BDA2F861B4}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+							</ChildrenList>
+						</RandomSequenceContainer>
+						<Sound Name="ASpire" ID="{60CD3E99-1E9A-4B53-AA90-A862288543AF}" ShortID="465936968">
+							<PropertyList>
+								<Property Name="Lowpass" Type="int16">
+									<ValueList>
+										<Value>42</Value>
+									</ValueList>
+								</Property>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{2BD389C3-9EC6-4637-949C-1D4A4B674147}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{D1B724BB-66B6-4F55-9CB7-851DFB74B0CF}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="ASpire" ID="{C0F2D0FF-EDF3-4E69-A07A-8E7FE9AC1729}" ShortID="384079195">
+									<Language>SFX</Language>
+									<AudioFile>ASpire.wav</AudioFile>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="ASpire" ID="{C0F2D0FF-EDF3-4E69-A07A-8E7FE9AC1729}" Platform="Linked"/>
 							</ActiveSourceList>
 						</Sound>
 					</ChildrenList>

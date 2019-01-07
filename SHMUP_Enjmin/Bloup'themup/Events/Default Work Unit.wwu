@@ -74,15 +74,10 @@
 								<Action Name="" ID="{23C6D900-E317-4251-8055-B24818C24AF6}" ShortID="1042451370">
 									<PropertyList>
 										<Property Name="ActionType" Type="int16" Value="1"/>
-										<Property Name="Inclusion" Type="bool">
-											<ValueList>
-												<Value>False</Value>
-											</ValueList>
-										</Property>
 									</PropertyList>
 									<ReferenceList>
 										<Reference Name="Target">
-											<ObjectRef Name="Bulles_Explodes" ID="{2F9B246F-44C2-44DD-9C5C-6DD87F0FEB3E}" WorkUnitID="{BFB9B95C-F19D-4A69-AD4E-5BA087B198AF}"/>
+											<ObjectRef Name="Bulles" ID="{24081961-02F5-408D-AF73-6786534BC995}" WorkUnitID="{BFB9B95C-F19D-4A69-AD4E-5BA087B198AF}"/>
 										</Reference>
 									</ReferenceList>
 								</Action>
@@ -116,7 +111,17 @@
 									</PropertyList>
 									<ReferenceList>
 										<Reference Name="Target">
-											<ObjectRef Name="Bull_Explode" ID="{BF441B5F-F4BB-428A-85FB-CEB608C971AD}" WorkUnitID="{BFB9B95C-F19D-4A69-AD4E-5BA087B198AF}"/>
+											<ObjectRef Name="Ploc_Bulles_Explodes" ID="{4F4A4D24-9EB4-4AD5-973C-4E67FEC632C2}" WorkUnitID="{BFB9B95C-F19D-4A69-AD4E-5BA087B198AF}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+								<Action Name="" ID="{7DB7CB9D-A0A4-4D2F-966F-66D552689C31}" ShortID="245615922">
+									<PropertyList>
+										<Property Name="ActionType" Type="int16" Value="2"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Pnj_Oh" ID="{560CBA5D-A706-471F-9C64-667B5705E419}" WorkUnitID="{BFB9B95C-F19D-4A69-AD4E-5BA087B198AF}"/>
 										</Reference>
 									</ReferenceList>
 								</Action>
@@ -131,6 +136,16 @@
 									<ReferenceList>
 										<Reference Name="Target">
 											<ObjectRef Name="Bull_Load" ID="{F165011D-324C-4280-9594-A7B526E9F49C}" WorkUnitID="{BFB9B95C-F19D-4A69-AD4E-5BA087B198AF}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+								<Action Name="" ID="{F4DDF6A4-EB6E-4951-92D1-2BA56076D14A}" ShortID="399183247">
+									<PropertyList>
+										<Property Name="ActionType" Type="int16" Value="1"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Bulles_Explodes_01" ID="{2A3774F6-F26A-4AAD-80EF-EC3A9ACF104A}" WorkUnitID="{BFB9B95C-F19D-4A69-AD4E-5BA087B198AF}"/>
 										</Reference>
 									</ReferenceList>
 								</Action>
@@ -159,6 +174,45 @@
 									<ReferenceList>
 										<Reference Name="Target">
 											<ObjectRef Name="Musique" ID="{C8FB359D-BE44-4223-B13B-B097C732393E}" WorkUnitID="{4E5A65E5-C56F-495A-AB58-65CC0CC32273}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="Play_Bulles_Grown" ID="{8F52B968-109A-4C45-874D-9F07CFF7DB55}">
+							<ChildrenList>
+								<Action Name="" ID="{B574E2C1-5245-4174-8BE3-4A9C03454593}" ShortID="196518463">
+									<PropertyList>
+										<Property Name="ActionType" Type="int16" Value="1"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Bulles_Explodes" ID="{2F9B246F-44C2-44DD-9C5C-6DD87F0FEB3E}" WorkUnitID="{BFB9B95C-F19D-4A69-AD4E-5BA087B198AF}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="Play_Pnj_Oh" ID="{5E27AFCB-5157-43AC-8549-83D7CAEE0F33}">
+							<ChildrenList>
+								<Action Name="" ID="{B539FB2E-3914-42DD-A0DB-CAE9DF703A2B}" ShortID="951803694">
+									<PropertyList>
+										<Property Name="ActionType" Type="int16" Value="1"/>
+										<Property Name="Delay" Type="Real64" Value="0.8"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Pnj_Oh" ID="{560CBA5D-A706-471F-9C64-667B5705E419}" WorkUnitID="{BFB9B95C-F19D-4A69-AD4E-5BA087B198AF}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+								<Action Name="" ID="{92F63A75-E9D2-4795-BE8B-05BA780946D4}" ShortID="788262618">
+									<PropertyList>
+										<Property Name="ActionType" Type="int16" Value="1"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="ASpire" ID="{60CD3E99-1E9A-4B53-AA90-A862288543AF}" WorkUnitID="{BFB9B95C-F19D-4A69-AD4E-5BA087B198AF}"/>
 										</Reference>
 									</ReferenceList>
 								</Action>

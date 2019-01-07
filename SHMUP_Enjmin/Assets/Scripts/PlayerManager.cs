@@ -65,6 +65,7 @@ public class PlayerManager : MonoBehaviour {
 		Dash();
 		
         rtpcValue = transform.position.y;
+
         AkSoundEngine.SetRTPCValue("Profondeur", rtpcValue, gameObject);
 	}
 
@@ -207,7 +208,7 @@ public class PlayerManager : MonoBehaviour {
 		//OLD VERSION GROW : 
 		//curBuble.transform.localScale=new Vector2(curBuble.transform.localScale.x+bullesReglages.speedGrow,curBuble.transform.localScale.y+bullesReglages.speedGrow);
 
-       // AkSoundEngine.PostEvent("Play_Load_Shot", gameObject);
+        AkSoundEngine.PostEvent("Play_Load_Shot", gameObject);
     }
 
 	IEnumerator ModifyBubleSize()

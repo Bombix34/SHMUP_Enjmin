@@ -1,13 +1,17 @@
 Event	ID	Name			Wwise Object Path	Notes
 	206418435	Play_Musique			\Default Work Unit\Ingame\Play_Musique	
 	2139305897	Play_Load_Shot			\Default Work Unit\Ingame\Play_Load_Shot	
+	2311964536	Play_Pnj_Oh			\Default Work Unit\Ingame\Play_Pnj_Oh	
 	2999869044	Innit_Amb			\Default Work Unit\Ingame\Innit_Amb	
 	3726773303	Play_Bubble_Explode_Os			\Default Work Unit\Ingame\Play_Bubble_Explode_Os	
+	3777684193	Play_Bulles_Grown			\Default Work Unit\Ingame\Play_Bulles_Grown	
 	3837926945	Play_Player_Dash_os			\Default Work Unit\Ingame\Play_Player_Dash_os	
 	4135433440	Play_Player_Shot			\Default Work Unit\Ingame\Play_Player_Shot	
 
+Game Parameter	ID	Name			Wwise Object Path	Notes
+	215492731	Profondeur			\Default Work Unit\Profondeur	
+
 Effect plug-ins	ID	Name	Type				Notes
-	1431265797	Monsterize	Wwise Pitch Shifter			
 	3948262040	Octave_Down	Wwise Pitch Shifter			
 
 Source plug-ins	ID	Name	Type		Wwise Object Path	Notes
@@ -16,21 +20,26 @@ Source plug-ins	ID	Name	Type		Wwise Object Path	Notes
 	1056852937	Wwise Silence	Wwise Silence		\Actor-Mixer Hierarchy\Default Work Unit\Amb\Test_Silence\New Sound SFX_01\Wwise Silence	
 
 In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
-	161089824	Musique_Lvl_02_Lp	Y:\Desktop\BLOOOOUUUUUUPPPPPPPPPP\SHMUP_Enjmin\SHMUP_Enjmin\Bloup'themup\.cache\Windows\SFX\Musique_Lvl_02_Lp_8956FC97.wem		\Interactive Music Hierarchy\Default Work Unit\Musique\Main_Facile\Musique_Lvl_02_Lp		4690208
-	174964560	Bull_Explode	Y:\Desktop\BLOOOOUUUUUUPPPPPPPPPP\SHMUP_Enjmin\SHMUP_Enjmin\Bloup'themup\.cache\Windows\SFX\Impact_Pnj_Bubble_Os_CDD262F9.wem		\Actor-Mixer Hierarchy\Default Work Unit\Sfx\Bull_Explode		89280
 	182596096	Underwater_03_Os	Y:\Desktop\BLOOOOUUUUUUPPPPPPPPPP\SHMUP_Enjmin\SHMUP_Enjmin\Bloup'themup\.cache\Windows\SFX\Underwater_03_Os_56D34C19.wem		\Actor-Mixer Hierarchy\Default Work Unit\Amb\Underwater_Rnd\Underwater_03_Os		441144
 	186136371	Underwater_Parasites_01_Os	Y:\Desktop\BLOOOOUUUUUUPPPPPPPPPP\SHMUP_Enjmin\SHMUP_Enjmin\Bloup'themup\.cache\Windows\SFX\Underwater_Parasites_01_Os_56D34C19.wem		\Actor-Mixer Hierarchy\Default Work Unit\Amb\Test_Silence\Underwater_Parasites_Rnd\Underwater_Parasites_01_Os		882192
-	278502607	Musique_Lvl_01_Lp	Y:\Desktop\BLOOOOUUUUUUPPPPPPPPPP\SHMUP_Enjmin\SHMUP_Enjmin\Bloup'themup\.cache\Windows\SFX\Musique_Lvl_01_Lp_8956FC97.wem		\Interactive Music Hierarchy\Default Work Unit\Musique\Main_Facile\Musique_Lvl_01_Lp		6525216
+	261343137	Pnj_Oh	Y:\Desktop\BLOOOOUUUUUUPPPPPPPPPP\SHMUP_Enjmin\SHMUP_Enjmin\Bloup'themup\.cache\Windows\SFX\Pnj_Oh_632521FD.wem		\Actor-Mixer Hierarchy\Default Work Unit\Sfx\Pnj_Oh		174852
 	318779871	Bull_SHot	Y:\Desktop\BLOOOOUUUUUUPPPPPPPPPP\SHMUP_Enjmin\SHMUP_Enjmin\Bloup'themup\.cache\Windows\SFX\Bull_SHot_20817CEF.wem		\Actor-Mixer Hierarchy\Default Work Unit\Sfx\Bull_SHot		233760
+	374062965	Musique_Lvl_02_Lp	Y:\Desktop\BLOOOOUUUUUUPPPPPPPPPP\SHMUP_Enjmin\SHMUP_Enjmin\Bloup'themup\.cache\Windows\SFX\Music_Main_Mid_Lp_8956FC97.wem		\Interactive Music Hierarchy\Default Work Unit\Musique\Main_Facile\Musique_Lvl_02_Lp		5644992
+	384079195	ASpire	Y:\Desktop\BLOOOOUUUUUUPPPPPPPPPP\SHMUP_Enjmin\SHMUP_Enjmin\Bloup'themup\.cache\Windows\SFX\ASpire_56D34C19.wem		\Actor-Mixer Hierarchy\Default Work Unit\Sfx\ASpire		233712
 	476708979	Underwater_05_Os	Y:\Desktop\BLOOOOUUUUUUPPPPPPPPPP\SHMUP_Enjmin\SHMUP_Enjmin\Bloup'themup\.cache\Windows\SFX\Underwater_05_Os_56D34C19.wem		\Actor-Mixer Hierarchy\Default Work Unit\Amb\Underwater_Rnd\Underwater_05_Os		308844
+	487742245	Ploc_03	Y:\Desktop\BLOOOOUUUUUUPPPPPPPPPP\SHMUP_Enjmin\SHMUP_Enjmin\Bloup'themup\.cache\Windows\SFX\Ploc_03_56D34C19.wem		\Actor-Mixer Hierarchy\Default Work Unit\Sfx\Ploc_Bulles_Explodes\Ploc_03		233712
 	498771420	Underwater_Parasites_02_Os	Y:\Desktop\BLOOOOUUUUUUPPPPPPPPPP\SHMUP_Enjmin\SHMUP_Enjmin\Bloup'themup\.cache\Windows\SFX\Underwater_Parasites_02_Os_56D34C19.wem		\Actor-Mixer Hierarchy\Default Work Unit\Amb\Test_Silence\Underwater_Parasites_Rnd\Underwater_Parasites_02_Os		882192
 	512970095	Underwater_Parasites_03_Os	Y:\Desktop\BLOOOOUUUUUUPPPPPPPPPP\SHMUP_Enjmin\SHMUP_Enjmin\Bloup'themup\.cache\Windows\SFX\Underwater_Parasites_03_Os_56D34C19.wem		\Actor-Mixer Hierarchy\Default Work Unit\Amb\Test_Silence\Underwater_Parasites_Rnd\Underwater_Parasites_03_Os		882192
-	570302368	Bull_Load	Y:\Desktop\BLOOOOUUUUUUPPPPPPPPPP\SHMUP_Enjmin\SHMUP_Enjmin\Bloup'themup\.cache\Windows\SFX\Bull_Load_B4FF3FF8.wem		\Actor-Mixer Hierarchy\Default Work Unit\Sfx\Bull_Load		253240
+	541592036	Music_Main_Percussions_Lp	Y:\Desktop\BLOOOOUUUUUUPPPPPPPPPP\SHMUP_Enjmin\SHMUP_Enjmin\Bloup'themup\.cache\Windows\SFX\Music_Main_Percussions_Lp_8956FC97.wem		\Interactive Music Hierarchy\Default Work Unit\Musique\Main_Facile\Music_Main_Percussions_Lp		5738784
+	570302368	Bull_Load	Y:\Desktop\BLOOOOUUUUUUPPPPPPPPPP\SHMUP_Enjmin\SHMUP_Enjmin\Bloup'themup\.cache\Windows\SFX\Bull_Load_21419124.wem		\Actor-Mixer Hierarchy\Default Work Unit\Sfx\Bull_Load		146772
+	612824582	Ploc_012	Y:\Desktop\BLOOOOUUUUUUPPPPPPPPPP\SHMUP_Enjmin\SHMUP_Enjmin\Bloup'themup\.cache\Windows\SFX\Ploc_012_56D34C19.wem		\Actor-Mixer Hierarchy\Default Work Unit\Sfx\Ploc_Bulles_Explodes\Ploc_012		233760
 	681287260	Player_Dash_os	Y:\Desktop\BLOOOOUUUUUUPPPPPPPPPP\SHMUP_Enjmin\SHMUP_Enjmin\Bloup'themup\.cache\Windows\SFX\Player_Dash_os_56D34C19.wem		\Actor-Mixer Hierarchy\Default Work Unit\Sfx\Player\Player_Dash_os		495856
-	689708618	Musique_Lvl_03_Lp	Y:\Desktop\BLOOOOUUUUUUPPPPPPPPPP\SHMUP_Enjmin\SHMUP_Enjmin\Bloup'themup\.cache\Windows\SFX\Musique_Lvl_03_Lp_8956FC97.wem		\Interactive Music Hierarchy\Default Work Unit\Musique\Main_Facile\Musique_Lvl_03_Lp		4165920
+	752078592	Music_Main_Cordes_Lp	Y:\Desktop\BLOOOOUUUUUUPPPPPPPPPP\SHMUP_Enjmin\SHMUP_Enjmin\Bloup'themup\.cache\Windows\SFX\Music_Main_Cordes_Lp_8956FC97.wem		\Interactive Music Hierarchy\Default Work Unit\Musique\Main_Facile\Music_Main_Cordes_Lp		6000928
 	842027309	Underwater_Parasites_04_Os	Y:\Desktop\BLOOOOUUUUUUPPPPPPPPPP\SHMUP_Enjmin\SHMUP_Enjmin\Bloup'themup\.cache\Windows\SFX\Underwater_Parasites_04_Os_56D34C19.wem		\Actor-Mixer Hierarchy\Default Work Unit\Amb\Test_Silence\Underwater_Parasites_Rnd\Underwater_Parasites_04_Os		882192
 	881670788	Underwater_lp	Y:\Desktop\BLOOOOUUUUUUPPPPPPPPPP\SHMUP_Enjmin\SHMUP_Enjmin\Bloup'themup\.cache\Windows\SFX\Underwater_lp_56D34C19.wem		\Actor-Mixer Hierarchy\Default Work Unit\Amb\Underwater_lp		9702240
-	905875478	Bulles_Explodes	Y:\Desktop\BLOOOOUUUUUUPPPPPPPPPP\SHMUP_Enjmin\SHMUP_Enjmin\Bloup'themup\.cache\Windows\SFX\Bulles_Turfu_56D34C19.wem		\Actor-Mixer Hierarchy\Default Work Unit\Sfx\Player\Bulles_Explodes		233712
+	904637434	Music_Intro_Vf	Y:\Desktop\BLOOOOUUUUUUPPPPPPPPPP\SHMUP_Enjmin\SHMUP_Enjmin\Bloup'themup\.cache\Windows\SFX\Music_Intro_Vf_8956FC97.wem		\Interactive Music Hierarchy\Default Work Unit\Musique\Intro\Music_Intro_Vf		3117344
+	905875478	Bulles_Explodes	Y:\Desktop\BLOOOOUUUUUUPPPPPPPPPP\SHMUP_Enjmin\SHMUP_Enjmin\Bloup'themup\.cache\Windows\SFX\Bulles_Turfu_56D34C19.wem		\Actor-Mixer Hierarchy\Default Work Unit\Sfx\Player\Bulles\Bulles_Explodes		233712
 	1010897979	Underwater_01_Os	Y:\Desktop\BLOOOOUUUUUUPPPPPPPPPP\SHMUP_Enjmin\SHMUP_Enjmin\Bloup'themup\.cache\Windows\SFX\Underwater_01_Os_56D34C19.wem		\Actor-Mixer Hierarchy\Default Work Unit\Amb\Underwater_Rnd\Underwater_01_Os		529392
-	1052246024	Music_Intro_Os	Y:\Desktop\BLOOOOUUUUUUPPPPPPPPPP\SHMUP_Enjmin\SHMUP_Enjmin\Bloup'themup\.cache\Windows\SFX\Music_Intro_Os_8956FC97.wem		\Interactive Music Hierarchy\Default Work Unit\Musique\Intro\Music_Intro_Os		1806624
+	1049757686	Ploc_01	Y:\Desktop\BLOOOOUUUUUUPPPPPPPPPP\SHMUP_Enjmin\SHMUP_Enjmin\Bloup'themup\.cache\Windows\SFX\Ploc_01_56D34C19.wem		\Actor-Mixer Hierarchy\Default Work Unit\Sfx\Ploc_Bulles_Explodes\Ploc_01		233760
+	1061159904	Music_Main_Aerie_Lp	Y:\Desktop\BLOOOOUUUUUUPPPPPPPPPP\SHMUP_Enjmin\SHMUP_Enjmin\Bloup'themup\.cache\Windows\SFX\Music_Main_Aerie_Lp_8956FC97.wem		\Interactive Music Hierarchy\Default Work Unit\Musique\Main_Facile\Music_Main_Aerie_Lp		8360224
 
