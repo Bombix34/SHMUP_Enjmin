@@ -174,8 +174,7 @@ public class BubleManager : MonoBehaviour {
         {
             foreach(GameObject pote in objectInTheBuble)
             {
-                // TODO : +1 au score
-                Debug.Log("JE SUIS SAUVE !");
+				GameManager.instance.AddScore();
                 Destroy(pote);
             }
             TentaclesManager.instance.MoveBackward();

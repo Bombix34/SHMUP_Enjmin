@@ -41,3 +41,4 @@ Assets/StreamingAssets/crashlytics-build.properties
 
 # InControl version file
 Assets/InControl/Source/VersionInfo.cs
+SHMUP_Enjmin/Assets/InControl/Source/VersionInfo\.cs
