@@ -377,6 +377,47 @@
 							</ReferenceList>
 							<ChildrenList>
 								<Sound Name="Player_Dash_os" ID="{4C68E278-7F4B-4F1F-9BCB-2686317EC842}" ShortID="520441988">
+									<PropertyList>
+										<Property Name="Lowpass" Type="int16">
+											<ValueList>
+												<Value>15</Value>
+											</ValueList>
+										</Property>
+										<Property Name="OverrideUserAuxSends" Type="bool" Value="True"/>
+										<Property Name="Pitch" Type="int32">
+											<ModifierList>
+												<ModifierInfo>
+													<Modifier Name="" ID="{D91783CB-624F-4305-AA3B-50CBC5A45A32}">
+														<PropertyList>
+															<Property Name="Enabled" Type="bool" Value="True"/>
+															<Property Name="Max" Type="Real64" Value="153"/>
+															<Property Name="Min" Type="Real64" Value="-400"/>
+														</PropertyList>
+													</Modifier>
+												</ModifierInfo>
+											</ModifierList>
+										</Property>
+										<Property Name="UserAuxSendVolume0" Type="Real64">
+											<ValueList>
+												<Value>-7</Value>
+											</ValueList>
+										</Property>
+										<Property Name="Volume" Type="Real64">
+											<ValueList>
+												<Value>-17</Value>
+											</ValueList>
+											<ModifierList>
+												<ModifierInfo>
+													<Modifier Name="" ID="{99860E9E-C15D-4671-BEBA-F9BD5690435F}">
+														<PropertyList>
+															<Property Name="Enabled" Type="bool" Value="True"/>
+															<Property Name="Max" Type="Real64" Value="2"/>
+														</PropertyList>
+													</Modifier>
+												</ModifierInfo>
+											</ModifierList>
+										</Property>
+									</PropertyList>
 									<ReferenceList>
 										<Reference Name="Conversion">
 											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{2BD389C3-9EC6-4637-949C-1D4A4B674147}"/>
@@ -384,9 +425,17 @@
 										<Reference Name="OutputBus">
 											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{D1B724BB-66B6-4F55-9CB7-851DFB74B0CF}"/>
 										</Reference>
+										<Reference Name="UserAuxSend0">
+											<ObjectRef Name="Rvrb" ID="{0F444CE1-A308-4A0A-BC97-BDAD8C6462AF}" WorkUnitID="{D1B724BB-66B6-4F55-9CB7-851DFB74B0CF}"/>
+										</Reference>
 									</ReferenceList>
 									<ChildrenList>
 										<AudioFileSource Name="Player_Dash_os" ID="{60A277E6-C992-4A7B-A762-D19A09DCB4E4}" ShortID="681287260">
+											<PropertyList>
+												<Property Name="FadeOutDuration" Type="Real64" Value="0.516024722573395"/>
+												<Property Name="TrimBegin" Type="Real64" Value="0.152320550639135"/>
+												<Property Name="TrimEnd" Type="Real64" Value="0.851751650512713"/>
+											</PropertyList>
 											<Language>SFX</Language>
 											<AudioFile>Player_Dash_os.wav</AudioFile>
 										</AudioFileSource>

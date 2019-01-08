@@ -109,7 +109,9 @@ public class PlayerManager : MonoBehaviour {
 			if(curBuble!=null)
 				curBuble.GetComponent<BubleManager>().DestroyBuble();
 			StartCoroutine(DashAction());
-		}
+            AkSoundEngine.PostEvent("Play_Player_Dash_os", gameObject);
+
+        }
 	}
 
 	IEnumerator DashAction()

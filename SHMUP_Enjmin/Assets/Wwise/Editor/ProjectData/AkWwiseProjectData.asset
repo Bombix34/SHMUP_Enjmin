@@ -180,7 +180,7 @@ MonoBehaviour:
   - PhysicalPath: Master-Mixer Hierarchy/Default Work Unit.wwu
     ParentPhysicalPath: 
     guid: bb24b7d1b666554f9cb7851dfb74b0cf
-    m_lastTime: -8586548130314775808
+    m_lastTime: -8586546486464775808
     List:
     - name: Rvrb
       guid: e14c440f08a30a4abc97bdad8c6462af
@@ -212,7 +212,7 @@ MonoBehaviour:
   - PhysicalPath: Events/Default Work Unit.wwu
     ParentPhysicalPath: 
     guid: 7c843613cd65de4b82e788b2522fbb1a
-    m_lastTime: -8586547476514775808
+    m_lastTime: -8586546511234775808
     List:
     - name: Innit_Amb
       guid: 0946cc13814ff64b909268618d042f1c
@@ -267,6 +267,18 @@ MonoBehaviour:
       - ElementName: Play_Load_Shot
         ObjectType: 3
       Path: Default Work Unit/Ingame/Play_Load_Shot
+      maxAttenuation: 0
+      maxDuration: 0
+      minDuration: 0
+    - name: Play_Music_Lvl_Sw
+      guid: f1b441241187f340b0a59628007c4233
+      id: 2108441497
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Play_Music_Lvl_Sw
+        ObjectType: 3
+      Path: Default Work Unit/Play_Music_Lvl_Sw
       maxAttenuation: 0
       maxDuration: 0
       minDuration: 0
@@ -472,8 +484,42 @@ MonoBehaviour:
   - PhysicalPath: States/Default Work Unit.wwu
     ParentPhysicalPath: 
     guid: 038c1f17d6122848aa7b71827bd9360d
-    m_lastTime: -8586548144174775808
+    m_lastTime: -8586546512894775808
     List:
+    - name: Lvl_Musique
+      guid: 8e2c72a0fbe466429c6a180f1526ed16
+      id: 966917733
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Lvl_Musique
+        ObjectType: 9
+      Path: Default Work Unit/Lvl_Musique
+      values:
+      - name: Lvl_01
+        guid: 99280301a3d0bb458d550e7b866379ff
+        id: 2147068365
+        PathAndIcons:
+        - ElementName: Lvl_01
+          ObjectType: 8
+      - name: Lvl_02
+        guid: 38e2971225598c4bbe1852bb5b1efd72
+        id: 2147068366
+        PathAndIcons:
+        - ElementName: Lvl_02
+          ObjectType: 8
+      - name: Lvl_03
+        guid: 114c7d64706a374ea9e6f2013cf0f7ac
+        id: 2147068367
+        PathAndIcons:
+        - ElementName: Lvl_03
+          ObjectType: 8
+      - name: None
+        guid: 45980e478ded7046a5e589448e4b097b
+        id: 748895195
+        PathAndIcons:
+        - ElementName: None
+          ObjectType: 8
     - name: Profondeur
       guid: 50183dcb10168f44a889060899cfbbb4
       id: 215492731
@@ -512,7 +558,7 @@ MonoBehaviour:
   - PhysicalPath: Switches/Default Work Unit.wwu
     ParentPhysicalPath: 
     guid: 7f676cc3b4825d41ac925e5c6fdc44d5
-    m_lastTime: -8586548144174775808
+    m_lastTime: -8586546512894775808
     List: []
   TriggerWwu:
   - PhysicalPath: Triggers/Default Work Unit.wwu
@@ -522,5 +568,8 @@ MonoBehaviour:
     List: []
   ExpandedItems:
   - /Bloup'themup
+  - /Bloup'themup/Events
+  - /Bloup'themup/Events/Default Work Unit
+  - /Bloup'themup/Events/Default Work Unit/Ingame
   autoPopulateEnabled: 1
   CurrentPluginConfig: 
