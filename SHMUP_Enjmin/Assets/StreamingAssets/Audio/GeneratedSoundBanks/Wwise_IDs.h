@@ -25,6 +25,18 @@ namespace AK
 
     namespace STATES
     {
+        namespace LVL_MUSIQUE
+        {
+            static const AkUniqueID GROUP = 966917733U;
+
+            namespace STATE
+            {
+                static const AkUniqueID LVL_01 = 2147068365U;
+                static const AkUniqueID LVL_02 = 2147068366U;
+                static const AkUniqueID LVL_03 = 2147068367U;
+            } // namespace STATE
+        } // namespace LVL_MUSIQUE
+
         namespace PROFONDEUR
         {
             static const AkUniqueID GROUP = 215492731U;

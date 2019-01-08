@@ -9,9 +9,10 @@ public class Collision_Trigger : MonoBehaviour {
     public void OnTriggerEnter(Collider other)
     {
         Debug.Log("In trig " + other.gameObject.tag);
-        if (other.gameObject.tag == "Player")
+        if (other.gameObject.tag == "Music_Lvl")
         {
-            AkSoundEngine.PostEvent(WiseEvent, gameObject);
+            AkSoundEngine.SetState("Lvl_Musique", "Lvl_01");
+        //    AkSoundEngine.PostEvent(WiseEvent, gameObject);
             Debug.Log("ak send");
         }
     }

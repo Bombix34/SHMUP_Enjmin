@@ -8,6 +8,11 @@
 						<Reference Name="AudioDevice">
 							<ObjectRef Name="System" ID="{FCC4F067-1568-403E-89A3-9BEF15909053}" WorkUnitID="{1CBB7E6F-55CF-43D8-AC73-66564D458B7D}"/>
 						</Reference>
+						<Reference Name="Effect0">
+							<Custom>
+								<Effect Name="Wwise Meter (Custom)" ID="{8AD9CA63-1C9F-43DB-993C-AAE126EAF598}" ShortID="340688602" PluginName="Wwise Meter" CompanyID="0" PluginID="129" PluginType="3"/>
+							</Custom>
+						</Reference>
 					</ReferenceList>
 					<ChildrenList>
 						<Bus Name="Sfx" ID="{F2A0E619-BE8F-40E5-AAC0-7BD9305E608D}">
@@ -38,11 +43,21 @@
 						</Bus>
 						<Bus Name="Amb" ID="{A82F35BC-A9C9-4EF5-8166-4091D089E415}">
 							<PropertyList>
+								<Property Name="BusChannelConfig" Type="int32">
+									<ValueList>
+										<Value>528</Value>
+									</ValueList>
+								</Property>
 								<Property Name="UseGameAuxSends" Type="bool" Value="True"/>
 							</PropertyList>
 						</Bus>
 						<Bus Name="Music" ID="{22627215-F271-45F9-A24D-6AB466AF1237}">
 							<PropertyList>
+								<Property Name="BusChannelConfig" Type="int32">
+									<ValueList>
+										<Value>528</Value>
+									</ValueList>
+								</Property>
 								<Property Name="UseGameAuxSends" Type="bool" Value="True"/>
 							</PropertyList>
 						</Bus>

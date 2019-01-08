@@ -14,6 +14,14 @@
 						<State Name="Lvl_03" ID="{8F0CC4DA-DF60-456D-8E10-4449E74962ED}"/>
 					</ChildrenList>
 				</StateGroup>
+				<StateGroup Name="Lvl_Musique" ID="{A0722C8E-E4FB-4266-9C6A-180F1526ED16}">
+					<ChildrenList>
+						<State Name="None" ID="{470E9845-ED8D-4670-A5E5-89448E4B097B}"/>
+						<State Name="Lvl_01" ID="{01032899-D0A3-45BB-8D55-0E7B866379FF}"/>
+						<State Name="Lvl_02" ID="{1297E238-5925-4B8C-BE18-52BB5B1EFD72}"/>
+						<State Name="Lvl_03" ID="{647D4C11-6A70-4E37-A9E6-F2013CF0F7AC}"/>
+					</ChildrenList>
+				</StateGroup>
 			</ChildrenList>
 		</WorkUnit>
 	</States>

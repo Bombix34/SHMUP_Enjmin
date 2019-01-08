@@ -220,6 +220,30 @@
 						</Event>
 					</ChildrenList>
 				</Folder>
+				<Event Name="Play_Music_Lvl_Sw" ID="{2441B4F1-8711-40F3-B0A5-9628007C4233}">
+					<ChildrenList>
+						<Action Name="" ID="{28E6EED5-BE5B-4FBC-8BA5-933DCE02625B}" ShortID="646910508">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="1"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Musique" ID="{C8FB359D-BE44-4223-B13B-B097C732393E}" WorkUnitID="{4E5A65E5-C56F-495A-AB58-65CC0CC32273}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+						<Action Name="" ID="{388EE690-E3D3-49A1-88B0-71B2B3248052}" ShortID="98862911">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="1"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Musique_Lvl_02" ID="{C45CE32D-7E36-4360-9173-ADDD07A2210F}" WorkUnitID="{4E5A65E5-C56F-495A-AB58-65CC0CC32273}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
 			</ChildrenList>
 		</WorkUnit>
 	</Events>
