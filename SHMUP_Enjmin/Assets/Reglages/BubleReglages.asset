@@ -15,6 +15,6 @@ MonoBehaviour:
   intermediateSize: 1
   maxSizeBuble: 1.5
   speedGrow: 0.0226
-  speedBuble: 40
+  speedBuble: 20
   velocityDecrease: 1.5
-  archimedEffect: 0.31
+  archimedEffect: 0.05
