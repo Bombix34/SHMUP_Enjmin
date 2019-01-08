@@ -35,13 +35,13 @@ public class BubleManager : MonoBehaviour {
         //transform.localScale = new Vector3(transform.localScale.x * 1.1f, transform.localScale.y * 1.1f, transform.localScale.z);
 	}
 
-
 	public void DestroyBuble()
 	{
         foreach(GameObject pote in objectInTheBuble)
         {
             // on decroche les potes dans les bulles, et on réactive leur scrollable
             pote.transform.parent = null;
+			pote.GetComponent<SavedManager>().SetIsInBuble(false);
             pote.GetComponent<ScrollScript>().enabled = true;
         }
 		Destroy(this.gameObject);
@@ -108,58 +108,46 @@ public class BubleManager : MonoBehaviour {
 
 	void OnCollisionEnter2D(Collision2D col)
     {
-        if(col.gameObject.tag=="Buble")
-		{
-			if(curIsCreate)
-			{
-				//détruit la bulle que le personnage est en train de créer 
-				DestroyBuble();
-                AkSoundEngine.PostEvent("Play_Bubble_Explode_Os", gameObject);
-
-            }
-        }
-        else if (col.gameObject.tag == "Player")
+       	if (col.gameObject.tag == "Player")
         {
-            if (curIsCreate)
-            {
-                //Physics2D.IgnoreCollision(colider, col.collider);
-            }
         }
+		else if(col.gameObject.tag == "oursin")
+		{
+			// si la bulle est déjà créée, on retracte l'oursin
+			if(!col.gameObject.GetComponent<UrchinManager>().GetIsRetracted())
+			{
+				col.gameObject.GetComponent<UrchinManager>().retract();	
+				DestroyBuble();
+			}
+            AkSoundEngine.PostEvent("Play_Bubble_Explode_Os", gameObject);
+		}
+		else
+		{
+			if (curIsCreate)
+				GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerManager>().DetachBuble();
+		}
     }
 
 	void OnTriggerEnter2D(Collider2D col)
     {
-		if(col.gameObject.tag == "oursin")
-		{
-			// si la bulle est déjà créée, on retracte l'oursin
-			if(!curIsCreate)
-				col.gameObject.GetComponent<UrchinManager>().retract();	
-			DestroyBuble();
-            AkSoundEngine.PostEvent("Play_Bubble_Explode_Os", gameObject);
-
-        }
-        else if(col.gameObject.tag=="Player")
+		if(col.gameObject.tag=="Player")
 		{
 		}
         else if (col.gameObject.tag == "ToSave")
         {
+			if(col.gameObject.GetComponent<SavedManager>().GetIsInbuble())
+				return;
             if (curIsCreate)
-            {
-                //détruit la bulle que le personnage est en train de créer 
-                DestroyBuble();
-                AkSoundEngine.PostEvent("Play_Bubble_Explode_Os", gameObject);
+				GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerManager>().DetachBuble();
+            
+			//on vérifie si on peut ajouter un personnage dans cette bulle en fonction de sa taille
+			if((objectInTheBuble.Count==(int)bubleSize)||(objectInTheBuble.Contains(col.gameObject)))
+				return;
+			col.gameObject.GetComponent<SavedManager>().SetIsInBuble(true);
+            StartCoroutine(SetObjectInTheBuble(col.gameObject));
+            objectInTheBuble.Add(col.gameObject);
 
-            }
-            else
-            {
-				//on vérifie si on peut ajouter un personnage dans cette bulle en fonction de sa taille
-				if((objectInTheBuble.Count==(int)bubleSize)||(objectInTheBuble.Contains(col.gameObject)))
-					return;
-                StartCoroutine(SetObjectInTheBuble(col.gameObject));
-                objectInTheBuble.Add(col.gameObject);
-
-                AkSoundEngine.PostEvent("Play_Pnj_Oh", gameObject);
-            }
+            AkSoundEngine.PostEvent("Play_Pnj_Oh", gameObject);
         }
     }
 	
@@ -169,8 +157,7 @@ public class BubleManager : MonoBehaviour {
         {
             DestroyBuble();
         }
-
-        if(col.gameObject.tag == "upBuble")
+        else if(col.gameObject.tag == "upBuble")
         {
             foreach(GameObject pote in objectInTheBuble)
             {

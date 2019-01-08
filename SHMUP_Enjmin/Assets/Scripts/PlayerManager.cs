@@ -280,6 +280,19 @@ public class PlayerManager : MonoBehaviour {
 		curBuble=null;
 	}
 
+	public void DetachBuble()
+	//pour detacher une bulle sans la tirer 
+	{
+		if(curBuble==null)
+			return;
+		curBuble.GetComponent<BubleManager>().SetIsCreate(false);
+        //effet des bulles a remonter vers la surface
+        curBuble.GetComponent<Rigidbody2D>().gravityScale=-bullesReglages.archimedEffect;
+
+		Physics2D.IgnoreCollision(colider,curBuble.GetComponent<BubleManager>().GetCollider(),false);
+		curBuble=null;
+	}
+
 	public IEnumerator KnockbackPlayer(Vector2 direction)
 	{
 		//pour empêcher le joueur de bouger pendant le knockback
