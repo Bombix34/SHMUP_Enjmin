@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CirclePattern : MonoBehaviour {
+public class CirclePattern : PatternInterface {
 
     // mettre une valeur négative pour tourner dans le sens horaire
     public float speed = 100.0f;
@@ -14,13 +14,16 @@ public class CirclePattern : MonoBehaviour {
 	void Start () {
 		if(pivot == null)
         {
-            Debug.LogError("Error on CirclePattern : no pivot declared.");
+            Debug.LogError("Error on CirclePattern : no pivot set.");
         }
 	}
 	
 	// Update is called once per frame
 	void Update () {
-        transform.RotateAround(pivot.position, Vector3.forward, speed * Time.deltaTime);
+
+        if(pivot != null)
+            transform.RotateAround(pivot.position, Vector3.forward, speed * Time.deltaTime);
+
         // empecher le pote de tourner, et donc de provoquer une erreur dans le pattern à cause du scrolling
         transform.rotation = new Quaternion(0, 0, 0, 0);
     }

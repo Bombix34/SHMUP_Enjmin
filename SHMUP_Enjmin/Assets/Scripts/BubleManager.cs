@@ -79,6 +79,10 @@ public class BubleManager : MonoBehaviour {
 	{
         // on desactive le scrollable des potes emprisonnés dans la bulle
         obj.GetComponent<ScrollScript>().enabled = false;
+        if(obj.GetComponent<PatternInterface>() != null)
+        {
+            obj.GetComponent<PatternInterface>().enabled = false;
+        }
         obj.transform.parent=this.transform;
 
 		Vector2 forceDirection = new Vector2(this.transform.position.x-obj.transform.position.x,this.transform.position.y-obj.transform.position.y);
