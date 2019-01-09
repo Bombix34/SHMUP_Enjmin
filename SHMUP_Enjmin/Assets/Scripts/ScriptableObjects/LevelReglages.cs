@@ -10,15 +10,30 @@ public class LevelReglages : ScriptableObject
 	[Range(0.1f,10f)]
 	public float scrollingSpeed=1f;
 
+    [Header("Portions de level design")]
+    public List<GameObject> levelParts;
 
-	[Header("Portion de level design")]
-	public List<GameObject> levelParts;
+
+    public GameObject GetLevelAtRandom()
+    {
+        return levelParts[(int)Random.Range(0f, levelParts.Count)];
+    }
+
+    [Header("Bases de plafond")]
+    public List<GameObject> basesPlafonds;
 
 
-	public GameObject GetLevelAtRandom()
+    public GameObject GetBaseDePlafondRandom()
+    {
+        return basesPlafonds[(int)Random.Range(0f, basesPlafonds.Count)];
+    }
+
+    [Header("Stalactites")]
+	public List<GameObject> stalactites;
+
+
+	public GameObject GetRandomStalactite()
 	{
-		return levelParts[(int)Random.Range(0f,levelParts.Count)];
+		return stalactites[(int)Random.Range(0f, stalactites.Count)];
 	}
-
-
 }

@@ -36,7 +36,6 @@ public class PlayerManager : MonoBehaviour {
     
     // rtpc value
     float rtpcValue = 0.0f;
-    int type = 1;
 
     private void Awake()
     {
