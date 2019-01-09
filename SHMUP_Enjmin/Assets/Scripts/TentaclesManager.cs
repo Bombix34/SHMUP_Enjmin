@@ -65,7 +65,8 @@ public class TentaclesManager : MonoBehaviour {
     public void MoveForward()
     {
         // TODO : animation de capture
-
+        if(Camera.main.GetComponent<CameraShaker>()!=null)
+			Camera.main.GetComponent<CameraShaker>().LaunchShake(1f,0.1f);
         // deplacement des tentacules
         distanceDone += distanceAtEachCapture;
         StartCoroutine(MoveForwardCoroutine());
@@ -73,6 +74,8 @@ public class TentaclesManager : MonoBehaviour {
 
     public void MoveBackward()
     {
+        if(Camera.main.GetComponent<CameraShaker>()!=null)
+			Camera.main.GetComponent<CameraShaker>().LaunchShake(0.5f,0.05f);
         // deplacement des tentacules
         distanceDone -= distanceAtEachSave;
         StartCoroutine(MoveBackwardCoroutine());

@@ -37,6 +37,7 @@ public class BubleManager : MonoBehaviour {
 
 	public void DestroyBuble()
 	{
+		StopCoroutine(ShakeBuble());
         foreach(GameObject pote in objectInTheBuble)
         {
             // on decroche les potes dans les bulles, et on réactive leur scrollable
@@ -56,7 +57,8 @@ public class BubleManager : MonoBehaviour {
 			sprite.transform.position=new Vector2(this.transform.position.x+Random.Range(0f,0.1f),this.transform.position.y+Random.Range(0f,0.1f));
 			yield return new WaitForSeconds(0.05f);
 		}
-		sprite.transform.position=this.transform.position;
+		if(sprite!=null)
+			sprite.transform.position=this.transform.position;
 	}
 
 

@@ -16,4 +16,6 @@ MonoBehaviour:
   dashPower: 7
   dashDuration: 0.075
   dashCoolDown: 0.5
+  dashKnockbackBuble: 10
   knockback: 0.5
+  oursinPoisonEffect: 1

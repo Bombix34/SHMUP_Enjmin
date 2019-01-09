@@ -133,6 +133,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   reglages: {fileID: 11400000, guid: bb46ea45fc1dc43b3a43617254e7da48, type: 2}
   bullesReglages: {fileID: 11400000, guid: 952773acbb64e4d3ead3c8a160f173b6, type: 2}
+  sprite: {fileID: 212817554402889088}
   bublePrefab: {fileID: 1933862619830500, guid: eda4015dcef1946f48f8181ff88db6d1,
     type: 2}
 --- !u!114 &114970156951695922

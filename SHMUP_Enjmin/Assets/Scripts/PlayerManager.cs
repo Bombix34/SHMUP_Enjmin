@@ -7,6 +7,9 @@ public class PlayerManager : MonoBehaviour {
 	[SerializeField]
 	//les différents réglages du personnage contenue dans le dossier Assets/Reglages/PlayerReglages
 	PlayerReglages reglages;
+	
+	//pour le poison notamment
+	float tempSpeedValue;
 
 	[SerializeField]
 	BubleReglages bullesReglages;
@@ -16,6 +19,9 @@ public class PlayerManager : MonoBehaviour {
 	KeyboardController keyboard;
 	Rigidbody2D rb2D;
 	CapsuleCollider2D colider;
+
+	[SerializeField]
+	SpriteRenderer sprite;
 
 	[SerializeField]
 	//prefab pour la création des bulles
@@ -30,6 +36,7 @@ public class PlayerManager : MonoBehaviour {
 
 	//cooldown du dash
 	float dashChrono=0f;
+	bool canDash=true;
 	bool canMove=true;
 
 	bool isDead=false;
@@ -44,6 +51,7 @@ public class PlayerManager : MonoBehaviour {
         {
             Debug.LogError("error PlayerManager : PlayerReglages not instanciated through editor");
         }
+		tempSpeedValue=reglages.speedPlayer;
     }
 
     void Start () 
@@ -67,7 +75,9 @@ public class PlayerManager : MonoBehaviour {
 		SetPlayerSize();
 
 		//Core mechanics
+		UpdateTempSpeed();
 		MovePlayer();	
+
 		BubleUpdate();
 		Dash();
 		
@@ -83,34 +93,65 @@ public class PlayerManager : MonoBehaviour {
 			curBuble.GetComponent<BubleManager>().DestroyBuble();
 	}
 
+	IEnumerator Damaged()
+	{
+		if(Camera.main.GetComponent<CameraShaker>()!=null)
+			Camera.main.GetComponent<CameraShaker>().LaunchShake(0.3f,0.2f);
+		sprite.enabled=false;
+		yield return new WaitForSeconds(0.1f);
+		sprite.enabled=true;
+	}
+
 
 //MOVEMENT________________________________________________________________________________
 	public void MovePlayer()
 	{
 		if((!canMove)||(isDashing))
 			return;
-		Vector2 controlWithSpeed = controller.getLeftStickDirection()*reglages.speedPlayer;
+		Vector2 controlWithSpeed = controller.getLeftStickDirection()*tempSpeedValue;
 		if(controlWithSpeed==Vector2.zero)
-			controlWithSpeed=keyboard.GetMovement()*reglages.speedPlayer;
+			controlWithSpeed=keyboard.GetMovement()*tempSpeedValue;
        // transform.Translate(new Vector2(controlWithSpeed.x, controlWithSpeed.y));
 	   rb2D.velocity=new Vector2(controlWithSpeed.x,controlWithSpeed.y);
 		//rb2D.MovePosition(new Vector2(transform.position.x+controlWithSpeed.x,transform.position.y+controlWithSpeed.y));
     }
+
+	public void UpdateTempSpeed()
+	//pour le poison de l'oursin
+	{
+		if(tempSpeedValue==reglages.speedPlayer)
+			return;
+
+		if(tempSpeedValue<reglages.speedPlayer)
+		{
+			canDash=false;
+			sprite.color=Color.green;
+			tempSpeedValue+=Time.deltaTime*reglages.oursinPoisonEffect;
+		}
+		else
+		{
+			canDash=true;
+			sprite.color=Color.white;
+			tempSpeedValue=reglages.speedPlayer;
+		}
+	}
 
 //DASH__________________________________________________________________________________________
 
 	public void Dash()
 	{
 		dashChrono-=Time.deltaTime;
-		if(dashChrono>0)
+		if((dashChrono>0)||(!canDash))
 			return;
 		if(controller.pressButtonB()||keyboard.PressDashBouton())
 		{
 			if(curBuble!=null)
-				curBuble.GetComponent<BubleManager>().DestroyBuble();
+			{	
+				BubleManager tempBuble = curBuble.GetComponent<BubleManager>();
+				tempBuble.DestroyBuble();
+			}
 			StartCoroutine(DashAction());
             AkSoundEngine.PostEvent("Play_Player_Dash_os", gameObject);
-
         }
 	}
 
@@ -118,10 +159,13 @@ public class PlayerManager : MonoBehaviour {
 	{
 		isDashing=true;
 
-		if(rb2D.velocity==Vector2.zero)
+		Vector2 tempDirection = rb2D.velocity;
+		tempDirection.Normalize();
+
+		if(tempDirection==Vector2.zero)
 			rb2D.velocity=new Vector2(reglages.speedPlayer,0f)*reglages.dashPower;
 		else	
-			rb2D.velocity*=reglages.dashPower;
+			rb2D.velocity=new Vector2(tempDirection.x*reglages.speedPlayer,tempDirection.y*reglages.speedPlayer)*reglages.dashPower;
 		
 		//attendre la fin du dash
 		float dash=reglages.dashDuration;
@@ -145,27 +189,50 @@ public class PlayerManager : MonoBehaviour {
 			if(isDashing)
 			//pousser la bulle super fort
 			{
-				Vector2 forceDirection = new Vector2(col.gameObject.transform.position.x-this.transform.position.x,col.gameObject.transform.position.y-this.transform.position.y);
+				Vector2 forceDirection = new Vector2(col.transform.position.x-this.transform.position.x,col.transform.position.y-this.transform.position.y);
+				forceDirection.Normalize();
 				forceDirection*=200f;
-				col.gameObject.GetComponent<Rigidbody2D>().AddForce(new Vector2(forceDirection.x,forceDirection.y)*bullesReglages.speedBuble);
+				col.gameObject.GetComponent<Rigidbody2D>().AddForce(new Vector2(forceDirection.x,forceDirection.y)*reglages.dashKnockbackBuble);
 			}
         }
+		else if(col.gameObject.tag=="oursin")
+		{
+			tempSpeedValue=0f;
+			canDash=false;
+			Vector2 forceDirection = new Vector2(this.transform.position.x-col.transform.position.x,this.transform.position.y-col.transform.position.y);
+			forceDirection.Normalize();
+			forceDirection*=30f;
+			StartCoroutine(KnockbackPlayer(forceDirection));
+			StartCoroutine(Damaged());
+			col.gameObject.GetComponent<UrchinManager>().retract();
+		}
     }
+
+	void OnCollisionStay2D(Collision2D col)
+    {
+		if (col.gameObject.tag == "Buble")
+       	{
+			if(isDashing)
+			//pousser la bulle super fort
+			{
+				Vector2 forceDirection = new Vector2(col.gameObject.transform.position.x-this.transform.position.x,col.gameObject.transform.position.y-this.transform.position.y);
+				forceDirection*=200f;
+				col.gameObject.GetComponent<Rigidbody2D>().AddForce(new Vector2(forceDirection.x,forceDirection.y)*reglages.dashKnockbackBuble);
+			}
+        }
+	}
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.tag == "niktemor")
         {
-            print("1");
             AkSoundEngine.SetState("Profondeur", "Lvl_01");
         } else if (collision.gameObject.tag == "niktarass")
         {
-            print("2");
             AkSoundEngine.SetState("Profondeur", "Lvl_02");
         }
         else if (collision.gameObject.tag == "niktonper")
         {
-            print("3");
             AkSoundEngine.SetState("Profondeur", "Lvl_03");
         }
     }
@@ -230,21 +297,24 @@ public class PlayerManager : MonoBehaviour {
 	IEnumerator ModifyBubleSize()
 	//permet de faire une petite animation lorsque la bulle grossie
 	{
-		if(curBuble.transform.localScale.x==bullesReglages.initialSize)
+		BubleManager tempBuble = curBuble.GetComponent<BubleManager>();
+		if(tempBuble.transform.localScale.x==bullesReglages.initialSize)
 		{	
-			curBuble.GetComponent<BubleManager>().IncrementBubleSize();
-			curBuble.transform.localScale=new Vector2(bullesReglages.intermediateSize+0.15f,bullesReglages.intermediateSize+0.15f);
+			tempBuble.IncrementBubleSize();
+			tempBuble.transform.localScale=new Vector2(bullesReglages.intermediateSize+0.15f,bullesReglages.intermediateSize+0.15f);
 			UpdateCurBublePosition();
 			yield return new WaitForSeconds(0.05f);
-			curBuble.transform.localScale=new Vector2(bullesReglages.intermediateSize,bullesReglages.intermediateSize);
+			//if(curBuble!=null)
+			tempBuble.transform.localScale=new Vector2(bullesReglages.intermediateSize,bullesReglages.intermediateSize);
 		}
-		else if(curBuble.transform.localScale.x==bullesReglages.intermediateSize)
+		else if(tempBuble.transform.localScale.x==bullesReglages.intermediateSize)
 		{
-			curBuble.GetComponent<BubleManager>().IncrementBubleSize();
-			curBuble.transform.localScale=new Vector2(bullesReglages.maxSizeBuble+0.15f,bullesReglages.maxSizeBuble+0.15f);
+			tempBuble.GetComponent<BubleManager>().IncrementBubleSize();
+			tempBuble.transform.localScale=new Vector2(bullesReglages.maxSizeBuble+0.15f,bullesReglages.maxSizeBuble+0.15f);
 			UpdateCurBublePosition();
 			yield return new WaitForSeconds(0.05f);
-			curBuble.transform.localScale=new Vector2(bullesReglages.maxSizeBuble,bullesReglages.maxSizeBuble);
+			//if(curBuble!=null)
+			tempBuble.transform.localScale=new Vector2(bullesReglages.maxSizeBuble,bullesReglages.maxSizeBuble);
 			ShootBuble();
 		}
 		chronoIncrementSizeBuble=1f;
@@ -255,7 +325,7 @@ public class PlayerManager : MonoBehaviour {
 		//quand je laisse appuyer, il faut que la bulle suive le personnage
 		if(curBuble==null)
 			return;
-		Vector2 newPos = new Vector2(transform.position.x + transform.localScale.x + (curBuble.transform.localScale.x*0.9f) , transform.position.y);
+		Vector2 newPos = new Vector2(transform.position.x + transform.localScale.x + (curBuble.transform.localScale.x*0.8f) , transform.position.y);
 		curBuble.transform.position=newPos;
 	}
 
@@ -287,6 +357,10 @@ public class PlayerManager : MonoBehaviour {
 	{
 		if(curBuble==null)
 			return;
+
+		//Hugo : j'ai ajouté ça, je ne savais pas si un event special allait être crée 
+        AkSoundEngine.PostEvent("Play_Player_Shot", gameObject);
+
 		curBuble.GetComponent<BubleManager>().SetIsCreate(false);
         //effet des bulles a remonter vers la surface
         curBuble.GetComponent<Rigidbody2D>().gravityScale=-bullesReglages.archimedEffect;
@@ -299,6 +373,7 @@ public class PlayerManager : MonoBehaviour {
 	{
 		//pour empêcher le joueur de bouger pendant le knockback
 		canMove=false;
+		canDash=false;
 		for(int i= 0;i<10;i++)
 		{
 			Vector2 final = new Vector2(direction.x*Time.deltaTime,direction.y*Time.deltaTime)*reglages.knockback;
@@ -308,6 +383,7 @@ public class PlayerManager : MonoBehaviour {
 			yield return new WaitForSeconds(0.001f);
 		}
 		canMove=true;
+		canDash=true;
 	}
 
 //GETTER & SETTER____________________________________________________________________________________________

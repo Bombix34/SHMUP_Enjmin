@@ -29,11 +29,23 @@ public class PlayerReglages : ScriptableObject
 	[Range(0f,10f)]
 	public float dashCoolDown=0f;
 
+	[Range(0f,100f)]
+	public float dashKnockbackBuble=0f;
+
+
+
 
 	[Space]
 
 	[Header("Knockback du tir de bulle")]
 	[Range(0f,7f)]
 	public float knockback=0;
+
+	[Space]
+
+	[Header("Effets divers")]
+	[Range(0.1f,10f)]
+	[Tooltip("plus elle est proche de 0 et plus le poison est lent a partir")]
+	public float oursinPoisonEffect=0.1f;
 
 }
