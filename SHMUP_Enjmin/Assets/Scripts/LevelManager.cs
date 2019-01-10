@@ -52,7 +52,11 @@ public class LevelManager : MonoBehaviour
             int idPlafond = Random.Range(0, reglages.plafonds.Count);
             GameObject newBasePlafond = (GameObject)Instantiate(reglages.plafonds[idPlafond], new Vector3(rightMostBackgroundPlafondBound, reglages.hauteursPlafonds[idPlafond], 0.3f), transform.rotation);
             newBasePlafond.transform.Translate(new Vector3(Camera.main.orthographicSize * Camera.main.aspect - GetGameObjectLeftMostBound(newBasePlafond), 0));
-            rightMostBackgroundPlafondBound = GetGameObjectRightMostBound(newBasePlafond) + Random.Range(0.5f, 2.0f);
+            Color color = newBasePlafond.GetComponent<SpriteRenderer>().material.color;
+            color *= 0.1f;
+            color.a = 1.0f;
+            newBasePlafond.GetComponent<SpriteRenderer>().material.color = color;
+            rightMostBackgroundPlafondBound = GetGameObjectRightMostBound(newBasePlafond) - Random.Range(0.5f, 2.0f);
             plafondsBackground.Add(newBasePlafond);
         }
 
@@ -61,7 +65,11 @@ public class LevelManager : MonoBehaviour
             int idPlafond = Random.Range(0, reglages.plafonds.Count);
             GameObject newBasePlafond = (GameObject)Instantiate(reglages.plafonds[idPlafond], new Vector3(rightMostMiddlegroundPlafondBound, reglages.hauteursPlafonds[idPlafond], 0.2f), transform.rotation);
             newBasePlafond.transform.Translate(new Vector3(Camera.main.orthographicSize * Camera.main.aspect - GetGameObjectLeftMostBound(newBasePlafond), 0));
-            rightMostMiddlegroundPlafondBound = GetGameObjectRightMostBound(newBasePlafond) + Random.Range(0.5f, 2.0f);
+            Color color = newBasePlafond.GetComponent<SpriteRenderer>().material.color;
+            color *= 0.45f;
+            color.a = 1.0f;
+            newBasePlafond.GetComponent<SpriteRenderer>().material.color = color;
+            rightMostMiddlegroundPlafondBound = GetGameObjectRightMostBound(newBasePlafond) + Random.Range(0.25f, 1.0f);
             plafondsMiddleground.Add(newBasePlafond);
         }
 
