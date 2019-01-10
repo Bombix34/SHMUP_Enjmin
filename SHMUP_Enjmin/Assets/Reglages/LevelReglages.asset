@@ -14,3 +14,23 @@ MonoBehaviour:
   scrollingSpeed: 2
   levelParts:
   - {fileID: 1597590202695692, guid: 1acdfb02104ba0548a862fae4baef58d, type: 2}
+  plafonds:
+  - {fileID: 1363204610409546, guid: 4f26e5f38cc90c7499a5286d03c60f6d, type: 2}
+  - {fileID: 1829984710835132, guid: c24ea04510d88f643b4f17ade4d4fb7b, type: 2}
+  - {fileID: 1397747539922564, guid: 5446cc13f2a7bf3439340abd24537de0, type: 2}
+  - {fileID: 1078550882466148, guid: f5e8ccb4ae969614daeb192e3b27b474, type: 2}
+  - {fileID: 1682251633891116, guid: fc08a3784b6b60b41bfe37adfd08ce68, type: 2}
+  - {fileID: 1071132027579472, guid: bce96abb084a7d2488b09d867bfa7d86, type: 2}
+  - {fileID: 1772783492414534, guid: 704e2f44299e52549a0f1535eac9cf24, type: 2}
+  - {fileID: 1441405520179626, guid: 764e8f1e71f200f45959869ddeb4b3e5, type: 2}
+  - {fileID: 1260402246207488, guid: 36093ff4626ae1549a761b9a935ed4b0, type: 2}
+  hauteursPlafonds:
+  - 4.27
+  - 4.21
+  - 3.95
+  - 3.76
+  - 4.1
+  - 4.06
+  - 4.25
+  - 4.21
+  - 4.45
