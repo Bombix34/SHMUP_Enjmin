@@ -36,6 +36,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4100841940541864}
   - component: {fileID: 114815973497355000}
+  - component: {fileID: 60601826544993530}
   m_Layer: 0
   m_Name: Rock3
   m_TagString: Untagged
@@ -50,7 +51,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1957408040844052}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 1.71, y: -4.63, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4408132576944932}
@@ -70,6 +71,41 @@ Transform:
   m_Father: {fileID: 4100841940541864}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!60 &60601826544993530
+PolygonCollider2D:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1957408040844052}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: -0.12717032, y: 0.36439562}
+      - {x: -0.3267665, y: 0.30901718}
+      - {x: -0.4643153, y: 0.16800737}
+      - {x: -0.49717653, y: 0.012182713}
+      - {x: -0.4189427, y: -0.18712664}
+      - {x: -0.29672992, y: -0.311018}
+      - {x: 0.13323474, y: -0.34866524}
+      - {x: 0.41024494, y: -0.25261974}
+      - {x: 0.49193645, y: -0.08879852}
+      - {x: 0.45716524, y: 0.08607721}
+      - {x: 0.29367685, y: 0.22267962}
 --- !u!114 &114815973497355000
 MonoBehaviour:
   m_ObjectHideFlags: 1
