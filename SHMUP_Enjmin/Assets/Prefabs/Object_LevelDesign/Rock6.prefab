@@ -19,6 +19,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4854599544245406}
+  - component: {fileID: 114614957396910610}
   - component: {fileID: 60847252889733980}
   m_Layer: 0
   m_Name: Rock6
@@ -62,14 +63,14 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1580719945488934}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 13.27, y: -3.89, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 1, w: 0}
+  m_LocalPosition: {x: -0.8299999, y: 1.13, z: 0}
+  m_LocalScale: {x: 1.98, y: 3.27, z: 1}
   m_Children:
   - {fileID: 4283562880035330}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 180}
 --- !u!60 &60847252889733980
 PolygonCollider2D:
   m_ObjectHideFlags: 1
@@ -119,6 +120,17 @@ PolygonCollider2D:
       - {x: 1.2334576, y: 0.2104268}
       - {x: 1.3015509, y: 0.9192989}
       - {x: 1.3125124, y: 1.0231235}
+--- !u!114 &114614957396910610
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1580719945488934}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 65535634a3daba24cadef691cf9c032c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!212 &212856351203938450
 SpriteRenderer:
   m_ObjectHideFlags: 1

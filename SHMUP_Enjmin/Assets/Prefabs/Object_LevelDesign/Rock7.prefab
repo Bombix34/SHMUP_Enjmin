@@ -19,8 +19,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4018276266740514}
-  - component: {fileID: 60138387799402772}
   - component: {fileID: 114064659067481446}
+  - component: {fileID: 60138387799402772}
   m_Layer: 0
   m_Name: Rock7
   m_TagString: Untagged
