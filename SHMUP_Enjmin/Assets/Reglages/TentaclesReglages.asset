@@ -8,14 +8,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9881faf378df9497abc42a1d94d353d0, type: 3}
-  m_Name: BubleReglages
+  m_Script: {fileID: 11500000, guid: 7722034f464be45feb067e569cfe87fb, type: 3}
+  m_Name: TentaclesReglages
   m_EditorClassIdentifier: 
-  initialSize: 0.6
-  intermediateSize: 1
-  maxSizeBuble: 1.5
-  speedGrow: 0.0226
-  speedBuble: 20
-  velocityDecrease: 1.5
-  archimedEffect: 0.05
-  bounceEffect: 5
+  speedApparition: 1
+  animSpeedUp: 2

@@ -13,7 +13,6 @@ public class Collision_Trigger : MonoBehaviour {
         {
             AkSoundEngine.SetState("Lvl_Musique", "Lvl_01");
         //    AkSoundEngine.PostEvent(WiseEvent, gameObject);
-            Debug.Log("ak send");
         }
     }
 }

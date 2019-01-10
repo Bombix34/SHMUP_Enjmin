@@ -7,7 +7,12 @@ public class BubleManager : MonoBehaviour {
 	Rigidbody2D rb2D;
     CircleCollider2D colider;
 
+	Animator animator;
+
 	BubleSize bubleSize=BubleSize.init;
+
+	[SerializeField]
+	BubleReglages reglages;
 
 	//pour différencier la bulle dans l'état de création par le player
 	bool curIsCreate=false;
@@ -22,6 +27,7 @@ public class BubleManager : MonoBehaviour {
         colider = GetComponent<CircleCollider2D>();
 		objectInTheBuble = new List<GameObject>();
 		colider = GetComponent<CircleCollider2D>();
+		animator =GetComponent<Animator>();
 	}
 
 	void Update()
@@ -45,8 +51,15 @@ public class BubleManager : MonoBehaviour {
 			pote.GetComponent<SavedManager>().SetIsInBuble(false);
             pote.GetComponent<ScrollScript>().enabled = true;
         }
-		Destroy(this.gameObject);
+		StartCoroutine(DestroyAnim());
         // enlever les bulles ui éclatent sortis d'écran
+	}
+
+	IEnumerator DestroyAnim()
+	{
+		animator.SetTrigger("Destroy");
+		yield return new WaitForSeconds(0.3f);
+		Destroy(this.gameObject);
 	}
 
 	public IEnumerator ShakeBuble()
@@ -81,6 +94,7 @@ public class BubleManager : MonoBehaviour {
 	{
         // on desactive le scrollable des potes emprisonnés dans la bulle
         obj.GetComponent<ScrollScript>().enabled = false;
+		animator.SetTrigger("Shoot");
         if(obj.GetComponent<PatternInterface>() != null)
         {
             obj.GetComponent<PatternInterface>().enabled = false;
@@ -91,7 +105,19 @@ public class BubleManager : MonoBehaviour {
 		float distanceFromCenter = GetDistanceFromBubleCenter(obj.transform.position);
 		forceDirection.Normalize();
 		int frameCount=0;
-		float randDist = Random.Range(3f,10f);
+		float randDist = 0;
+		switch(objectInTheBuble.Count)
+		{
+			case 0:
+				randDist = randDist = Random.Range(6f,10f);
+				break;
+			case 1:
+				randDist = Random.Range(3f,5f);
+				break;
+			case 2:
+				randDist = 2f;
+				break;
+		}
 		while(GetDistanceFromBubleCenter(obj.transform.position) > (distanceFromCenter * 1/randDist ))
 		{
 			if(frameCount>45)
@@ -131,6 +157,15 @@ public class BubleManager : MonoBehaviour {
 		{
 			if (curIsCreate)
 				GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerManager>().DetachBuble();
+			else
+			{
+				//les bulles bounce un peu partout
+				Vector2 contactPoint=col.GetContact(0).point;
+				Vector2 forceDirection = new Vector2(this.transform.position.x-contactPoint.x,this.transform.position.y-contactPoint.y);
+				forceDirection.Normalize();
+				forceDirection*=200f;
+				rb2D.AddForce(new Vector2(forceDirection.x,forceDirection.y)*reglages.bounceEffect);
+			}
 		}
     }
 
@@ -148,7 +183,15 @@ public class BubleManager : MonoBehaviour {
             
 			//on vérifie si on peut ajouter un personnage dans cette bulle en fonction de sa taille
 			if((objectInTheBuble.Count==(int)bubleSize)||(objectInTheBuble.Contains(col.gameObject)))
+			{
+				//si on ne peut pas, on repousse la bulle
+				Vector2 forceDirection = new Vector2(this.transform.position.x-col.transform.position.x,this.transform.position.y-col.transform.position.y);
+				forceDirection.Normalize();
+				forceDirection*=200f;
+				rb2D.AddForce(new Vector2(forceDirection.x,forceDirection.y)*20f);
 				return;
+			}
+			//sinon on ajoute le perso dans la bulle
 			col.gameObject.GetComponent<SavedManager>().SetIsInBuble(true);
             StartCoroutine(SetObjectInTheBuble(col.gameObject));
             objectInTheBuble.Add(col.gameObject);
@@ -205,6 +248,11 @@ public class BubleManager : MonoBehaviour {
 			return;
 		bubleSize++;
         AkSoundEngine.PostEvent("Play_Bulles_Grown", gameObject);
+	}
+
+	public Animator GetBubleAnim()
+	{
+		return animator;
 	}
 
 	enum BubleSize
