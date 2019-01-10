@@ -180,8 +180,19 @@ MonoBehaviour:
   - PhysicalPath: Master-Mixer Hierarchy/Default Work Unit.wwu
     ParentPhysicalPath: 
     guid: bb24b7d1b666554f9cb7851dfb74b0cf
-    m_lastTime: -8586546486464775808
+    m_lastTime: -8586546196724775808
     List:
+    - name: Delay
+      guid: 31a4ca601367c544b349886c538ea77e
+      id: 357718954
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Master Audio Bus
+        ObjectType: 2
+      - ElementName: Delay
+        ObjectType: 1
+      Path: Default Work Unit/Master Audio Bus/Delay
     - name: Rvrb
       guid: e14c440f08a30a4abc97bdad8c6462af
       id: 2157448753
@@ -212,7 +223,7 @@ MonoBehaviour:
   - PhysicalPath: Events/Default Work Unit.wwu
     ParentPhysicalPath: 
     guid: 7c843613cd65de4b82e788b2522fbb1a
-    m_lastTime: -8586546511234775808
+    m_lastTime: -8586546221524775808
     List:
     - name: Innit_Amb
       guid: 0946cc13814ff64b909268618d042f1c
@@ -270,15 +281,17 @@ MonoBehaviour:
       maxAttenuation: 0
       maxDuration: 0
       minDuration: 0
-    - name: Play_Music_Lvl_Sw
-      guid: f1b441241187f340b0a59628007c4233
-      id: 2108441497
+    - name: Play_Music_GameOver
+      guid: 015e5bd4492bdc4c9c222b772a51da9f
+      id: 619661162
       PathAndIcons:
       - ElementName: Default Work Unit
         ObjectType: 12
-      - ElementName: Play_Music_Lvl_Sw
+      - ElementName: Ingame
+        ObjectType: 4
+      - ElementName: Play_Music_GameOver
         ObjectType: 3
-      Path: Default Work Unit/Play_Music_Lvl_Sw
+      Path: Default Work Unit/Ingame/Play_Music_GameOver
       maxAttenuation: 0
       maxDuration: 0
       minDuration: 0
@@ -296,6 +309,20 @@ MonoBehaviour:
       maxAttenuation: 0
       maxDuration: 0
       minDuration: 0
+    - name: Play_Oursin_Scream_Os
+      guid: aa7ff89570eef1488d541383af9a083e
+      id: 1942785931
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Ingame
+        ObjectType: 4
+      - ElementName: Play_Oursin_Scream_Os
+        ObjectType: 3
+      Path: Default Work Unit/Ingame/Play_Oursin_Scream_Os
+      maxAttenuation: 0
+      maxDuration: 0
+      minDuration: 0
     - name: Play_Player_Dash_os
       guid: 26acd9a2d178754b9285563016befe0a
       id: 3837926945
@@ -307,7 +334,7 @@ MonoBehaviour:
       - ElementName: Play_Player_Dash_os
         ObjectType: 3
       Path: Default Work Unit/Ingame/Play_Player_Dash_os
-      maxAttenuation: 0
+      maxAttenuation: 100
       maxDuration: 0
       minDuration: 0
     - name: Play_Player_Shot
@@ -338,11 +365,39 @@ MonoBehaviour:
       maxAttenuation: 0
       maxDuration: 0
       minDuration: 0
+    - name: Stop_All
+      guid: c02ff26bc2ab7340a4d9a5c8c29165e0
+      id: 452547817
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Ingame
+        ObjectType: 4
+      - ElementName: Stop_All
+        ObjectType: 3
+      Path: Default Work Unit/Ingame/Stop_All
+      maxAttenuation: 0
+      maxDuration: 0
+      minDuration: 0
+    - name: Stop_Music_GameOver
+      guid: 2329d52ee7a3e84295fc9de8db0d1da6
+      id: 3414730868
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Ingame
+        ObjectType: 4
+      - ElementName: Stop_Music_GameOver
+        ObjectType: 3
+      Path: Default Work Unit/Ingame/Stop_Music_GameOver
+      maxAttenuation: 0
+      maxDuration: 0
+      minDuration: 0
   RtpcWwu:
   - PhysicalPath: Game Parameters/Default Work Unit.wwu
     ParentPhysicalPath: 
     guid: bee0b53b9a5d654a8a2c3017e9e6dea0
-    m_lastTime: -8586547487624775808
+    m_lastTime: -8586546213274775808
     List:
     - name: BubbleSize
       guid: 4fd8dd76cfe56440b1cf03cf0185f858
@@ -353,6 +408,15 @@ MonoBehaviour:
       - ElementName: BubbleSize
         ObjectType: 13
       Path: Default Work Unit/BubbleSize
+    - name: LeftRight
+      guid: a71498181fc4324b94dd765dbf2c9ff0
+      id: 2583390356
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: LeftRight
+        ObjectType: 13
+      Path: Default Work Unit/LeftRight
     - name: Profondeur
       guid: 7f69b427dd9f5d4fb7f0b5a24ff86796
       id: 215492731
@@ -484,8 +548,36 @@ MonoBehaviour:
   - PhysicalPath: States/Default Work Unit.wwu
     ParentPhysicalPath: 
     guid: 038c1f17d6122848aa7b71827bd9360d
-    m_lastTime: -8586546512894775808
+    m_lastTime: -8586546278984775808
     List:
+    - name: Game_State
+      guid: 7517db71f9d05246b60381bff54c2f89
+      id: 766723505
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Game_State
+        ObjectType: 9
+      Path: Default Work Unit/Game_State
+      values:
+      - name: gameOver
+        guid: ffc0999a5507fa4793713bab9e5fdf65
+        id: 4158285989
+        PathAndIcons:
+        - ElementName: gameOver
+          ObjectType: 8
+      - name: inGame
+        guid: 3d41d7194780a8418dd14040004e6839
+        id: 984691642
+        PathAndIcons:
+        - ElementName: inGame
+          ObjectType: 8
+      - name: None
+        guid: deacc780648a5340a57b749b3ff2ca07
+        id: 748895195
+        PathAndIcons:
+        - ElementName: None
+          ObjectType: 8
     - name: Lvl_Musique
       guid: 8e2c72a0fbe466429c6a180f1526ed16
       id: 966917733
@@ -508,48 +600,8 @@ MonoBehaviour:
         PathAndIcons:
         - ElementName: Lvl_02
           ObjectType: 8
-      - name: Lvl_03
-        guid: 114c7d64706a374ea9e6f2013cf0f7ac
-        id: 2147068367
-        PathAndIcons:
-        - ElementName: Lvl_03
-          ObjectType: 8
       - name: None
         guid: 45980e478ded7046a5e589448e4b097b
-        id: 748895195
-        PathAndIcons:
-        - ElementName: None
-          ObjectType: 8
-    - name: Profondeur
-      guid: 50183dcb10168f44a889060899cfbbb4
-      id: 215492731
-      PathAndIcons:
-      - ElementName: Default Work Unit
-        ObjectType: 12
-      - ElementName: Profondeur
-        ObjectType: 9
-      Path: Default Work Unit/Profondeur
-      values:
-      - name: Lvl_01
-        guid: acfed391e334d7488d9d9182b1bab57f
-        id: 2147068365
-        PathAndIcons:
-        - ElementName: Lvl_01
-          ObjectType: 8
-      - name: Lvl_02
-        guid: e53865e3fc14484b8f3d3df82dbeb51c
-        id: 2147068366
-        PathAndIcons:
-        - ElementName: Lvl_02
-          ObjectType: 8
-      - name: Lvl_03
-        guid: dac40c8f60df6d458e104449e74962ed
-        id: 2147068367
-        PathAndIcons:
-        - ElementName: Lvl_03
-          ObjectType: 8
-      - name: None
-        guid: 9035a2eb3c2e35469050242263ef47da
         id: 748895195
         PathAndIcons:
         - ElementName: None
@@ -568,8 +620,5 @@ MonoBehaviour:
     List: []
   ExpandedItems:
   - /Bloup'themup
-  - /Bloup'themup/Events
-  - /Bloup'themup/Events/Default Work Unit
-  - /Bloup'themup/Events/Default Work Unit/Ingame
-  autoPopulateEnabled: 1
+  autoPopulateEnabled: 0
   CurrentPluginConfig: 

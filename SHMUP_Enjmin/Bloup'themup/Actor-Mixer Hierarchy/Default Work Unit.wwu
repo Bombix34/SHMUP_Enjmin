@@ -20,6 +20,12 @@
 										<Value>6</Value>
 									</ValueList>
 								</Property>
+								<Property Name="MaxReachedBehavior" Type="int16" Value="1"/>
+								<Property Name="MaxSoundPerInstance" Type="int16">
+									<ValueList>
+										<Value>1</Value>
+									</ValueList>
+								</Property>
 								<Property Name="OutputBusVolume" Type="Real64">
 									<RTPCList>
 										<RTPC Name="" ID="{1D6735B9-230F-401B-A861-8D9E94C8A680}" ShortID="551856715">
@@ -47,6 +53,11 @@
 											</Curve>
 										</RTPC>
 									</RTPCList>
+								</Property>
+								<Property Name="UseMaxSoundPerInstance" Type="bool">
+									<ValueList>
+										<Value>True</Value>
+									</ValueList>
 								</Property>
 							</PropertyList>
 							<ReferenceList>
@@ -79,6 +90,12 @@
 										<Value>3</Value>
 									</ValueList>
 								</Property>
+								<Property Name="MaxReachedBehavior" Type="int16" Value="1"/>
+								<Property Name="MaxSoundPerInstance" Type="int16">
+									<ValueList>
+										<Value>1</Value>
+									</ValueList>
+								</Property>
 								<Property Name="Pitch" Type="int32">
 									<ValueList>
 										<Value>-610</Value>
@@ -87,6 +104,11 @@
 								<Property Name="PlayMechanismLoop" Type="bool" Value="True"/>
 								<Property Name="PlayMechanismSpecialTransitions" Type="bool" Value="True"/>
 								<Property Name="PlayMechanismStepOrContinuous" Type="int16" Value="0"/>
+								<Property Name="UseMaxSoundPerInstance" Type="bool">
+									<ValueList>
+										<Value>True</Value>
+									</ValueList>
+								</Property>
 								<Property Name="Volume" Type="Real64">
 									<ValueList>
 										<Value>-3</Value>
@@ -198,7 +220,18 @@
 							<ChildrenList>
 								<RandomSequenceContainer Name="Underwater_Parasites_Rnd" ID="{DBBD9715-ABAC-4C02-B80A-C37416B3B643}" ShortID="285352394">
 									<PropertyList>
+										<Property Name="MaxReachedBehavior" Type="int16" Value="1"/>
+										<Property Name="MaxSoundPerInstance" Type="int16">
+											<ValueList>
+												<Value>1</Value>
+											</ValueList>
+										</Property>
 										<Property Name="OverrideUserAuxSends" Type="bool" Value="True"/>
+										<Property Name="UseMaxSoundPerInstance" Type="bool">
+											<ValueList>
+												<Value>True</Value>
+											</ValueList>
+										</Property>
 										<Property Name="Volume" Type="Real64">
 											<ValueList>
 												<Value>-13</Value>
@@ -606,49 +639,91 @@
 										<ItemRef Name="Bulles_Explodes_02" ID="{BAB38C68-0E36-43ED-BA53-E11D697100F1}"/>
 									</Playlist>
 								</RandomSequenceContainer>
-								<Sound Name="Bulles_Explodes_01" ID="{2A3774F6-F26A-4AAD-80EF-EC3A9ACF104A}" ShortID="1015525380">
+								<RandomSequenceContainer Name="Player_Dash_Rnd" ID="{6D2998FB-5B53-4617-9840-82C783744CD6}" ShortID="1051863233">
 									<PropertyList>
+										<Property Name="3DPosition" Type="int16" Value="2"/>
+										<Property Name="3DSpatialization" Type="int16" Value="1"/>
+										<Property Name="CenterPercentage" Type="int32">
+											<ValueList>
+												<Value>38</Value>
+											</ValueList>
+										</Property>
+										<Property Name="Highpass" Type="int16">
+											<ValueList>
+												<Value>26</Value>
+											</ValueList>
+											<ModifierList>
+												<ModifierInfo>
+													<Modifier Name="" ID="{BB377AAD-9EB4-45DD-98DE-E574CC2CA5DA}">
+														<PropertyList>
+															<Property Name="Enabled" Type="bool" Value="True"/>
+															<Property Name="Min" Type="Real64" Value="-7"/>
+														</PropertyList>
+													</Modifier>
+												</ModifierInfo>
+											</ModifierList>
+										</Property>
+										<Property Name="Lowpass" Type="int16">
+											<ValueList>
+												<Value>19</Value>
+											</ValueList>
+											<ModifierList>
+												<ModifierInfo>
+													<Modifier Name="" ID="{BD1B3480-8880-4FE7-B183-BA12136904A1}">
+														<PropertyList>
+															<Property Name="Enabled" Type="bool" Value="True"/>
+															<Property Name="Max" Type="Real64" Value="8"/>
+															<Property Name="Min" Type="Real64" Value="-15"/>
+														</PropertyList>
+													</Modifier>
+												</ModifierInfo>
+											</ModifierList>
+										</Property>
+										<Property Name="MakeUpGain" Type="Real64">
+											<ValueList>
+												<Value>5</Value>
+											</ValueList>
+										</Property>
 										<Property Name="MaxReachedBehavior" Type="int16" Value="1"/>
 										<Property Name="MaxSoundPerInstance" Type="int16">
 											<ValueList>
 												<Value>1</Value>
 											</ValueList>
 										</Property>
-										<Property Name="OverrideEffect" Type="bool" Value="True"/>
-										<Property Name="OverrideGameAuxSends" Type="bool" Value="True"/>
+										<Property Name="OverrideUserAuxSends" Type="bool" Value="True"/>
 										<Property Name="Pitch" Type="int32">
 											<ValueList>
-												<Value>-1290</Value>
+												<Value>860</Value>
 											</ValueList>
 											<ModifierList>
 												<ModifierInfo>
-													<Modifier Name="" ID="{E59AED2E-AA86-4260-BE55-8C0904941C98}">
+													<Modifier Name="" ID="{99F75FD5-10C2-46F1-91A5-B408860769DF}">
 														<PropertyList>
 															<Property Name="Enabled" Type="bool" Value="True"/>
-															<Property Name="Max" Type="Real64" Value="783"/>
-															<Property Name="Min" Type="Real64" Value="-581"/>
+															<Property Name="Max" Type="Real64" Value="303"/>
+															<Property Name="Min" Type="Real64" Value="-404"/>
 														</PropertyList>
 													</Modifier>
 												</ModifierInfo>
 											</ModifierList>
 										</Property>
-										<Property Name="UseGameAuxSends" Type="bool" Value="True"/>
 										<Property Name="UseMaxSoundPerInstance" Type="bool">
 											<ValueList>
 												<Value>True</Value>
 											</ValueList>
 										</Property>
-										<Property Name="Volume" Type="Real64">
+										<Property Name="UserAuxSendVolume0" Type="Real64">
 											<ValueList>
-												<Value>-5</Value>
+												<Value>-9</Value>
 											</ValueList>
+										</Property>
+										<Property Name="Volume" Type="Real64">
 											<ModifierList>
 												<ModifierInfo>
-													<Modifier Name="" ID="{2DD1CD7F-97DC-4DF4-9607-4219353425F1}">
+													<Modifier Name="" ID="{72F060DD-9A6C-4271-8714-D48190B08D34}">
 														<PropertyList>
 															<Property Name="Enabled" Type="bool" Value="True"/>
-															<Property Name="Max" Type="Real64" Value="1"/>
-															<Property Name="Min" Type="Real64" Value="-2"/>
+															<Property Name="Min" Type="Real64" Value="-6"/>
 														</PropertyList>
 													</Modifier>
 												</ModifierInfo>
@@ -656,29 +731,201 @@
 										</Property>
 									</PropertyList>
 									<ReferenceList>
+										<Reference Name="Attenuation">
+											<Custom>
+												<Attenuation Name="Attenuation (Custom)" ID="{09E37D63-2DF7-45E4-AF8C-FA76D16BEE9D}" ShortID="52894896">
+													<PropertyList>
+														<Property Name="ConeAttenuation" Type="Real64">
+															<ValueList>
+																<Value>-3</Value>
+															</ValueList>
+														</Property>
+														<Property Name="ConeInnerAngle" Type="int32" Value="150"/>
+														<Property Name="ConeOuterAngle" Type="int32" Value="265"/>
+													</PropertyList>
+													<CurveUsageInfoList>
+														<VolumeDryUsage>
+															<CurveUsageInfo Platform="Linked" CurveToUse="Custom">
+																<Curve Name="VolumeDry" ID="{438D0E70-0E5E-404B-B7F5-491FB4F1F1B8}">
+																	<PropertyList>
+																		<Property Name="Flags" Type="int32" Value="3"/>
+																	</PropertyList>
+																	<PointList>
+																		<Point>
+																			<XPos>0</XPos>
+																			<YPos>0</YPos>
+																			<Flags>5</Flags>
+																		</Point>
+																		<Point>
+																			<XPos>100</XPos>
+																			<YPos>-200</YPos>
+																			<Flags>37</Flags>
+																		</Point>
+																	</PointList>
+																</Curve>
+															</CurveUsageInfo>
+														</VolumeDryUsage>
+														<VolumeWetGameUsage>
+															<CurveUsageInfo Platform="Linked" CurveToUse="UseVolumeDry"/>
+														</VolumeWetGameUsage>
+														<VolumeWetUserUsage>
+															<CurveUsageInfo Platform="Linked" CurveToUse="UseVolumeDry"/>
+														</VolumeWetUserUsage>
+														<LowPassFilterUsage>
+															<CurveUsageInfo Platform="Linked" CurveToUse="None"/>
+														</LowPassFilterUsage>
+														<HighPassFilterUsage>
+															<CurveUsageInfo Platform="Linked" CurveToUse="None"/>
+														</HighPassFilterUsage>
+														<SpreadUsage>
+															<CurveUsageInfo Platform="Linked" CurveToUse="Custom">
+																<Curve Name="Spread" ID="{3C70F24C-011A-4145-9ADE-F2F6685C155F}">
+																	<PropertyList>
+																		<Property Name="Flags" Type="int32" Value="1"/>
+																	</PropertyList>
+																	<PointList>
+																		<Point>
+																			<XPos>0</XPos>
+																			<YPos>41.44737</YPos>
+																			<Flags>5</Flags>
+																			<SegmentShape>InvertedSCurve</SegmentShape>
+																		</Point>
+																		<Point>
+																			<XPos>100</XPos>
+																			<YPos>100</YPos>
+																			<Flags>37</Flags>
+																		</Point>
+																	</PointList>
+																</Curve>
+															</CurveUsageInfo>
+														</SpreadUsage>
+														<FocusUsage>
+															<CurveUsageInfo Platform="Linked" CurveToUse="None"/>
+														</FocusUsage>
+													</CurveUsageInfoList>
+												</Attenuation>
+											</Custom>
+										</Reference>
 										<Reference Name="Conversion">
 											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{2BD389C3-9EC6-4637-949C-1D4A4B674147}"/>
 										</Reference>
-										<Reference Name="Effect1" PluginName="Wwise Pitch Shifter" CompanyID="0" PluginID="136" PluginType="3">
-											<ObjectRef Name="Octave_Down" ID="{062EC4B1-5372-4D1E-917B-C757293F2B42}" WorkUnitID="{E8613F7D-BAD3-45CD-A3ED-505576F31277}"/>
-										</Reference>
 										<Reference Name="OutputBus">
-											<ObjectRef Name="Sfx" ID="{F2A0E619-BE8F-40E5-AAC0-7BD9305E608D}" WorkUnitID="{D1B724BB-66B6-4F55-9CB7-851DFB74B0CF}"/>
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{D1B724BB-66B6-4F55-9CB7-851DFB74B0CF}"/>
+										</Reference>
+										<Reference Name="UserAuxSend0">
+											<ObjectRef Name="Delay" ID="{60CAA431-6713-44C5-B349-886C538EA77E}" WorkUnitID="{D1B724BB-66B6-4F55-9CB7-851DFB74B0CF}"/>
+										</Reference>
+										<Reference Name="UserAuxSend1">
+											<ObjectRef Name="Rvrb" ID="{0F444CE1-A308-4A0A-BC97-BDAD8C6462AF}" WorkUnitID="{D1B724BB-66B6-4F55-9CB7-851DFB74B0CF}"/>
 										</Reference>
 									</ReferenceList>
 									<ChildrenList>
-										<AudioFileSource Name="Bulles_Turfu" ID="{708B582A-9EF0-4AD1-8D04-B632F5AF7C96}" ShortID="820945430">
-											<Language>SFX</Language>
-											<AudioFile>Bulles_Turfu.wav</AudioFile>
-											<ConvertedFileIDList>
-												<File ID="905875478"/>
-											</ConvertedFileIDList>
-										</AudioFileSource>
+										<Sound Name="Dash_04_Os" ID="{C1181EA4-96F5-4503-8960-916DC2AF7680}" ShortID="1064747337">
+											<PropertyList>
+												<Property Name="Inclusion" Type="bool">
+													<ValueList>
+														<Value>False</Value>
+													</ValueList>
+												</Property>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{2BD389C3-9EC6-4637-949C-1D4A4B674147}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{D1B724BB-66B6-4F55-9CB7-851DFB74B0CF}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="Dash_04_Os" ID="{FE88DEEA-2420-4692-834D-C4295A8BEA3D}" ShortID="197841704">
+													<PropertyList>
+														<Property Name="FadeOutDuration" Type="Real64" Value="0.377890554451869"/>
+														<Property Name="TrimEnd" Type="Real64" Value="0.618100054180964"/>
+													</PropertyList>
+													<Language>SFX</Language>
+													<AudioFile>Dash_04_Os.wav</AudioFile>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="Dash_04_Os" ID="{FE88DEEA-2420-4692-834D-C4295A8BEA3D}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+										<Sound Name="MACK Whoosh Arrow Low" ID="{C1C63298-4498-4064-94A5-1F53A7E05182}" ShortID="907496664">
+											<PropertyList>
+												<Property Name="Lowpass" Type="int16">
+													<ValueList>
+														<Value>38</Value>
+													</ValueList>
+												</Property>
+												<Property Name="MakeUpGain" Type="Real64">
+													<ValueList>
+														<Value>13</Value>
+													</ValueList>
+												</Property>
+												<Property Name="OverrideUserAuxSends" Type="bool" Value="True"/>
+												<Property Name="Pitch" Type="int32">
+													<ValueList>
+														<Value>-150</Value>
+													</ValueList>
+												</Property>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{2BD389C3-9EC6-4637-949C-1D4A4B674147}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Sfx" ID="{F2A0E619-BE8F-40E5-AAC0-7BD9305E608D}" WorkUnitID="{D1B724BB-66B6-4F55-9CB7-851DFB74B0CF}"/>
+												</Reference>
+												<Reference Name="UserAuxSend0">
+													<ObjectRef Name="Rvrb" ID="{0F444CE1-A308-4A0A-BC97-BDAD8C6462AF}" WorkUnitID="{D1B724BB-66B6-4F55-9CB7-851DFB74B0CF}"/>
+												</Reference>
+												<Reference Name="UserAuxSend1">
+													<ObjectRef Name="Delay" ID="{60CAA431-6713-44C5-B349-886C538EA77E}" WorkUnitID="{D1B724BB-66B6-4F55-9CB7-851DFB74B0CF}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="MACK Whoosh Arrow Low" ID="{B7AF8DA1-CEA1-4482-98E3-F97DCD4A299D}" ShortID="31575492">
+													<PropertyList>
+														<Property Name="FadeInDuration" Type="Real64" Value="0.374560909845133"/>
+														<Property Name="FadeOutDuration" Type="Real64" Value="0.152598889196165"/>
+														<Property Name="TrimBegin" Type="Real64" Value="0.263579899520649"/>
+														<Property Name="TrimEnd" Type="Real64" Value="1.10981010324484"/>
+													</PropertyList>
+													<Language>SFX</Language>
+													<AudioFile>MACK Whoosh Arrow Low.wav</AudioFile>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="MACK Whoosh Arrow Low" ID="{B7AF8DA1-CEA1-4482-98E3-F97DCD4A299D}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
 									</ChildrenList>
-									<ActiveSourceList>
-										<ActiveSource Name="Bulles_Turfu" ID="{708B582A-9EF0-4AD1-8D04-B632F5AF7C96}" Platform="Linked"/>
-									</ActiveSourceList>
-								</Sound>
+									<PositioningInfo>
+										<Panner Name="" ID="{95E8A3F5-8774-490D-9BD0-8FB3239E8F51}"/>
+										<Position Name="" ID="{55FB470A-85F2-4D62-ACBA-1F6F464CC567}">
+											<PropertyList>
+												<Property Name="NewPathForEachSound" Type="bool" Value="True"/>
+											</PropertyList>
+											<ChildrenList>
+												<Path2D Name="R" ID="{DDA38116-DD3A-4643-8612-6F717CFAD640}">
+													<PropertyList>
+														<Property Name="RandomX" Type="Real64" Value="64"/>
+														<Property Name="RandomY" Type="Real64" Value="15"/>
+														<Property Name="RandomZ" Type="Real64" Value="24"/>
+													</PropertyList>
+													<PointList>
+														<Point>
+															<XPos>0</XPos>
+															<YPos>56.36942</YPos>
+															<Flags>12</Flags>
+															<Time>0</Time>
+														</Point>
+													</PointList>
+												</Path2D>
+											</ChildrenList>
+										</Position>
+									</PositioningInfo>
+								</RandomSequenceContainer>
 							</ChildrenList>
 						</ActorMixer>
 						<Sound Name="Bull_SHot" ID="{32A85D79-B99F-4249-8174-37952F2FBB59}" ShortID="526477280">
@@ -940,6 +1187,143 @@
 							</ChildrenList>
 							<ActiveSourceList>
 								<ActiveSource Name="ASpire" ID="{C0F2D0FF-EDF3-4E69-A07A-8E7FE9AC1729}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="Oursin_Scream_Os" ID="{BEF72EA7-A13D-4125-A2F6-7CD559F599CD}" ShortID="836924069">
+							<PropertyList>
+								<Property Name="Highpass" Type="int16">
+									<ValueList>
+										<Value>10</Value>
+									</ValueList>
+								</Property>
+								<Property Name="Lowpass" Type="int16">
+									<ValueList>
+										<Value>19</Value>
+									</ValueList>
+								</Property>
+								<Property Name="OverrideEffect" Type="bool" Value="True"/>
+								<Property Name="OverrideUserAuxSends" Type="bool" Value="True"/>
+								<Property Name="Pitch" Type="int32">
+									<ValueList>
+										<Value>250</Value>
+									</ValueList>
+								</Property>
+								<Property Name="UserAuxSendVolume0" Type="Real64">
+									<ValueList>
+										<Value>-1</Value>
+									</ValueList>
+								</Property>
+								<Property Name="UserAuxSendVolume1" Type="Real64">
+									<ValueList>
+										<Value>-9</Value>
+									</ValueList>
+								</Property>
+								<Property Name="Volume" Type="Real64">
+									<ValueList>
+										<Value>-6</Value>
+									</ValueList>
+								</Property>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{2BD389C3-9EC6-4637-949C-1D4A4B674147}"/>
+								</Reference>
+								<Reference Name="Effect0" CompanyID="4095" PluginID="65535" PluginType="15">
+									<ObjectRef Name="Few_Even_Notches" ID="{25DCAC4B-7165-436C-9B22-75628C2533D1}" WorkUnitID="{E8613F7D-BAD3-45CD-A3ED-505576F31277}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{D1B724BB-66B6-4F55-9CB7-851DFB74B0CF}"/>
+								</Reference>
+								<Reference Name="UserAuxSend0">
+									<ObjectRef Name="Rvrb" ID="{0F444CE1-A308-4A0A-BC97-BDAD8C6462AF}" WorkUnitID="{D1B724BB-66B6-4F55-9CB7-851DFB74B0CF}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="Oursin_Scream_Os" ID="{BC3CEC0F-319B-4B7D-A880-7793F5FA411A}" ShortID="111718063">
+									<PropertyList>
+										<Property Name="FadeOutDuration" Type="Real64" Value="0.139886219974716"/>
+										<Property Name="TrimBegin" Type="Real64" Value="0.357487006602051"/>
+										<Property Name="TrimEnd" Type="Real64" Value="1.26830172777075"/>
+									</PropertyList>
+									<Language>SFX</Language>
+									<AudioFile>Oursin_Scream_Os.wav</AudioFile>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="Oursin_Scream_Os" ID="{BC3CEC0F-319B-4B7D-A880-7793F5FA411A}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="Bulles_Explodes_01" ID="{2A3774F6-F26A-4AAD-80EF-EC3A9ACF104A}" ShortID="1015525380">
+							<PropertyList>
+								<Property Name="MaxReachedBehavior" Type="int16" Value="1"/>
+								<Property Name="MaxSoundPerInstance" Type="int16">
+									<ValueList>
+										<Value>1</Value>
+									</ValueList>
+								</Property>
+								<Property Name="OverrideEffect" Type="bool" Value="True"/>
+								<Property Name="OverrideGameAuxSends" Type="bool" Value="True"/>
+								<Property Name="Pitch" Type="int32">
+									<ValueList>
+										<Value>-1290</Value>
+									</ValueList>
+									<ModifierList>
+										<ModifierInfo>
+											<Modifier Name="" ID="{E59AED2E-AA86-4260-BE55-8C0904941C98}">
+												<PropertyList>
+													<Property Name="Enabled" Type="bool" Value="True"/>
+													<Property Name="Max" Type="Real64" Value="783"/>
+													<Property Name="Min" Type="Real64" Value="-581"/>
+												</PropertyList>
+											</Modifier>
+										</ModifierInfo>
+									</ModifierList>
+								</Property>
+								<Property Name="UseGameAuxSends" Type="bool" Value="True"/>
+								<Property Name="UseMaxSoundPerInstance" Type="bool">
+									<ValueList>
+										<Value>True</Value>
+									</ValueList>
+								</Property>
+								<Property Name="Volume" Type="Real64">
+									<ValueList>
+										<Value>-5</Value>
+									</ValueList>
+									<ModifierList>
+										<ModifierInfo>
+											<Modifier Name="" ID="{2DD1CD7F-97DC-4DF4-9607-4219353425F1}">
+												<PropertyList>
+													<Property Name="Enabled" Type="bool" Value="True"/>
+													<Property Name="Max" Type="Real64" Value="1"/>
+													<Property Name="Min" Type="Real64" Value="-2"/>
+												</PropertyList>
+											</Modifier>
+										</ModifierInfo>
+									</ModifierList>
+								</Property>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{2BD389C3-9EC6-4637-949C-1D4A4B674147}"/>
+								</Reference>
+								<Reference Name="Effect1" PluginName="Wwise Pitch Shifter" CompanyID="0" PluginID="136" PluginType="3">
+									<ObjectRef Name="Octave_Down" ID="{062EC4B1-5372-4D1E-917B-C757293F2B42}" WorkUnitID="{E8613F7D-BAD3-45CD-A3ED-505576F31277}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Sfx" ID="{F2A0E619-BE8F-40E5-AAC0-7BD9305E608D}" WorkUnitID="{D1B724BB-66B6-4F55-9CB7-851DFB74B0CF}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="Bulles_Turfu" ID="{708B582A-9EF0-4AD1-8D04-B632F5AF7C96}" ShortID="820945430">
+									<Language>SFX</Language>
+									<AudioFile>Bulles_Turfu.wav</AudioFile>
+									<ConvertedFileIDList>
+										<File ID="905875478"/>
+									</ConvertedFileIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="Bulles_Turfu" ID="{708B582A-9EF0-4AD1-8D04-B632F5AF7C96}" Platform="Linked"/>
 							</ActiveSourceList>
 						</Sound>
 					</ChildrenList>

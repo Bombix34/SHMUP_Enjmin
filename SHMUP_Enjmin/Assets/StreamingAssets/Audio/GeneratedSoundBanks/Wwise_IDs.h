@@ -17,14 +17,29 @@ namespace AK
         static const AkUniqueID PLAY_BUBBLE_EXPLODE_OS = 3726773303U;
         static const AkUniqueID PLAY_BULLES_GROWN = 3777684193U;
         static const AkUniqueID PLAY_LOAD_SHOT = 2139305897U;
+        static const AkUniqueID PLAY_MUSIC_GAMEOVER = 619661162U;
         static const AkUniqueID PLAY_MUSIQUE = 206418435U;
+        static const AkUniqueID PLAY_OURSIN_SCREAM_OS = 1942785931U;
         static const AkUniqueID PLAY_PLAYER_DASH_OS = 3837926945U;
         static const AkUniqueID PLAY_PLAYER_SHOT = 4135433440U;
         static const AkUniqueID PLAY_PNJ_OH = 2311964536U;
+        static const AkUniqueID STOP_ALL = 452547817U;
+        static const AkUniqueID STOP_MUSIC_GAMEOVER = 3414730868U;
     } // namespace EVENTS
 
     namespace STATES
     {
+        namespace GAME_STATE
+        {
+            static const AkUniqueID GROUP = 766723505U;
+
+            namespace STATE
+            {
+                static const AkUniqueID GAMEOVER = 4158285989U;
+                static const AkUniqueID INGAME = 984691642U;
+            } // namespace STATE
+        } // namespace GAME_STATE
+
         namespace LVL_MUSIQUE
         {
             static const AkUniqueID GROUP = 966917733U;
@@ -33,27 +48,15 @@ namespace AK
             {
                 static const AkUniqueID LVL_01 = 2147068365U;
                 static const AkUniqueID LVL_02 = 2147068366U;
-                static const AkUniqueID LVL_03 = 2147068367U;
             } // namespace STATE
         } // namespace LVL_MUSIQUE
-
-        namespace PROFONDEUR
-        {
-            static const AkUniqueID GROUP = 215492731U;
-
-            namespace STATE
-            {
-                static const AkUniqueID LVL_01 = 2147068365U;
-                static const AkUniqueID LVL_02 = 2147068366U;
-                static const AkUniqueID LVL_03 = 2147068367U;
-            } // namespace STATE
-        } // namespace PROFONDEUR
 
     } // namespace STATES
 
     namespace GAME_PARAMETERS
     {
         static const AkUniqueID BUBBLESIZE = 4093488308U;
+        static const AkUniqueID LEFTRIGHT = 2583390356U;
         static const AkUniqueID PLAYBACK_RATE = 1524500807U;
         static const AkUniqueID PROFONDEUR = 215492731U;
         static const AkUniqueID RPM = 796049864U;
@@ -86,6 +89,7 @@ namespace AK
 
     namespace AUX_BUSSES
     {
+        static const AkUniqueID DELAY = 357718954U;
         static const AkUniqueID RVRB = 2157448753U;
     } // namespace AUX_BUSSES
 

@@ -26,6 +26,10 @@
 							<Position X="2" Y="1"/>
 						</Module>
 						<Module>
+							<ObjectRef Name="Play_Oursin_Scream_Os" ID="{95F87FAA-EE70-48F1-8D54-1383AF9A083E}" WorkUnitID="{1336847C-65CD-4BDE-82E7-88B2522FBB1A}"/>
+							<Position X="2" Y="3"/>
+						</Module>
+						<Module>
 							<ObjectRef Name="Play_Player_Shot" ID="{4F6015C0-0C9E-45B0-BCE5-B0C978078CE4}" WorkUnitID="{1336847C-65CD-4BDE-82E7-88B2522FBB1A}"/>
 							<Position X="3" Y="1"/>
 						</Module>
@@ -72,6 +76,10 @@
 							<Value>75</Value>
 						</RTPCValue>
 						<RTPCValue>
+							<GameParameterRef Name="LeftRight" ID="{189814A7-C41F-4B32-94DD-765DBF2C9FF0}"/>
+							<Value>100</Value>
+						</RTPCValue>
+						<RTPCValue>
 							<GameParameterRef Name="SS_Air_TimeOfDay" ID="{536FA72C-8C7E-4C8B-AE03-EF34FDADC314}"/>
 							<Value>6</Value>
 						</RTPCValue>
@@ -85,22 +93,16 @@
 						</RTPCValue>
 						<RTPCValue>
 							<GameParameterRef Name="Profondeur" ID="{27B4697F-9FDD-4F5D-B7F0-B5A24FF86796}"/>
-							<Value>4.34959349593496</Value>
+							<Value>-5</Value>
 						</RTPCValue>
 					</RTPCValueList>
 					<CurrentStateList ShowAll="true">
 						<CurrentStateRef Name="Lvl_02" ID="{1297E238-5925-4B8C-BE18-52BB5B1EFD72}"/>
-						<CurrentStateRef Name="Lvl_02" ID="{E36538E5-14FC-4B48-8F3D-3DF82DBEB51C}"/>
+						<CurrentStateRef Name="inGame" ID="{19D7413D-8047-41A8-8DD1-4040004E6839}"/>
 					</CurrentStateList>
 					<CurrentSwitchList ShowAll="true"/>
 				</SoundcasterSession>
 				<SoundcasterSession Name="Musique" ID="{F29D0821-AE0A-491B-9157-43A360F17858}">
-					<ModuleList>
-						<Module>
-							<ObjectRef Name="Play_Music_Lvl_Sw" ID="{2441B4F1-8711-40F3-B0A5-9628007C4233}" WorkUnitID="{1336847C-65CD-4BDE-82E7-88B2522FBB1A}"/>
-							<Position X="0" Y="0"/>
-						</Module>
-					</ModuleList>
 					<RTPCValueList ShowAll="true">
 						<RTPCValue>
 							<GameParameterRef Name="BubbleSize" ID="{76DDD84F-E5CF-4064-B1CF-03CF0185F858}"/>

@@ -15,9 +15,15 @@ public class GameManager : MonoBehaviour {
 	void Start () 
 	{
 		player=GameObject.FindGameObjectWithTag("Player");
-	}
-	
-	void Update () 
+
+      //  AkSoundEngine.SetState("Game_State", "inGame");
+        AkSoundEngine.SetState("Lvl_Musique", "Lvl_01");
+        AkSoundEngine.PostEvent("Innit_Amb", gameObject);
+
+
+    }
+
+    void Update () 
 	{
 		
 	}
@@ -33,16 +39,24 @@ public class GameManager : MonoBehaviour {
 		gameover.GetComponent<GameOverUI>().scoreText.text=score.ToString();
 		player.GetComponent<PlayerManager>().Die();
 		gameover.SetActive(true);
-	}
+     //   AkSoundEngine.SetState("Game_State", "gameOver");
+        AkSoundEngine.PostEvent("Stop_All", gameObject);
+        AkSoundEngine.PostEvent("Play_Music_GameOver", gameObject);
 
-	public void RelaunchGame()
+    }
+
+    public void RelaunchGame()
 	{
-		SceneManager.LoadScene("MainScene");
-	}
+        Debug.Log("aaa");
+        SceneManager.LoadScene("MainScene");
+        AkSoundEngine.PostEvent("Stop_Music_GameOver", gameObject);
 
-//SINGLETON________________________________________________________________________________________________
 
-	private static GameManager s_Instance = null;
+    }
+
+    //SINGLETON________________________________________________________________________________________________
+
+    private static GameManager s_Instance = null;
 
     // This defines a static instance property that attempts to find the manager object in the scene and
     // returns it to the caller.
