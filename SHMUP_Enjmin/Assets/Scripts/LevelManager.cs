@@ -6,25 +6,34 @@ using UnityEngine;
 public class LevelManager : MonoBehaviour
 {
     float rightMostSituationBound;
-    float rightMostBasePlafondBound;
 
-    List<GameObject> basesPlafond;
-    List<List<GameObject>> stalactiteGroups;
+    List<GameObject> plafondsBackground;
+    List<GameObject> plafondsMiddleground;
+    List<GameObject> plafondsForeground;
+
+    float rightMostBackgroundPlafondBound;
+    float rightMostMiddlegroundPlafondBound;
+    float rightMostForegroundPlafondBound;
 
     public LevelReglages reglages;
 
     void Start ()
     {
         rightMostSituationBound = Camera.main.orthographicSize * Camera.main.aspect;
-        rightMostBasePlafondBound = Camera.main.orthographicSize * Camera.main.aspect;
-        basesPlafond = new List<GameObject>();
-        stalactiteGroups = new List<List<GameObject>>();
+        plafondsBackground = new List<GameObject>();
+        plafondsMiddleground = new List<GameObject>();
+        plafondsForeground = new List<GameObject>();
+        rightMostBackgroundPlafondBound = Camera.main.orthographicSize * Camera.main.aspect;
+        rightMostMiddlegroundPlafondBound = Camera.main.orthographicSize * Camera.main.aspect;
+        rightMostForegroundPlafondBound = Camera.main.orthographicSize * Camera.main.aspect;
     }
 
     void Update ()
     {
         rightMostSituationBound -= reglages.scrollingSpeed * Time.deltaTime;
-        rightMostBasePlafondBound -= reglages.scrollingSpeed * Time.deltaTime;
+        rightMostBackgroundPlafondBound -= reglages.scrollingSpeed * Time.deltaTime * 0.33f;
+        rightMostMiddlegroundPlafondBound -= reglages.scrollingSpeed * Time.deltaTime * 0.66f;
+        rightMostForegroundPlafondBound -= reglages.scrollingSpeed * Time.deltaTime;
 
         while (rightMostSituationBound < Camera.main.orthographicSize * Camera.main.aspect)
         {
@@ -38,39 +47,72 @@ public class LevelManager : MonoBehaviour
             Destroy(newSituation);
         }
 
-        while (rightMostBasePlafondBound < Camera.main.orthographicSize * Camera.main.aspect)
+        while (rightMostBackgroundPlafondBound < Camera.main.orthographicSize * Camera.main.aspect)
         {
-            GameObject newBasePlafond = (GameObject)Instantiate(reglages.GetBaseDePlafondRandom(), new Vector3(rightMostBasePlafondBound, 4.0731f), transform.rotation);
+            int idPlafond = Random.Range(0, reglages.plafonds.Count);
+            GameObject newBasePlafond = (GameObject)Instantiate(reglages.plafonds[idPlafond], new Vector3(rightMostBackgroundPlafondBound, reglages.hauteursPlafonds[idPlafond], 0.3f), transform.rotation);
             newBasePlafond.transform.Translate(new Vector3(Camera.main.orthographicSize * Camera.main.aspect - GetGameObjectLeftMostBound(newBasePlafond), 0));
-            rightMostBasePlafondBound = GetGameObjectRightMostBound(newBasePlafond) + Random.Range(0.5f, 4.0f);
-            basesPlafond.Add(newBasePlafond);
-            List<GameObject> stalactitesGroup = new List<GameObject>();
-            float stalactitesXPos = GetGameObjectLeftMostBound(newBasePlafond) + Random.Range(0.1f, 1.0f);
-            while (stalactitesXPos < GetGameObjectRightMostBound(newBasePlafond))
-            {
-                GameObject stalactite = (GameObject)Instantiate(reglages.GetRandomStalactite(), new Vector3(stalactitesXPos, 4.0f + Random.Range(-0.5f, 0.5f), 0.1f), transform.rotation);
-                stalactite.transform.position += new Vector3(stalactite.GetComponent<Renderer>().bounds.max.x - stalactite.transform.position.x, 0.0f, 0.0f);
-                stalactitesGroup.Add(stalactite);
-                stalactitesXPos += GetGameObjectSize(stalactite) + Random.Range(0.1f, 1.0f);
-            }
-            stalactiteGroups.Add(stalactitesGroup);
+            rightMostBackgroundPlafondBound = GetGameObjectRightMostBound(newBasePlafond) + Random.Range(0.5f, 2.0f);
+            plafondsBackground.Add(newBasePlafond);
         }
 
-        if (basesPlafond.Count != 0)
+        while (rightMostMiddlegroundPlafondBound < Camera.main.orthographicSize * Camera.main.aspect)
         {
-            while (GetGameObjectRightMostBound(basesPlafond.First()) < -Camera.main.orthographicSize * Camera.main.aspect)
-            {
-                GameObject basePlafondToRemove = basesPlafond.First();
-                basesPlafond.RemoveAt(0);
-                Destroy(basePlafondToRemove);
-                List<GameObject> stalactiteGroupToRemove = stalactiteGroups.First();
-                stalactiteGroups.RemoveAt(0);
-                foreach (GameObject stalactite in stalactiteGroupToRemove)
-                {
-                    Destroy(stalactite);
-                }
+            int idPlafond = Random.Range(0, reglages.plafonds.Count);
+            GameObject newBasePlafond = (GameObject)Instantiate(reglages.plafonds[idPlafond], new Vector3(rightMostMiddlegroundPlafondBound, reglages.hauteursPlafonds[idPlafond], 0.2f), transform.rotation);
+            newBasePlafond.transform.Translate(new Vector3(Camera.main.orthographicSize * Camera.main.aspect - GetGameObjectLeftMostBound(newBasePlafond), 0));
+            rightMostMiddlegroundPlafondBound = GetGameObjectRightMostBound(newBasePlafond) + Random.Range(0.5f, 2.0f);
+            plafondsMiddleground.Add(newBasePlafond);
+        }
 
-                if (basesPlafond.Count == 0)
+        while (rightMostForegroundPlafondBound < Camera.main.orthographicSize * Camera.main.aspect)
+        {
+            int idPlafond = Random.Range(0, reglages.plafonds.Count);
+            GameObject newBasePlafond = (GameObject)Instantiate(reglages.plafonds[idPlafond], new Vector3(rightMostForegroundPlafondBound, reglages.hauteursPlafonds[idPlafond], 0.1f), transform.rotation);
+            newBasePlafond.transform.Translate(new Vector3(Camera.main.orthographicSize * Camera.main.aspect - GetGameObjectLeftMostBound(newBasePlafond), 0));
+            rightMostForegroundPlafondBound = GetGameObjectRightMostBound(newBasePlafond) + Random.Range(0.5f, 2.0f);
+            plafondsForeground.Add(newBasePlafond);
+        }
+
+        if (plafondsBackground.Count != 0)
+        {
+            while (GetGameObjectRightMostBound(plafondsBackground.First()) < -Camera.main.orthographicSize * Camera.main.aspect)
+            {
+                GameObject basePlafondToRemove = plafondsBackground.First();
+                plafondsBackground.RemoveAt(0);
+                Destroy(basePlafondToRemove);
+
+                if (plafondsBackground.Count == 0)
+                {
+                    break;
+                }
+            }
+        }
+
+        if (plafondsMiddleground.Count != 0)
+        {
+            while (GetGameObjectRightMostBound(plafondsMiddleground.First()) < -Camera.main.orthographicSize * Camera.main.aspect)
+            {
+                GameObject basePlafondToRemove = plafondsMiddleground.First();
+                plafondsMiddleground.RemoveAt(0);
+                Destroy(basePlafondToRemove);
+
+                if (plafondsMiddleground.Count == 0)
+                {
+                    break;
+                }
+            }
+        }
+
+        if (plafondsForeground.Count != 0)
+        {
+            while (GetGameObjectRightMostBound(plafondsForeground.First()) < -Camera.main.orthographicSize * Camera.main.aspect)
+            {
+                GameObject basePlafondToRemove = plafondsForeground.First();
+                plafondsForeground.RemoveAt(0);
+                Destroy(basePlafondToRemove);
+
+                if (plafondsForeground.Count == 0)
                 {
                     break;
                 }
@@ -79,17 +121,19 @@ public class LevelManager : MonoBehaviour
 
         Vector3 scrollingVector = new Vector3(-reglages.scrollingSpeed * Time.deltaTime, 0.0f, 0.0f);
 
-        foreach (GameObject basePlafond in basesPlafond)
+        foreach (GameObject basePlafond in plafondsBackground)
         {
-            basePlafond.transform.Translate(scrollingVector);
+            basePlafond.transform.Translate(scrollingVector * 0.33f);
         }
 
-        foreach (List<GameObject> stalactitesGroup in stalactiteGroups)
+        foreach (GameObject basePlafond in plafondsMiddleground)
         {
-            foreach (GameObject stalactite in stalactitesGroup)
-            {
-                stalactite.transform.Translate(scrollingVector * 0.8f);
-            }
+            basePlafond.transform.Translate(scrollingVector * 0.66f);
+        }
+
+        foreach (GameObject basePlafond in plafondsForeground)
+        {
+            basePlafond.transform.Translate(scrollingVector);
         }
     }
 

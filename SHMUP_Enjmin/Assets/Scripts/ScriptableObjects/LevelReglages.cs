@@ -19,21 +19,9 @@ public class LevelReglages : ScriptableObject
         return levelParts[(int)Random.Range(0f, levelParts.Count)];
     }
 
-    [Header("Bases de plafond")]
-    public List<GameObject> basesPlafonds;
+    [Header("Plafonds")]
+    public List<GameObject> plafonds;
 
-
-    public GameObject GetBaseDePlafondRandom()
-    {
-        return basesPlafonds[(int)Random.Range(0f, basesPlafonds.Count)];
-    }
-
-    [Header("Stalactites")]
-	public List<GameObject> stalactites;
-
-
-	public GameObject GetRandomStalactite()
-	{
-		return stalactites[(int)Random.Range(0f, stalactites.Count)];
-	}
+    [Header("Hauteurs plafonds")]
+    public List<float> hauteursPlafonds;
 }
