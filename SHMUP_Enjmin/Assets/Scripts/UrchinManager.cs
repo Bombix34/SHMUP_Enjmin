@@ -36,6 +36,8 @@ public class UrchinManager : MonoBehaviour {
         isRetracted = true;
         col.enabled=false;
         animator.SetTrigger("Retract");
+
+        AkSoundEngine.PostEvent("Play_Oursin_In", gameObject);
     }
 
     public void detract()
@@ -43,6 +45,8 @@ public class UrchinManager : MonoBehaviour {
         isRetracted = false;
         col.enabled=true;
         animator.SetTrigger("Detract");
+
+        AkSoundEngine.PostEvent("Play_Oursin_Out", gameObject);
     }
 
     public bool GetIsRetracted()

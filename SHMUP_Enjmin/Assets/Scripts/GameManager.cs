@@ -44,9 +44,13 @@ public class GameManager : MonoBehaviour {
 		player.GetComponent<PlayerManager>().Die();
 		highScore.AddNewHighscore("world",score);
 		gameover.SetActive(true);
-	}
 
-	public void RelaunchGame()
+        AkSoundEngine.PostEvent("Stop_All", gameObject);
+        AkSoundEngine.PostEvent("Play_Music_GameOver", gameObject);
+
+    }
+
+    public void RelaunchGame()
 	{
 		AddMetric("Rejoué",true.ToString());
 

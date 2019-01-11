@@ -35,7 +35,7 @@
 									<DuckingParam>
 										<Volume>-3</Volume>
 										<FadeInTime>0.100000001490116</FadeInTime>
-										<FadeOutTime>0.100000001490116</FadeOutTime>
+										<FadeOutTime>1.5</FadeOutTime>
 										<FadeCurve>FadeInvSCurve</FadeCurve>
 									</DuckingParam>
 								</DuckItem>
@@ -50,6 +50,11 @@
 								</Property>
 								<Property Name="UseGameAuxSends" Type="bool" Value="True"/>
 							</PropertyList>
+							<ReferenceList>
+								<Reference Name="UserAuxSend0">
+									<ObjectRef Name="Rvrb" ID="{0F444CE1-A308-4A0A-BC97-BDAD8C6462AF}" WorkUnitID="{D1B724BB-66B6-4F55-9CB7-851DFB74B0CF}"/>
+								</Reference>
+							</ReferenceList>
 						</Bus>
 						<Bus Name="Music" ID="{22627215-F271-45F9-A24D-6AB466AF1237}">
 							<PropertyList>
@@ -68,14 +73,45 @@
 								</Reference>
 							</ReferenceList>
 						</AuxBus>
+						<AuxBus Name="Delay" ID="{60CAA431-6713-44C5-B349-886C538EA77E}">
+							<PropertyList>
+								<Property Name="BusVolume" Type="Real64">
+									<ValueList>
+										<Value>-5</Value>
+									</ValueList>
+								</Property>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Effect0" PluginName="Wwise Stereo Delay" CompanyID="0" PluginID="135" PluginType="3">
+									<ObjectRef Name="Underwater_Echoes" ID="{3C6B127B-9DAE-4879-A4ED-75DF209310EC}" WorkUnitID="{E8613F7D-BAD3-45CD-A3ED-505576F31277}"/>
+								</Reference>
+							</ReferenceList>
+						</AuxBus>
 					</ChildrenList>
-				</Bus>
-				<Bus Name="Motion Factory Bus" ID="{2AF9B9C6-6EF1-46E9-B5F2-E30C9E602C74}">
-					<ReferenceList>
-						<Reference Name="AudioDevice">
-							<ObjectRef Name="Default_Motion_Device" ID="{B94CCCB5-DDB5-4AEC-9960-09B4166D46ED}" WorkUnitID="{1CBB7E6F-55CF-43D8-AC73-66564D458B7D}"/>
-						</Reference>
-					</ReferenceList>
+					<StateInfo>
+						<StateGroupList>
+							<StateGroupInfo>
+								<StateGroupRef Name="Game_State" ID="{71DB1775-D0F9-4652-B603-81BFF54C2F89}"/>
+							</StateGroupInfo>
+						</StateGroupList>
+						<CustomStateList>
+							<CustomState>
+								<StateRef Name="ReadyToDestroyBuble" ID="{19D7413D-8047-41A8-8DD1-4040004E6839}"/>
+								<State Name="" ID="{74D8EFDC-51B7-4EB6-9888-42AD075255AB}" ShortID="568819186"/>
+							</CustomState>
+							<CustomState>
+								<StateRef Name="Poisonus" ID="{9A99C0FF-0755-47FA-9371-3BAB9E5FDF65}"/>
+								<State Name="" ID="{58DA1255-1B29-40DD-B1E3-6F39A42EB043}" ShortID="178037871">
+									<PropertyList>
+										<Property Name="Highpass" Type="int16" Value="-32"/>
+										<Property Name="Lowpass" Type="int16" Value="48"/>
+										<Property Name="Pitch" Type="int32" Value="-2430"/>
+										<Property Name="Volume" Type="Real64" Value="-2"/>
+									</PropertyList>
+								</State>
+							</CustomState>
+						</CustomStateList>
+					</StateInfo>
 				</Bus>
 			</ChildrenList>
 		</WorkUnit>

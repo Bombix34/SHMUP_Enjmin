@@ -8,7 +8,28 @@
 		<ExternalSourcesOutputRoot>/Users/benjamindarmon/Library/Application Support/Wwise2018/Bottles/wwise/dosdevices/y:/Desktop/BLOOOOUUUUUUPPPPPPPPPP/SHMUP_Enjmin/SHMUP_Enjmin/Bloup'themup/GeneratedSoundBanks/Mac</ExternalSourcesOutputRoot>
 	</RootPaths>
 	<DialogueEvents/>
-	<StreamedFiles/>
+	<StreamedFiles>
+		<File Id="374062965" Language="SFX">
+			<ShortName>Music_Main_Mid_Lp.wav</ShortName>
+			<Path>SFX/Music_Main_Mid_Lp_8956FC97.wem</Path>
+		</File>
+		<File Id="376671590" Language="SFX">
+			<ShortName>Batterie_Lvl_02_Lp.wav</ShortName>
+			<Path>SFX/Batterie_Lvl_02_Lp_8956FC97.wem</Path>
+		</File>
+		<File Id="541592036" Language="SFX">
+			<ShortName>Music_Main_Percussions_Lp.wav</ShortName>
+			<Path>SFX/Music_Main_Percussions_Lp_8956FC97.wem</Path>
+		</File>
+		<File Id="752078592" Language="SFX">
+			<ShortName>Music_Main_Cordes_Lp.wav</ShortName>
+			<Path>SFX/Music_Main_Cordes_Lp_8956FC97.wem</Path>
+		</File>
+		<File Id="1061159904" Language="SFX">
+			<ShortName>Music_Main_Aerie_Lp.wav</ShortName>
+			<Path>SFX/Music_Main_Aerie_Lp_8956FC97.wem</Path>
+		</File>
+	</StreamedFiles>
 	<MediaFilesNotInAnyBank/>
 	<SoundBanks>
 		<SoundBank Id="984691642" Language="SFX">
@@ -17,15 +38,42 @@
 			<Path>Ingame.bnk</Path>
 			<IncludedEvents>
 				<Event Id="2999869044" Name="Innit_Amb" ObjectPath="\Events\Default Work Unit\Ingame\Innit_Amb"/>
+				<Event Id="2269074425" Name="Innit_Menu" ObjectPath="\Events\Default Work Unit\Ingame\Innit_Menu"/>
 				<Event Id="3726773303" Name="Play_Bubble_Explode_Os" ObjectPath="\Events\Default Work Unit\Ingame\Play_Bubble_Explode_Os"/>
 				<Event Id="3777684193" Name="Play_Bulles_Grown" ObjectPath="\Events\Default Work Unit\Ingame\Play_Bulles_Grown"/>
+				<Event Id="2756168116" Name="Play_Impact_Dash_bubble" ObjectPath="\Events\Default Work Unit\Ingame\Play_Impact_Dash_bubble"/>
+				<Event Id="2784081170" Name="Play_Kraken_Eat_Pnj" ObjectPath="\Events\Default Work Unit\Ingame\Play_Kraken_Eat_Pnj"/>
 				<Event Id="2139305897" Name="Play_Load_Shot" ObjectPath="\Events\Default Work Unit\Ingame\Play_Load_Shot"/>
+				<Event Id="619661162" Name="Play_Music_GameOver" ObjectPath="\Events\Default Work Unit\Ingame\Play_Music_GameOver"/>
 				<Event Id="206418435" Name="Play_Musique" ObjectPath="\Events\Default Work Unit\Ingame\Play_Musique"/>
+				<Event Id="1942065700" Name="Play_Oursin_In" ObjectPath="\Events\Default Work Unit\Ingame\Play_Oursin_In"/>
+				<Event Id="1957308451" Name="Play_Oursin_Out" ObjectPath="\Events\Default Work Unit\Ingame\Play_Oursin_Out"/>
 				<Event Id="3837926945" Name="Play_Player_Dash_os" ObjectPath="\Events\Default Work Unit\Ingame\Play_Player_Dash_os"/>
 				<Event Id="4135433440" Name="Play_Player_Shot" ObjectPath="\Events\Default Work Unit\Ingame\Play_Player_Shot"/>
 				<Event Id="2311964536" Name="Play_Pnj_Oh" ObjectPath="\Events\Default Work Unit\Ingame\Play_Pnj_Oh"/>
+				<Event Id="452547817" Name="Stop_All" ObjectPath="\Events\Default Work Unit\Ingame\Stop_All" MaxAttenuation="0.000000"/>
+				<Event Id="3414730868" Name="Stop_Music_GameOver" ObjectPath="\Events\Default Work Unit\Ingame\Stop_Music_GameOver" MaxAttenuation="0.000000"/>
 			</IncludedEvents>
+			<ReferencedStreamedFiles>
+				<File Id="374062965"/>
+				<File Id="376671590"/>
+				<File Id="541592036"/>
+				<File Id="752078592"/>
+				<File Id="1061159904"/>
+			</ReferencedStreamedFiles>
 			<IncludedMemoryFiles>
+				<File Id="715088" Language="SFX">
+					<ShortName>Monstre_Amb_Intervention_01_06_Os.wav</ShortName>
+					<Path>SFX/Monstre_Amb_Intervention_01_06_Os_8956FC97.wem</Path>
+				</File>
+				<File Id="31575492" Language="SFX">
+					<ShortName>MACK Whoosh Arrow Low.wav</ShortName>
+					<Path>SFX/MACK Whoosh Arrow Low_ACF0B30C.wem</Path>
+				</File>
+				<File Id="179179122" Language="SFX">
+					<ShortName>Pnj_In_Bubble.wav</ShortName>
+					<Path>SFX/Pnj_In_Bubble_56D34C19.wem</Path>
+				</File>
 				<File Id="182596096" Language="SFX">
 					<ShortName>Underwater_03_Os.wav</ShortName>
 					<Path>SFX/Underwater_03_Os_56D34C19.wem</Path>
@@ -42,13 +90,35 @@
 					<ShortName>Bull_SHot.wav</ShortName>
 					<Path>SFX/Bull_SHot_20817CEF.wem</Path>
 				</File>
+				<File Id="357325793" Language="SFX">
+					<ShortName>Pnj_In_Bubble_02.wav</ShortName>
+					<Path>SFX/Pnj_In_Bubble_02_56D34C19.wem</Path>
+				</File>
 				<File Id="374062965" Language="SFX">
 					<ShortName>Music_Main_Mid_Lp.wav</ShortName>
 					<Path>SFX/Music_Main_Mid_Lp_8956FC97.wem</Path>
+					<PrefetchSize>17832</PrefetchSize>
 				</File>
-				<File Id="384079195" Language="SFX">
-					<ShortName>ASpire.wav</ShortName>
-					<Path>SFX/ASpire_56D34C19.wem</Path>
+				<File Id="376671590" Language="SFX">
+					<ShortName>Batterie_Lvl_02_Lp.wav</ShortName>
+					<Path>SFX/Batterie_Lvl_02_Lp_8956FC97.wem</Path>
+					<PrefetchSize>17784</PrefetchSize>
+				</File>
+				<File Id="409045576" Language="SFX">
+					<ShortName>Music_Loose.wav</ShortName>
+					<Path>SFX/Music_Loose_8956FC97.wem</Path>
+				</File>
+				<File Id="417209907" Language="SFX">
+					<ShortName>Kraken_Eat_Pnj.wav</ShortName>
+					<Path>SFX/Kraken_Eat_Pnj_4DE3AA7B.wem</Path>
+				</File>
+				<File Id="427775264" Language="SFX">
+					<ShortName>Oursin_In.wav</ShortName>
+					<Path>SFX/Oursin_In_BBA067F0.wem</Path>
+				</File>
+				<File Id="470362947" Language="SFX">
+					<ShortName>Monstre_Amb_Intervention_01_05_Os.wav</ShortName>
+					<Path>SFX/Monstre_Amb_Intervention_01_05_Os_8956FC97.wem</Path>
 				</File>
 				<File Id="476708979" Language="SFX">
 					<ShortName>Underwater_05_Os.wav</ShortName>
@@ -66,29 +136,35 @@
 					<ShortName>Underwater_Parasites_03_Os.wav</ShortName>
 					<Path>SFX/Underwater_Parasites_03_Os_56D34C19.wem</Path>
 				</File>
+				<File Id="517778700" Language="SFX">
+					<ShortName>Monstre_Amb_Intervention_05_Os.wav</ShortName>
+					<Path>SFX/Monstre_Amb_Intervention_05_Os_8956FC97.wem</Path>
+				</File>
 				<File Id="541592036" Language="SFX">
 					<ShortName>Music_Main_Percussions_Lp.wav</ShortName>
 					<Path>SFX/Music_Main_Percussions_Lp_8956FC97.wem</Path>
-				</File>
-				<File Id="570302368" Language="SFX">
-					<ShortName>Bull_Load.wav</ShortName>
-					<Path>SFX/Bull_Load_21419124.wem</Path>
+					<PrefetchSize>17832</PrefetchSize>
 				</File>
 				<File Id="612824582" Language="SFX">
 					<ShortName>Ploc_012.wav</ShortName>
 					<Path>SFX/Ploc_012_56D34C19.wem</Path>
 				</File>
-				<File Id="681287260" Language="SFX">
-					<ShortName>Player_Dash_os.wav</ShortName>
-					<Path>SFX/Player_Dash_os_86F89E72.wem</Path>
+				<File Id="745076470" Language="SFX">
+					<ShortName>Oursin_Out.wav</ShortName>
+					<Path>SFX/Oursin_Out_C313A24D.wem</Path>
 				</File>
 				<File Id="752078592" Language="SFX">
 					<ShortName>Music_Main_Cordes_Lp.wav</ShortName>
 					<Path>SFX/Music_Main_Cordes_Lp_8956FC97.wem</Path>
+					<PrefetchSize>17832</PrefetchSize>
 				</File>
 				<File Id="842027309" Language="SFX">
 					<ShortName>Underwater_Parasites_04_Os.wav</ShortName>
 					<Path>SFX/Underwater_Parasites_04_Os_56D34C19.wem</Path>
+				</File>
+				<File Id="877869285" Language="SFX">
+					<ShortName>Impact_Dash_bubble.wav</ShortName>
+					<Path>SFX/Impact_Dash_bubble_56D34C19.wem</Path>
 				</File>
 				<File Id="881670788" Language="SFX">
 					<ShortName>Underwater_lp.wav</ShortName>
@@ -106,6 +182,10 @@
 					<ShortName>Underwater_01_Os.wav</ShortName>
 					<Path>SFX/Underwater_01_Os_56D34C19.wem</Path>
 				</File>
+				<File Id="1018135258" Language="SFX">
+					<ShortName>Monstre_Amb_Intervention_01_04_Os.wav</ShortName>
+					<Path>SFX/Monstre_Amb_Intervention_01_04_Os_8956FC97.wem</Path>
+				</File>
 				<File Id="1049757686" Language="SFX">
 					<ShortName>Ploc_01.wav</ShortName>
 					<Path>SFX/Ploc_01_56D34C19.wem</Path>
@@ -113,6 +193,7 @@
 				<File Id="1061159904" Language="SFX">
 					<ShortName>Music_Main_Aerie_Lp.wav</ShortName>
 					<Path>SFX/Music_Main_Aerie_Lp_8956FC97.wem</Path>
+					<PrefetchSize>18716</PrefetchSize>
 				</File>
 			</IncludedMemoryFiles>
 		</SoundBank>
