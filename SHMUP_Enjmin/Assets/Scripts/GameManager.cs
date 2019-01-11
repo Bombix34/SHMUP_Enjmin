@@ -12,14 +12,12 @@ public class GameManager : MonoBehaviour {
 
 	GameObject player;
 
+	Score highScore;
+
 	void Start () 
 	{
 		player=GameObject.FindGameObjectWithTag("Player");
-	}
-	
-	void Update () 
-	{
-		
+		highScore=GetComponent<Score>();
 	}
 
 	public void AddScore()
@@ -32,6 +30,7 @@ public class GameManager : MonoBehaviour {
 		GameObject gameover = Instantiate(gameOverUI, transform.position,Quaternion.identity) as GameObject;
 		gameover.GetComponent<GameOverUI>().scoreText.text=score.ToString();
 		player.GetComponent<PlayerManager>().Die();
+		highScore.AddNewHighscore("world",score);
 		gameover.SetActive(true);
 	}
 
