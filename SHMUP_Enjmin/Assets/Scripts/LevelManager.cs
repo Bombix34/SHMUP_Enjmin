@@ -17,15 +17,20 @@ public class LevelManager : MonoBehaviour
 
     public LevelReglages reglages;
 
+    float surfaceJouable;
+
     void Start ()
     {
         rightMostSituationBound = Camera.main.orthographicSize * Camera.main.aspect;
+
         plafondsBackground = new List<GameObject>();
         plafondsMiddleground = new List<GameObject>();
         plafondsForeground = new List<GameObject>();
         rightMostBackgroundPlafondBound = Camera.main.orthographicSize * Camera.main.aspect;
         rightMostMiddlegroundPlafondBound = Camera.main.orthographicSize * Camera.main.aspect;
         rightMostForegroundPlafondBound = Camera.main.orthographicSize * Camera.main.aspect;
+
+        surfaceJouable = 0.0f;
     }
 
     void Update ()
@@ -54,7 +59,7 @@ public class LevelManager : MonoBehaviour
             newBasePlafond.transform.Translate(new Vector3(Camera.main.orthographicSize * Camera.main.aspect - GetGameObjectLeftMostBound(newBasePlafond), 0));
             Color color = newBasePlafond.GetComponent<SpriteRenderer>().material.color;
             color *= 0.1f;
-            color.a = 1.0f;
+            color.a = 0.5f;
             newBasePlafond.GetComponent<SpriteRenderer>().material.color = color;
             rightMostBackgroundPlafondBound = GetGameObjectRightMostBound(newBasePlafond) - Random.Range(0.5f, 2.0f);
             plafondsBackground.Add(newBasePlafond);
@@ -67,7 +72,7 @@ public class LevelManager : MonoBehaviour
             newBasePlafond.transform.Translate(new Vector3(Camera.main.orthographicSize * Camera.main.aspect - GetGameObjectLeftMostBound(newBasePlafond), 0));
             Color color = newBasePlafond.GetComponent<SpriteRenderer>().material.color;
             color *= 0.45f;
-            color.a = 1.0f;
+            color.a = 0.5f;
             newBasePlafond.GetComponent<SpriteRenderer>().material.color = color;
             rightMostMiddlegroundPlafondBound = GetGameObjectRightMostBound(newBasePlafond) + Random.Range(0.25f, 1.0f);
             plafondsMiddleground.Add(newBasePlafond);
@@ -78,6 +83,9 @@ public class LevelManager : MonoBehaviour
             int idPlafond = Random.Range(0, reglages.plafonds.Count);
             GameObject newBasePlafond = (GameObject)Instantiate(reglages.plafonds[idPlafond], new Vector3(rightMostForegroundPlafondBound, reglages.hauteursPlafonds[idPlafond], 0.1f), transform.rotation);
             newBasePlafond.transform.Translate(new Vector3(Camera.main.orthographicSize * Camera.main.aspect - GetGameObjectLeftMostBound(newBasePlafond), 0));
+            Color color = newBasePlafond.GetComponent<SpriteRenderer>().material.color;
+            color.a = 0.5f;
+            newBasePlafond.GetComponent<SpriteRenderer>().material.color = color;
             rightMostForegroundPlafondBound = GetGameObjectRightMostBound(newBasePlafond) + Random.Range(0.5f, 2.0f);
             plafondsForeground.Add(newBasePlafond);
         }
@@ -143,6 +151,11 @@ public class LevelManager : MonoBehaviour
         {
             basePlafond.transform.Translate(scrollingVector);
         }
+    }
+
+    float GetGameObjectSurface(GameObject gameObjectParam)
+    {
+        return GetGameObjectSize(gameObjectParam) * (gameObjectParam.GetComponentInChildren<Renderer>().bounds.max.y - gameObjectParam.GetComponentInChildren<Renderer>().bounds.min.y);
     }
 
     float GetGameObjectSize(GameObject gameObjectParam)
