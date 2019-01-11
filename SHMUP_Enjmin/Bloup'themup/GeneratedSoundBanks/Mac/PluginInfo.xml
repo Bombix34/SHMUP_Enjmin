@@ -3,7 +3,6 @@
 	<Plugins>
 		<Plugin Name="Wwise Silence" ID="6619138" DLL="AkSilenceGenerator"/>
 		<Plugin Name="Wwise Matrix Reverb" ID="7536643" DLL="AkMatrixReverb"/>
-		<Plugin Name="Wwise Flanger" ID="8192003" DLL="AkFlanger"/>
 		<Plugin Name="Wwise Meter" ID="8454147" DLL="AkSoundEngineDLL"/>
 		<Plugin Name="Wwise Stereo Delay" ID="8847363" DLL="AkStereoDelay"/>
 		<Plugin Name="Wwise Pitch Shifter" ID="8912899" DLL="AkPitchShifter"/>

@@ -55,6 +55,8 @@ public class TentaclesManager : MonoBehaviour {
         if (collision.gameObject.tag == "ToSave")
         {
             MoveForward();
+
+            AkSoundEngine.PostEvent("Play_Kraken_Eat_Pnj", gameObject);
         }
         else if(collision.gameObject.tag=="Player")
         {

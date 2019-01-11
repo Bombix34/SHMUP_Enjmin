@@ -180,7 +180,7 @@ MonoBehaviour:
   - PhysicalPath: Master-Mixer Hierarchy/Default Work Unit.wwu
     ParentPhysicalPath: 
     guid: bb24b7d1b666554f9cb7851dfb74b0cf
-    m_lastTime: -8586546196724775808
+    m_lastTime: -8586543869194775808
     List:
     - name: Delay
       guid: 31a4ca601367c544b349886c538ea77e
@@ -223,7 +223,7 @@ MonoBehaviour:
   - PhysicalPath: Events/Default Work Unit.wwu
     ParentPhysicalPath: 
     guid: 7c843613cd65de4b82e788b2522fbb1a
-    m_lastTime: -8586546221524775808
+    m_lastTime: -8586543823034775808
     List:
     - name: Innit_Amb
       guid: 0946cc13814ff64b909268618d042f1c
@@ -236,6 +236,20 @@ MonoBehaviour:
       - ElementName: Innit_Amb
         ObjectType: 3
       Path: Default Work Unit/Ingame/Innit_Amb
+      maxAttenuation: 0
+      maxDuration: 0
+      minDuration: 0
+    - name: Innit_Menu
+      guid: b2eb8b8c5a004047b9aa1ce17b6b35f1
+      id: 2269074425
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Ingame
+        ObjectType: 4
+      - ElementName: Innit_Menu
+        ObjectType: 3
+      Path: Default Work Unit/Ingame/Innit_Menu
       maxAttenuation: 0
       maxDuration: 0
       minDuration: 0
@@ -264,6 +278,34 @@ MonoBehaviour:
       - ElementName: Play_Bulles_Grown
         ObjectType: 3
       Path: Default Work Unit/Ingame/Play_Bulles_Grown
+      maxAttenuation: 0
+      maxDuration: 0
+      minDuration: 0
+    - name: Play_Impact_Dash_bubble
+      guid: 8a6b2059cf6c5d45b66dc59b46631ecc
+      id: 2756168116
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Ingame
+        ObjectType: 4
+      - ElementName: Play_Impact_Dash_bubble
+        ObjectType: 3
+      Path: Default Work Unit/Ingame/Play_Impact_Dash_bubble
+      maxAttenuation: 0
+      maxDuration: 0
+      minDuration: 0
+    - name: Play_Kraken_Eat_Pnj
+      guid: b36353448e7f2747bed21d1d1102a565
+      id: 2784081170
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Ingame
+        ObjectType: 4
+      - ElementName: Play_Kraken_Eat_Pnj
+        ObjectType: 3
+      Path: Default Work Unit/Ingame/Play_Kraken_Eat_Pnj
       maxAttenuation: 0
       maxDuration: 0
       minDuration: 0
@@ -309,17 +351,31 @@ MonoBehaviour:
       maxAttenuation: 0
       maxDuration: 0
       minDuration: 0
-    - name: Play_Oursin_Scream_Os
+    - name: Play_Oursin_In
       guid: aa7ff89570eef1488d541383af9a083e
-      id: 1942785931
+      id: 1942065700
       PathAndIcons:
       - ElementName: Default Work Unit
         ObjectType: 12
       - ElementName: Ingame
         ObjectType: 4
-      - ElementName: Play_Oursin_Scream_Os
+      - ElementName: Play_Oursin_In
         ObjectType: 3
-      Path: Default Work Unit/Ingame/Play_Oursin_Scream_Os
+      Path: Default Work Unit/Ingame/Play_Oursin_In
+      maxAttenuation: 0
+      maxDuration: 0
+      minDuration: 0
+    - name: Play_Oursin_Out
+      guid: adbdb3d999fc2d438e7b9fbf740738b8
+      id: 1957308451
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Ingame
+        ObjectType: 4
+      - ElementName: Play_Oursin_Out
+        ObjectType: 3
+      Path: Default Work Unit/Ingame/Play_Oursin_Out
       maxAttenuation: 0
       maxDuration: 0
       minDuration: 0
@@ -334,7 +390,7 @@ MonoBehaviour:
       - ElementName: Play_Player_Dash_os
         ObjectType: 3
       Path: Default Work Unit/Ingame/Play_Player_Dash_os
-      maxAttenuation: 100
+      maxAttenuation: 0
       maxDuration: 0
       minDuration: 0
     - name: Play_Player_Shot
@@ -397,7 +453,7 @@ MonoBehaviour:
   - PhysicalPath: Game Parameters/Default Work Unit.wwu
     ParentPhysicalPath: 
     guid: bee0b53b9a5d654a8a2c3017e9e6dea0
-    m_lastTime: -8586546213274775808
+    m_lastTime: -8586544819334775808
     List:
     - name: BubbleSize
       guid: 4fd8dd76cfe56440b1cf03cf0185f858
@@ -548,7 +604,7 @@ MonoBehaviour:
   - PhysicalPath: States/Default Work Unit.wwu
     ParentPhysicalPath: 
     guid: 038c1f17d6122848aa7b71827bd9360d
-    m_lastTime: -8586546278984775808
+    m_lastTime: -8586543882894775808
     List:
     - name: Game_State
       guid: 7517db71f9d05246b60381bff54c2f89
@@ -560,23 +616,23 @@ MonoBehaviour:
         ObjectType: 9
       Path: Default Work Unit/Game_State
       values:
-      - name: gameOver
-        guid: ffc0999a5507fa4793713bab9e5fdf65
-        id: 4158285989
-        PathAndIcons:
-        - ElementName: gameOver
-          ObjectType: 8
-      - name: inGame
-        guid: 3d41d7194780a8418dd14040004e6839
-        id: 984691642
-        PathAndIcons:
-        - ElementName: inGame
-          ObjectType: 8
       - name: None
         guid: deacc780648a5340a57b749b3ff2ca07
         id: 748895195
         PathAndIcons:
         - ElementName: None
+          ObjectType: 8
+      - name: Poisonus
+        guid: ffc0999a5507fa4793713bab9e5fdf65
+        id: 1198722561
+        PathAndIcons:
+        - ElementName: Poisonus
+          ObjectType: 8
+      - name: ReadyToDestroyBuble
+        guid: 3d41d7194780a8418dd14040004e6839
+        id: 3359657449
+        PathAndIcons:
+        - ElementName: ReadyToDestroyBuble
           ObjectType: 8
     - name: Lvl_Musique
       guid: 8e2c72a0fbe466429c6a180f1526ed16

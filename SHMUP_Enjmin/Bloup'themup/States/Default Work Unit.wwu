@@ -19,8 +19,8 @@
 					</PropertyList>
 					<ChildrenList>
 						<State Name="None" ID="{80C7ACDE-8A64-4053-A57B-749B3FF2CA07}"/>
-						<State Name="inGame" ID="{19D7413D-8047-41A8-8DD1-4040004E6839}"/>
-						<State Name="gameOver" ID="{9A99C0FF-0755-47FA-9371-3BAB9E5FDF65}"/>
+						<State Name="ReadyToDestroyBuble" ID="{19D7413D-8047-41A8-8DD1-4040004E6839}"/>
+						<State Name="Poisonus" ID="{9A99C0FF-0755-47FA-9371-3BAB9E5FDF65}"/>
 					</ChildrenList>
 				</StateGroup>
 			</ChildrenList>

@@ -597,6 +597,11 @@
 											</ValueList>
 										</Property>
 										<Property Name="MusicTrackType" Type="int16" Value="1"/>
+										<Property Name="Volume" Type="Real64">
+											<ValueList>
+												<Value>-3</Value>
+											</ValueList>
+										</Property>
 									</PropertyList>
 									<ReferenceList>
 										<Reference Name="OutputBus">
@@ -720,6 +725,23 @@
 							</CueList>
 						</MusicSegment>
 					</ChildrenList>
+					<StateInfo>
+						<StateGroupList>
+							<StateGroupInfo>
+								<StateGroupRef Name="Game_State" ID="{71DB1775-D0F9-4652-B603-81BFF54C2F89}"/>
+							</StateGroupInfo>
+						</StateGroupList>
+						<CustomStateList>
+							<CustomState>
+								<StateRef Name="ReadyToDestroyBuble" ID="{19D7413D-8047-41A8-8DD1-4040004E6839}"/>
+								<State Name="" ID="{E116C0B9-4334-4DC0-971B-4D978BEE9A1D}" ShortID="924287339"/>
+							</CustomState>
+							<CustomState>
+								<StateRef Name="Poisonus" ID="{9A99C0FF-0755-47FA-9371-3BAB9E5FDF65}"/>
+								<State Name="" ID="{09AF806B-BDF7-46F5-8E7B-487238FDFE3D}" ShortID="348482675"/>
+							</CustomState>
+						</CustomStateList>
+					</StateInfo>
 					<TransitionList>
 						<MusicTransition Name="Root" ID="{9C2AB130-88C7-4CEB-BE63-50672A184796}">
 							<PropertyList>
@@ -896,7 +918,7 @@
 								</Property>
 								<Property Name="Volume" Type="Real64">
 									<ValueList>
-										<Value>-5</Value>
+										<Value>-1</Value>
 									</ValueList>
 								</Property>
 							</PropertyList>
@@ -1128,6 +1150,193 @@
 										<Property Name="PlaylistItemType" Type="int16" Value="1"/>
 									</PropertyList>
 									<SegmentRef Name="Music_Loose" ID="{7406696B-3650-4F7D-826B-39915F73F5F8}"/>
+								</MusicPlaylistItem>
+							</ChildrenList>
+						</MusicPlaylistItem>
+					</Playlist>
+				</MusicPlaylistContainer>
+				<MusicPlaylistContainer Name="Music_Menu" ID="{D0EAAB71-401A-4027-89C0-FAACA4D43BF5}" ShortID="835524893">
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{2BD389C3-9EC6-4637-949C-1D4A4B674147}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{D1B724BB-66B6-4F55-9CB7-851DFB74B0CF}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<MusicSegment Name="Percussions_Rnd" ID="{3FC84C80-9D3D-4E7C-B318-DC037BC02573}" ShortID="361090937">
+							<PropertyList>
+								<Property Name="EndPosition" Type="Real64" Value="19000"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{2BD389C3-9EC6-4637-949C-1D4A4B674147}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{D1B724BB-66B6-4F55-9CB7-851DFB74B0CF}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<MusicTrack Name="Monstre_Amb_Intervention_01_04_Os" ID="{17A45412-9608-4CCF-8472-ADF4AB5F64AD}" ShortID="900548650">
+									<PropertyList>
+										<Property Name="MakeUpGain" Type="Real64">
+											<ValueList>
+												<Value>-4</Value>
+											</ValueList>
+										</Property>
+										<Property Name="MusicTrackType" Type="int16" Value="1"/>
+										<Property Name="Volume" Type="Real64">
+											<ValueList>
+												<Value>-6</Value>
+											</ValueList>
+										</Property>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{D1B724BB-66B6-4F55-9CB7-851DFB74B0CF}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="Monstre_Amb_Intervention_01_04_Os" ID="{D34C396C-6A62-485E-B11F-EFA9118EF413}" ShortID="1018135258">
+											<Language>SFX</Language>
+											<AudioFile>Monstre_Amb_Intervention_01_04_Os.wav</AudioFile>
+										</AudioFileSource>
+										<AudioFileSource Name="Monstre_Amb_Intervention_01_05_Os" ID="{53E601A4-F424-45AE-A49B-0948B66B2D87}" ShortID="470362947">
+											<Language>SFX</Language>
+											<AudioFile>Monstre_Amb_Intervention_01_05_Os.wav</AudioFile>
+										</AudioFileSource>
+										<AudioFileSource Name="Monstre_Amb_Intervention_01_06_Os" ID="{D71D655F-B382-4ECF-BBA5-D4CDF31904FB}" ShortID="715088">
+											<Language>SFX</Language>
+											<AudioFile>Monstre_Amb_Intervention_01_06_Os.wav</AudioFile>
+										</AudioFileSource>
+									</ChildrenList>
+									<TransitionList>
+										<MusicTransition Name="Root" ID="{ABCF8AA0-F4AA-441F-BEAD-881C6EEF7311}">
+											<PropertyList>
+												<Property Name="IsFolder" Type="bool" Value="True"/>
+											</PropertyList>
+											<TransitionInfo/>
+										</MusicTransition>
+									</TransitionList>
+									<SequenceList>
+										<MusicTrackSequence Name="" ID="{CE633FDF-1093-4ECE-812B-F07FD5FC39B0}">
+											<ClipList>
+												<MusicClip Name="Monstre_Amb_Intervention_01_04_Os" ID="{20E83E99-85F7-4BA1-8FFC-89BBBD26435E}">
+													<PropertyList>
+														<Property Name="EndTrimOffset" Type="Real64" Value="12000"/>
+														<Property Name="FadeInMode" Type="int16" Value="0"/>
+														<Property Name="FadeOutMode" Type="int16" Value="0"/>
+														<Property Name="PlayAt" Type="Real64" Value="3000"/>
+													</PropertyList>
+													<AudioSourceRef Name="Monstre_Amb_Intervention_01_04_Os" ID="{D34C396C-6A62-485E-B11F-EFA9118EF413}"/>
+												</MusicClip>
+											</ClipList>
+										</MusicTrackSequence>
+										<MusicTrackSequence Name="" ID="{5380D14A-A58A-4A9A-96A2-C532EBB0A018}">
+											<ClipList>
+												<MusicClip Name="Monstre_Amb_Intervention_01_05_Os" ID="{6637E8EB-4E75-44A6-A14F-0A507E83497D}">
+													<PropertyList>
+														<Property Name="EndTrimOffset" Type="Real64" Value="12000"/>
+														<Property Name="FadeInMode" Type="int16" Value="0"/>
+														<Property Name="FadeOutMode" Type="int16" Value="0"/>
+													</PropertyList>
+													<AudioSourceRef Name="Monstre_Amb_Intervention_01_05_Os" ID="{53E601A4-F424-45AE-A49B-0948B66B2D87}"/>
+												</MusicClip>
+											</ClipList>
+										</MusicTrackSequence>
+										<MusicTrackSequence Name="" ID="{A627B506-ED26-44CD-9697-ABFBECEB2501}">
+											<ClipList>
+												<MusicClip Name="Monstre_Amb_Intervention_01_06_Os" ID="{7A917E1F-CF60-4AC8-BE89-E173FF9E855A}">
+													<PropertyList>
+														<Property Name="EndTrimOffset" Type="Real64" Value="12000"/>
+														<Property Name="FadeInMode" Type="int16" Value="0"/>
+														<Property Name="FadeOutMode" Type="int16" Value="0"/>
+														<Property Name="PlayAt" Type="Real64" Value="1500"/>
+													</PropertyList>
+													<AudioSourceRef Name="Monstre_Amb_Intervention_01_06_Os" ID="{D71D655F-B382-4ECF-BBA5-D4CDF31904FB}"/>
+												</MusicClip>
+											</ClipList>
+										</MusicTrackSequence>
+										<MusicTrackSequence Name="" ID="{5FA308AB-0BF7-42A2-882B-367AFAAAF313}"/>
+									</SequenceList>
+								</MusicTrack>
+								<MusicTrack Name="Main_Basse" ID="{4487F8EE-14A4-4583-9567-4C0F3DEDD604}" ShortID="355121180">
+									<PropertyList>
+										<Property Name="MakeUpGain" Type="Real64">
+											<ValueList>
+												<Value>-7</Value>
+											</ValueList>
+										</Property>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{D1B724BB-66B6-4F55-9CB7-851DFB74B0CF}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="Monstre_Amb_Intervention_05_Os" ID="{48DB4C92-A3E6-4FD3-9E40-A3C97E0A4F56}" ShortID="517778700">
+											<Language>SFX</Language>
+											<AudioFile>Monstre_Amb_Intervention_05_Os.wav</AudioFile>
+										</AudioFileSource>
+									</ChildrenList>
+									<TransitionList>
+										<MusicTransition Name="Root" ID="{EDE1796A-66F3-4A09-8ACB-9D9B794EB05A}">
+											<PropertyList>
+												<Property Name="IsFolder" Type="bool" Value="True"/>
+											</PropertyList>
+											<TransitionInfo/>
+										</MusicTransition>
+									</TransitionList>
+									<SequenceList>
+										<MusicTrackSequence Name="" ID="{5FA32737-9DBF-45A2-B0D5-7D20F1AFEBDB}">
+											<ClipList>
+												<MusicClip Name="Monstre_Amb_Intervention_05_Os" ID="{FDF0E3DE-6221-4AEC-8155-8E152780A6AD}">
+													<PropertyList>
+														<Property Name="EndTrimOffset" Type="Real64" Value="14000"/>
+														<Property Name="FadeInMode" Type="int16" Value="0"/>
+														<Property Name="FadeOutMode" Type="int16" Value="0"/>
+													</PropertyList>
+													<AudioSourceRef Name="Monstre_Amb_Intervention_05_Os" ID="{48DB4C92-A3E6-4FD3-9E40-A3C97E0A4F56}"/>
+												</MusicClip>
+											</ClipList>
+										</MusicTrackSequence>
+									</SequenceList>
+								</MusicTrack>
+							</ChildrenList>
+							<CueList>
+								<MusicCue Name="Entry Cue" ID="{D634664F-A2B7-499C-8887-0F9EDB65F2EA}"/>
+								<MusicCue Name="Exit Cue" ID="{08DD09A0-19FF-4194-BB60-E17A00B1304B}">
+									<PropertyList>
+										<Property Name="CueType" Type="int16" Value="1"/>
+										<Property Name="TimeMs" Type="Real64" Value="14000"/>
+									</PropertyList>
+								</MusicCue>
+							</CueList>
+						</MusicSegment>
+					</ChildrenList>
+					<TransitionList>
+						<MusicTransition Name="Root" ID="{A8968C32-3B3E-46C3-8159-84AFF04875D1}">
+							<PropertyList>
+								<Property Name="IsFolder" Type="bool" Value="True"/>
+							</PropertyList>
+							<ChildrenList>
+								<MusicTransition Name="Transition" ID="{5BB8963D-CA71-4824-8C49-793BB55AFBCA}">
+									<TransitionInfo/>
+								</MusicTransition>
+							</ChildrenList>
+							<TransitionInfo/>
+						</MusicTransition>
+					</TransitionList>
+					<Playlist>
+						<MusicPlaylistItem Name="" ID="{0474A5F6-61FC-4A5B-8A91-0587AAD4D7A2}" ShortID="919674522">
+							<ChildrenList>
+								<MusicPlaylistItem Name="" ID="{D5756C65-0DC9-4D5B-B0F8-81E2EADE5322}" ShortID="273973607">
+									<PropertyList>
+										<Property Name="LoopCount" Type="int16" Value="0"/>
+										<Property Name="PlaylistItemType" Type="int16" Value="1"/>
+									</PropertyList>
+									<SegmentRef Name="Percussions_Rnd" ID="{3FC84C80-9D3D-4E7C-B318-DC037BC02573}"/>
 								</MusicPlaylistItem>
 							</ChildrenList>
 						</MusicPlaylistItem>

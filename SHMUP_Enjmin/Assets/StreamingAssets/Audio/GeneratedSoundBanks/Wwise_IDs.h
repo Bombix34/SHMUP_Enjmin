@@ -14,12 +14,16 @@ namespace AK
     namespace EVENTS
     {
         static const AkUniqueID INNIT_AMB = 2999869044U;
+        static const AkUniqueID INNIT_MENU = 2269074425U;
         static const AkUniqueID PLAY_BUBBLE_EXPLODE_OS = 3726773303U;
         static const AkUniqueID PLAY_BULLES_GROWN = 3777684193U;
+        static const AkUniqueID PLAY_IMPACT_DASH_BUBBLE = 2756168116U;
+        static const AkUniqueID PLAY_KRAKEN_EAT_PNJ = 2784081170U;
         static const AkUniqueID PLAY_LOAD_SHOT = 2139305897U;
         static const AkUniqueID PLAY_MUSIC_GAMEOVER = 619661162U;
         static const AkUniqueID PLAY_MUSIQUE = 206418435U;
-        static const AkUniqueID PLAY_OURSIN_SCREAM_OS = 1942785931U;
+        static const AkUniqueID PLAY_OURSIN_IN = 1942065700U;
+        static const AkUniqueID PLAY_OURSIN_OUT = 1957308451U;
         static const AkUniqueID PLAY_PLAYER_DASH_OS = 3837926945U;
         static const AkUniqueID PLAY_PLAYER_SHOT = 4135433440U;
         static const AkUniqueID PLAY_PNJ_OH = 2311964536U;
@@ -35,8 +39,8 @@ namespace AK
 
             namespace STATE
             {
-                static const AkUniqueID GAMEOVER = 4158285989U;
-                static const AkUniqueID INGAME = 984691642U;
+                static const AkUniqueID POISONUS = 1198722561U;
+                static const AkUniqueID READYTODESTROYBUBLE = 3359657449U;
             } // namespace STATE
         } // namespace GAME_STATE
 
@@ -82,7 +86,6 @@ namespace AK
     {
         static const AkUniqueID AMB = 1117531639U;
         static const AkUniqueID MASTER_AUDIO_BUS = 3803692087U;
-        static const AkUniqueID MOTION_FACTORY_BUS = 985987111U;
         static const AkUniqueID MUSIC = 3991942870U;
         static const AkUniqueID SFX = 393239870U;
     } // namespace BUSSES

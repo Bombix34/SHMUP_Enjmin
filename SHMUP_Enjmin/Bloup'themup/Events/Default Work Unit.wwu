@@ -71,16 +71,6 @@
 										</Reference>
 									</ReferenceList>
 								</Action>
-								<Action Name="" ID="{42EFD582-2DD5-45F2-94F7-4BFEF0D88003}" ShortID="221015208">
-									<PropertyList>
-										<Property Name="ActionType" Type="int16" Value="2"/>
-									</PropertyList>
-									<ReferenceList>
-										<Reference Name="Target">
-											<ObjectRef Name="Bull_Load" ID="{F165011D-324C-4280-9594-A7B526E9F49C}" WorkUnitID="{BFB9B95C-F19D-4A69-AD4E-5BA087B198AF}"/>
-										</Reference>
-									</ReferenceList>
-								</Action>
 								<Action Name="" ID="{23C6D900-E317-4251-8055-B24818C24AF6}" ShortID="1042451370">
 									<PropertyList>
 										<Property Name="ActionType" Type="int16" Value="1"/>
@@ -95,16 +85,6 @@
 						</Event>
 						<Event Name="Play_Bubble_Explode_Os" ID="{54F2F68E-297D-4491-81F8-973496A0B5BB}">
 							<ChildrenList>
-								<Action Name="" ID="{649B35F8-8E52-437A-AEC1-5EF914D2D1C9}" ShortID="4295943">
-									<PropertyList>
-										<Property Name="ActionType" Type="int16" Value="2"/>
-									</PropertyList>
-									<ReferenceList>
-										<Reference Name="Target">
-											<ObjectRef Name="Bull_Load" ID="{F165011D-324C-4280-9594-A7B526E9F49C}" WorkUnitID="{BFB9B95C-F19D-4A69-AD4E-5BA087B198AF}"/>
-										</Reference>
-									</ReferenceList>
-								</Action>
 								<Action Name="" ID="{CDFE1BC4-8B83-4C8A-A235-B437DFC7243A}" ShortID="590800649">
 									<PropertyList>
 										<Property Name="ActionType" Type="int16" Value="2"/>
@@ -139,16 +119,6 @@
 						</Event>
 						<Event Name="Play_Load_Shot" ID="{C387B0CB-78EE-45C4-87CF-AC51E456CBEB}">
 							<ChildrenList>
-								<Action Name="" ID="{722E7194-E05C-47EE-B3ED-2689D98D17DE}" ShortID="331472408">
-									<PropertyList>
-										<Property Name="ActionType" Type="int16" Value="1"/>
-									</PropertyList>
-									<ReferenceList>
-										<Reference Name="Target">
-											<ObjectRef Name="Bull_Load" ID="{F165011D-324C-4280-9594-A7B526E9F49C}" WorkUnitID="{BFB9B95C-F19D-4A69-AD4E-5BA087B198AF}"/>
-										</Reference>
-									</ReferenceList>
-								</Action>
 								<Action Name="" ID="{F4DDF6A4-EB6E-4951-92D1-2BA56076D14A}" ShortID="399183247">
 									<PropertyList>
 										<Property Name="ActionType" Type="int16" Value="1"/>
@@ -216,13 +186,14 @@
 										</Reference>
 									</ReferenceList>
 								</Action>
-								<Action Name="" ID="{92F63A75-E9D2-4795-BE8B-05BA780946D4}" ShortID="788262618">
+								<Action Name="" ID="{37716AA9-41A3-4C81-A0FD-4A83EDDD49B7}" ShortID="1029380681">
 									<PropertyList>
 										<Property Name="ActionType" Type="int16" Value="1"/>
+										<Property Name="Delay" Type="Real64" Value="0.7"/>
 									</PropertyList>
 									<ReferenceList>
 										<Reference Name="Target">
-											<ObjectRef Name="ASpire" ID="{60CD3E99-1E9A-4B53-AA90-A862288543AF}" WorkUnitID="{BFB9B95C-F19D-4A69-AD4E-5BA087B198AF}"/>
+											<ObjectRef Name="Pnj_In_Bubble_RNd" ID="{895898F8-86C9-472E-9363-6159F85FF4FC}" WorkUnitID="{BFB9B95C-F19D-4A69-AD4E-5BA087B198AF}"/>
 										</Reference>
 									</ReferenceList>
 								</Action>
@@ -288,7 +259,7 @@
 								</Action>
 							</ChildrenList>
 						</Event>
-						<Event Name="Play_Oursin_Scream_Os" ID="{95F87FAA-EE70-48F1-8D54-1383AF9A083E}">
+						<Event Name="Play_Oursin_In" ID="{95F87FAA-EE70-48F1-8D54-1383AF9A083E}">
 							<ChildrenList>
 								<Action Name="" ID="{5E4D9959-1502-4057-95F8-0E1CE041F3F1}" ShortID="853328321">
 									<PropertyList>
@@ -296,7 +267,113 @@
 									</PropertyList>
 									<ReferenceList>
 										<Reference Name="Target">
-											<ObjectRef Name="Oursin_Scream_Os" ID="{BEF72EA7-A13D-4125-A2F6-7CD559F599CD}" WorkUnitID="{BFB9B95C-F19D-4A69-AD4E-5BA087B198AF}"/>
+											<ObjectRef Name="Oursin_In" ID="{E245DFC5-265A-42AC-BB6C-76288F409851}" WorkUnitID="{BFB9B95C-F19D-4A69-AD4E-5BA087B198AF}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="Play_Impact_Dash_bubble" ID="{59206B8A-6CCF-455D-B66D-C59B46631ECC}">
+							<ChildrenList>
+								<Action Name="" ID="{54EC230F-F30C-4D08-B109-60E85C4D8F7B}" ShortID="642944357">
+									<PropertyList>
+										<Property Name="ActionType" Type="int16" Value="1"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Impact_Dash_bubble" ID="{4C9688BF-131C-4602-ACAA-4C839D791B6D}" WorkUnitID="{BFB9B95C-F19D-4A69-AD4E-5BA087B198AF}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+								<Action Name="" ID="{215D98D1-BBF1-4588-95B1-BCE182007F37}" ShortID="611063095">
+									<PropertyList>
+										<Property Name="ActionType" Type="int16" Value="2"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Player_Dash_Rnd" ID="{6D2998FB-5B53-4617-9840-82C783744CD6}" WorkUnitID="{BFB9B95C-F19D-4A69-AD4E-5BA087B198AF}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="Play_Oursin_Out" ID="{D9B3BDAD-FC99-432D-8E7B-9FBF740738B8}">
+							<ChildrenList>
+								<Action Name="" ID="{B94EAC84-9958-4E9F-8059-58E725F26558}" ShortID="613387301">
+									<PropertyList>
+										<Property Name="ActionType" Type="int16" Value="1"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Oursin_Out" ID="{F2D37EC3-B43E-4511-AB0D-8A7F763A6BE8}" WorkUnitID="{BFB9B95C-F19D-4A69-AD4E-5BA087B198AF}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="Innit_Menu" ID="{8C8BEBB2-005A-4740-B9AA-1CE17B6B35F1}">
+							<ChildrenList>
+								<Action Name="" ID="{63078219-005B-4725-B185-10DEF5F67A40}" ShortID="950931111">
+									<PropertyList>
+										<Property Name="ActionType" Type="int16" Value="1"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Music_Menu" ID="{D0EAAB71-401A-4027-89C0-FAACA4D43BF5}" WorkUnitID="{4E5A65E5-C56F-495A-AB58-65CC0CC32273}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+								<Action Name="" ID="{05B7B471-2FAD-4FCA-A6F9-0A286CD7CD68}" ShortID="715142876">
+									<PropertyList>
+										<Property Name="ActionType" Type="int16" Value="1"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Underwater_Rnd" ID="{4A79B598-056A-4864-B6F3-A6B4B2D28ED5}" WorkUnitID="{BFB9B95C-F19D-4A69-AD4E-5BA087B198AF}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+								<Action Name="" ID="{72220237-667E-48ED-A497-8CF55B78DCB4}" ShortID="680890917">
+									<PropertyList>
+										<Property Name="ActionType" Type="int16" Value="1"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Underwater_lp" ID="{C5914DA8-300A-42D4-8B19-63A133F499C5}" WorkUnitID="{BFB9B95C-F19D-4A69-AD4E-5BA087B198AF}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+								<Action Name="" ID="{59261A4F-6B43-41DA-8F6E-583FB5FAD3FD}" ShortID="24505605">
+									<PropertyList>
+										<Property Name="ActionType" Type="int16" Value="1"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Test_Silence" ID="{B44F229F-5E0D-4B35-A974-895A5A57A172}" WorkUnitID="{BFB9B95C-F19D-4A69-AD4E-5BA087B198AF}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="Play_Kraken_Eat_Pnj" ID="{445363B3-7F8E-4727-BED2-1D1D1102A565}">
+							<ChildrenList>
+								<Action Name="" ID="{947EC91C-EC14-4B5A-8E9F-1A0B151CF478}" ShortID="120233627">
+									<PropertyList>
+										<Property Name="ActionType" Type="int16" Value="1"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Kraken_Eat_Pnj" ID="{D5AEEB6C-E1F6-44BC-8128-CF73EC6FA0D4}" WorkUnitID="{BFB9B95C-F19D-4A69-AD4E-5BA087B198AF}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+								<Action Name="" ID="{2F313E27-EFD4-4ED4-9892-AFEAC53BF7DA}" ShortID="99145921">
+									<PropertyList>
+										<Property Name="ActionType" Type="int16" Value="2"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Pnj_Oh" ID="{560CBA5D-A706-471F-9C64-667B5705E419}" WorkUnitID="{BFB9B95C-F19D-4A69-AD4E-5BA087B198AF}"/>
 										</Reference>
 									</ReferenceList>
 								</Action>
