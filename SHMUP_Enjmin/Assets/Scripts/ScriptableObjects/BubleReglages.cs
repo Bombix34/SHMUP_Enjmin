@@ -38,4 +38,8 @@ public class BubleReglages : ScriptableObject {
 	[Tooltip("La vitesse a laquelle la bulle va remonter à la surface")]
 	public float archimedEffect=0f;
 
+	[Range(0f,30f)]
+	[Tooltip("A quel point les bulles rebondissent sur les obstacles")]
+	public float bounceEffect=0f;
+
 }

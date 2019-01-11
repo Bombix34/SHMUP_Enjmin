@@ -43,7 +43,6 @@ public class PlayerManager : MonoBehaviour {
     
     // rtpc value
     float rtpcValue = 0.0f;
-    int type = 1;
 
     private void Awake()
     {
@@ -348,6 +347,7 @@ public class PlayerManager : MonoBehaviour {
 		//tir de la bulle
 
 		curBuble.GetComponent<Rigidbody2D>().AddForce(new Vector2(500f,0f)*bullesReglages.speedBuble);
+		curBuble.GetComponent<BubleManager>().GetBubleAnim().SetTrigger("Shoot");
 
         AkSoundEngine.PostEvent("Play_Player_Shot", gameObject);
        

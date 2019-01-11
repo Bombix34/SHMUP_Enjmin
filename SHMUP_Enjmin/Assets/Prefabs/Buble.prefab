@@ -36,9 +36,10 @@ GameObject:
   m_Component:
   - component: {fileID: 4936623818346586}
   - component: {fileID: 114284520931702002}
+  - component: {fileID: 114882198825220966}
   - component: {fileID: 58790875477006094}
   - component: {fileID: 50095769234116576}
-  - component: {fileID: 114882198825220966}
+  - component: {fileID: 95080040876117606}
   m_Layer: 0
   m_Name: Buble
   m_TagString: Buble
@@ -108,6 +109,24 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.95
+--- !u!95 &95080040876117606
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1933862619830500}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 21e9b65d8420a44f887ddc71256c938d, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!114 &114284520931702002
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -119,6 +138,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a310c8e12dfc247db9b1d364641f7eca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  reglages: {fileID: 11400000, guid: 952773acbb64e4d3ead3c8a160f173b6, type: 2}
 --- !u!114 &114882198825220966
 MonoBehaviour:
   m_ObjectHideFlags: 1
