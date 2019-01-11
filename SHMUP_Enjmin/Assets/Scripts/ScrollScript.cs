@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class ScrollScript : MonoBehaviour {
 
-	void Start () {
+	void Start ()
+    {
 		
 	}
 	

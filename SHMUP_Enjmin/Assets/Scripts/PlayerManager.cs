@@ -40,6 +40,8 @@ public class PlayerManager : MonoBehaviour {
 	bool canMove=true;
 
 	bool isDead=false;
+
+	int nbBullesTirées=0;
     
     // rtpc value
     float rtpcValue = 0.0f;
@@ -88,6 +90,10 @@ public class PlayerManager : MonoBehaviour {
 	public void Die()
 	{
 		isDead=true;
+
+		//PLAYTEST
+		GameManager.instance.AddMetric("Bulles tirées", nbBullesTirées.ToString());
+
 		if(curBuble!=null)
 			curBuble.GetComponent<BubleManager>().DestroyBuble();
 	}
@@ -335,6 +341,8 @@ public class PlayerManager : MonoBehaviour {
 
 		curBuble.GetComponent<BubleManager>().SetIsCreate(false);
 		//tir de la bulle
+
+		nbBullesTirées++;
 
 		curBuble.GetComponent<Rigidbody2D>().AddForce(new Vector2(500f,0f)*bullesReglages.speedBuble);
 		curBuble.GetComponent<BubleManager>().GetBubleAnim().SetTrigger("Shoot");

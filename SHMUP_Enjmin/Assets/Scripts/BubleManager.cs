@@ -211,9 +211,9 @@ public class BubleManager : MonoBehaviour {
             foreach(GameObject pote in objectInTheBuble)
             {
 				GameManager.instance.AddScore();
+            	TentaclesManager.instance.MoveBackward();
                 Destroy(pote);
             }
-            TentaclesManager.instance.MoveBackward();
             Destroy(this.gameObject);
         }
     }

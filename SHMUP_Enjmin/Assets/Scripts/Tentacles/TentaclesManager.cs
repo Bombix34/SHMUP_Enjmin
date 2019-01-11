@@ -74,10 +74,12 @@ public class TentaclesManager : MonoBehaviour {
 
     public void MoveBackward()
     {
-        if(Camera.main.GetComponent<CameraShaker>()!=null)
-			Camera.main.GetComponent<CameraShaker>().LaunchShake(0.5f,0.05f);
         // deplacement des tentacules
         distanceDone -= distanceAtEachSave;
+
+        if((Camera.main.GetComponent<CameraShaker>()!=null)&&(distanceDone==0))
+			Camera.main.GetComponent<CameraShaker>().LaunchShake(0.5f,0.05f);
+
         StartCoroutine(MoveBackwardCoroutine());
     }
 
