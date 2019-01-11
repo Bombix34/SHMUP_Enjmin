@@ -19,15 +19,10 @@ public class GameManager : MonoBehaviour {
 	void Start () 
 	{
 		player=GameObject.FindGameObjectWithTag("Player");
+		highScore=GetComponent<Score>();
+	}
 
-      //  AkSoundEngine.SetState("Game_State", "inGame");
-        AkSoundEngine.SetState("Lvl_Musique", "Lvl_01");
-        AkSoundEngine.PostEvent("Innit_Amb", gameObject);
-
-
-    }
-
-    void Update () 
+	void Update()
 	{
 		chrono+=Time.deltaTime;
 	}
@@ -47,8 +42,9 @@ public class GameManager : MonoBehaviour {
 		GameObject gameover = Instantiate(gameOverUI, transform.position,Quaternion.identity) as GameObject;
 		gameover.GetComponent<GameOverUI>().scoreText.text=score.ToString();
 		player.GetComponent<PlayerManager>().Die();
+		highScore.AddNewHighscore("world",score);
 		gameover.SetActive(true);
-     //   AkSoundEngine.SetState("Game_State", "gameOver");
+
         AkSoundEngine.PostEvent("Stop_All", gameObject);
         AkSoundEngine.PostEvent("Play_Music_GameOver", gameObject);
 
@@ -56,16 +52,33 @@ public class GameManager : MonoBehaviour {
 
     public void RelaunchGame()
 	{
-        Debug.Log("aaa");
-        SceneManager.LoadScene("MainScene");
-        AkSoundEngine.PostEvent("Stop_Music_GameOver", gameObject);
+		AddMetric("Rejoué",true.ToString());
 
+		GetComponent<Playtest>().Save();
 
-    }
+		SceneManager.LoadScene("MainScene");
+	}
 
-    //SINGLETON________________________________________________________________________________________________
+	public void MainMenu()
+	{
+		AddMetric("Rejoué",false.ToString());
 
-    private static GameManager s_Instance = null;
+		GetComponent<Playtest>().Save();
+
+		//A CHANGER AVEC LA SCENE DU MENU PRINCIPAL
+		SceneManager.LoadScene("MainScene");
+	}
+
+	public void AddMetric(string name, string val)
+	{
+		if(GetComponent<Playtest>()==null)
+			return;
+		GetComponent<Playtest>().AddMetric(name, val);
+	}
+
+//SINGLETON________________________________________________________________________________________________
+
+	private static GameManager s_Instance = null;
 
     // This defines a static instance property that attempts to find the manager object in the scene and
     // returns it to the caller.

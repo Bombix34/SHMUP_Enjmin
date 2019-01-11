@@ -10,6 +10,7 @@
 								<Action Name="" ID="{0627FF2E-8956-4D52-8C2A-3FBB50DD96C8}" ShortID="61801196">
 									<PropertyList>
 										<Property Name="ActionType" Type="int16" Value="1"/>
+										<Property Name="FadeTime" Type="Real64" Value="0.3"/>
 									</PropertyList>
 									<ReferenceList>
 										<Reference Name="Target">
@@ -54,6 +55,16 @@
 									<ReferenceList>
 										<Reference Name="Target">
 											<ObjectRef Name="Musique_Lvl_02" ID="{33303E70-671C-4F38-8E1F-D0B5421B5B25}" WorkUnitID="{4E5A65E5-C56F-495A-AB58-65CC0CC32273}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+								<Action Name="" ID="{A775CB67-BB1C-40B9-827D-B6A940AE9133}" ShortID="916442033">
+									<PropertyList>
+										<Property Name="ActionType" Type="int16" Value="2"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Music_GameOver" ID="{59E81B42-6CDE-4F43-BEE1-E10EA8789C06}" WorkUnitID="{4E5A65E5-C56F-495A-AB58-65CC0CC32273}"/>
 										</Reference>
 									</ReferenceList>
 								</Action>
@@ -235,6 +246,7 @@
 								<Action Name="" ID="{C44F22CE-B3AE-4EC3-AF5C-AE367B4CF089}" ShortID="414429834">
 									<PropertyList>
 										<Property Name="ActionType" Type="int16" Value="1"/>
+										<Property Name="FadeTime" Type="Real64" Value="0.5"/>
 									</PropertyList>
 									<ReferenceList>
 										<Reference Name="Target">
