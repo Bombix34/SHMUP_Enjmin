@@ -607,8 +607,7 @@ MonoBehaviour:
   tentacles: {fileID: 4750155654912582}
   initPosition: {fileID: 4373603059412934}
   finalPosition: {fileID: 4555358033059054}
-  SpeedApparition: 1
-  animSpeedUp: 2
+  reglages: {fileID: 0}
 --- !u!212 &212066369092401790
 SpriteRenderer:
   m_ObjectHideFlags: 1
