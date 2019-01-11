@@ -41,6 +41,8 @@ public class GameManager : MonoBehaviour {
 	{
 		AddMetric("Time",Mathf.Floor((chrono/60)).ToString() + ":" + Mathf.RoundToInt(chrono%60).ToString());
 		AddMetric("Score",score.ToString());
+		
+		GetComponent<Playtest>().Save();
 
 		GameObject gameover = Instantiate(gameOverUI, transform.position,Quaternion.identity) as GameObject;
 		gameover.GetComponent<GameOverUI>().scoreText.text=score.ToString();
