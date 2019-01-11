@@ -12,6 +12,10 @@ public class GameManager : MonoBehaviour {
 
 	GameObject player;
 
+	Score highScore;
+
+	float chrono=0f;
+
 	void Start () 
 	{
 		player=GameObject.FindGameObjectWithTag("Player");
@@ -25,7 +29,7 @@ public class GameManager : MonoBehaviour {
 
     void Update () 
 	{
-		
+		chrono+=Time.deltaTime;
 	}
 
 	public void AddScore()
@@ -35,6 +39,9 @@ public class GameManager : MonoBehaviour {
 
 	public void GameOver()
 	{
+		AddMetric("Time",Mathf.Floor((chrono/60)).ToString() + ":" + Mathf.RoundToInt(chrono%60).ToString());
+		AddMetric("Score",score.ToString());
+
 		GameObject gameover = Instantiate(gameOverUI, transform.position,Quaternion.identity) as GameObject;
 		gameover.GetComponent<GameOverUI>().scoreText.text=score.ToString();
 		player.GetComponent<PlayerManager>().Die();

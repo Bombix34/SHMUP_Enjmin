@@ -18,4 +18,4 @@ MonoBehaviour:
   speedBuble: 20
   velocityDecrease: 1.5
   archimedEffect: 0.05
-  bounceEffect: 5
+  bounceEffect: 8.7

@@ -4,24 +4,24 @@ using UnityEngine;
 
 public class BubleManager : MonoBehaviour {
 
-	Rigidbody2D rb2D;
-    CircleCollider2D colider;
+	protected Rigidbody2D rb2D;
+    protected CircleCollider2D colider;
 
-	Animator animator;
+	protected Animator animator;
 
-	BubleSize bubleSize=BubleSize.init;
+	protected BubleSize bubleSize=BubleSize.init;
 
 	[SerializeField]
-	BubleReglages reglages;
+	protected BubleReglages reglages;
 
 	//pour différencier la bulle dans l'état de création par le player
-	bool curIsCreate=false;
+	protected bool curIsCreate=false;
 
-	List<GameObject> objectInTheBuble;
+	protected List<GameObject> objectInTheBuble;
 
-    float rtpcValue2 = (float)BubleSize.init;
+   protected  float rtpcValue2 = (float)BubleSize.init;
 
-    void Awake () 
+    protected void Awake () 
 	{
 		rb2D = GetComponent<Rigidbody2D>();
         colider = GetComponent<CircleCollider2D>();
@@ -30,7 +30,7 @@ public class BubleManager : MonoBehaviour {
 		animator =GetComponent<Animator>();
 	}
 
-	void Update()
+	protected void Update()
 	{
         rtpcValue2 = (float)bubleSize;
         AkSoundEngine.SetRTPCValue("BubbleSize", rtpcValue2, gameObject);
@@ -41,7 +41,7 @@ public class BubleManager : MonoBehaviour {
         //transform.localScale = new Vector3(transform.localScale.x * 1.1f, transform.localScale.y * 1.1f, transform.localScale.z);
 	}
 
-	public void DestroyBuble()
+	public virtual void DestroyBuble()
 	{
 		StopCoroutine(ShakeBuble());
         foreach(GameObject pote in objectInTheBuble)
@@ -55,7 +55,7 @@ public class BubleManager : MonoBehaviour {
         // enlever les bulles ui éclatent sortis d'écran
 	}
 
-	IEnumerator DestroyAnim()
+	protected IEnumerator DestroyAnim()
 	{
 		animator.SetTrigger("Destroy");
 		yield return new WaitForSeconds(0.3f);
@@ -77,7 +77,7 @@ public class BubleManager : MonoBehaviour {
 
 //OBJETS DANS LA BULLE_________________________________________________________________________________________
 
-	List<GameObject> CheckCharacterInBuble(string tag)
+	protected List<GameObject> CheckCharacterInBuble(string tag)
 	{
 		List<GameObject> finalList=new List<GameObject>();
 		if(objectInTheBuble.Count==0)
@@ -90,7 +90,7 @@ public class BubleManager : MonoBehaviour {
 		return finalList;
 	}
 
-	IEnumerator SetObjectInTheBuble(GameObject obj)
+	protected virtual IEnumerator SetObjectInTheBuble(GameObject obj)
 	{
         // on desactive le scrollable des potes emprisonnés dans la bulle
         obj.GetComponent<ScrollScript>().enabled = false;
@@ -138,7 +138,7 @@ public class BubleManager : MonoBehaviour {
 
 //COLLISIONS_____________________________________________________________________________________________________
 
-	void OnCollisionEnter2D(Collision2D col)
+	protected virtual void OnCollisionEnter2D(Collision2D col)
     {
        	if (col.gameObject.tag == "Player")
         {
@@ -169,7 +169,7 @@ public class BubleManager : MonoBehaviour {
 		}
     }
 
-	void OnTriggerEnter2D(Collider2D col)
+	protected virtual void OnTriggerEnter2D(Collider2D col)
     {
 		if(col.gameObject.tag=="Player")
 		{
@@ -200,7 +200,7 @@ public class BubleManager : MonoBehaviour {
         }
     }
 	
-	void OnTriggerExit2D(Collider2D col)
+	protected virtual void OnTriggerExit2D(Collider2D col)
 	{
         if (col.gameObject.tag == "DeathBuble")
         {
@@ -211,9 +211,9 @@ public class BubleManager : MonoBehaviour {
             foreach(GameObject pote in objectInTheBuble)
             {
 				GameManager.instance.AddScore();
+            	TentaclesManager.instance.MoveBackward();
                 Destroy(pote);
             }
-            TentaclesManager.instance.MoveBackward();
             Destroy(this.gameObject);
         }
     }
@@ -255,7 +255,7 @@ public class BubleManager : MonoBehaviour {
 		return animator;
 	}
 
-	enum BubleSize
+	protected enum BubleSize
 	{
 		init=1,
 		intermediate=2,

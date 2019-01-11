@@ -17,7 +17,6 @@ public class TentacleAnim : MonoBehaviour
 	public void SpeedAnimation(float val)
 	{
 		anim.speed=val;	
-		Debug.Log(anim.speed);
 	}
 
 }
