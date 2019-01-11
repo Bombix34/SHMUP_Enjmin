@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Name: BubleReglages
   m_EditorClassIdentifier: 
   initialSize: 0.6
-  intermediateSize: 1
-  maxSizeBuble: 1.5
-  speedGrow: 0.0226
+  intermediateSize: 0.9
+  maxSizeBuble: 1.2
+  speedGrow: 0.025
   speedBuble: 20
   velocityDecrease: 1.5
   archimedEffect: 0.05
