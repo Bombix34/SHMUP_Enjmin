@@ -19,6 +19,8 @@ public class PlayerManager : MonoBehaviour {
 	KeyboardController keyboard;
 	Rigidbody2D rb2D;
 	CapsuleCollider2D colider;
+	
+	Animator animator;
 
 	[SerializeField]
 	SpriteRenderer sprite;
@@ -61,6 +63,7 @@ public class PlayerManager : MonoBehaviour {
 		controller=GetComponent<ControllerManager>();
 		keyboard=GetComponent<KeyboardController>();
 		rb2D=GetComponent<Rigidbody2D>();
+		animator=GetComponent<Animator>();
 		transform.localScale=new Vector2(reglages.sizePlayer,reglages.sizePlayer);
 
         AkSoundEngine.SetState("Game_State", "ReadyToDestroyBuble");
@@ -171,6 +174,8 @@ public class PlayerManager : MonoBehaviour {
 	IEnumerator DashAction()
 	{
 		isDashing=true;
+
+		animator.SetTrigger("Dash");
 
 		Vector2 tempDirection = rb2D.velocity;
 		tempDirection.Normalize();
