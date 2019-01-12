@@ -124,8 +124,19 @@ public class PlayerManager : MonoBehaviour {
 			controlWithSpeed=keyboard.GetMovement()*tempSpeedValue;
        // transform.Translate(new Vector2(controlWithSpeed.x, controlWithSpeed.y));
 	   rb2D.velocity=new Vector2(controlWithSpeed.x,controlWithSpeed.y);
+	   UpdateSpeedAnim();
 		//rb2D.MovePosition(new Vector2(transform.position.x+controlWithSpeed.x,transform.position.y+controlWithSpeed.y));
     }
+
+	public void UpdateSpeedAnim()
+	{
+		if(rb2D.velocity.x==0)
+			animator.speed=1f;
+		else if(rb2D.velocity.x>0)
+			animator.speed = 1 + (rb2D.velocity.x/reglages.speedPlayer);
+		else
+			animator.speed =1 - ((Mathf.Abs(rb2D.velocity.x)/reglages.speedPlayer)-0.4f);
+	}
 
 	public void UpdateTempSpeed()
 	//pour le poison de l'oursin
@@ -288,6 +299,10 @@ public class PlayerManager : MonoBehaviour {
 		if(curBuble==null)
 			return;
 		chronoIncrementSizeBuble-=bullesReglages.speedGrow;
+		if(curBuble.transform.localScale.x<=0)
+		{
+			
+		}
 		if(chronoIncrementSizeBuble<=0)
 		{
 			StartCoroutine(ModifyBubleSize());
