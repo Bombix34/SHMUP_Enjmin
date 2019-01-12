@@ -40,16 +40,19 @@ public class LevelManager : MonoBehaviour
         rightMostMiddlegroundPlafondBound -= reglages.scrollingSpeed * Time.deltaTime * 0.66f;
         rightMostForegroundPlafondBound -= reglages.scrollingSpeed * Time.deltaTime;
 
-        while (rightMostSituationBound < Camera.main.orthographicSize * Camera.main.aspect)
+        if (reglages.levelParts.Count > 0)
         {
-            GameObject newSituation = (GameObject)Instantiate(reglages.GetLevelAtRandom(), new Vector3(rightMostSituationBound, 0), transform.rotation);
-            newSituation.transform.Translate(new Vector3(Camera.main.orthographicSize * Camera.main.aspect - GetGameObjectChildrenLeftMostBound(newSituation), 0));
-            rightMostSituationBound = GetGameObjectChildrenRightMostBound(newSituation) + (Camera.main.orthographicSize * Camera.main.aspect) / 2;
-            for (int i = newSituation.transform.childCount - 1; i >= 0; i--)
+            while (rightMostSituationBound < Camera.main.orthographicSize * Camera.main.aspect)
             {
-                newSituation.transform.GetChild(i).parent = null;
+                GameObject newSituation = (GameObject)Instantiate(reglages.GetLevelAtRandom(), new Vector3(rightMostSituationBound, 0), transform.rotation);
+                newSituation.transform.Translate(new Vector3(Camera.main.orthographicSize * Camera.main.aspect - GetGameObjectChildrenLeftMostBound(newSituation), 0));
+                rightMostSituationBound = GetGameObjectChildrenRightMostBound(newSituation) + (Camera.main.orthographicSize * Camera.main.aspect) / 2;
+                for (int i = newSituation.transform.childCount - 1; i >= 0; i--)
+                {
+                    newSituation.transform.GetChild(i).parent = null;
+                }
+                Destroy(newSituation);
             }
-            Destroy(newSituation);
         }
 
         while (rightMostBackgroundPlafondBound < Camera.main.orthographicSize * Camera.main.aspect)

@@ -7,7 +7,7 @@ public class Music_Lvl_02 : MonoBehaviour
 
     public string WiseEvent;
 
-    public void OnTriggerEnter(Collider other)
+    void OnTriggerEnter2D(Collider2D other)
     {
         Debug.Log("In trig " + other.gameObject.tag);
         if (other.gameObject.tag == "Music_Lvl")

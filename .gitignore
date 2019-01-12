@@ -25,6 +25,10 @@ ExportedObj/
 *.opendb
 *.VC.db
 
+# pour enlever les fichiers de playtest
+*.csv
+*.csv.meta
+
 # Unity3D generated meta files
 *.pidb.meta
 *.pdb.meta

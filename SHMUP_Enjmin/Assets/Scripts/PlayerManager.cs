@@ -40,6 +40,8 @@ public class PlayerManager : MonoBehaviour {
 	bool canMove=true;
 
 	bool isDead=false;
+
+	int nbBullesTirées=0;
     
     // rtpc value
     float rtpcValue = 0.0f;
@@ -60,9 +62,12 @@ public class PlayerManager : MonoBehaviour {
 		keyboard=GetComponent<KeyboardController>();
 		rb2D=GetComponent<Rigidbody2D>();
 		transform.localScale=new Vector2(reglages.sizePlayer,reglages.sizePlayer);
+
+        AkSoundEngine.SetState("Game_State", "ReadyToDestroyBuble");
+
     }
-	
-	void Update () 
+
+    void Update () 
 	{
 		if(isDead)
 		{
@@ -88,6 +93,10 @@ public class PlayerManager : MonoBehaviour {
 	public void Die()
 	{
 		isDead=true;
+
+		//PLAYTEST
+		GameManager.instance.AddMetric("Bulles tirées", nbBullesTirées.ToString());
+
 		if(curBuble!=null)
 			curBuble.GetComponent<BubleManager>().DestroyBuble();
 	}
@@ -126,14 +135,19 @@ public class PlayerManager : MonoBehaviour {
 			canDash=false;
 			sprite.color=Color.green;
 			tempSpeedValue+=Time.deltaTime*reglages.oursinPoisonEffect;
-		}
+
+            AkSoundEngine.SetState("Game_State", "Poisonus");
+        }
 		else
 		{
 			canDash=true;
 			sprite.color=Color.white;
 			tempSpeedValue=reglages.speedPlayer;
-		}
-	}
+
+            AkSoundEngine.SetState("Game_State", "ReadyToDestroyBuble");
+
+        }
+    }
 
 //DASH__________________________________________________________________________________________
 
@@ -217,6 +231,8 @@ public class PlayerManager : MonoBehaviour {
 				Vector2 forceDirection = new Vector2(col.gameObject.transform.position.x-this.transform.position.x,col.gameObject.transform.position.y-this.transform.position.y);
 				forceDirection*=200f;
 				col.gameObject.GetComponent<Rigidbody2D>().AddForce(new Vector2(forceDirection.x,forceDirection.y)*reglages.dashKnockbackBuble);
+                print("dashbuble");
+                AkSoundEngine.PostEvent("Play_Impact_Dash_bubble", gameObject);
 			}
         }
 	}
@@ -335,6 +351,8 @@ public class PlayerManager : MonoBehaviour {
 
 		curBuble.GetComponent<BubleManager>().SetIsCreate(false);
 		//tir de la bulle
+
+		nbBullesTirées++;
 
 		curBuble.GetComponent<Rigidbody2D>().AddForce(new Vector2(500f,0f)*bullesReglages.speedBuble);
 		curBuble.GetComponent<BubleManager>().GetBubleAnim().SetTrigger("Shoot");

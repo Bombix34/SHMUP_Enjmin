@@ -12,14 +12,19 @@ public class GameManager : MonoBehaviour {
 
 	GameObject player;
 
+	Score highScore;
+
+	float chrono=0f;
+
 	void Start () 
 	{
 		player=GameObject.FindGameObjectWithTag("Player");
+		highScore=GetComponent<Score>();
 	}
-	
-	void Update () 
+
+	void Update()
 	{
-		
+		chrono+=Time.deltaTime;
 	}
 
 	public void AddScore()
@@ -29,15 +34,46 @@ public class GameManager : MonoBehaviour {
 
 	public void GameOver()
 	{
+		AddMetric("Time",Mathf.Floor((chrono/60)).ToString() + ":" + Mathf.RoundToInt(chrono%60).ToString());
+		AddMetric("Score",score.ToString());
+		
+		GetComponent<Playtest>().Save();
+
 		GameObject gameover = Instantiate(gameOverUI, transform.position,Quaternion.identity) as GameObject;
 		gameover.GetComponent<GameOverUI>().scoreText.text=score.ToString();
 		player.GetComponent<PlayerManager>().Die();
+		highScore.AddNewHighscore("world",score);
 		gameover.SetActive(true);
+
+        AkSoundEngine.PostEvent("Stop_All", gameObject);
+        AkSoundEngine.PostEvent("Play_Music_GameOver", gameObject);
+
+    }
+
+    public void RelaunchGame()
+	{
+		AddMetric("Rejoué",true.ToString());
+
+		GetComponent<Playtest>().Save();
+
+		SceneManager.LoadScene("MainScene");
 	}
 
-	public void RelaunchGame()
+	public void MainMenu()
 	{
+		AddMetric("Rejoué",false.ToString());
+
+		GetComponent<Playtest>().Save();
+
+		//A CHANGER AVEC LA SCENE DU MENU PRINCIPAL
 		SceneManager.LoadScene("MainScene");
+	}
+
+	public void AddMetric(string name, string val)
+	{
+		if(GetComponent<Playtest>()==null)
+			return;
+		GetComponent<Playtest>().AddMetric(name, val);
 	}
 
 //SINGLETON________________________________________________________________________________________________

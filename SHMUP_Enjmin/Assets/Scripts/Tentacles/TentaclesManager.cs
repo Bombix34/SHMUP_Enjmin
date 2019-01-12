@@ -45,16 +45,13 @@ public class TentaclesManager : MonoBehaviour {
 
     }
 
-    void Update () {
-
-
-	}
-
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.tag == "ToSave")
         {
             MoveForward();
+
+            AkSoundEngine.PostEvent("Play_Kraken_Eat_Pnj", gameObject);
         }
         else if(collision.gameObject.tag=="Player")
         {
@@ -74,10 +71,12 @@ public class TentaclesManager : MonoBehaviour {
 
     public void MoveBackward()
     {
-        if(Camera.main.GetComponent<CameraShaker>()!=null)
-			Camera.main.GetComponent<CameraShaker>().LaunchShake(0.5f,0.05f);
         // deplacement des tentacules
         distanceDone -= distanceAtEachSave;
+
+        if((Camera.main.GetComponent<CameraShaker>()!=null)&&(distanceDone==0))
+			Camera.main.GetComponent<CameraShaker>().LaunchShake(0.5f,0.05f);
+
         StartCoroutine(MoveBackwardCoroutine());
     }
 

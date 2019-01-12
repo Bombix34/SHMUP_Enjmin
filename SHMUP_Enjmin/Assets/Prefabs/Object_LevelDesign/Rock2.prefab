@@ -35,8 +35,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4959273773689530}
-  - component: {fileID: 60789421625557498}
   - component: {fileID: 114055086015272378}
+  - component: {fileID: 60789421625557498}
   m_Layer: 0
   m_Name: Rock2
   m_TagString: Untagged
