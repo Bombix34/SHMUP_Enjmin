@@ -488,7 +488,7 @@ namespace InControl.ReorderableList
 		private void PrepareState( int controlID, IReorderableListAdaptor adaptor )
 		{
 			_controlID = controlID;
-			_visibleRect = Internal.GUIHelper.VisibleRect();
+//			_visibleRect = Internal.GUIHelper.VisibleRect();
 
 			if ((flags & ReorderableListFlags.ShowIndices) != 0)
 			{

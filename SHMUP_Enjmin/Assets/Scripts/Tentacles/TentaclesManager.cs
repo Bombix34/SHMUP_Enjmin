@@ -77,7 +77,7 @@ public class TentaclesManager : MonoBehaviour {
         distanceDone -= distanceAtEachSave;
 
         if((Camera.main.GetComponent<CameraShaker>()!=null)&&(distanceDone==0))
-			Camera.main.GetComponent<CameraShaker>().LaunchShake(0.5f,0.05f);
+			Camera.main.GetComponent<CameraShaker>().LaunchShake(0.3f,0.03f);
 
         StartCoroutine(MoveBackwardCoroutine());
     }

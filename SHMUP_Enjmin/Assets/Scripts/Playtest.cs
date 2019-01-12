@@ -36,6 +36,10 @@ public class Playtest : MonoBehaviour {
     
     public void Save()
     {
+
+        //A ENLEVER QUAND ON A BESOIN DES CSV PLAYTESTS
+        return;
+
         string[][] output = new string[rowData.Count][];
 
         for(int i = 0; i < output.Length; i++)
