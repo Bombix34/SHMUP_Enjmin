@@ -17,5 +17,7 @@ MonoBehaviour:
   dashDuration: 0.075
   dashCoolDown: 1
   dashKnockbackBuble: 20
+  amplitude: 0.47
+  frequence: 3.53
   knockback: 0.2
   oursinPoisonEffect: 1

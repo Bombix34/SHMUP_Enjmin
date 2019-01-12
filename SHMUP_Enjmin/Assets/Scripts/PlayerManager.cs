@@ -193,11 +193,16 @@ public class PlayerManager : MonoBehaviour {
 
 		if(tempDirection==Vector2.zero)
 			rb2D.velocity=new Vector2(reglages.speedPlayer,0f)*reglages.dashPower;
-		else	
+		else
+        {
 			rb2D.velocity=new Vector2(tempDirection.x*reglages.speedPlayer,tempDirection.y*reglages.speedPlayer)*reglages.dashPower;
+            float angle = Vector2.Angle(Vector2.right, controller.getLeftStickDirection());
+            if (controller.getLeftStickDirection().y < 0.0f) angle = 360.0f - angle;
+            GetComponentInChildren<SpriteRenderer>().transform.Rotate(new Vector3(0.0f, 0.0f, angle));
+        }
 		
 		//attendre la fin du dash
-		float dash=reglages.dashDuration;
+		float dash=reglages.dashDuration * 2;
 		while(dash>0)
 		{
 			dash-=Time.deltaTime;
@@ -206,7 +211,8 @@ public class PlayerManager : MonoBehaviour {
 		//_______________________
 		isDashing=false;
 		rb2D.velocity=Vector2.zero;
-		dashChrono=reglages.dashCoolDown;
+        GetComponentInChildren<SpriteRenderer>().transform.rotation = Quaternion.identity;
+        dashChrono =reglages.dashCoolDown;
 	}
 
 //COLLISIONS____________________________________________________________________________________
@@ -234,7 +240,7 @@ public class PlayerManager : MonoBehaviour {
 			StartCoroutine(KnockbackPlayer(forceDirection));
 			StartCoroutine(Damaged());
 			col.gameObject.GetComponent<UrchinManager>().retract();
-            LevelManager.ChangeScore(-1);
+            LevelManager.instance.ChangeScore(LevelManager.instance.reglages.malusCollisionOursin);
 		}
     }
 

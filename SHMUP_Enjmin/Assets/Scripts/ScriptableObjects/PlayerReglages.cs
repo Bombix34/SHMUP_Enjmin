@@ -32,7 +32,14 @@ public class PlayerReglages : ScriptableObject
 	[Range(0f,100f)]
 	public float dashKnockbackBuble=0f;
 
+    [Space]
 
+    [Header("Oscillation")]
+    [Range(0f, 3f)]
+    public float amplitude = 0.2f;
+
+    [Range(1f, 5f)]
+    public float frequence = 2f;
 
 
 	[Space]

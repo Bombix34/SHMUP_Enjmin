@@ -10,13 +10,36 @@ public class LevelReglages : ScriptableObject
 	[Range(0.1f,10f)]
 	public float scrollingSpeed=1f;
 
-    [Header("Portions de level design faciles")]
+    [Space]
+
+    [Header("DDA - Bonus / Malus")]
+    [Range(0, 5)]
+    public int bonusAmiMisEnBulle;
+
+    [Range(0, 5)]
+    public int bonusAmiSauve;
+
+    [Range(-5, 0)]
+    public int malusBulleAmiEclatee;
+
+    [Range(-5, 0)]
+    public int malusCollisionOursin;
+
+    [Range(-5, 0)]
+    public int malusAmiMangeParKraken;
+
+    [Header("DDA - Palliers de score")]
+    [Range(0, 30)]
+    public int pallierNormal;
+
+    [Range(0, 30)]
+    public int pallierDifficile;
+
+    [Space]
+
+    [Header("Portions de level design")]
     public List<GameObject> levelPartsEasy;
-
-    [Header("Portions de level design intermédiaires")]
     public List<GameObject> levelPartsNormal;
-
-    [Header("Portions de level design difficiles")]
     public List<GameObject> levelPartsHard;
 
     public GameObject GetEasyLevel()
@@ -34,9 +57,9 @@ public class LevelReglages : ScriptableObject
         return levelPartsHard[(int)Random.Range(0f, levelPartsHard.Count)];
     }
 
+    [Space]
+
     [Header("Plafonds")]
     public List<GameObject> plafonds;
-
-    [Header("Hauteurs plafonds")]
     public List<float> hauteursPlafonds;
 }
