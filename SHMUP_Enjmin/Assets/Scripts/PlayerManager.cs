@@ -218,6 +218,7 @@ public class PlayerManager : MonoBehaviour {
 			StartCoroutine(KnockbackPlayer(forceDirection));
 			StartCoroutine(Damaged());
 			col.gameObject.GetComponent<UrchinManager>().retract();
+            LevelManager.ChangeScore(-1);
 		}
     }
 
@@ -236,21 +237,6 @@ public class PlayerManager : MonoBehaviour {
 			}
         }
 	}
-
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (collision.gameObject.tag == "niktemor")
-        {
-            AkSoundEngine.SetState("Profondeur", "Lvl_01");
-        } else if (collision.gameObject.tag == "niktarass")
-        {
-            AkSoundEngine.SetState("Profondeur", "Lvl_02");
-        }
-        else if (collision.gameObject.tag == "niktonper")
-        {
-            AkSoundEngine.SetState("Profondeur", "Lvl_03");
-        }
-    }
 
 
 //POUR LES TESTS____________________________________________________________________________________

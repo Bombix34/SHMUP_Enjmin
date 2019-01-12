@@ -150,6 +150,7 @@ public class BubleManager : MonoBehaviour {
 			{
 				col.gameObject.GetComponent<UrchinManager>().retract();	
 				DestroyBuble();
+                LevelManager.ChangeScore(-1);
 			}
             AkSoundEngine.PostEvent("Play_Bubble_Explode_Os", gameObject);
 		}
@@ -196,6 +197,8 @@ public class BubleManager : MonoBehaviour {
             StartCoroutine(SetObjectInTheBuble(col.gameObject));
             objectInTheBuble.Add(col.gameObject);
 
+            LevelManager.ChangeScore(1);
+
             AkSoundEngine.PostEvent("Play_Pnj_Oh", gameObject);
         }
     }
@@ -213,6 +216,7 @@ public class BubleManager : MonoBehaviour {
 				GameManager.instance.AddScore();
             	TentaclesManager.instance.MoveBackward();
                 Destroy(pote);
+                LevelManager.ChangeScore(1);
             }
             Destroy(this.gameObject);
         }

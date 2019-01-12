@@ -51,6 +51,8 @@ public class TentaclesManager : MonoBehaviour {
         {
             MoveForward();
 
+            LevelManager.ChangeScore(-1);
+
             AkSoundEngine.PostEvent("Play_Kraken_Eat_Pnj", gameObject);
         }
         else if(collision.gameObject.tag=="Player")

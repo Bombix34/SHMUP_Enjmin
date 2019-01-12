@@ -17,7 +17,9 @@ public class LevelManager : MonoBehaviour
 
     public LevelReglages reglages;
 
-    float surfaceJouable;
+    static float surfaceJouable;
+
+    static int score;
 
     void Start ()
     {
@@ -30,7 +32,9 @@ public class LevelManager : MonoBehaviour
         rightMostMiddlegroundPlafondBound = Camera.main.orthographicSize * Camera.main.aspect;
         rightMostForegroundPlafondBound = Camera.main.orthographicSize * Camera.main.aspect;
 
-        surfaceJouable = 0.0f;
+        surfaceJouable = 100.0f;
+
+        score = 0;
     }
 
     void Update ()
@@ -40,15 +44,28 @@ public class LevelManager : MonoBehaviour
         rightMostMiddlegroundPlafondBound -= reglages.scrollingSpeed * Time.deltaTime * 0.66f;
         rightMostForegroundPlafondBound -= reglages.scrollingSpeed * Time.deltaTime;
 
-        if (reglages.levelParts.Count > 0)
+        if (reglages.levelPartsEasy.Count + reglages.levelPartsNormal.Count + reglages.levelPartsHard.Count > 0)
         {
             while (rightMostSituationBound < Camera.main.orthographicSize * Camera.main.aspect)
             {
-                GameObject newSituation = (GameObject)Instantiate(reglages.GetLevelAtRandom(), new Vector3(rightMostSituationBound, 0), transform.rotation);
+                GameObject newSituation;
+                if (score < 5)
+                {
+                    print("facile : " + score);
+                    newSituation = (GameObject)Instantiate(reglages.GetEasyLevel(), new Vector3(rightMostSituationBound, 0), transform.rotation);
+                } else if (score < 10) {
+                    print("normal : " + score);
+                    newSituation = (GameObject)Instantiate(reglages.GetNormalLevel(), new Vector3(rightMostSituationBound, 0), transform.rotation);
+                } else {
+                    print("difficile : " + score);
+                    newSituation = (GameObject)Instantiate(reglages.GetHardLevel(), new Vector3(rightMostSituationBound, 0), transform.rotation); ;
+                }
+                
                 newSituation.transform.Translate(new Vector3(Camera.main.orthographicSize * Camera.main.aspect - GetGameObjectChildrenLeftMostBound(newSituation), 0));
                 rightMostSituationBound = GetGameObjectChildrenRightMostBound(newSituation) + (Camera.main.orthographicSize * Camera.main.aspect) / 2;
                 for (int i = newSituation.transform.childCount - 1; i >= 0; i--)
                 {
+                    surfaceJouable -= GetGameObjectSurface(newSituation.transform.GetChild(i).gameObject) / 2;
                     newSituation.transform.GetChild(i).parent = null;
                 }
                 Destroy(newSituation);
@@ -62,7 +79,7 @@ public class LevelManager : MonoBehaviour
             newBasePlafond.transform.Translate(new Vector3(Camera.main.orthographicSize * Camera.main.aspect - GetGameObjectLeftMostBound(newBasePlafond), 0));
             Color color = newBasePlafond.GetComponent<SpriteRenderer>().material.color;
             color *= 0.1f;
-            color.a = 0.5f;
+            color.a = 1.0f;
             newBasePlafond.GetComponent<SpriteRenderer>().material.color = color;
             rightMostBackgroundPlafondBound = GetGameObjectRightMostBound(newBasePlafond) - Random.Range(0.5f, 2.0f);
             plafondsBackground.Add(newBasePlafond);
@@ -74,8 +91,8 @@ public class LevelManager : MonoBehaviour
             GameObject newBasePlafond = (GameObject)Instantiate(reglages.plafonds[idPlafond], new Vector3(rightMostMiddlegroundPlafondBound, reglages.hauteursPlafonds[idPlafond], 0.2f), transform.rotation);
             newBasePlafond.transform.Translate(new Vector3(Camera.main.orthographicSize * Camera.main.aspect - GetGameObjectLeftMostBound(newBasePlafond), 0));
             Color color = newBasePlafond.GetComponent<SpriteRenderer>().material.color;
-            color *= 0.45f;
-            color.a = 0.5f;
+            color *= 0.2f;
+            color.a = 1.0f;
             newBasePlafond.GetComponent<SpriteRenderer>().material.color = color;
             rightMostMiddlegroundPlafondBound = GetGameObjectRightMostBound(newBasePlafond) + Random.Range(0.25f, 1.0f);
             plafondsMiddleground.Add(newBasePlafond);
@@ -87,7 +104,8 @@ public class LevelManager : MonoBehaviour
             GameObject newBasePlafond = (GameObject)Instantiate(reglages.plafonds[idPlafond], new Vector3(rightMostForegroundPlafondBound, reglages.hauteursPlafonds[idPlafond], 0.1f), transform.rotation);
             newBasePlafond.transform.Translate(new Vector3(Camera.main.orthographicSize * Camera.main.aspect - GetGameObjectLeftMostBound(newBasePlafond), 0));
             Color color = newBasePlafond.GetComponent<SpriteRenderer>().material.color;
-            color.a = 0.5f;
+            color *= 0.3f;
+            color.a = 1.0f;
             newBasePlafond.GetComponent<SpriteRenderer>().material.color = color;
             rightMostForegroundPlafondBound = GetGameObjectRightMostBound(newBasePlafond) + Random.Range(0.5f, 2.0f);
             plafondsForeground.Add(newBasePlafond);
@@ -154,29 +172,41 @@ public class LevelManager : MonoBehaviour
         {
             basePlafond.transform.Translate(scrollingVector);
         }
+        
+        AkSoundEngine.SetRTPCValue("Surface jouable", surfaceJouable);
     }
 
-    float GetGameObjectSurface(GameObject gameObjectParam)
+    public static void ChangeScore(int change)
+    {
+        score += change;
+    }
+
+    public static void ReleasePlayableSpace(GameObject gameObjectParam)
+    {
+        surfaceJouable += GetGameObjectSurface(gameObjectParam) / 2;
+    }
+
+    static float GetGameObjectSurface(GameObject gameObjectParam)
     {
         return GetGameObjectSize(gameObjectParam) * (gameObjectParam.GetComponentInChildren<Renderer>().bounds.max.y - gameObjectParam.GetComponentInChildren<Renderer>().bounds.min.y);
     }
 
-    float GetGameObjectSize(GameObject gameObjectParam)
+    static float GetGameObjectSize(GameObject gameObjectParam)
     {
         return GetGameObjectRightMostBound(gameObjectParam) - GetGameObjectLeftMostBound(gameObjectParam);
     }
 
-    float GetGameObjectLeftMostBound(GameObject gameObjectParam)
+    static float GetGameObjectLeftMostBound(GameObject gameObjectParam)
     {
         return gameObjectParam.GetComponentInChildren<Renderer>().bounds.min.x;
     }
 
-    float GetGameObjectRightMostBound(GameObject gameObjectParam)
+    static float GetGameObjectRightMostBound(GameObject gameObjectParam)
     {
         return gameObjectParam.GetComponentInChildren<Renderer>().bounds.max.x;
     }
 
-    float GetGameObjectChildrenLeftMostBound(GameObject gameObjectParam)
+    static float GetGameObjectChildrenLeftMostBound(GameObject gameObjectParam)
     {
         List<Transform> elements = new List<Transform>();
         foreach (Transform child in gameObjectParam.transform)
@@ -194,7 +224,7 @@ public class LevelManager : MonoBehaviour
         }
     }
 
-    float GetGameObjectChildrenRightMostBound(GameObject gameObjectParam)
+    static float GetGameObjectChildrenRightMostBound(GameObject gameObjectParam)
     {
         List<Transform> elements = new List<Transform>();
         foreach (Transform child in gameObjectParam.transform)

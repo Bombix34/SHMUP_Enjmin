@@ -10,13 +10,28 @@ public class LevelReglages : ScriptableObject
 	[Range(0.1f,10f)]
 	public float scrollingSpeed=1f;
 
-    [Header("Portions de level design")]
-    public List<GameObject> levelParts;
+    [Header("Portions de level design faciles")]
+    public List<GameObject> levelPartsEasy;
 
+    [Header("Portions de level design intermédiaires")]
+    public List<GameObject> levelPartsNormal;
 
-    public GameObject GetLevelAtRandom()
+    [Header("Portions de level design difficiles")]
+    public List<GameObject> levelPartsHard;
+
+    public GameObject GetEasyLevel()
     {
-        return levelParts[(int)Random.Range(0f, levelParts.Count)];
+        return levelPartsEasy[(int)Random.Range(0f, levelPartsEasy.Count)];
+    }
+
+    public GameObject GetNormalLevel()
+    {
+        return levelPartsNormal[(int)Random.Range(0f, levelPartsNormal.Count)];
+    }
+
+    public GameObject GetHardLevel()
+    {
+        return levelPartsHard[(int)Random.Range(0f, levelPartsHard.Count)];
     }
 
     [Header("Plafonds")]
