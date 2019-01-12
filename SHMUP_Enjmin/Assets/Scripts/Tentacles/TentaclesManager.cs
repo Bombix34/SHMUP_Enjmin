@@ -51,7 +51,7 @@ public class TentaclesManager : MonoBehaviour {
         {
             MoveForward();
 
-            LevelManager.ChangeScore(-1);
+            LevelManager.instance.ChangeScore(LevelManager.instance.reglages.malusAmiMangeParKraken);
 
             AkSoundEngine.PostEvent("Play_Kraken_Eat_Pnj", gameObject);
         }
