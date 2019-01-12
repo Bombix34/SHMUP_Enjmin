@@ -16,9 +16,6 @@ public class GameManager : MonoBehaviour {
 
 	float chrono=0f;
 
-	[SerializeField]
-	GameObject tentacles;
-
 	void Start () 
 	{
 		player=GameObject.FindGameObjectWithTag("Player");
@@ -40,23 +37,17 @@ public class GameManager : MonoBehaviour {
 		AddMetric("Time",Mathf.Floor((chrono/60)).ToString() + ":" + Mathf.RoundToInt(chrono%60).ToString());
 		AddMetric("Score",score.ToString());
 		
+		GetComponent<Playtest>().Save();
 
 		GameObject gameover = Instantiate(gameOverUI, transform.position,Quaternion.identity) as GameObject;
 		gameover.GetComponent<GameOverUI>().scoreText.text=score.ToString();
-		gameover.SetActive(true);
-
-		if(tentacles!=null)
-		{
-			tentacles.GetComponent<BoxCollider2D>().enabled=false;
-			tentacles.GetComponent<TentaclesManager>().enabled=false;
-		}
-
-		
 		player.GetComponent<PlayerManager>().Die();
 		highScore.AddNewHighscore("world",score);
+		gameover.SetActive(true);
 
         AkSoundEngine.PostEvent("Stop_All", gameObject);
         AkSoundEngine.PostEvent("Play_Music_GameOver", gameObject);
+
     }
 
     public void RelaunchGame()

@@ -63,36 +63,6 @@ public class ControllerManager : MonoBehaviour {
 		return new Vector2(inputDevice.Direction.X,inputDevice.Direction.Y);
 	}
 
-//SHMUP_____________________________________________
-
-	public bool pressFireBouton()
-	{
-		if(pressButtonA()||pressButtonR2()||pressButtonR1())
-			return true;
-		return false;
-	}
-
-	public bool useFireBouton()
-	{
-		if(usingButtonA()||usingButtonR2()||usingButtonR1())
-			return true;
-		return false;
-	}
-
-	public bool releaseFireBouton()
-	{
-		if(releasedButtonA()||releasedButtonR2()||releasedButtonR1())
-			return true;
-		return false;
-	}
-
-	public bool pressDashBouton()
-	{
-		if(pressButtonB()||pressButtonX())
-			return true;
-		return false;
-	}
-
 //DETECTION PRESSION
 	public bool pressAnyButton()
 	{

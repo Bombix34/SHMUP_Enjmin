@@ -159,7 +159,7 @@ public class PlayerManager : MonoBehaviour {
 		dashChrono-=Time.deltaTime;
 		if((dashChrono>0)||(!canDash))
 			return;
-		if(controller.pressDashBouton()||keyboard.PressDashBouton())
+		if(controller.pressButtonB()||keyboard.PressDashBouton())
 		{
 			if(curBuble!=null)
 			{	
@@ -260,11 +260,11 @@ public class PlayerManager : MonoBehaviour {
 		UpdateCurBublePosition();
 
 		//controlles a la manette
-		if(controller.pressFireBouton()||keyboard.PressFireBouton())
+		if(controller.pressButtonA()||keyboard.PressFireBouton())
 			CreateBuble();
-		if(controller.useFireBouton()||keyboard.UseFireBouton())
+		if(controller.usingButtonA()||keyboard.UseFireBouton())
 			GrowBuble();
-		if(controller.releaseFireBouton()||keyboard.ReleaseFireBouton())
+		if(controller.releasedButtonA()||keyboard.ReleaseFireBouton())
 			ShootBuble();
 	}
 
@@ -339,10 +339,6 @@ public class PlayerManager : MonoBehaviour {
 	{
 		if(curBuble==null)
 			return;
-			
-		//pour empêcher le joueur de bouger pendant le knockback
-		canMove=false;
-		canDash=false;
 
 		curBuble.GetComponent<BubleManager>().SetIsCreate(false);
 		//tir de la bulle
@@ -387,7 +383,6 @@ public class PlayerManager : MonoBehaviour {
 		//pour empêcher le joueur de bouger pendant le knockback
 		canMove=false;
 		canDash=false;
-		animator.speed=0.2f;
 		for(int i= 0;i<10;i++)
 		{
 			Vector2 final = new Vector2(direction.x*Time.deltaTime,direction.y*Time.deltaTime)*reglages.knockback;
@@ -396,7 +391,6 @@ public class PlayerManager : MonoBehaviour {
 			transform.Translate(final);
 			yield return new WaitForSeconds(0.001f);
 		}
-		animator.speed=1f;
 		canMove=true;
 		canDash=true;
 	}
