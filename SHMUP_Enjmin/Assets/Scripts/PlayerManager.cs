@@ -116,16 +116,17 @@ public class PlayerManager : MonoBehaviour {
 
 //MOVEMENT________________________________________________________________________________
 	public void MovePlayer()
-	{
-		if((!canMove)||(isDashing))
-			return;
-		Vector2 controlWithSpeed = controller.getLeftStickDirection()*tempSpeedValue;
-		if(controlWithSpeed==Vector2.zero)
-			controlWithSpeed=keyboard.GetMovement()*tempSpeedValue;
+    {
+        if((!canMove)||(isDashing))
+            return;
+        Vector2 controlWithSpeed = controller.getLeftStickDirection()*tempSpeedValue;
+        if(controlWithSpeed==Vector2.zero)
+            controlWithSpeed=keyboard.GetMovement()*tempSpeedValue;
        // transform.Translate(new Vector2(controlWithSpeed.x, controlWithSpeed.y));
-	   rb2D.velocity=new Vector2(controlWithSpeed.x,controlWithSpeed.y);
+       rb2D.velocity=new Vector2(controlWithSpeed.x,controlWithSpeed.y + Mathf.Sin(Time.frameCount / (30.0f / reglages.frequence)) * reglages.amplitude);
+
 	   UpdateSpeedAnim();
-		//rb2D.MovePosition(new Vector2(transform.position.x+controlWithSpeed.x,transform.position.y+controlWithSpeed.y));
+        //rb2D.MovePosition(new Vector2(transform.position.x+controlWithSpeed.x,transform.position.y+controlWithSpeed.y));
     }
 
 	public void UpdateSpeedAnim()
