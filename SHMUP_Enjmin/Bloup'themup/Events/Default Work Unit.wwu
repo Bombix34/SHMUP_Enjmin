@@ -247,6 +247,16 @@
 										</Reference>
 									</ReferenceList>
 								</Action>
+								<Action Name="" ID="{6C38AD42-C6E8-4F0C-8548-4A00177B2EEE}" ShortID="582763276">
+									<PropertyList>
+										<Property Name="ActionType" Type="int16" Value="1"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Pnj_In_Bubble_RNd" ID="{895898F8-86C9-472E-9363-6159F85FF4FC}" WorkUnitID="{BFB9B95C-F19D-4A69-AD4E-5BA087B198AF}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
 							</ChildrenList>
 						</Event>
 						<Event Name="Play_Musique" ID="{A3FDAEB7-7E5C-4B07-98AD-15B83474C0B1}">
@@ -339,7 +349,6 @@
 								<Action Name="" ID="{C44F22CE-B3AE-4EC3-AF5C-AE367B4CF089}" ShortID="414429834">
 									<PropertyList>
 										<Property Name="ActionType" Type="int16" Value="1"/>
-										<Property Name="Delay" Type="Real64" Value="0.8"/>
 										<Property Name="FadeTime" Type="Real64" Value="0.5"/>
 									</PropertyList>
 									<ReferenceList>
@@ -351,7 +360,6 @@
 								<Action Name="" ID="{D58F4324-239A-4AB6-85CB-A5CD2E64329B}" ShortID="270567721">
 									<PropertyList>
 										<Property Name="ActionType" Type="int16" Value="1"/>
-										<Property Name="Delay" Type="Real64" Value="0.8"/>
 									</PropertyList>
 									<ReferenceList>
 										<Reference Name="Target">
@@ -389,26 +397,6 @@
 										</Reference>
 									</ReferenceList>
 								</Action>
-								<Action Name="" ID="{6586DA49-EF51-4185-86B5-7FA1B18F5815}" ShortID="98145416">
-									<PropertyList>
-										<Property Name="ActionType" Type="int16" Value="1"/>
-									</PropertyList>
-									<ReferenceList>
-										<Reference Name="Target">
-											<ObjectRef Name="Underwater_Rnd" ID="{4A79B598-056A-4864-B6F3-A6B4B2D28ED5}" WorkUnitID="{BFB9B95C-F19D-4A69-AD4E-5BA087B198AF}"/>
-										</Reference>
-									</ReferenceList>
-								</Action>
-								<Action Name="" ID="{154DEE86-F03A-46DA-BFA4-EB9E8BF759CE}" ShortID="339887017">
-									<PropertyList>
-										<Property Name="ActionType" Type="int16" Value="1"/>
-									</PropertyList>
-									<ReferenceList>
-										<Reference Name="Target">
-											<ObjectRef Name="Underwater_lp" ID="{C5914DA8-300A-42D4-8B19-63A133F499C5}" WorkUnitID="{BFB9B95C-F19D-4A69-AD4E-5BA087B198AF}"/>
-										</Reference>
-									</ReferenceList>
-								</Action>
 								<Action Name="" ID="{7837333A-B842-437B-9BB4-564161956D47}" ShortID="209165883">
 									<PropertyList>
 										<Property Name="ActionType" Type="int16" Value="1"/>
@@ -429,13 +417,13 @@
 										</Reference>
 									</ReferenceList>
 								</Action>
-								<Action Name="" ID="{FB0A2722-0365-4D44-80B6-059BDF68D8C3}" ShortID="928201394">
+								<Action Name="" ID="{99927ABF-7884-48E0-87C7-5E667FA2643D}" ShortID="44050040">
 									<PropertyList>
 										<Property Name="ActionType" Type="int16" Value="1"/>
 									</PropertyList>
 									<ReferenceList>
 										<Reference Name="Target">
-											<ObjectRef Name="Sfx_gameOver_Os" ID="{81DD6213-0FE6-4A03-A85F-FBB902D608C2}" WorkUnitID="{BFB9B95C-F19D-4A69-AD4E-5BA087B198AF}"/>
+											<ObjectRef Name="Underwater_lp" ID="{7FC79C60-A493-4115-9C4D-193485CB3FFB}" WorkUnitID="{BFB9B95C-F19D-4A69-AD4E-5BA087B198AF}"/>
 										</Reference>
 									</ReferenceList>
 								</Action>

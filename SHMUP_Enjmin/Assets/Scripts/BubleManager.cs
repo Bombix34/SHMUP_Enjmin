@@ -50,6 +50,7 @@ public class BubleManager : MonoBehaviour {
             // on decroche les potes dans les bulles, et on réactive leur scrollable
             pote.transform.parent = null;
 			pote.GetComponent<SavedManager>().SetIsInBuble(false);
+			pote.GetComponent<SavedManager>().EnterBuble(false);
             pote.GetComponent<ScrollScript>().enabled = true;
         }
 		StartCoroutine(DestroyAnim());
@@ -122,8 +123,12 @@ public class BubleManager : MonoBehaviour {
 		while(GetDistanceFromBubleCenter(obj.transform.position) > (distanceFromCenter * 1/randDist ))
 		{
 			if(frameCount>45)
+			{
 				//on attend un certain nombre de frame avant de le faire rentrer très vite 
+				if(obj.GetComponent<SavedManager>()!=null)
+					obj.GetComponent<SavedManager>().EnterBuble(true);
 				obj.transform.Translate(forceDirection.x*Time.deltaTime*5f,forceDirection.y*Time.deltaTime*5f,0f);
+			}
 			else
 				obj.transform.Translate(forceDirection.x*Time.deltaTime*0.6f,forceDirection.y*Time.deltaTime*0.6f,0f);
 			frameCount++;

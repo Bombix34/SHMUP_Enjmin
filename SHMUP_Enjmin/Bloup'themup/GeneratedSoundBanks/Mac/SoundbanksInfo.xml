@@ -71,10 +71,6 @@
 					<ShortName>MACK Whoosh Arrow Low.wav</ShortName>
 					<Path>SFX/MACK Whoosh Arrow Low_ACF0B30C.wem</Path>
 				</File>
-				<File Id="101981067" Language="SFX">
-					<ShortName>Sfx_gameOver_Os.wav</ShortName>
-					<Path>SFX/Sfx_gameOver_Os_56D34C19.wem</Path>
-				</File>
 				<File Id="179179122" Language="SFX">
 					<ShortName>Pnj_In_Bubble.wav</ShortName>
 					<Path>SFX/Pnj_In_Bubble_56D34C19.wem</Path>
