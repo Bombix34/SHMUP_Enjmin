@@ -435,7 +435,7 @@
 									</PropertyList>
 									<ReferenceList>
 										<Reference Name="Target">
-											<ObjectRef Name="Kraken_Eat_Pnj" ID="{D5AEEB6C-E1F6-44BC-8128-CF73EC6FA0D4}" WorkUnitID="{BFB9B95C-F19D-4A69-AD4E-5BA087B198AF}"/>
+											<ObjectRef Name="Sfx_gameOver_Os" ID="{81DD6213-0FE6-4A03-A85F-FBB902D608C2}" WorkUnitID="{BFB9B95C-F19D-4A69-AD4E-5BA087B198AF}"/>
 										</Reference>
 									</ReferenceList>
 								</Action>
