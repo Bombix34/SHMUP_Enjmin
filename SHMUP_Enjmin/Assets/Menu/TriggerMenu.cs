@@ -17,6 +17,8 @@ public class TriggerMenu : MonoBehaviour {
     [SerializeField]
     Vector2 cavernPosition=new Vector2(18f,0f);
 
+    public GameObject uiScore;
+
    
 	
 
@@ -28,6 +30,7 @@ public class TriggerMenu : MonoBehaviour {
             {
                 //Transition vers la caverne des crédits
                 StartCoroutine(StopPlayer(col.gameObject));
+                uiScore.SetActive(false);
                 StartCoroutine(MoveCamera(false,col.gameObject));
                 SwitchIsInMainMenu(false);
             }
@@ -35,6 +38,7 @@ public class TriggerMenu : MonoBehaviour {
             {
                 //Transition vers la caverne Main Menu 
                 StartCoroutine(StopPlayer(col.gameObject));
+                uiScore.SetActive(true);
                 StartCoroutine(MoveCamera(true,col.gameObject));
                 SwitchIsInMainMenu(true);
             }

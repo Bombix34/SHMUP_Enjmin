@@ -13,6 +13,7 @@ public class Score : MonoBehaviour
 
 	//contient la valeur de score globale
 	int globalScore=0;
+ 
 
 	void Awake() 
 	{
@@ -53,7 +54,7 @@ public class Score : MonoBehaviour
 		yield return www;
 		
 		if (string.IsNullOrEmpty(www.error))
-			FormatHighscores(www.text);
+            FormatHighscores(www.text);
 		else {
 			print ("Error Downloading: " + www.error);
 		}
@@ -73,6 +74,11 @@ public class Score : MonoBehaviour
 		if(highscoresList.Length>0)
 			globalScore=highscoresList[0].score;
 	}
+
+    public int GetOnlineScore()
+    {
+        return globalScore;
+    }
 
 }
 
