@@ -17,6 +17,11 @@
 					</PropertyList>
 				</GameParameter>
 				<GameParameter Name="LeftRight" ID="{189814A7-C41F-4B32-94DD-765DBF2C9FF0}"/>
+				<GameParameter Name="Surface_jouable" ID="{42777A1D-5C88-4839-8B7F-B1D601F7F950}">
+					<PropertyList>
+						<Property Name="InitialValue" Type="Real64" Value="100"/>
+					</PropertyList>
+				</GameParameter>
 			</ChildrenList>
 		</WorkUnit>
 	</GameParameters>

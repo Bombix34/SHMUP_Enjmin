@@ -4,10 +4,18 @@ using UnityEngine;
 
 public class BubleMainMenu : BubleManager 
 {
+    void Start()
+    {
+        foreach (GameObject go in GameObject.FindGameObjectsWithTag("Wall"))
+        {
+            Physics2D.IgnoreCollision(GetCollider(), go.GetComponent<BoxCollider2D>());
+        }
+    }
 
 	protected override void OnCollisionEnter2D(Collision2D col)
     {
-       	if (col.gameObject.tag == "_REMPLACER_LE_TAG_ICI")
+
+        if (col.gameObject.tag == "ObjMenu")
 		//ENTRE DANS LA BULLE
         {
             if (curIsCreate)
@@ -44,7 +52,7 @@ public class BubleMainMenu : BubleManager
 
 	protected override void OnTriggerEnter2D(Collider2D col)
     {
-		if (col.gameObject.tag == "_REMPLACER_LE_TAG_ICI")
+		if (col.gameObject.tag == "ObjMenu")
 		//ENTRE DANS LA BULLE
         {
             if (curIsCreate)

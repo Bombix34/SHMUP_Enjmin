@@ -17,6 +17,9 @@ public class TentaclesManager : MonoBehaviour {
     private Coroutine deplacement;
 
     public float distanceDone = 0;
+    
+    [SerializeField]
+    List<ParticleSystem> fishParticles;
 
 
     private void Awake()
@@ -29,6 +32,10 @@ public class TentaclesManager : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
+        foreach(ParticleSystem particle in fishParticles)
+        {
+            particle.Stop();
+        }
 
         float dist = Camera.main.transform.position.z;
 
@@ -51,7 +58,7 @@ public class TentaclesManager : MonoBehaviour {
         {
             MoveForward();
 
-            LevelManager.ChangeScore(-1);
+            LevelManager.instance.ChangeScore(LevelManager.instance.reglages.malusAmiMangeParKraken);
 
             AkSoundEngine.PostEvent("Play_Kraken_Eat_Pnj", gameObject);
         }
@@ -68,7 +75,23 @@ public class TentaclesManager : MonoBehaviour {
 			Camera.main.GetComponent<CameraShaker>().LaunchShake(1f,0.1f);
         // deplacement des tentacules
         distanceDone += distanceAtEachCapture;
+        
+        StartCoroutine(LaunchFishParticles());
+
         StartCoroutine(MoveForwardCoroutine());
+    }
+
+    IEnumerator LaunchFishParticles()
+    {
+        float rand = Random.Range(0f,100f);
+        yield return new WaitForSeconds(0.75f);
+        if(rand>=55)
+        {
+            foreach(ParticleSystem particle in fishParticles)
+            {
+              particle.Play();
+            }
+        }
     }
 
     public void MoveBackward()
@@ -77,7 +100,7 @@ public class TentaclesManager : MonoBehaviour {
         distanceDone -= distanceAtEachSave;
 
         if((Camera.main.GetComponent<CameraShaker>()!=null)&&(distanceDone==0))
-			Camera.main.GetComponent<CameraShaker>().LaunchShake(0.3f,0.03f);
+			Camera.main.GetComponent<CameraShaker>().LaunchShake(0.5f,0.05f);
 
         StartCoroutine(MoveBackwardCoroutine());
     }

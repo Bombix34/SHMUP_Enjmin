@@ -180,7 +180,7 @@ MonoBehaviour:
   - PhysicalPath: Master-Mixer Hierarchy/Default Work Unit.wwu
     ParentPhysicalPath: 
     guid: bb24b7d1b666554f9cb7851dfb74b0cf
-    m_lastTime: -8586543869194775808
+    m_lastTime: -8586541980164775808
     List:
     - name: Delay
       guid: 31a4ca601367c544b349886c538ea77e
@@ -223,7 +223,7 @@ MonoBehaviour:
   - PhysicalPath: Events/Default Work Unit.wwu
     ParentPhysicalPath: 
     guid: 7c843613cd65de4b82e788b2522fbb1a
-    m_lastTime: -8586543823034775808
+    m_lastTime: -8586541989294775808
     List:
     - name: Innit_Amb
       guid: 0946cc13814ff64b909268618d042f1c
@@ -306,6 +306,20 @@ MonoBehaviour:
       - ElementName: Play_Kraken_Eat_Pnj
         ObjectType: 3
       Path: Default Work Unit/Ingame/Play_Kraken_Eat_Pnj
+      maxAttenuation: 0
+      maxDuration: 0
+      minDuration: 0
+    - name: Play_Kraken_Near_Rnd
+      guid: e62cbfad8bb6254f95fd6924aefaf4ca
+      id: 2798840920
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Ingame
+        ObjectType: 4
+      - ElementName: Play_Kraken_Near_Rnd
+        ObjectType: 3
+      Path: Default Work Unit/Ingame/Play_Kraken_Near_Rnd
       maxAttenuation: 0
       maxDuration: 0
       minDuration: 0
@@ -453,7 +467,7 @@ MonoBehaviour:
   - PhysicalPath: Game Parameters/Default Work Unit.wwu
     ParentPhysicalPath: 
     guid: bee0b53b9a5d654a8a2c3017e9e6dea0
-    m_lastTime: -8586544819334775808
+    m_lastTime: -8586542000144775808
     List:
     - name: BubbleSize
       guid: 4fd8dd76cfe56440b1cf03cf0185f858
@@ -482,6 +496,15 @@ MonoBehaviour:
       - ElementName: Profondeur
         ObjectType: 13
       Path: Default Work Unit/Profondeur
+    - name: Surface_jouable
+      guid: 1d7a7742885c39488b7fb1d601f7f950
+      id: 1507378905
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Surface_jouable
+        ObjectType: 13
+      Path: Default Work Unit/Surface_jouable
   - PhysicalPath: Game Parameters/Factory Motion.wwu
     ParentPhysicalPath: 
     guid: 225213d7dbd1d042adc0930743567776

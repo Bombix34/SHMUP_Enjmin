@@ -23,17 +23,49 @@
 										<Value>-16</Value>
 									</ValueList>
 								</Property>
+								<Property Name="UserAuxSendVolume1" Type="Real64">
+									<RTPCList>
+										<RTPC Name="" ID="{E46BD558-3DCC-42A9-8534-FF5CFE2C68DE}" ShortID="942355251">
+											<ReferenceList>
+												<Reference Name="ControlInput">
+													<ObjectRef Name="Surface_jouable" ID="{42777A1D-5C88-4839-8B7F-B1D601F7F950}" WorkUnitID="{3BB5E0BE-5D9A-4A65-8A2C-3017E9E6DEA0}"/>
+												</Reference>
+											</ReferenceList>
+											<Curve Name="" ID="{4A4ADA8D-C6D4-412A-BCBC-92701DD934DD}">
+												<PropertyList>
+													<Property Name="Flags" Type="int32" Value="3"/>
+												</PropertyList>
+												<PointList>
+													<Point>
+														<XPos>0</XPos>
+														<YPos>-200</YPos>
+														<Flags>5</Flags>
+														<SegmentShape>Log1</SegmentShape>
+													</Point>
+													<Point>
+														<XPos>100</XPos>
+														<YPos>-10</YPos>
+														<Flags>37</Flags>
+													</Point>
+												</PointList>
+											</Curve>
+										</RTPC>
+									</RTPCList>
+								</Property>
 							</PropertyList>
 							<ReferenceList>
 								<Reference Name="UserAuxSend0">
 									<ObjectRef Name="Rvrb" ID="{0F444CE1-A308-4A0A-BC97-BDAD8C6462AF}" WorkUnitID="{D1B724BB-66B6-4F55-9CB7-851DFB74B0CF}"/>
+								</Reference>
+								<Reference Name="UserAuxSend1">
+									<ObjectRef Name="Delay" ID="{60CAA431-6713-44C5-B349-886C538EA77E}" WorkUnitID="{D1B724BB-66B6-4F55-9CB7-851DFB74B0CF}"/>
 								</Reference>
 							</ReferenceList>
 							<DuckingList>
 								<DuckItem>
 									<BusRef Name="Music" ID="{22627215-F271-45F9-A24D-6AB466AF1237}"/>
 									<DuckingParam>
-										<Volume>-3</Volume>
+										<Volume>-1</Volume>
 										<FadeInTime>0.100000001490116</FadeInTime>
 										<FadeOutTime>1.5</FadeOutTime>
 										<FadeCurve>FadeInvSCurve</FadeCurve>

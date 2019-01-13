@@ -13,7 +13,6 @@ public class Music_Lvl_02 : MonoBehaviour
         {
             AkSoundEngine.SetState("Lvl_Musique", "Lvl_02");
             //    AkSoundEngine.PostEvent(WiseEvent, gameObject);
-            Debug.Log("ak send");
         }
     }
 }

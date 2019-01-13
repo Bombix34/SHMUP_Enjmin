@@ -67,28 +67,28 @@ public class ControllerManager : MonoBehaviour {
 
 	public bool pressFireBouton()
 	{
-		if(pressButtonA()||pressButtonR2()||pressButtonR1())
+		if(pressButtonA()||pressButtonR2()||pressButtonR1()||pressButtonB())
 			return true;
 		return false;
 	}
 
 	public bool useFireBouton()
 	{
-		if(usingButtonA()||usingButtonR2()||usingButtonR1())
+		if(usingButtonA()||usingButtonR2()||usingButtonR1()||usingButtonB())
 			return true;
 		return false;
 	}
 
 	public bool releaseFireBouton()
 	{
-		if(releasedButtonA()||releasedButtonR2()||releasedButtonR1())
+		if(releasedButtonA()||releasedButtonR2()||releasedButtonR1()||releasedButtonB())
 			return true;
 		return false;
 	}
 
 	public bool pressDashBouton()
 	{
-		if(pressButtonB()||pressButtonX())
+		if(pressButtonY()||pressButtonX()||pressButtonL1()||pressButtonL2())
 			return true;
 		return false;
 	}

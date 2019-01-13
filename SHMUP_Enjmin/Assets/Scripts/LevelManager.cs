@@ -17,9 +17,10 @@ public class LevelManager : MonoBehaviour
 
     public LevelReglages reglages;
 
-    static float surfaceJouable;
+    float surfaceJouable;
+    float surfaceJouable2;
 
-    static int score;
+    int score;
 
     void Start ()
     {
@@ -49,11 +50,11 @@ public class LevelManager : MonoBehaviour
             while (rightMostSituationBound < Camera.main.orthographicSize * Camera.main.aspect)
             {
                 GameObject newSituation;
-                if (score < 5)
+                if (score < reglages.pallierNormal)
                 {
                     print("facile : " + score);
                     newSituation = (GameObject)Instantiate(reglages.GetEasyLevel(), new Vector3(rightMostSituationBound, 0), transform.rotation);
-                } else if (score < 10) {
+                } else if (score < reglages.pallierDifficile) {
                     print("normal : " + score);
                     newSituation = (GameObject)Instantiate(reglages.GetNormalLevel(), new Vector3(rightMostSituationBound, 0), transform.rotation);
                 } else {
@@ -172,41 +173,43 @@ public class LevelManager : MonoBehaviour
         {
             basePlafond.transform.Translate(scrollingVector);
         }
-        
-        AkSoundEngine.SetRTPCValue("Surface jouable", surfaceJouable);
+
+        surfaceJouable2 = surfaceJouable;
+        AkSoundEngine.SetRTPCValue("Surface_jouable", surfaceJouable2, gameObject);
+        print("surfaceJouable:" + surfaceJouable2);
     }
 
-    public static void ChangeScore(int change)
+    public void ChangeScore(int change)
     {
         score += change;
     }
 
-    public static void ReleasePlayableSpace(GameObject gameObjectParam)
+    public void ReleasePlayableSpace(GameObject gameObjectParam)
     {
         surfaceJouable += GetGameObjectSurface(gameObjectParam) / 2;
     }
 
-    static float GetGameObjectSurface(GameObject gameObjectParam)
+    float GetGameObjectSurface(GameObject gameObjectParam)
     {
         return GetGameObjectSize(gameObjectParam) * (gameObjectParam.GetComponentInChildren<Renderer>().bounds.max.y - gameObjectParam.GetComponentInChildren<Renderer>().bounds.min.y);
     }
 
-    static float GetGameObjectSize(GameObject gameObjectParam)
+    float GetGameObjectSize(GameObject gameObjectParam)
     {
         return GetGameObjectRightMostBound(gameObjectParam) - GetGameObjectLeftMostBound(gameObjectParam);
     }
 
-    static float GetGameObjectLeftMostBound(GameObject gameObjectParam)
+    float GetGameObjectLeftMostBound(GameObject gameObjectParam)
     {
         return gameObjectParam.GetComponentInChildren<Renderer>().bounds.min.x;
     }
 
-    static float GetGameObjectRightMostBound(GameObject gameObjectParam)
+    float GetGameObjectRightMostBound(GameObject gameObjectParam)
     {
         return gameObjectParam.GetComponentInChildren<Renderer>().bounds.max.x;
     }
 
-    static float GetGameObjectChildrenLeftMostBound(GameObject gameObjectParam)
+    float GetGameObjectChildrenLeftMostBound(GameObject gameObjectParam)
     {
         List<Transform> elements = new List<Transform>();
         foreach (Transform child in gameObjectParam.transform)
@@ -224,7 +227,7 @@ public class LevelManager : MonoBehaviour
         }
     }
 
-    static float GetGameObjectChildrenRightMostBound(GameObject gameObjectParam)
+    float GetGameObjectChildrenRightMostBound(GameObject gameObjectParam)
     {
         List<Transform> elements = new List<Transform>();
         foreach (Transform child in gameObjectParam.transform)
@@ -250,7 +253,7 @@ public class LevelManager : MonoBehaviour
 //SINGLETON________________________________________________________________________________________________
 	private static LevelManager s_Instance = null;
 
-    // This defines a static instance property that attempts to find the manager object in the scene and
+    // This defines a instance property that attempts to find the manager object in the scene and
     // returns it to the caller.
     public static LevelManager instance
     {

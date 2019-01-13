@@ -26,6 +26,7 @@ ExportedObj/
 *.VC.db
 
 # pour enlever les fichiers de playtest
+SHMUP_Enjmin/Assets/CSV/
 *.csv
 *.csv.meta
 

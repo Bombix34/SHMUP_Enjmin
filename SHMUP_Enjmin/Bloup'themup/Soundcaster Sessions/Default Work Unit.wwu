@@ -10,8 +10,16 @@
 							<Position X="0" Y="0"/>
 						</Module>
 						<Module>
+							<ObjectRef Name="Stop_All" ID="{6BF22FC0-ABC2-4073-A4D9-A5C8C29165E0}" WorkUnitID="{1336847C-65CD-4BDE-82E7-88B2522FBB1A}"/>
+							<Position X="0" Y="1"/>
+						</Module>
+						<Module>
 							<ObjectRef Name="Play_Pnj_Oh" ID="{5E27AFCB-5157-43AC-8549-83D7CAEE0F33}" WorkUnitID="{1336847C-65CD-4BDE-82E7-88B2522FBB1A}"/>
 							<Position X="0" Y="2"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="Play_Music_GameOver" ID="{D45B5E01-2B49-4CDC-9C22-2B772A51DA9F}" WorkUnitID="{1336847C-65CD-4BDE-82E7-88B2522FBB1A}"/>
+							<Position X="1" Y="1"/>
 						</Module>
 						<Module>
 							<ObjectRef Name="Play_Bubble_Explode_Os" ID="{54F2F68E-297D-4491-81F8-973496A0B5BB}" WorkUnitID="{1336847C-65CD-4BDE-82E7-88B2522FBB1A}"/>
@@ -24,6 +32,10 @@
 						<Module>
 							<ObjectRef Name="Play_Load_Shot" ID="{C387B0CB-78EE-45C4-87CF-AC51E456CBEB}" WorkUnitID="{1336847C-65CD-4BDE-82E7-88B2522FBB1A}"/>
 							<Position X="2" Y="1"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="Innit_Menu" ID="{8C8BEBB2-005A-4740-B9AA-1CE17B6B35F1}" WorkUnitID="{1336847C-65CD-4BDE-82E7-88B2522FBB1A}"/>
+							<Position X="2" Y="2"/>
 						</Module>
 						<Module>
 							<ObjectRef Name="Play_Oursin_In" ID="{95F87FAA-EE70-48F1-8D54-1383AF9A083E}" WorkUnitID="{1336847C-65CD-4BDE-82E7-88B2522FBB1A}"/>
@@ -76,6 +88,10 @@
 							<Value>75</Value>
 						</RTPCValue>
 						<RTPCValue>
+							<GameParameterRef Name="Surface_jouable" ID="{42777A1D-5C88-4839-8B7F-B1D601F7F950}"/>
+							<Value>0</Value>
+						</RTPCValue>
+						<RTPCValue>
 							<GameParameterRef Name="SS_Air_Presence" ID="{E3B7811A-7B2F-490F-B44F-5FE51B468041}"/>
 							<Value>75</Value>
 						</RTPCValue>
@@ -97,12 +113,12 @@
 						</RTPCValue>
 						<RTPCValue>
 							<GameParameterRef Name="Profondeur" ID="{27B4697F-9FDD-4F5D-B7F0-B5A24FF86796}"/>
-							<Value>-5</Value>
+							<Value>5</Value>
 						</RTPCValue>
 					</RTPCValueList>
 					<CurrentStateList ShowAll="true">
 						<CurrentStateRef Name="Lvl_01" ID="{01032899-D0A3-45BB-8D55-0E7B866379FF}"/>
-						<CurrentStateRef Name="Poisonus" ID="{9A99C0FF-0755-47FA-9371-3BAB9E5FDF65}"/>
+						<CurrentStateRef Name="ReadyToDestroyBuble" ID="{19D7413D-8047-41A8-8DD1-4040004E6839}"/>
 					</CurrentStateList>
 					<CurrentSwitchList ShowAll="true"/>
 				</SoundcasterSession>

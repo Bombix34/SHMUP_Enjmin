@@ -14,7 +14,7 @@ public class ScrollScript : MonoBehaviour {
 
         if (GetComponentInChildren<Renderer>().bounds.max.x < -1 * Camera.main.orthographicSize * Camera.main.aspect)
         {
-            LevelManager.ReleasePlayableSpace(gameObject);
+            LevelManager.instance.ReleasePlayableSpace(gameObject);
             Destroy(this.gameObject);
         }
     }

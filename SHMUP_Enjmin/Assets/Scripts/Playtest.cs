@@ -11,6 +11,8 @@ public class Playtest : MonoBehaviour {
 
     DateTime timeFolder;
 
+    public bool generateCSV=false;
+
     // nombre de bulles tirées  DONE
     // durée de la partie       DONE
     // score                    DONE
@@ -36,9 +38,8 @@ public class Playtest : MonoBehaviour {
     
     public void Save()
     {
-
-        //A ENLEVER QUAND ON A BESOIN DES CSV PLAYTESTS
-        return;
+        if (!generateCSV)
+            return;
 
         string[][] output = new string[rowData.Count][];
 

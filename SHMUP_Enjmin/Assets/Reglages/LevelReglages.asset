@@ -11,8 +11,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9618d9eac8ce9443da4e0e688468f107, type: 3}
   m_Name: LevelReglages
   m_EditorClassIdentifier: 
-  scrollingSpeed: 0.7
+  scrollingSpeed: 1
+  bonusAmiMisEnBulle: 1
+  bonusAmiSauve: 1
+  malusBulleAmiEclatee: -1
+  malusCollisionOursin: -1
+  malusAmiMangeParKraken: -1
+  pallierNormal: 5
+  pallierDifficile: 10
   levelPartsEasy:
+  - {fileID: 1597590202695692, guid: 1acdfb02104ba0548a862fae4baef58d, type: 2}
+  - {fileID: 1597590202695692, guid: 1acdfb02104ba0548a862fae4baef58d, type: 2}
+  - {fileID: 1597590202695692, guid: 1acdfb02104ba0548a862fae4baef58d, type: 2}
+  - {fileID: 1597590202695692, guid: 1acdfb02104ba0548a862fae4baef58d, type: 2}
   - {fileID: 1597590202695692, guid: 1acdfb02104ba0548a862fae4baef58d, type: 2}
   levelPartsNormal:
   - {fileID: 1597590202695692, guid: 1acdfb02104ba0548a862fae4baef58d, type: 2}

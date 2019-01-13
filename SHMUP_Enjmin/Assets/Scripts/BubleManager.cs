@@ -43,12 +43,14 @@ public class BubleManager : MonoBehaviour {
 
 	public virtual void DestroyBuble()
 	{
+		rb2D.velocity=Vector2.zero;
 		StopCoroutine(ShakeBuble());
         foreach(GameObject pote in objectInTheBuble)
         {
             // on decroche les potes dans les bulles, et on réactive leur scrollable
             pote.transform.parent = null;
 			pote.GetComponent<SavedManager>().SetIsInBuble(false);
+			pote.GetComponent<SavedManager>().EnterBuble(false);
             pote.GetComponent<ScrollScript>().enabled = true;
         }
 		StartCoroutine(DestroyAnim());
@@ -121,8 +123,12 @@ public class BubleManager : MonoBehaviour {
 		while(GetDistanceFromBubleCenter(obj.transform.position) > (distanceFromCenter * 1/randDist ))
 		{
 			if(frameCount>45)
+			{
 				//on attend un certain nombre de frame avant de le faire rentrer très vite 
+				if(obj.GetComponent<SavedManager>()!=null)
+					obj.GetComponent<SavedManager>().EnterBuble(true);
 				obj.transform.Translate(forceDirection.x*Time.deltaTime*5f,forceDirection.y*Time.deltaTime*5f,0f);
+			}
 			else
 				obj.transform.Translate(forceDirection.x*Time.deltaTime*0.6f,forceDirection.y*Time.deltaTime*0.6f,0f);
 			frameCount++;
@@ -150,8 +156,8 @@ public class BubleManager : MonoBehaviour {
 			{
 				col.gameObject.GetComponent<UrchinManager>().retract();	
 				DestroyBuble();
-                LevelManager.ChangeScore(-1);
-			}
+                LevelManager.instance.ChangeScore(LevelManager.instance.reglages.malusBulleAmiEclatee);
+            }
             AkSoundEngine.PostEvent("Play_Bubble_Explode_Os", gameObject);
 		}
 		else
@@ -196,8 +202,8 @@ public class BubleManager : MonoBehaviour {
 			col.gameObject.GetComponent<SavedManager>().SetIsInBuble(true);
             StartCoroutine(SetObjectInTheBuble(col.gameObject));
             objectInTheBuble.Add(col.gameObject);
-
-            LevelManager.ChangeScore(1);
+            
+            LevelManager.instance.ChangeScore(LevelManager.instance.reglages.bonusAmiMisEnBulle);
 
             AkSoundEngine.PostEvent("Play_Pnj_Oh", gameObject);
         }
@@ -208,6 +214,8 @@ public class BubleManager : MonoBehaviour {
         if (col.gameObject.tag == "DeathBuble")
         {
             DestroyBuble();
+            AkSoundEngine.PostEvent("Play_Bubble_Explode_Os", gameObject);
+
         }
         else if(col.gameObject.tag == "upBuble")
         {
@@ -216,7 +224,7 @@ public class BubleManager : MonoBehaviour {
 				GameManager.instance.AddScore();
             	TentaclesManager.instance.MoveBackward();
                 Destroy(pote);
-                LevelManager.ChangeScore(1);
+                LevelManager.instance.ChangeScore(LevelManager.instance.reglages.bonusAmiSauve);
             }
             Destroy(this.gameObject);
         }
