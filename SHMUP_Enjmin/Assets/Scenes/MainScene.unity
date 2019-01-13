@@ -245,7 +245,7 @@ SpriteRenderer:
   m_Size: {x: 48, y: 14.53}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!4 &621110949
@@ -686,29 +686,6 @@ Prefab:
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0a0e22a9c00344bbdb0a4500af4f8c3f, type: 2}
   m_IsPrefabAsset: 0
---- !u!1 &1807302038 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1458314996277038, guid: 0a0e22a9c00344bbdb0a4500af4f8c3f,
-    type: 2}
-  m_PrefabInternal: {fileID: 1807302037}
---- !u!95 &1807302039
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1807302038}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 155c809e2c77644c294e4502b68bce8e, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &2053191905
 GameObject:
   m_ObjectHideFlags: 0

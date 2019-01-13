@@ -12,7 +12,7 @@ public class ScrollScript : MonoBehaviour {
 	void Update () {
         transform.Translate(-LevelManager.instance.GetScrollingSpeed() * Time.deltaTime, 0f, 0f, Space.World);
 
-        if (GetComponentInChildren<SpriteRenderer>().bounds.max.x < -1 * Camera.main.orthographicSize * Camera.main.aspect)
+        if (GetComponentInChildren<Renderer>().bounds.max.x < -1 * Camera.main.orthographicSize * Camera.main.aspect)
         {
             LevelManager.ReleasePlayableSpace(gameObject);
             Destroy(this.gameObject);

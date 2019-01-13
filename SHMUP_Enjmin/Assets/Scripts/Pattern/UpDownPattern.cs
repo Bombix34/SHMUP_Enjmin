@@ -29,11 +29,11 @@ public class UpDownPattern : PatternInterface {
         }
         if (directionUp)
         {
-            transform.position = new Vector3(transform.position.x, transform.position.y + Time.deltaTime * speed, transform.position.z);
+            transform.position = new Vector3(transform.position.x, transform.position.y + Time.deltaTime * speed * (distance - distanceDone), transform.position.z);
         }
         else
         {
-            transform.position = new Vector3(transform.position.x, transform.position.y - Time.deltaTime * speed, transform.position.z);
+            transform.position = new Vector3(transform.position.x, transform.position.y - Time.deltaTime * speed * (distance - distanceDone), transform.position.z);
         }
     }
 
