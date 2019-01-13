@@ -21,6 +21,7 @@ GameObject:
   - component: {fileID: 4408411818631144}
   - component: {fileID: 212007453219194548}
   - component: {fileID: 95390028030229816}
+  - component: {fileID: 114105509209986728}
   m_Layer: 0
   m_Name: algue1_0
   m_TagString: Untagged
@@ -59,6 +60,17 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &114105509209986728
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1944431241898512}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4a72fafa14a1a42b888647415c6b2c47, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!212 &212007453219194548
 SpriteRenderer:
   m_ObjectHideFlags: 1

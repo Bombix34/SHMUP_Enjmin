@@ -129,9 +129,6 @@ public class PlayerManager : MonoBehaviour {
 		}
 	}
 
-
-
-
 //MOVEMENT________________________________________________________________________________
 	public void MovePlayer()
     {
@@ -209,7 +206,7 @@ public class PlayerManager : MonoBehaviour {
 		dashChrono-=Time.deltaTime;
 		if((dashChrono>0)||(!canDash))
 			return;
-		if(controller.pressButtonB()||keyboard.PressDashBouton())
+		if(controller.pressDashBouton()||keyboard.PressDashBouton())
 		{
 			if(curBuble!=null)
 			{	
@@ -305,7 +302,6 @@ public class PlayerManager : MonoBehaviour {
 				Vector2 forceDirection = new Vector2(col.gameObject.transform.position.x-this.transform.position.x,col.gameObject.transform.position.y-this.transform.position.y);
 				forceDirection*=200f;
 				col.gameObject.GetComponent<Rigidbody2D>().AddForce(new Vector2(forceDirection.x,forceDirection.y)*reglages.dashKnockbackBuble);
-                print("dashbuble");
                 AkSoundEngine.PostEvent("Play_Impact_Dash_bubble", gameObject);
 			}
         }
@@ -328,11 +324,11 @@ public class PlayerManager : MonoBehaviour {
 		UpdateCurBublePosition();
 
 		//controlles a la manette
-		if(controller.pressButtonA()||keyboard.PressFireBouton())
+		if(controller.pressFireBouton()||keyboard.PressFireBouton())
 			CreateBuble();
-		if(controller.usingButtonA()||keyboard.UseFireBouton())
+		if(controller.useFireBouton()||keyboard.UseFireBouton())
 			GrowBuble();
-		if(controller.releasedButtonA()||keyboard.ReleaseFireBouton())
+		if(controller.releaseFireBouton()||keyboard.ReleaseFireBouton())
 			ShootBuble();
 	}
 
