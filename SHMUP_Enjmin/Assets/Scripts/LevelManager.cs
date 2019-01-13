@@ -18,6 +18,7 @@ public class LevelManager : MonoBehaviour
     public LevelReglages reglages;
 
     float surfaceJouable;
+    float surfaceJouable2;
 
     int score;
 
@@ -172,8 +173,10 @@ public class LevelManager : MonoBehaviour
         {
             basePlafond.transform.Translate(scrollingVector);
         }
-        
-        AkSoundEngine.SetRTPCValue("Surface jouable", surfaceJouable);
+
+        surfaceJouable2 = surfaceJouable;
+        AkSoundEngine.SetRTPCValue("Surface_jouable", surfaceJouable2, gameObject);
+        print("surfaceJouable:" + surfaceJouable2);
     }
 
     public void ChangeScore(int change)
