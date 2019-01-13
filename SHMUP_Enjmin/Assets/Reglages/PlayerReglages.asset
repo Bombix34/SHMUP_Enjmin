@@ -14,8 +14,10 @@ MonoBehaviour:
   sizePlayer: 1
   speedPlayer: 4
   dashPower: 7
-  dashDuration: 0.075
+  dashDuration: 0.1
   dashCoolDown: 1
   dashKnockbackBuble: 20
+  amplitude: 1
+  frequence: 3
   knockback: 0.2
   oursinPoisonEffect: 1

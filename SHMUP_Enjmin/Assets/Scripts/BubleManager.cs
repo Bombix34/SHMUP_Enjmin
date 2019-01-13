@@ -43,6 +43,7 @@ public class BubleManager : MonoBehaviour {
 
 	public virtual void DestroyBuble()
 	{
+		rb2D.velocity=Vector2.zero;
 		StopCoroutine(ShakeBuble());
         foreach(GameObject pote in objectInTheBuble)
         {
@@ -150,8 +151,8 @@ public class BubleManager : MonoBehaviour {
 			{
 				col.gameObject.GetComponent<UrchinManager>().retract();	
 				DestroyBuble();
-                LevelManager.ChangeScore(-1);
-			}
+                LevelManager.instance.ChangeScore(LevelManager.instance.reglages.malusBulleAmiEclatee);
+            }
             AkSoundEngine.PostEvent("Play_Bubble_Explode_Os", gameObject);
 		}
 		else
@@ -196,8 +197,8 @@ public class BubleManager : MonoBehaviour {
 			col.gameObject.GetComponent<SavedManager>().SetIsInBuble(true);
             StartCoroutine(SetObjectInTheBuble(col.gameObject));
             objectInTheBuble.Add(col.gameObject);
-
-            LevelManager.ChangeScore(1);
+            
+            LevelManager.instance.ChangeScore(LevelManager.instance.reglages.bonusAmiMisEnBulle);
 
             AkSoundEngine.PostEvent("Play_Pnj_Oh", gameObject);
         }
@@ -218,7 +219,7 @@ public class BubleManager : MonoBehaviour {
 				GameManager.instance.AddScore();
             	TentaclesManager.instance.MoveBackward();
                 Destroy(pote);
-                LevelManager.ChangeScore(1);
+                LevelManager.instance.ChangeScore(LevelManager.instance.reglages.bonusAmiSauve);
             }
             Destroy(this.gameObject);
         }
