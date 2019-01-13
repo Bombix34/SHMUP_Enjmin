@@ -47,6 +47,7 @@ public class TentacleDetection : MonoBehaviour
 			return;
 		isDetract=true;
 		StartCoroutine(MoveTentacles());
+        AkSoundEngine.PostEvent("Play_Kraken_Near_Rnd", gameObject);
 	}
 
 	void OnTriggerEnter2D(Collider2D col)

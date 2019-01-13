@@ -19,6 +19,7 @@ namespace AK
         static const AkUniqueID PLAY_BULLES_GROWN = 3777684193U;
         static const AkUniqueID PLAY_IMPACT_DASH_BUBBLE = 2756168116U;
         static const AkUniqueID PLAY_KRAKEN_EAT_PNJ = 2784081170U;
+        static const AkUniqueID PLAY_KRAKEN_NEAR_RND = 2798840920U;
         static const AkUniqueID PLAY_LOAD_SHOT = 2139305897U;
         static const AkUniqueID PLAY_MUSIC_GAMEOVER = 619661162U;
         static const AkUniqueID PLAY_MUSIQUE = 206418435U;

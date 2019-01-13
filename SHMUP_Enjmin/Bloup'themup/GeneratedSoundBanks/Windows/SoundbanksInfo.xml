@@ -43,6 +43,7 @@
 				<Event Id="3777684193" Name="Play_Bulles_Grown" ObjectPath="\Events\Default Work Unit\Ingame\Play_Bulles_Grown"/>
 				<Event Id="2756168116" Name="Play_Impact_Dash_bubble" ObjectPath="\Events\Default Work Unit\Ingame\Play_Impact_Dash_bubble"/>
 				<Event Id="2784081170" Name="Play_Kraken_Eat_Pnj" ObjectPath="\Events\Default Work Unit\Ingame\Play_Kraken_Eat_Pnj"/>
+				<Event Id="2798840920" Name="Play_Kraken_Near_Rnd" ObjectPath="\Events\Default Work Unit\Ingame\Play_Kraken_Near_Rnd"/>
 				<Event Id="2139305897" Name="Play_Load_Shot" ObjectPath="\Events\Default Work Unit\Ingame\Play_Load_Shot"/>
 				<Event Id="619661162" Name="Play_Music_GameOver" ObjectPath="\Events\Default Work Unit\Ingame\Play_Music_GameOver"/>
 				<Event Id="206418435" Name="Play_Musique" ObjectPath="\Events\Default Work Unit\Ingame\Play_Musique"/>
@@ -82,9 +83,25 @@
 					<ShortName>Underwater_Parasites_01_Os.wav</ShortName>
 					<Path>SFX/Underwater_Parasites_01_Os_56D34C19.wem</Path>
 				</File>
+				<File Id="194232518" Language="SFX">
+					<ShortName>Kraken_Eat_Pnj_02_Os.wav</ShortName>
+					<Path>SFX/Kraken_Eat_Pnj_02_Os_93B54F2F.wem</Path>
+				</File>
+				<File Id="196566995" Language="SFX">
+					<ShortName>Amb_gameOver_Rnd_01_03_Os.wav</ShortName>
+					<Path>SFX/Amb_gameOver_Rnd_01_03_Os_56D34C19.wem</Path>
+				</File>
+				<File Id="213300549" Language="SFX">
+					<ShortName>Kraken_Player_Near_01_Os.wav</ShortName>
+					<Path>SFX/Kraken_Player_Near_01_Os_56D34C19.wem</Path>
+				</File>
 				<File Id="261343137" Language="SFX">
 					<ShortName>Pnj_Oh.wav</ShortName>
 					<Path>SFX/Pnj_Oh_632521FD.wem</Path>
+				</File>
+				<File Id="275245460" Language="SFX">
+					<ShortName>Amb_gameOver_Rnd_01_Os.wav</ShortName>
+					<Path>SFX/Amb_gameOver_Rnd_01_Os_56D34C19.wem</Path>
 				</File>
 				<File Id="318779871" Language="SFX">
 					<ShortName>Bull_SHot.wav</ShortName>
@@ -103,6 +120,10 @@
 					<ShortName>Batterie_Lvl_02_Lp.wav</ShortName>
 					<Path>SFX/Batterie_Lvl_02_Lp_8956FC97.wem</Path>
 					<PrefetchSize>17784</PrefetchSize>
+				</File>
+				<File Id="382429217" Language="SFX">
+					<ShortName>Kraken_Player_Near_02_Os.wav</ShortName>
+					<Path>SFX/Kraken_Player_Near_02_Os_56D34C19.wem</Path>
 				</File>
 				<File Id="409045576" Language="SFX">
 					<ShortName>Music_Loose.wav</ShortName>
@@ -145,6 +166,10 @@
 					<Path>SFX/Music_Main_Percussions_Lp_8956FC97.wem</Path>
 					<PrefetchSize>17832</PrefetchSize>
 				</File>
+				<File Id="561392681" Language="SFX">
+					<ShortName>Amb_gameOver_Rnd_03_Os.wav</ShortName>
+					<Path>SFX/Amb_gameOver_Rnd_03_Os_56D34C19.wem</Path>
+				</File>
 				<File Id="612824582" Language="SFX">
 					<ShortName>Ploc_012.wav</ShortName>
 					<Path>SFX/Ploc_012_56D34C19.wem</Path>
@@ -168,7 +193,7 @@
 				</File>
 				<File Id="881670788" Language="SFX">
 					<ShortName>Underwater_lp.wav</ShortName>
-					<Path>SFX/Underwater_lp_56D34C19.wem</Path>
+					<Path>SFX/Underwater_lp_8956FC97.wem</Path>
 				</File>
 				<File Id="904637434" Language="SFX">
 					<ShortName>Music_Intro_Vf.wav</ShortName>
@@ -177,6 +202,26 @@
 				<File Id="905875478" Language="SFX">
 					<ShortName>Bulles_Turfu.wav</ShortName>
 					<Path>SFX/Bulles_Turfu_56D34C19.wem</Path>
+				</File>
+				<File Id="910541250" Language="SFX">
+					<ShortName>Amb_Drones_Lp.wav</ShortName>
+					<Path>SFX/Amb_Drones_Lp_8956FC97.wem</Path>
+				</File>
+				<File Id="944875389" Language="SFX">
+					<ShortName>Amb_gameOver_Rnd_01_02_Os.wav</ShortName>
+					<Path>SFX/Amb_gameOver_Rnd_01_02_Os_56D34C19.wem</Path>
+				</File>
+				<File Id="956314345" Language="SFX">
+					<ShortName>Amb_Layout_Snake_Lp.wav</ShortName>
+					<Path>SFX/Amb_Layout_Snake_Lp_8956FC97.wem</Path>
+				</File>
+				<File Id="961577093" Language="SFX">
+					<ShortName>Amb_gameOver_Rnd_02_Os.wav</ShortName>
+					<Path>SFX/Amb_gameOver_Rnd_02_Os_56D34C19.wem</Path>
+				</File>
+				<File Id="964220506" Language="SFX">
+					<ShortName>Kraken_Eat_Pnj_01_Os.wav</ShortName>
+					<Path>SFX/Kraken_Eat_Pnj_01_Os_26098A56.wem</Path>
 				</File>
 				<File Id="1010897979" Language="SFX">
 					<ShortName>Underwater_01_Os.wav</ShortName>
@@ -189,6 +234,10 @@
 				<File Id="1049757686" Language="SFX">
 					<ShortName>Ploc_01.wav</ShortName>
 					<Path>SFX/Ploc_01_56D34C19.wem</Path>
+				</File>
+				<File Id="1052222280" Language="SFX">
+					<ShortName>Amb_gameOver_Rnd_01_01_Os.wav</ShortName>
+					<Path>SFX/Amb_gameOver_Rnd_01_01_Os_56D34C19.wem</Path>
 				</File>
 				<File Id="1061159904" Language="SFX">
 					<ShortName>Music_Main_Aerie_Lp.wav</ShortName>

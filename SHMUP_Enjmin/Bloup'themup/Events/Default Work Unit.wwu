@@ -246,11 +246,103 @@
 								<Action Name="" ID="{C44F22CE-B3AE-4EC3-AF5C-AE367B4CF089}" ShortID="414429834">
 									<PropertyList>
 										<Property Name="ActionType" Type="int16" Value="1"/>
+										<Property Name="Delay" Type="Real64" Value="0.8"/>
 										<Property Name="FadeTime" Type="Real64" Value="0.5"/>
 									</PropertyList>
 									<ReferenceList>
 										<Reference Name="Target">
 											<ObjectRef Name="Music_GameOver" ID="{59E81B42-6CDE-4F43-BEE1-E10EA8789C06}" WorkUnitID="{4E5A65E5-C56F-495A-AB58-65CC0CC32273}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+								<Action Name="" ID="{D58F4324-239A-4AB6-85CB-A5CD2E64329B}" ShortID="270567721">
+									<PropertyList>
+										<Property Name="ActionType" Type="int16" Value="1"/>
+										<Property Name="Delay" Type="Real64" Value="0.8"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Music_Menu" ID="{D0EAAB71-401A-4027-89C0-FAACA4D43BF5}" WorkUnitID="{4E5A65E5-C56F-495A-AB58-65CC0CC32273}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+								<Action Name="" ID="{27137A98-14A9-4657-ADDD-DEC6BE423C50}" ShortID="780727612">
+									<PropertyList>
+										<Property Name="ActionType" Type="int16" Value="1"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Amb_GameOVer_01_Rnd_01" ID="{29692D4F-A334-418E-A741-CF4D250E2F07}" WorkUnitID="{BFB9B95C-F19D-4A69-AD4E-5BA087B198AF}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+								<Action Name="" ID="{1B0116CB-1005-4CC6-8567-E8DC94DDE30A}" ShortID="879057846">
+									<PropertyList>
+										<Property Name="ActionType" Type="int16" Value="1"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Amb_GameOVer_01_Rnd" ID="{12C375A1-EA2E-46C9-A08D-B019E351BB8D}" WorkUnitID="{BFB9B95C-F19D-4A69-AD4E-5BA087B198AF}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+								<Action Name="" ID="{6EEAF845-DACE-4723-9C5E-2CA4D2E149FD}" ShortID="183425226">
+									<PropertyList>
+										<Property Name="ActionType" Type="int16" Value="1"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Test_Silence" ID="{B44F229F-5E0D-4B35-A974-895A5A57A172}" WorkUnitID="{BFB9B95C-F19D-4A69-AD4E-5BA087B198AF}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+								<Action Name="" ID="{6586DA49-EF51-4185-86B5-7FA1B18F5815}" ShortID="98145416">
+									<PropertyList>
+										<Property Name="ActionType" Type="int16" Value="1"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Underwater_Rnd" ID="{4A79B598-056A-4864-B6F3-A6B4B2D28ED5}" WorkUnitID="{BFB9B95C-F19D-4A69-AD4E-5BA087B198AF}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+								<Action Name="" ID="{154DEE86-F03A-46DA-BFA4-EB9E8BF759CE}" ShortID="339887017">
+									<PropertyList>
+										<Property Name="ActionType" Type="int16" Value="1"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Underwater_lp" ID="{C5914DA8-300A-42D4-8B19-63A133F499C5}" WorkUnitID="{BFB9B95C-F19D-4A69-AD4E-5BA087B198AF}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+								<Action Name="" ID="{7837333A-B842-437B-9BB4-564161956D47}" ShortID="209165883">
+									<PropertyList>
+										<Property Name="ActionType" Type="int16" Value="1"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Amb_Drones_Lp" ID="{750BC768-05AA-4343-BCD1-04228D82F893}" WorkUnitID="{BFB9B95C-F19D-4A69-AD4E-5BA087B198AF}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+								<Action Name="" ID="{5E87505B-E530-4C7F-AEBB-4C6AF68E3ED8}" ShortID="751750691">
+									<PropertyList>
+										<Property Name="ActionType" Type="int16" Value="1"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Amb_Layout_Snake_Lp" ID="{E54214D1-0400-412A-B839-F263734768E6}" WorkUnitID="{BFB9B95C-F19D-4A69-AD4E-5BA087B198AF}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+								<Action Name="" ID="{FB0A2722-0365-4D44-80B6-059BDF68D8C3}" ShortID="928201394">
+									<PropertyList>
+										<Property Name="ActionType" Type="int16" Value="1"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Kraken_Eat_Pnj" ID="{D5AEEB6C-E1F6-44BC-8128-CF73EC6FA0D4}" WorkUnitID="{BFB9B95C-F19D-4A69-AD4E-5BA087B198AF}"/>
 										</Reference>
 									</ReferenceList>
 								</Action>
@@ -375,7 +467,7 @@
 									</PropertyList>
 									<ReferenceList>
 										<Reference Name="Target">
-											<ObjectRef Name="Kraken_Eat_Pnj" ID="{D5AEEB6C-E1F6-44BC-8128-CF73EC6FA0D4}" WorkUnitID="{BFB9B95C-F19D-4A69-AD4E-5BA087B198AF}"/>
+											<ObjectRef Name="Kraken-Eat_Pnj_Rnd" ID="{A2324D08-9062-4648-85DD-8E955EE6CAB3}" WorkUnitID="{BFB9B95C-F19D-4A69-AD4E-5BA087B198AF}"/>
 										</Reference>
 									</ReferenceList>
 								</Action>
@@ -386,6 +478,31 @@
 									<ReferenceList>
 										<Reference Name="Target">
 											<ObjectRef Name="Pnj_Oh" ID="{560CBA5D-A706-471F-9C64-667B5705E419}" WorkUnitID="{BFB9B95C-F19D-4A69-AD4E-5BA087B198AF}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="Play_Kraken_Near_Rnd" ID="{ADBF2CE6-B68B-4F25-95FD-6924AEFAF4CA}">
+							<ChildrenList>
+								<Action Name="" ID="{95ECA29D-ACF1-41EA-8C0C-E8A0CD0F66A8}" ShortID="202793848">
+									<PropertyList>
+										<Property Name="ActionType" Type="int16" Value="1"/>
+										<Property Name="Probability" Type="Real64" Value="38"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Kraken_Near_Rnd" ID="{FACDF962-8060-498B-A5C8-A60538C1E32E}" WorkUnitID="{BFB9B95C-F19D-4A69-AD4E-5BA087B198AF}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+								<Action Name="" ID="{1935584C-B32A-4AAD-95EF-8FFF42C4CBCA}" ShortID="128157380">
+									<PropertyList>
+										<Property Name="ActionType" Type="int16" Value="1"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Kraken-Eat_Pnj_Rnd_01" ID="{6140059E-3E31-454A-B6B9-316003884C70}" WorkUnitID="{BFB9B95C-F19D-4A69-AD4E-5BA087B198AF}"/>
 										</Reference>
 									</ReferenceList>
 								</Action>

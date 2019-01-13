@@ -208,6 +208,8 @@ public class BubleManager : MonoBehaviour {
         if (col.gameObject.tag == "DeathBuble")
         {
             DestroyBuble();
+            AkSoundEngine.PostEvent("Play_Bubble_Explode_Os", gameObject);
+
         }
         else if(col.gameObject.tag == "upBuble")
         {

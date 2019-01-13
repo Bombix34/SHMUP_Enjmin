@@ -223,7 +223,7 @@ MonoBehaviour:
   - PhysicalPath: Events/Default Work Unit.wwu
     ParentPhysicalPath: 
     guid: 7c843613cd65de4b82e788b2522fbb1a
-    m_lastTime: -8586543823034775808
+    m_lastTime: -8586542121844775808
     List:
     - name: Innit_Amb
       guid: 0946cc13814ff64b909268618d042f1c
@@ -306,6 +306,20 @@ MonoBehaviour:
       - ElementName: Play_Kraken_Eat_Pnj
         ObjectType: 3
       Path: Default Work Unit/Ingame/Play_Kraken_Eat_Pnj
+      maxAttenuation: 0
+      maxDuration: 0
+      minDuration: 0
+    - name: Play_Kraken_Near_Rnd
+      guid: e62cbfad8bb6254f95fd6924aefaf4ca
+      id: 2798840920
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Ingame
+        ObjectType: 4
+      - ElementName: Play_Kraken_Near_Rnd
+        ObjectType: 3
+      Path: Default Work Unit/Ingame/Play_Kraken_Near_Rnd
       maxAttenuation: 0
       maxDuration: 0
       minDuration: 0
