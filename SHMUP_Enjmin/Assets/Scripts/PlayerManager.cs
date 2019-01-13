@@ -50,6 +50,8 @@ public class PlayerManager : MonoBehaviour {
     // rtpc value
     float rtpcValue = 0.0f;
 
+	PlayerParticles particles;
+
     private void Awake()
     {
         if(reglages == null)
@@ -61,6 +63,7 @@ public class PlayerManager : MonoBehaviour {
 
     void Start () 
 	{
+		particles=GetComponent<PlayerParticles>();
 		colider=GetComponent<CapsuleCollider2D>();
 		controller=GetComponent<ControllerManager>();
 		keyboard=GetComponent<KeyboardController>();
@@ -69,7 +72,6 @@ public class PlayerManager : MonoBehaviour {
 		transform.localScale=new Vector2(reglages.sizePlayer,reglages.sizePlayer);
 
         AkSoundEngine.SetState("Game_State", "ReadyToDestroyBuble");
-
     }
 
     void Update () 
@@ -139,8 +141,11 @@ public class PlayerManager : MonoBehaviour {
         if(controlWithSpeed==Vector2.zero)
             controlWithSpeed=keyboard.GetMovement()*tempSpeedValue;
        // transform.Translate(new Vector2(controlWithSpeed.x, controlWithSpeed.y));
-       rb2D.velocity=new Vector2(controlWithSpeed.x,controlWithSpeed.y + Mathf.Sin(Time.frameCount / (30.0f / reglages.frequence)) * reglages.amplitude);
-	   UpdateSpeedAnim();
+		particles.LaunchBulleStop(controlWithSpeed==Vector2.zero);
+		particles.LaunchLineParticle(controlWithSpeed!=Vector2.zero);
+
+       	rb2D.velocity=new Vector2(controlWithSpeed.x,controlWithSpeed.y + Mathf.Sin(Time.frameCount / (30.0f / reglages.frequence)) * reglages.amplitude);
+	   	UpdateSpeedAnim();
         //rb2D.MovePosition(new Vector2(transform.position.x+controlWithSpeed.x,transform.position.y+controlWithSpeed.y));
     }
 
@@ -149,9 +154,9 @@ public class PlayerManager : MonoBehaviour {
 		if(rb2D.velocity.x==0)
 			animator.speed=1f;
 		else if(rb2D.velocity.x>0)
-			animator.speed = 1 + (rb2D.velocity.x/reglages.speedPlayer);
+			animator.speed = 1 + ((rb2D.velocity.x/reglages.speedPlayer)/2);
 		else
-			animator.speed =1 - ((Mathf.Abs(rb2D.velocity.x)/reglages.speedPlayer)-0.4f);
+			animator.speed =1 - ((Mathf.Abs(rb2D.velocity.x)/reglages.speedPlayer)/2);
 	}
 
 	public void UpdateTempSpeed()
@@ -222,27 +227,38 @@ public class PlayerManager : MonoBehaviour {
 
 		animator.SetTrigger("Dash");
 
+		particles.LaunchLineParticle(false);
+
 		Vector2 tempDirection = controlWithSpeed;
 		tempDirection.Normalize();
 
 		if(tempDirection==Vector2.zero)
+		{
 			rb2D.velocity=new Vector2(reglages.speedPlayer,0f)*reglages.dashPower;
+		}
 		else
         {
 			rb2D.velocity=new Vector2(tempDirection.x*reglages.speedPlayer,tempDirection.y*reglages.speedPlayer)*reglages.dashPower;
             float angle = Vector2.Angle(Vector2.right, controller.getLeftStickDirection());
             if (controller.getLeftStickDirection().y < 0.0f) angle = 360.0f - angle;
-            GetComponentInChildren<SpriteRenderer>().transform.Rotate(new Vector3(0.0f, 0.0f, angle));
+			{
+           		GetComponentInChildren<SpriteRenderer>().transform.Rotate(new Vector3(0.0f, 0.0f, angle));
+			}
         }
 		
+		particles.ActiveDashParticles(true);
+		
 		//attendre la fin du dash
-		float dash=reglages.dashDuration * 2;
+		float dash=reglages.dashDuration;
 		while(dash>0)
 		{
 			dash-=Time.deltaTime;
 			yield return new WaitForSeconds(0.001f);
 		}
 		//_______________________
+
+		particles.ActiveDashParticles(false);
+
 		isDashing=false;
 		rb2D.velocity=Vector2.zero;
         GetComponentInChildren<SpriteRenderer>().transform.rotation = Quaternion.identity;

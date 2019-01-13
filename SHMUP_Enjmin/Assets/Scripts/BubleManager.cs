@@ -43,6 +43,7 @@ public class BubleManager : MonoBehaviour {
 
 	public virtual void DestroyBuble()
 	{
+		rb2D.velocity=Vector2.zero;
 		StopCoroutine(ShakeBuble());
         foreach(GameObject pote in objectInTheBuble)
         {
