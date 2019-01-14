@@ -45,13 +45,17 @@ public class BubleManager : MonoBehaviour {
 	{
 		rb2D.velocity=Vector2.zero;
 		StopCoroutine(ShakeBuble());
-        foreach(GameObject pote in objectInTheBuble)
+		List<GameObject>tempPote = objectInTheBuble;
+        foreach(GameObject pote in tempPote)
         {
             // on decroche les potes dans les bulles, et on réactive leur scrollable
-            pote.transform.parent = null;
-			pote.GetComponent<SavedManager>().SetIsInBuble(false);
-			pote.GetComponent<SavedManager>().EnterBuble(false);
-            pote.GetComponent<ScrollScript>().enabled = true;
+			if(pote!=null)
+			{
+				pote.transform.parent = null;
+				pote.GetComponent<SavedManager>().SetIsInBuble(false);
+				pote.GetComponent<SavedManager>().EnterBuble(false);
+				pote.GetComponent<ScrollScript>().enabled = true;
+			}
         }
 		StartCoroutine(DestroyAnim());
         // enlever les bulles ui éclatent sortis d'écran

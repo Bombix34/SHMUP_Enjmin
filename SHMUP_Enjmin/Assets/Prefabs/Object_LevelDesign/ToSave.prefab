@@ -83,7 +83,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1196394181121924}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 4.44, y: 0.94, z: 528.3672}
+  m_LocalPosition: {x: 4.44, y: 0.94, z: 0}
   m_LocalScale: {x: 1.5, y: 1.5, z: 1}
   m_Children:
   - {fileID: 4291540804546170}
@@ -149,6 +149,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   auraPoulpe: {fileID: 1718232408451690}
+  sprite: {fileID: 212576977329778324}
 --- !u!114 &114597675016877000
 MonoBehaviour:
   m_ObjectHideFlags: 1

@@ -176,7 +176,6 @@ public class LevelManager : MonoBehaviour
 
         surfaceJouable2 = surfaceJouable;
         AkSoundEngine.SetRTPCValue("Surface_jouable", surfaceJouable2, gameObject);
-        print("surfaceJouable:" + surfaceJouable2);
     }
 
     public void ChangeScore(int change)

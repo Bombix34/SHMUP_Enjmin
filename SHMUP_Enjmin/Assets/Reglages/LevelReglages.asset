@@ -20,15 +20,11 @@ MonoBehaviour:
   pallierNormal: 5
   pallierDifficile: 10
   levelPartsEasy:
-  - {fileID: 1597590202695692, guid: 1acdfb02104ba0548a862fae4baef58d, type: 2}
-  - {fileID: 1597590202695692, guid: 1acdfb02104ba0548a862fae4baef58d, type: 2}
-  - {fileID: 1597590202695692, guid: 1acdfb02104ba0548a862fae4baef58d, type: 2}
-  - {fileID: 1597590202695692, guid: 1acdfb02104ba0548a862fae4baef58d, type: 2}
-  - {fileID: 1597590202695692, guid: 1acdfb02104ba0548a862fae4baef58d, type: 2}
+  - {fileID: 1430408559247294, guid: e870886f6d97d45ec99c921168b9304b, type: 2}
   levelPartsNormal:
-  - {fileID: 1597590202695692, guid: 1acdfb02104ba0548a862fae4baef58d, type: 2}
+  - {fileID: 1430408559247294, guid: e870886f6d97d45ec99c921168b9304b, type: 2}
   levelPartsHard:
-  - {fileID: 1597590202695692, guid: 1acdfb02104ba0548a862fae4baef58d, type: 2}
+  - {fileID: 1430408559247294, guid: e870886f6d97d45ec99c921168b9304b, type: 2}
   plafonds:
   - {fileID: 1363204610409546, guid: 4f26e5f38cc90c7499a5286d03c60f6d, type: 2}
   - {fileID: 1829984710835132, guid: c24ea04510d88f643b4f17ade4d4fb7b, type: 2}

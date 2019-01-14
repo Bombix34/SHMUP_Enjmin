@@ -45,6 +45,8 @@ public class GameManager : MonoBehaviour {
 		highScore.AddNewHighscore("world",score);
 		gameover.SetActive(true);
 
+		TentaclesManager.instance.gameObject.SetActive(false);
+
         AkSoundEngine.PostEvent("Stop_All", gameObject);
         AkSoundEngine.PostEvent("Play_Music_GameOver", gameObject);
 

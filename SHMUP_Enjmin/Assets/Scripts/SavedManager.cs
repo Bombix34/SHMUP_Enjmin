@@ -11,8 +11,12 @@ public class SavedManager : MonoBehaviour {
 
 	Animator anim;
 
+	[SerializeField]
+	SpriteRenderer sprite;
+
 	void Start()
 	{
+		//sprite = GetComponentInChildren<SpriteRenderer>();
 		SetInitColor();
 		anim=GetComponent<Animator>();
 	}
@@ -30,7 +34,6 @@ public class SavedManager : MonoBehaviour {
 
 	public void SetInitColor()
 	{
-		SpriteRenderer sprite = GetComponentInChildren<SpriteRenderer>();
 		sprite.color=new Color32((byte)Random.Range(200f,255f),(byte)Random.Range(200f,255f),(byte)Random.Range(200f,255f),255);
 	}
 
@@ -40,6 +43,14 @@ public class SavedManager : MonoBehaviour {
 			anim.SetTrigger("enter");
 		else
 			anim.SetTrigger("exit");
+	}
+
+	void OnTriggerEnter2D(Collider2D col)
+	{
+		if(col.gameObject.tag=="DeathBuble")
+		{
+			Debug.Log("ok");
+		}
 	}
 
 	
