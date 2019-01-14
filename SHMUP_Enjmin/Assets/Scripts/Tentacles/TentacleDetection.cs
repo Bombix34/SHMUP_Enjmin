@@ -24,31 +24,6 @@ public class TentacleDetection : MonoBehaviour
 		objectNears=new List<GameObject>();
 		tentacles.position=initPosition.position;
 	}
-	
-	void Update()
-	{
-		RetractTentacles();
-	}
-
-	public void RetractTentacles()
-	{
-		RefreshList();
-		if((objectNears.Count!=0)||(!isDetract))
-		//si il a encore des objets proches, on retracte pas
-			return;
-		isDetract=false;
-		StartCoroutine(MoveTentacles());
-	}
-
-	public void DetractTentacles()
-	{
-		RefreshList();
-		if((objectNears.Count==0)||(isDetract))
-			return;
-		isDetract=true;
-		StartCoroutine(MoveTentacles());
-        AkSoundEngine.PostEvent("Play_Kraken_Near_Rnd", gameObject);
-	}
 
 	void OnTriggerEnter2D(Collider2D col)
     {
@@ -58,7 +33,23 @@ public class TentacleDetection : MonoBehaviour
 			//si entre par la droite, ajoute le a la liste des objets proches
 			{
 				objectNears.Add(col.gameObject);
-				DetractTentacles();
+				RefreshList();
+				if(objectNears.Count==1)
+					StartCoroutine(MoveTentacles());
+			}
+		}
+    }
+
+	void OnTriggerExit2D(Collider2D col)
+    {
+		if((col.gameObject.tag=="ToSave")||(col.gameObject.tag=="Player"))
+		{
+			objectNears.Remove(col.gameObject);
+			RefreshList();
+			if(objectNears.Count==0)
+			{
+				StartCoroutine(MoveTentacles());
+
 			}
 		}
     }
@@ -77,24 +68,22 @@ public class TentacleDetection : MonoBehaviour
 		{
 			objectNears.Remove(removeList[j]);
 		}
+		isDetract=objectNears.Count!=0;
 	}
 
-	void OnTriggerExit2D(Collider2D col)
-    {
-		if((col.gameObject.tag=="ToSave")||(col.gameObject.tag=="Player"))
-		{
-			objectNears.Remove(col.gameObject);
-			RetractTentacles();
-		}
-    }
-
-	IEnumerator MoveTentacles()
+	public IEnumerator MoveTentacles()
 	{
 		if(isDetract)
 		{
 			ChangeAnimSpeed(reglages.animSpeedUp);
+       		AkSoundEngine.PostEvent("Play_Kraken_Near_Rnd", gameObject);
 			while(tentacles.position.x<finalPosition.position.x)
 			{
+				if(!isDetract)
+				{
+					RefreshList();
+					StartCoroutine(MoveTentacles());
+				}
 				tentacles.Translate(Time.deltaTime*reglages.speedApparition,0f,0f);
 				yield return new WaitForSeconds(0.01f);
 			}
@@ -104,10 +93,20 @@ public class TentacleDetection : MonoBehaviour
 			ChangeAnimSpeed(1f);
 			while(tentacles.position.x>initPosition.position.x)
 			{
-				tentacles.Translate(-Time.deltaTime*reglages.speedApparition,0f,0f);
+				tentacles.Translate(-Time.deltaTime*reglages.speedApparition/20f,0f,0f);
 				yield return new WaitForSeconds(0.01f);
 			}
 		}
+	}
+
+	public void Retract()
+	{
+		RefreshList();
+       if(objectNears.Count==0)
+	   {
+			StopCoroutine(MoveTentacles());
+        	StartCoroutine(MoveTentacles());
+	   }
 	}
 
 	public void ChangeAnimSpeed(float val)
@@ -117,6 +116,11 @@ public class TentacleDetection : MonoBehaviour
 		{
 			anim.SpeedAnimation(val);
 		}
+	}
+
+	public int GetObjectNearsCount()
+	{
+		return objectNears.Count;
 	}
 
 }

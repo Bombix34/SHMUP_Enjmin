@@ -44,14 +44,4 @@ public class SavedManager : MonoBehaviour {
 		else
 			anim.SetTrigger("exit");
 	}
-
-	void OnTriggerEnter2D(Collider2D col)
-	{
-		if(col.gameObject.tag=="DeathBuble")
-		{
-			Debug.Log("ok");
-		}
-	}
-
-	
 }
