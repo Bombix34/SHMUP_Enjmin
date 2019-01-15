@@ -52,13 +52,10 @@ public class LevelManager : MonoBehaviour
                 GameObject newSituation;
                 if (score < reglages.pallierNormal)
                 {
-                    print("facile : " + score);
                     newSituation = (GameObject)Instantiate(reglages.GetEasyLevel(), new Vector3(rightmostSituationBound, 0), transform.rotation);
                 } else if (score < reglages.pallierDifficile) {
-                    print("normal : " + score);
                     newSituation = (GameObject)Instantiate(reglages.GetNormalLevel(), new Vector3(rightmostSituationBound, 0), transform.rotation);
                 } else {
-                    print("difficile : " + score);
                     newSituation = (GameObject)Instantiate(reglages.GetHardLevel(), new Vector3(rightmostSituationBound, 0), transform.rotation);
                 }
                 
@@ -82,7 +79,6 @@ public class LevelManager : MonoBehaviour
             color *= 0.1f;
             color.a = 1.0f;
             newBasePlafond.GetComponent<SpriteRenderer>().material.color = color;
-            print("lol :" + GetGameObjectRightmostBound(newBasePlafond));
             rightmostBackgroundPlafondBound = GetGameObjectRightmostBound(newBasePlafond) - Random.Range(0.5f, 2.0f);
             plafondsBackground.Add(newBasePlafond);
         }
@@ -96,7 +92,6 @@ public class LevelManager : MonoBehaviour
             color *= 0.2f;
             color.a = 1.0f;
             newBasePlafond.GetComponent<SpriteRenderer>().material.color = color;
-            print("mdr :" + GetGameObjectRightmostBound(newBasePlafond));
             rightmostMiddlegroundPlafondBound = GetGameObjectRightmostBound(newBasePlafond) + Random.Range(0.25f, 1.0f);
             plafondsMiddleground.Add(newBasePlafond);
         }
@@ -110,7 +105,6 @@ public class LevelManager : MonoBehaviour
             color *= 0.3f;
             color.a = 1.0f;
             newBasePlafond.GetComponent<SpriteRenderer>().material.color = color;
-            print("ptdr :" + GetGameObjectRightmostBound(newBasePlafond));
             rightmostForegroundPlafondBound = GetGameObjectRightmostBound(newBasePlafond) + Random.Range(0.5f, 2.0f);
             plafondsForeground.Add(newBasePlafond);
         }
@@ -246,11 +240,7 @@ public class LevelManager : MonoBehaviour
 
     public float GetGameObjectLeftmostBound(GameObject gameObjectParam)
     {
-        print("Computing " + gameObjectParam.name + "'s leftmost bound.");
-
         float situationLeftmostBound = gameObjectParam.transform.position.x;
-
-        print("transform.position.x = " + situationLeftmostBound);
 
         Renderer renderer = gameObjectParam.GetComponentInChildren<SpriteRenderer>();
 
@@ -258,18 +248,10 @@ public class LevelManager : MonoBehaviour
         {
             float rendererLeftmostBound = renderer.bounds.min.x;
 
-            print("renderer.bounds.min.x = " + rendererLeftmostBound);
-
             if (rendererLeftmostBound < situationLeftmostBound)
             {
                 situationLeftmostBound = rendererLeftmostBound;
-            } else
-            {
-                print(rendererLeftmostBound + " >= " + situationLeftmostBound);
             }
-        } else
-        {
-            print("GameObject : " + gameObjectParam.name + " has no Renderer.");
         }
         
         foreach (Transform child in gameObjectParam.transform)
@@ -278,19 +260,12 @@ public class LevelManager : MonoBehaviour
             {
                 float childLeftmostBound = GetGameObjectLeftmostBound(child.gameObject);
 
-                print("GetGameObjectLeftmostBound(child.gameObject) = " + childLeftmostBound);
-
                 if (childLeftmostBound < situationLeftmostBound)
                 {
                     situationLeftmostBound = childLeftmostBound;
-                } else
-                {
-                    print(childLeftmostBound + " >= " + situationLeftmostBound);
                 }
             }
         }
-
-        print("GameObject : " + gameObjectParam.name + "'s leftmost bound is at x = " + situationLeftmostBound + ".");
 
         return situationLeftmostBound;
     }
