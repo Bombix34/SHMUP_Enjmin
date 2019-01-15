@@ -29,9 +29,8 @@ public class CirclePattern : PatternInterface
     // Update is called once per frame
     void Update()
     {
-        print("angle fait :" + speed * Time.deltaTime * (distance - distanceDone + 5));
         distanceDone += speed * Time.deltaTime * (distance - distanceDone + 5);
-        if (distanceDone > distance)
+        if (Mathf.Abs(distanceDone) > distance)
         {
             distanceDone = 0;
         }
@@ -41,8 +40,6 @@ public class CirclePattern : PatternInterface
 
         // empecher le pote de tourner, et donc de provoquer une erreur dans le pattern à cause du scrolling
         transform.rotation = new Quaternion(0, 0, 0, 0);
-
-        pivot.Translate(-LevelManager.instance.GetScrollingSpeed() * Time.deltaTime, 0f, 0f, Space.World);
     }
 
     void OnDrawGizmos()
