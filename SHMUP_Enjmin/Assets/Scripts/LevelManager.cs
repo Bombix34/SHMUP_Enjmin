@@ -5,15 +5,15 @@ using UnityEngine;
 
 public class LevelManager : MonoBehaviour
 {
-    float rightMostSituationBound;
+    float rightmostSituationBound;
 
     List<GameObject> plafondsBackground;
     List<GameObject> plafondsMiddleground;
     List<GameObject> plafondsForeground;
 
-    float rightMostBackgroundPlafondBound;
-    float rightMostMiddlegroundPlafondBound;
-    float rightMostForegroundPlafondBound;
+    float rightmostBackgroundPlafondBound;
+    float rightmostMiddlegroundPlafondBound;
+    float rightmostForegroundPlafondBound;
 
     public LevelReglages reglages;
 
@@ -24,14 +24,14 @@ public class LevelManager : MonoBehaviour
 
     void Start ()
     {
-        rightMostSituationBound = Camera.main.orthographicSize * Camera.main.aspect;
+        rightmostSituationBound = Camera.main.orthographicSize * Camera.main.aspect;
 
         plafondsBackground = new List<GameObject>();
         plafondsMiddleground = new List<GameObject>();
         plafondsForeground = new List<GameObject>();
-        rightMostBackgroundPlafondBound = Camera.main.orthographicSize * Camera.main.aspect;
-        rightMostMiddlegroundPlafondBound = Camera.main.orthographicSize * Camera.main.aspect;
-        rightMostForegroundPlafondBound = Camera.main.orthographicSize * Camera.main.aspect;
+        rightmostBackgroundPlafondBound = Camera.main.orthographicSize * Camera.main.aspect;
+        rightmostMiddlegroundPlafondBound = Camera.main.orthographicSize * Camera.main.aspect;
+        rightmostForegroundPlafondBound = Camera.main.orthographicSize * Camera.main.aspect;
 
         surfaceJouable = 100.0f;
 
@@ -40,31 +40,28 @@ public class LevelManager : MonoBehaviour
 
     void Update ()
     {
-        rightMostSituationBound -= reglages.scrollingSpeed * Time.deltaTime;
-        rightMostBackgroundPlafondBound -= reglages.scrollingSpeed * Time.deltaTime * 0.33f;
-        rightMostMiddlegroundPlafondBound -= reglages.scrollingSpeed * Time.deltaTime * 0.66f;
-        rightMostForegroundPlafondBound -= reglages.scrollingSpeed * Time.deltaTime;
+        rightmostSituationBound -= reglages.scrollingSpeed * Time.deltaTime;
+        rightmostBackgroundPlafondBound -= reglages.scrollingSpeed * Time.deltaTime * 0.25f;
+        rightmostMiddlegroundPlafondBound -= reglages.scrollingSpeed * Time.deltaTime * 0.5f;
+        rightmostForegroundPlafondBound -= reglages.scrollingSpeed * Time.deltaTime * 0.75f;
 
         if (reglages.levelPartsEasy.Count + reglages.levelPartsNormal.Count + reglages.levelPartsHard.Count > 0)
         {
-            while (rightMostSituationBound < Camera.main.orthographicSize * Camera.main.aspect)
+            if (rightmostSituationBound < Camera.main.orthographicSize * Camera.main.aspect)
             {
                 GameObject newSituation;
                 if (score < reglages.pallierNormal)
                 {
-                    print("facile : " + score);
-                    newSituation = (GameObject)Instantiate(reglages.GetEasyLevel(), new Vector3(rightMostSituationBound, 0), transform.rotation);
+                    newSituation = (GameObject)Instantiate(reglages.GetEasyLevel(), new Vector3(rightmostSituationBound, 0), transform.rotation);
                 } else if (score < reglages.pallierDifficile) {
-                    print("normal : " + score);
-                    newSituation = (GameObject)Instantiate(reglages.GetNormalLevel(), new Vector3(rightMostSituationBound, 0), transform.rotation);
+                    newSituation = (GameObject)Instantiate(reglages.GetNormalLevel(), new Vector3(rightmostSituationBound, 0), transform.rotation);
                 } else {
-                    print("difficile : " + score);
-                    newSituation = (GameObject)Instantiate(reglages.GetHardLevel(), new Vector3(rightMostSituationBound, 0), transform.rotation); ;
+                    newSituation = (GameObject)Instantiate(reglages.GetHardLevel(), new Vector3(rightmostSituationBound, 0), transform.rotation);
                 }
                 
-                newSituation.transform.Translate(new Vector3(Camera.main.orthographicSize * Camera.main.aspect - GetGameObjectChildrenLeftMostBound(newSituation), 0));
-                rightMostSituationBound = GetGameObjectChildrenRightMostBound(newSituation) + (Camera.main.orthographicSize * Camera.main.aspect) / 2;
-                for (int i = newSituation.transform.childCount - 1; i >= 0; i--)
+                newSituation.transform.Translate(new Vector3(Camera.main.orthographicSize * Camera.main.aspect - GetGameObjectLeftmostBound(newSituation), 0.0f));
+                rightmostSituationBound = GetGameObjectRightmostBound(newSituation) + (Camera.main.orthographicSize * Camera.main.aspect) / 2;
+                for (int i = newSituation.transform.childCount - 1; i > 0; i--)
                 {
                     surfaceJouable -= GetGameObjectSurface(newSituation.transform.GetChild(i).gameObject) / 2;
                     newSituation.transform.GetChild(i).parent = null;
@@ -73,105 +70,81 @@ public class LevelManager : MonoBehaviour
             }
         }
 
-        while (rightMostBackgroundPlafondBound < Camera.main.orthographicSize * Camera.main.aspect)
+        if (rightmostBackgroundPlafondBound < Camera.main.orthographicSize * Camera.main.aspect)
         {
             int idPlafond = Random.Range(0, reglages.plafonds.Count);
-            GameObject newBasePlafond = (GameObject)Instantiate(reglages.plafonds[idPlafond], new Vector3(rightMostBackgroundPlafondBound, reglages.hauteursPlafonds[idPlafond], 0.3f), transform.rotation);
-            newBasePlafond.transform.Translate(new Vector3(Camera.main.orthographicSize * Camera.main.aspect - GetGameObjectLeftMostBound(newBasePlafond), 0));
+            GameObject newBasePlafond = (GameObject)Instantiate(reglages.plafonds[idPlafond], new Vector3(rightmostBackgroundPlafondBound, reglages.hauteursPlafonds[idPlafond], 0.3f), transform.rotation);
+            newBasePlafond.transform.Translate(new Vector3(Camera.main.orthographicSize * Camera.main.aspect - GetGameObjectLeftmostBound(newBasePlafond), 0));
             Color color = newBasePlafond.GetComponent<SpriteRenderer>().material.color;
             color *= 0.1f;
             color.a = 1.0f;
             newBasePlafond.GetComponent<SpriteRenderer>().material.color = color;
-            rightMostBackgroundPlafondBound = GetGameObjectRightMostBound(newBasePlafond) - Random.Range(0.5f, 2.0f);
+            rightmostBackgroundPlafondBound = GetGameObjectRightmostBound(newBasePlafond) - Random.Range(0.5f, 2.0f);
             plafondsBackground.Add(newBasePlafond);
         }
 
-        while (rightMostMiddlegroundPlafondBound < Camera.main.orthographicSize * Camera.main.aspect)
+        if (rightmostMiddlegroundPlafondBound < Camera.main.orthographicSize * Camera.main.aspect)
         {
             int idPlafond = Random.Range(0, reglages.plafonds.Count);
-            GameObject newBasePlafond = (GameObject)Instantiate(reglages.plafonds[idPlafond], new Vector3(rightMostMiddlegroundPlafondBound, reglages.hauteursPlafonds[idPlafond], 0.2f), transform.rotation);
-            newBasePlafond.transform.Translate(new Vector3(Camera.main.orthographicSize * Camera.main.aspect - GetGameObjectLeftMostBound(newBasePlafond), 0));
+            GameObject newBasePlafond = (GameObject)Instantiate(reglages.plafonds[idPlafond], new Vector3(rightmostMiddlegroundPlafondBound, reglages.hauteursPlafonds[idPlafond], 0.2f), transform.rotation);
+            newBasePlafond.transform.Translate(new Vector3(Camera.main.orthographicSize * Camera.main.aspect - GetGameObjectLeftmostBound(newBasePlafond), 0));
             Color color = newBasePlafond.GetComponent<SpriteRenderer>().material.color;
             color *= 0.2f;
             color.a = 1.0f;
             newBasePlafond.GetComponent<SpriteRenderer>().material.color = color;
-            rightMostMiddlegroundPlafondBound = GetGameObjectRightMostBound(newBasePlafond) + Random.Range(0.25f, 1.0f);
+            rightmostMiddlegroundPlafondBound = GetGameObjectRightmostBound(newBasePlafond) + Random.Range(0.25f, 1.0f);
             plafondsMiddleground.Add(newBasePlafond);
         }
 
-        while (rightMostForegroundPlafondBound < Camera.main.orthographicSize * Camera.main.aspect)
+        if (rightmostForegroundPlafondBound < Camera.main.orthographicSize * Camera.main.aspect)
         {
             int idPlafond = Random.Range(0, reglages.plafonds.Count);
-            GameObject newBasePlafond = (GameObject)Instantiate(reglages.plafonds[idPlafond], new Vector3(rightMostForegroundPlafondBound, reglages.hauteursPlafonds[idPlafond], 0.1f), transform.rotation);
-            newBasePlafond.transform.Translate(new Vector3(Camera.main.orthographicSize * Camera.main.aspect - GetGameObjectLeftMostBound(newBasePlafond), 0));
+            GameObject newBasePlafond = (GameObject)Instantiate(reglages.plafonds[idPlafond], new Vector3(rightmostForegroundPlafondBound, reglages.hauteursPlafonds[idPlafond], 0.1f), transform.rotation);
+            newBasePlafond.transform.Translate(new Vector3(Camera.main.orthographicSize * Camera.main.aspect - GetGameObjectLeftmostBound(newBasePlafond), 0));
             Color color = newBasePlafond.GetComponent<SpriteRenderer>().material.color;
             color *= 0.3f;
             color.a = 1.0f;
             newBasePlafond.GetComponent<SpriteRenderer>().material.color = color;
-            rightMostForegroundPlafondBound = GetGameObjectRightMostBound(newBasePlafond) + Random.Range(0.5f, 2.0f);
+            rightmostForegroundPlafondBound = GetGameObjectRightmostBound(newBasePlafond) + Random.Range(0.5f, 2.0f);
             plafondsForeground.Add(newBasePlafond);
         }
 
-        if (plafondsBackground.Count != 0)
+        if (GetGameObjectRightmostBound(plafondsBackground.First()) < -Camera.main.orthographicSize * Camera.main.aspect && plafondsBackground.Count != 0)
         {
-            while (GetGameObjectRightMostBound(plafondsBackground.First()) < -Camera.main.orthographicSize * Camera.main.aspect)
-            {
-                GameObject basePlafondToRemove = plafondsBackground.First();
-                plafondsBackground.RemoveAt(0);
-                Destroy(basePlafondToRemove);
-
-                if (plafondsBackground.Count == 0)
-                {
-                    break;
-                }
-            }
+            GameObject basePlafondToRemove = plafondsBackground.First();
+            plafondsBackground.RemoveAt(0);
+            Destroy(basePlafondToRemove);
         }
 
-        if (plafondsMiddleground.Count != 0)
+        if (GetGameObjectRightmostBound(plafondsMiddleground.First()) < -Camera.main.orthographicSize * Camera.main.aspect && plafondsMiddleground.Count != 0)
         {
-            while (GetGameObjectRightMostBound(plafondsMiddleground.First()) < -Camera.main.orthographicSize * Camera.main.aspect)
-            {
-                GameObject basePlafondToRemove = plafondsMiddleground.First();
-                plafondsMiddleground.RemoveAt(0);
-                Destroy(basePlafondToRemove);
-
-                if (plafondsMiddleground.Count == 0)
-                {
-                    break;
-                }
-            }
+            GameObject basePlafondToRemove = plafondsMiddleground.First();
+            plafondsMiddleground.RemoveAt(0);
+            Destroy(basePlafondToRemove);
         }
 
-        if (plafondsForeground.Count != 0)
+        if (GetGameObjectRightmostBound(plafondsForeground.First()) < -Camera.main.orthographicSize * Camera.main.aspect && plafondsForeground.Count != 0)
         {
-            while (GetGameObjectRightMostBound(plafondsForeground.First()) < -Camera.main.orthographicSize * Camera.main.aspect)
-            {
-                GameObject basePlafondToRemove = plafondsForeground.First();
-                plafondsForeground.RemoveAt(0);
-                Destroy(basePlafondToRemove);
-
-                if (plafondsForeground.Count == 0)
-                {
-                    break;
-                }
-            }
+            GameObject basePlafondToRemove = plafondsForeground.First();
+            plafondsForeground.RemoveAt(0);
+            Destroy(basePlafondToRemove);
         }
 
         Vector3 scrollingVector = new Vector3(-reglages.scrollingSpeed * Time.deltaTime, 0.0f, 0.0f);
 
         foreach (GameObject basePlafond in plafondsBackground)
         {
-            basePlafond.transform.Translate(scrollingVector * 0.33f);
+            basePlafond.transform.Translate(scrollingVector * 0.25f);
         }
 
         foreach (GameObject basePlafond in plafondsMiddleground)
         {
-            basePlafond.transform.Translate(scrollingVector * 0.66f);
+            basePlafond.transform.Translate(scrollingVector * 0.5f);
         }
 
         foreach (GameObject basePlafond in plafondsForeground)
         {
-            basePlafond.transform.Translate(scrollingVector);
+            basePlafond.transform.Translate(scrollingVector * 0.75f);
         }
 
         surfaceJouable2 = surfaceJouable;
@@ -190,58 +163,190 @@ public class LevelManager : MonoBehaviour
 
     float GetGameObjectSurface(GameObject gameObjectParam)
     {
-        return GetGameObjectSize(gameObjectParam) * (gameObjectParam.GetComponentInChildren<Renderer>().bounds.max.y - gameObjectParam.GetComponentInChildren<Renderer>().bounds.min.y);
+        return GetGameObjectWidth(gameObjectParam) * GetGameObjectHeight(gameObjectParam);
     }
 
-    float GetGameObjectSize(GameObject gameObjectParam)
+    float GetGameObjectHeight(GameObject gameObjectParam)
     {
-        return GetGameObjectRightMostBound(gameObjectParam) - GetGameObjectLeftMostBound(gameObjectParam);
+        return GetGameObjectHighestBound(gameObjectParam) - GetGameObjectLowestBound(gameObjectParam);
     }
 
-    float GetGameObjectLeftMostBound(GameObject gameObjectParam)
+    float GetGameObjectWidth(GameObject gameObjectParam)
     {
-        return gameObjectParam.GetComponentInChildren<Renderer>().bounds.min.x;
+        return GetGameObjectRightmostBound(gameObjectParam) - GetGameObjectLeftmostBound(gameObjectParam);
     }
 
-    float GetGameObjectRightMostBound(GameObject gameObjectParam)
+    float GetGameObjectHighestBound(GameObject gameObjectParam)
     {
-        return gameObjectParam.GetComponentInChildren<Renderer>().bounds.max.x;
-    }
+        float situationHighestBound = gameObjectParam.transform.position.y;
 
-    float GetGameObjectChildrenLeftMostBound(GameObject gameObjectParam)
-    {
-        List<Transform> elements = new List<Transform>();
+        SpriteRenderer renderer = gameObjectParam.GetComponent<SpriteRenderer>();
+
+        if (gameObjectParam.GetComponent<SpriteRenderer>() != null)
+        {
+            float rendererHighestBound = renderer.bounds.max.y;
+
+            if (rendererHighestBound > situationHighestBound)
+            {
+                situationHighestBound = rendererHighestBound;
+            }
+        }
+
+        SpriteMask mask = gameObjectParam.GetComponent<SpriteMask>();
+
+        if (gameObjectParam.GetComponent<SpriteMask>() != null)
+        {
+            float maskHighestBound = renderer.bounds.max.y;
+
+            if (maskHighestBound > situationHighestBound)
+            {
+                situationHighestBound = maskHighestBound;
+            }
+        }
+
         foreach (Transform child in gameObjectParam.transform)
         {
-            elements.Add(child);
+            if (child != gameObjectParam.transform)
+            {
+                float childHighestBound = GetGameObjectHighestBound(child.gameObject);
+                if (childHighestBound > situationHighestBound)
+                {
+                    situationHighestBound = childHighestBound;
+                }
+            }
         }
-        if (elements.Count != 0)
-        {
-            float situationLeftMostBound = elements.Min(element => element.gameObject.GetComponentInChildren<Renderer>().bounds.min.x);
-            return situationLeftMostBound;
-        }
-        else
-        {
-            return 0.0f;
-        }
+
+        return situationHighestBound;
     }
 
-    float GetGameObjectChildrenRightMostBound(GameObject gameObjectParam)
+    float GetGameObjectLowestBound(GameObject gameObjectParam)
     {
-        List<Transform> elements = new List<Transform>();
+        float situationLowestBound = gameObjectParam.transform.position.y;
+
+        SpriteRenderer renderer = gameObjectParam.GetComponent<SpriteRenderer>();
+
+        if (gameObjectParam.GetComponent<SpriteRenderer>() != null)
+        {
+            float rendererLowestBound = renderer.bounds.min.y;
+
+            if (rendererLowestBound < situationLowestBound)
+            {
+                situationLowestBound = rendererLowestBound;
+            }
+        }
+
+        SpriteMask mask = gameObjectParam.GetComponent<SpriteMask>();
+
+        if (gameObjectParam.GetComponent<SpriteMask>() != null)
+        {
+            float maskLowestBound = renderer.bounds.min.y;
+
+            if (maskLowestBound < situationLowestBound)
+            {
+                situationLowestBound = maskLowestBound;
+            }
+        }
+
         foreach (Transform child in gameObjectParam.transform)
         {
-            elements.Add(child);
+            if (child != gameObjectParam.transform)
+            {
+                float childLowestBound = GetGameObjectLowestBound(child.gameObject);
+                if (childLowestBound < situationLowestBound)
+                {
+                    situationLowestBound = childLowestBound;
+                }
+            }
         }
-        if (elements.Count != 0)
+
+        return situationLowestBound;
+    }
+
+    public float GetGameObjectLeftmostBound(GameObject gameObjectParam)
+    {
+        float situationLeftmostBound = gameObjectParam.transform.position.x;
+
+        Renderer renderer = gameObjectParam.GetComponent<SpriteRenderer>();
+
+        if (gameObjectParam.GetComponent<SpriteRenderer>() != null)
         {
-            float situationRightMostBound = elements.Max(element => element.gameObject.GetComponentInChildren<Renderer>().bounds.max.x);
-            return situationRightMostBound;
+            float rendererLeftmostBound = renderer.bounds.min.x;
+
+            if (rendererLeftmostBound < situationLeftmostBound)
+            {
+                situationLeftmostBound = rendererLeftmostBound;
+            }
         }
-        else
+
+        SpriteMask mask = gameObjectParam.GetComponent<SpriteMask>();
+
+        if (gameObjectParam.GetComponent<SpriteMask>() != null)
         {
-            return 0.0f;
+            float maskLeftmostBound = renderer.bounds.min.x;
+
+            if (maskLeftmostBound < situationLeftmostBound)
+            {
+                situationLeftmostBound = maskLeftmostBound;
+            }
         }
+
+        foreach (Transform child in gameObjectParam.transform)
+        {
+            if (child != gameObjectParam.transform)
+            {
+                float childLeftmostBound = GetGameObjectLeftmostBound(child.gameObject);
+
+                if (childLeftmostBound < situationLeftmostBound)
+                {
+                    situationLeftmostBound = childLeftmostBound;
+                }
+            }
+        }
+
+        return situationLeftmostBound;
+    }
+
+    public float GetGameObjectRightmostBound(GameObject gameObjectParam)
+    {
+        float situationRightmostBound = gameObjectParam.transform.position.x;
+
+        Renderer renderer = gameObjectParam.GetComponentInChildren<SpriteRenderer>();
+
+        if (gameObjectParam.GetComponent<SpriteRenderer>() != null)
+        {
+            float rendererRightmostBound = renderer.bounds.max.x;
+
+            if (rendererRightmostBound > situationRightmostBound)
+            {
+                situationRightmostBound = rendererRightmostBound;
+            }
+        }
+
+        SpriteMask mask = gameObjectParam.GetComponent<SpriteMask>();
+
+        if (gameObjectParam.GetComponent<SpriteMask>() != null)
+        {
+            float maskRightmostBound = renderer.bounds.max.x;
+
+            if (maskRightmostBound > situationRightmostBound)
+            {
+                situationRightmostBound = maskRightmostBound;
+            }
+        }
+
+        foreach (Transform child in gameObjectParam.transform)
+        {
+            if (child != gameObjectParam.transform)
+            {
+                float childRightmostBound = GetGameObjectRightmostBound(child.gameObject);
+                if (childRightmostBound > situationRightmostBound)
+                {
+                    situationRightmostBound = childRightmostBound;
+                }
+            }
+        }
+
+        return situationRightmostBound;
     }
 
     public float GetScrollingSpeed()
