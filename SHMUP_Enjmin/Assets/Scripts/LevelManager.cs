@@ -22,7 +22,7 @@ public class LevelManager : MonoBehaviour
 
     int score;
 
-    void Start ()
+    void Start()
     {
         rightmostSituationBound = Camera.main.orthographicSize * Camera.main.aspect;
 
@@ -38,7 +38,7 @@ public class LevelManager : MonoBehaviour
         score = 0;
     }
 
-    void Update ()
+    void Update()
     {
         rightmostSituationBound -= reglages.scrollingSpeed * Time.deltaTime;
         rightmostBackgroundPlafondBound -= reglages.scrollingSpeed * Time.deltaTime * 0.25f;
@@ -53,12 +53,16 @@ public class LevelManager : MonoBehaviour
                 if (score < reglages.pallierNormal)
                 {
                     newSituation = (GameObject)Instantiate(reglages.GetEasyLevel(), new Vector3(rightmostSituationBound, 0), transform.rotation);
-                } else if (score < reglages.pallierDifficile) {
+                }
+                else if (score < reglages.pallierDifficile)
+                {
                     newSituation = (GameObject)Instantiate(reglages.GetNormalLevel(), new Vector3(rightmostSituationBound, 0), transform.rotation);
-                } else {
+                }
+                else
+                {
                     newSituation = (GameObject)Instantiate(reglages.GetHardLevel(), new Vector3(rightmostSituationBound, 0), transform.rotation);
                 }
-                
+
                 newSituation.transform.Translate(new Vector3(Camera.main.orthographicSize * Camera.main.aspect - GetGameObjectLeftmostBound(newSituation), 0.0f));
                 rightmostSituationBound = GetGameObjectRightmostBound(newSituation) + (Camera.main.orthographicSize * Camera.main.aspect) / 2;
                 for (int i = newSituation.transform.childCount - 1; i > 0; i--)
@@ -196,7 +200,7 @@ public class LevelManager : MonoBehaviour
 
         if (gameObjectParam.GetComponent<SpriteMask>() != null)
         {
-            float maskHighestBound = renderer.bounds.max.y;
+            float maskHighestBound = mask.bounds.max.y;
 
             if (maskHighestBound > situationHighestBound)
             {
@@ -239,7 +243,7 @@ public class LevelManager : MonoBehaviour
 
         if (gameObjectParam.GetComponent<SpriteMask>() != null)
         {
-            float maskLowestBound = renderer.bounds.min.y;
+            float maskLowestBound = mask.bounds.min.y;
 
             if (maskLowestBound < situationLowestBound)
             {
@@ -282,7 +286,7 @@ public class LevelManager : MonoBehaviour
 
         if (gameObjectParam.GetComponent<SpriteMask>() != null)
         {
-            float maskLeftmostBound = renderer.bounds.min.x;
+            float maskLeftmostBound = mask.bounds.min.x;
 
             if (maskLeftmostBound < situationLeftmostBound)
             {
@@ -326,7 +330,7 @@ public class LevelManager : MonoBehaviour
 
         if (gameObjectParam.GetComponent<SpriteMask>() != null)
         {
-            float maskRightmostBound = renderer.bounds.max.x;
+            float maskRightmostBound = mask.bounds.max.x;
 
             if (maskRightmostBound > situationRightmostBound)
             {
@@ -354,8 +358,8 @@ public class LevelManager : MonoBehaviour
         return reglages.scrollingSpeed;
     }
 
-//SINGLETON________________________________________________________________________________________________
-	private static LevelManager s_Instance = null;
+    //SINGLETON________________________________________________________________________________________________
+    private static LevelManager s_Instance = null;
 
     // This defines a instance property that attempts to find the manager object in the scene and
     // returns it to the caller.
