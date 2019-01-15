@@ -180,15 +180,27 @@ public class LevelManager : MonoBehaviour
     {
         float situationHighestBound = gameObjectParam.transform.position.y;
 
-        SpriteRenderer renderer = gameObjectParam.GetComponentInChildren<SpriteRenderer>();
+        SpriteRenderer renderer = gameObjectParam.GetComponent<SpriteRenderer>();
 
         if (gameObjectParam.GetComponent<SpriteRenderer>() != null)
         {
-            float rendererHighestBound = renderer.bounds.min.y;
+            float rendererHighestBound = renderer.bounds.max.y;
 
             if (rendererHighestBound > situationHighestBound)
             {
                 situationHighestBound = rendererHighestBound;
+            }
+        }
+
+        SpriteMask mask = gameObjectParam.GetComponent<SpriteMask>();
+
+        if (gameObjectParam.GetComponent<SpriteMask>() != null)
+        {
+            float maskHighestBound = renderer.bounds.max.y;
+
+            if (maskHighestBound > situationHighestBound)
+            {
+                situationHighestBound = maskHighestBound;
             }
         }
 
@@ -211,7 +223,7 @@ public class LevelManager : MonoBehaviour
     {
         float situationLowestBound = gameObjectParam.transform.position.y;
 
-        SpriteRenderer renderer = gameObjectParam.GetComponentInChildren<SpriteRenderer>();
+        SpriteRenderer renderer = gameObjectParam.GetComponent<SpriteRenderer>();
 
         if (gameObjectParam.GetComponent<SpriteRenderer>() != null)
         {
@@ -220,6 +232,18 @@ public class LevelManager : MonoBehaviour
             if (rendererLowestBound < situationLowestBound)
             {
                 situationLowestBound = rendererLowestBound;
+            }
+        }
+
+        SpriteMask mask = gameObjectParam.GetComponent<SpriteMask>();
+
+        if (gameObjectParam.GetComponent<SpriteMask>() != null)
+        {
+            float maskLowestBound = renderer.bounds.min.y;
+
+            if (maskLowestBound < situationLowestBound)
+            {
+                situationLowestBound = maskLowestBound;
             }
         }
 
@@ -242,7 +266,7 @@ public class LevelManager : MonoBehaviour
     {
         float situationLeftmostBound = gameObjectParam.transform.position.x;
 
-        Renderer renderer = gameObjectParam.GetComponentInChildren<SpriteRenderer>();
+        Renderer renderer = gameObjectParam.GetComponent<SpriteRenderer>();
 
         if (gameObjectParam.GetComponent<SpriteRenderer>() != null)
         {
@@ -253,7 +277,19 @@ public class LevelManager : MonoBehaviour
                 situationLeftmostBound = rendererLeftmostBound;
             }
         }
-        
+
+        SpriteMask mask = gameObjectParam.GetComponent<SpriteMask>();
+
+        if (gameObjectParam.GetComponent<SpriteMask>() != null)
+        {
+            float maskLeftmostBound = renderer.bounds.min.x;
+
+            if (maskLeftmostBound < situationLeftmostBound)
+            {
+                situationLeftmostBound = maskLeftmostBound;
+            }
+        }
+
         foreach (Transform child in gameObjectParam.transform)
         {
             if (child != gameObjectParam.transform)
@@ -283,6 +319,18 @@ public class LevelManager : MonoBehaviour
             if (rendererRightmostBound > situationRightmostBound)
             {
                 situationRightmostBound = rendererRightmostBound;
+            }
+        }
+
+        SpriteMask mask = gameObjectParam.GetComponent<SpriteMask>();
+
+        if (gameObjectParam.GetComponent<SpriteMask>() != null)
+        {
+            float maskRightmostBound = renderer.bounds.max.x;
+
+            if (maskRightmostBound > situationRightmostBound)
+            {
+                situationRightmostBound = maskRightmostBound;
             }
         }
 
