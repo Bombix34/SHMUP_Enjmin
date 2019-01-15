@@ -115,18 +115,18 @@ public class BubleManager : MonoBehaviour {
 		switch(objectInTheBuble.Count)
 		{
 			case 0:
-				randDist = Random.Range(6f,10f);
+				randDist = 0.05f;
 				break;
 			case 1:
-				randDist = Random.Range(3f,5f);
+				randDist = 0.2f;
 				break;
 			case 2:
-				randDist = 2f;
+				randDist = 0.5f;
 				break;
 		}
-		while(GetDistanceFromBubleCenter(obj.transform.position) > (distanceFromCenter * 1/randDist ))
+		while(GetDistanceFromBubleCenter(obj.transform.position) > (distanceFromCenter  * randDist ))
 		{
-			if(frameCount>45)
+			if(GetDistanceFromBubleCenter(obj.transform.position) < (distanceFromCenter-0.3f ))
 			{
 				//on attend un certain nombre de frame avant de le faire rentrer très vite 
 				if(obj.GetComponent<SavedManager>()!=null)
@@ -136,9 +136,17 @@ public class BubleManager : MonoBehaviour {
 			else
 				obj.transform.Translate(forceDirection.x*Time.deltaTime*0.6f,forceDirection.y*Time.deltaTime*0.6f,0f);
 			frameCount++;
+			if(frameCount>42&&objectInTheBuble.Count==1)
+			//pour empêcher que les ptits calamars partent dans l'espace des fois
+			//je sais pas d'ou provient le bug donc je mets une petite sécurité 
+				obj.transform.position = this.transform.position;
 			yield return new WaitForSeconds(0.001f);
 		}
-		//obj.transform.position= new Vector2(obj.transform.position.x+forceDirection.x,)
+		if(objectInTheBuble.Count==1)
+		{
+			obj.GetComponent<SavedManager>().EnterBuble(true);
+			obj.transform.position = this.transform.position;
+		}
 	}
 
 	public float GetDistanceFromBubleCenter(Vector2 pos)

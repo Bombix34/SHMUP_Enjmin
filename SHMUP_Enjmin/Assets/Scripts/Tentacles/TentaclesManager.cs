@@ -34,6 +34,7 @@ public class TentaclesManager : MonoBehaviour {
     void Start () {
         foreach(ParticleSystem particle in fishParticles)
         {
+            particle.gameObject.SetActive(false);
             particle.Stop();
         }
 
@@ -91,7 +92,8 @@ public class TentaclesManager : MonoBehaviour {
         {
             foreach(ParticleSystem particle in fishParticles)
             {
-              particle.Play();
+                particle.gameObject.SetActive(true);
+                particle.Play();
             }
         }
     }

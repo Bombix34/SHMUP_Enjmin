@@ -213,6 +213,7 @@ public class PlayerManager : MonoBehaviour {
 				BubleManager tempBuble = curBuble.GetComponent<BubleManager>();
 				tempBuble.DestroyBuble();
 			}
+			isDashing=true;
 			StartCoroutine(DashAction());
             AkSoundEngine.PostEvent("Play_Player_Dash_os", gameObject);
         }
@@ -220,7 +221,6 @@ public class PlayerManager : MonoBehaviour {
 
 	IEnumerator DashAction()
 	{
-		isDashing=true;
 
 		animator.SetTrigger("Dash");
 

@@ -6,15 +6,15 @@ public class KeyboardController : MonoBehaviour
 {
 	public bool PressFireBouton()
 	{
-		return Input.GetButtonDown("Fire1");
+		return Input.GetButtonDown("Bubble");
 	}
 	public bool UseFireBouton()
 	{
-		return Input.GetButton("Fire1");
+		return Input.GetButton("Bubble");
 	}
 	public bool ReleaseFireBouton()
 	{
-		return Input.GetButtonUp("Fire1");
+		return Input.GetButtonUp("Bubble");
 	}
 	public Vector2 GetMovement()
 	{
