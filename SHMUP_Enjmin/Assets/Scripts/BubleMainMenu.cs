@@ -52,7 +52,7 @@ public class BubleMainMenu : BubleManager
 
 	protected override void OnTriggerEnter2D(Collider2D col)
     {
-		if (col.gameObject.tag == "ObjMenu")
+		if (col.gameObject.tag == "ObjPlay")
 		//ENTRE DANS LA BULLE
         {
             if (curIsCreate)
@@ -63,8 +63,23 @@ public class BubleMainMenu : BubleManager
             objectInTheBuble.Add(col.gameObject);
 
             AkSoundEngine.PostEvent("Play_Pnj_Oh", gameObject);
+
         }
-	}
+
+        if (col.gameObject.tag == "ObjQuit")
+        //ENTRE DANS LA BULLE
+        {
+            if (curIsCreate)
+                GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerManager>().DetachBuble();
+
+            //sinon on ajoute le perso dans la bulle
+            StartCoroutine(SetObjectInTheBuble(col.gameObject));
+            objectInTheBuble.Add(col.gameObject);
+
+            AkSoundEngine.PostEvent("Play_Pnj_Oh", gameObject);
+
+        }
+    }
 
 	public override void DestroyBuble()
 	{

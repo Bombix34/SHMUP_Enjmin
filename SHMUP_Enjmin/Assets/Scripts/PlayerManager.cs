@@ -236,8 +236,8 @@ public class PlayerManager : MonoBehaviour {
 		else
         {
 			rb2D.velocity=new Vector2(tempDirection.x*reglages.speedPlayer,tempDirection.y*reglages.speedPlayer)*reglages.dashPower;
-            float angle = Vector2.Angle(Vector2.right, controller.getLeftStickDirection());
-            if (controller.getLeftStickDirection().y < 0.0f) angle = 360.0f - angle;
+            float angle = Vector2.Angle(Vector2.right, tempDirection);
+            if (tempDirection.y < 0.0f) angle = 360.0f - angle;
 			{
            		GetComponentInChildren<SpriteRenderer>().transform.Rotate(new Vector3(0.0f, 0.0f, angle));
 			}
