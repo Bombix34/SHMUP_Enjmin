@@ -20,11 +20,11 @@ MonoBehaviour:
   pallierNormal: 5
   pallierDifficile: 10
   levelPartsEasy:
-  - {fileID: 1430408559247294, guid: e870886f6d97d45ec99c921168b9304b, type: 2}
+  - {fileID: 1014378443322570, guid: 373e55054a40c1748a1f6d12d221224d, type: 2}
   levelPartsNormal:
-  - {fileID: 1430408559247294, guid: e870886f6d97d45ec99c921168b9304b, type: 2}
+  - {fileID: 1124644681589060, guid: 631d7e8d8f7fd7347ac4d78fa1656641, type: 2}
   levelPartsHard:
-  - {fileID: 1430408559247294, guid: e870886f6d97d45ec99c921168b9304b, type: 2}
+  - {fileID: 1771237411998048, guid: f3823791324cdc64f973ea5934f598d2, type: 2}
   plafonds:
   - {fileID: 1363204610409546, guid: 4f26e5f38cc90c7499a5286d03c60f6d, type: 2}
   - {fileID: 1829984710835132, guid: c24ea04510d88f643b4f17ade4d4fb7b, type: 2}
