@@ -115,7 +115,7 @@ public class BubleManager : MonoBehaviour {
 		switch(objectInTheBuble.Count)
 		{
 			case 0:
-				randDist = randDist = Random.Range(6f,10f);
+				randDist = Random.Range(6f,10f);
 				break;
 			case 1:
 				randDist = Random.Range(3f,5f);
