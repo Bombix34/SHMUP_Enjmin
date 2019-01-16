@@ -41,6 +41,7 @@ public class GameManager : MonoBehaviour {
 
 		GameObject gameover = Instantiate(gameOverUI, transform.position,Quaternion.identity) as GameObject;
 		gameover.GetComponent<GameOverUI>().scoreText.text=score.ToString();
+		gameover.GetComponent<GameOverUI>().allSavedText.text=highScore.GetOnlineScoreToString();
 		player.GetComponent<PlayerManager>().Die();
 		highScore.AddNewHighscore("world",score);
 		gameover.SetActive(true);
@@ -68,7 +69,14 @@ public class GameManager : MonoBehaviour {
 		GetComponent<Playtest>().Save();
 
 		//A CHANGER AVEC LA SCENE DU MENU PRINCIPAL
-		SceneManager.LoadScene("MainScene");
+		SceneManager.LoadScene("MenuScene");
+	}
+
+	public void QuitGame()
+	{
+		GetComponent<Playtest>().Save();
+
+		Application.Quit();
 	}
 
 	public void AddMetric(string name, string val)

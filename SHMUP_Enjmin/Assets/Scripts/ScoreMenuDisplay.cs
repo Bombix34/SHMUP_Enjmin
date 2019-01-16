@@ -22,6 +22,6 @@ public class ScoreMenuDisplay : MonoBehaviour {
     IEnumerator ShowScreen()
     {
         yield return new WaitForSeconds(1f);
-        scoreText.text = score.GetOnlineScore().ToString();
+        scoreText.text = score.GetOnlineScoreToString();
     }
 }

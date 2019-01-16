@@ -77,11 +77,8 @@ public class PlayerManager : MonoBehaviour {
     void Update () 
 	{
 		if(isDead)
-		{
-			if(controller.pressAnyButton()||keyboard.PressFireBouton()||keyboard.PressDashBouton())
-				GameManager.instance.RelaunchGame();
 			return;
-		}
+		
 
 		SetPlayerSize();
 
@@ -104,6 +101,8 @@ public class PlayerManager : MonoBehaviour {
 
 		//PLAYTEST
 		GameManager.instance.AddMetric("Bulles tirées", nbBullesTirées.ToString());
+
+		colider.enabled=false;
 
 		if(curBuble!=null)
 			curBuble.GetComponent<BubleManager>().DestroyBuble();
