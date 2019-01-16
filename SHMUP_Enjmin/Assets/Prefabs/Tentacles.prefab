@@ -910,7 +910,7 @@ MonoBehaviour:
   - {fileID: 1048708388101486}
   distanceAtEachCapture: 0.5
   moveSpeedForward: 0.01
-  distanceAtEachSave: 0.25
+  distanceAtEachSave: 0.125
   moveSpeedBackward: 0.01
   distanceDone: 0
   fishParticles:

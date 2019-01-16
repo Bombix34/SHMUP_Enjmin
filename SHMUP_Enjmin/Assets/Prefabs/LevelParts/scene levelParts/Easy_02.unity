@@ -1749,7 +1749,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 1
-  diametre: 1
+  diametre: 2
   pivot: {fileID: 1001874336}
 --- !u!1001 &783624120
 Prefab:
