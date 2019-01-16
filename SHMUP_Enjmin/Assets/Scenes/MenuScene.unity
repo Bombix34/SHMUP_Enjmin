@@ -7302,7 +7302,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 309261894}
-  - component: {fileID: 309261896}
   - component: {fileID: 309261895}
   m_Layer: 11
   m_Name: ObjMenu Play Y
@@ -7342,20 +7341,6 @@ CapsuleCollider2D:
   m_Offset: {x: 0, y: 0.115067124}
   m_Size: {x: 0.35, y: 0.50005317}
   m_Direction: 0
---- !u!114 &309261896
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 114365609953916298, guid: 1bf51977053ab9e42a45e3db0911d280,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 309261893}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 604cc1a53663d4aef84343712a44ffb5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  auraPoulpe: {fileID: 0}
-  sprite: {fileID: 0}
 --- !u!1 &311570884
 GameObject:
   m_ObjectHideFlags: 0
@@ -7365,7 +7350,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 311570885}
-  - component: {fileID: 311570887}
   - component: {fileID: 311570886}
   m_Layer: 11
   m_Name: ObjMenu Play A
@@ -7405,20 +7389,6 @@ CapsuleCollider2D:
   m_Offset: {x: 0, y: 0.115067124}
   m_Size: {x: 0.35, y: 0.50005317}
   m_Direction: 0
---- !u!114 &311570887
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 114566387702786676, guid: 1bf51977053ab9e42a45e3db0911d280,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 311570884}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 604cc1a53663d4aef84343712a44ffb5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  auraPoulpe: {fileID: 0}
-  sprite: {fileID: 0}
 --- !u!1 &318709343
 GameObject:
   m_ObjectHideFlags: 0
@@ -15716,7 +15686,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 697080449}
-  - component: {fileID: 697080451}
   - component: {fileID: 697080450}
   m_Layer: 11
   m_Name: ObjMenu Play T
@@ -15756,20 +15725,6 @@ CapsuleCollider2D:
   m_Offset: {x: 0, y: 0.115067124}
   m_Size: {x: 0.35, y: 0.50005317}
   m_Direction: 0
---- !u!114 &697080451
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 114733748756409062, guid: 1bf51977053ab9e42a45e3db0911d280,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 697080448}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 604cc1a53663d4aef84343712a44ffb5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  auraPoulpe: {fileID: 0}
-  sprite: {fileID: 0}
 --- !u!1 &697584370
 GameObject:
   m_ObjectHideFlags: 0
@@ -16914,7 +16869,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 825814669}
-  - component: {fileID: 825814671}
   - component: {fileID: 825814670}
   m_Layer: 11
   m_Name: ObjMenu Play U
@@ -16954,20 +16908,6 @@ CapsuleCollider2D:
   m_Offset: {x: 0, y: 0.115067124}
   m_Size: {x: 0.35, y: 0.50005317}
   m_Direction: 0
---- !u!114 &825814671
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 114459272423979650, guid: 1bf51977053ab9e42a45e3db0911d280,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 825814668}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 604cc1a53663d4aef84343712a44ffb5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  auraPoulpe: {fileID: 0}
-  sprite: {fileID: 0}
 --- !u!1 &835742217
 GameObject:
   m_ObjectHideFlags: 0
@@ -17895,7 +17835,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 885046178}
-  - component: {fileID: 885046180}
   - component: {fileID: 885046179}
   m_Layer: 11
   m_Name: ObjMenu Play I
@@ -17935,20 +17874,6 @@ CapsuleCollider2D:
   m_Offset: {x: 0, y: 0.115067124}
   m_Size: {x: 0.35, y: 0.50005317}
   m_Direction: 0
---- !u!114 &885046180
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 114128546729528084, guid: 1bf51977053ab9e42a45e3db0911d280,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 885046177}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 604cc1a53663d4aef84343712a44ffb5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  auraPoulpe: {fileID: 0}
-  sprite: {fileID: 0}
 --- !u!1 &902654613
 GameObject:
   m_ObjectHideFlags: 0
@@ -26278,7 +26203,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1372760652}
-  - component: {fileID: 1372760654}
   - component: {fileID: 1372760653}
   m_Layer: 11
   m_Name: ObjMenu Play P
@@ -26318,20 +26242,6 @@ CapsuleCollider2D:
   m_Offset: {x: 0, y: 0.115067124}
   m_Size: {x: 0.35, y: 0.50005317}
   m_Direction: 0
---- !u!114 &1372760654
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 114886001096715530, guid: 1bf51977053ab9e42a45e3db0911d280,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1372760651}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 604cc1a53663d4aef84343712a44ffb5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  auraPoulpe: {fileID: 0}
-  sprite: {fileID: 0}
 --- !u!1 &1372860055
 GameObject:
   m_ObjectHideFlags: 0
@@ -32494,7 +32404,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2045251007}
-  - component: {fileID: 2045251009}
   - component: {fileID: 2045251008}
   m_Layer: 11
   m_Name: ObjMenu Play Q
@@ -32534,20 +32443,6 @@ CapsuleCollider2D:
   m_Offset: {x: 0, y: 0.115067124}
   m_Size: {x: 0.35, y: 0.50005317}
   m_Direction: 0
---- !u!114 &2045251009
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 114314206720719986, guid: 1bf51977053ab9e42a45e3db0911d280,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 2045251006}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 604cc1a53663d4aef84343712a44ffb5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  auraPoulpe: {fileID: 0}
-  sprite: {fileID: 0}
 --- !u!1 &2051562890
 GameObject:
   m_ObjectHideFlags: 0
@@ -32702,7 +32597,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2084621754}
-  - component: {fileID: 2084621756}
   - component: {fileID: 2084621755}
   m_Layer: 11
   m_Name: ObjMenu Play L
@@ -32742,20 +32636,6 @@ CapsuleCollider2D:
   m_Offset: {x: 0, y: 0.115067124}
   m_Size: {x: 0.35, y: 0.50005317}
   m_Direction: 0
---- !u!114 &2084621756
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 114453218766041724, guid: 1bf51977053ab9e42a45e3db0911d280,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 2084621753}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 604cc1a53663d4aef84343712a44ffb5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  auraPoulpe: {fileID: 0}
-  sprite: {fileID: 0}
 --- !u!1 &2092401273
 GameObject:
   m_ObjectHideFlags: 0
