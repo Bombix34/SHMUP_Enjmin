@@ -17,9 +17,6 @@ public class LevelManager : MonoBehaviour
 
     public LevelReglages reglages;
 
-    float surfaceJouable;
-    float surfaceJouable2;
-
     int score;
 
     void Start()
@@ -32,8 +29,6 @@ public class LevelManager : MonoBehaviour
         rightmostBackgroundPlafondBound = Camera.main.orthographicSize * Camera.main.aspect;
         rightmostMiddlegroundPlafondBound = Camera.main.orthographicSize * Camera.main.aspect;
         rightmostForegroundPlafondBound = Camera.main.orthographicSize * Camera.main.aspect;
-
-        surfaceJouable = 100.0f;
 
         score = 0;
     }
@@ -65,12 +60,7 @@ public class LevelManager : MonoBehaviour
 
                 newSituation.transform.Translate(new Vector3(Camera.main.orthographicSize * Camera.main.aspect - GetGameObjectLeftmostBound(newSituation), 0.0f));
                 rightmostSituationBound = GetGameObjectRightmostBound(newSituation) + (Camera.main.orthographicSize * Camera.main.aspect) / 2;
-                for (int i = newSituation.transform.childCount - 1; i >= 0; i--)
-                {
-                    surfaceJouable -= GetGameObjectSurface(newSituation.transform.GetChild(i).gameObject) / 2;
-                    newSituation.transform.GetChild(i).parent = null;
-                }
-                Destroy(newSituation);
+                detachGameObject(newSituation);
             }
         }
 
@@ -150,19 +140,32 @@ public class LevelManager : MonoBehaviour
         {
             basePlafond.transform.Translate(scrollingVector * 0.75f);
         }
+    }
 
-        surfaceJouable2 = surfaceJouable;
-        AkSoundEngine.SetRTPCValue("Surface_jouable", surfaceJouable2, gameObject);
+    List<GameObject> detachGameObject(GameObject gameObjectParam)
+    {
+        List<GameObject> gos = new List<GameObject>();
+
+        if (gameObjectParam.GetComponent<ScrollScript>() == null)
+        {
+            for (int i = gameObjectParam.transform.childCount - 1; i >= 0; i--)
+            {
+                Transform child = gameObjectParam.transform.GetChild(i);
+                child.parent = null;
+                gos.AddRange(detachGameObject(child.gameObject));
+            }
+            Destroy(gameObjectParam);
+        } else
+        {
+            gos.Add(gameObjectParam);
+        }
+
+        return gos;
     }
 
     public void ChangeScore(int change)
     {
         score += change;
-    }
-
-    public void ReleasePlayableSpace(GameObject gameObjectParam)
-    {
-        surfaceJouable += GetGameObjectSurface(gameObjectParam) / 2;
     }
 
     float GetGameObjectSurface(GameObject gameObjectParam)
