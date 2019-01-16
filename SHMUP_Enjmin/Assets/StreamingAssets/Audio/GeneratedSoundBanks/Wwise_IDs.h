@@ -22,9 +22,11 @@ namespace AK
         static const AkUniqueID PLAY_KRAKEN_NEAR_RND = 2798840920U;
         static const AkUniqueID PLAY_LOAD_SHOT = 2139305897U;
         static const AkUniqueID PLAY_MUSIC_GAMEOVER = 619661162U;
+        static const AkUniqueID PLAY_MUSIC_MENU = 1699343283U;
         static const AkUniqueID PLAY_MUSIQUE = 206418435U;
         static const AkUniqueID PLAY_OURSIN_IN = 1942065700U;
         static const AkUniqueID PLAY_OURSIN_OUT = 1957308451U;
+        static const AkUniqueID PLAY_PLAY = 2189502264U;
         static const AkUniqueID PLAY_PLAYER_DASH_OS = 3837926945U;
         static const AkUniqueID PLAY_PLAYER_SHOT = 4135433440U;
         static const AkUniqueID PLAY_PNJ_OH = 2311964536U;
@@ -55,6 +57,17 @@ namespace AK
                 static const AkUniqueID LVL_02 = 2147068366U;
             } // namespace STATE
         } // namespace LVL_MUSIQUE
+
+        namespace MENU
+        {
+            static const AkUniqueID GROUP = 2607556080U;
+
+            namespace STATE
+            {
+                static const AkUniqueID IN = 1752637612U;
+                static const AkUniqueID OUT = 645492555U;
+            } // namespace STATE
+        } // namespace MENU
 
     } // namespace STATES
 

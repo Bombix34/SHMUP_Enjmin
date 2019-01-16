@@ -23,6 +23,13 @@
 						<State Name="Poisonus" ID="{9A99C0FF-0755-47FA-9371-3BAB9E5FDF65}"/>
 					</ChildrenList>
 				</StateGroup>
+				<StateGroup Name="MENU" ID="{A2215547-9F4D-4F62-ACBA-492D5527BC81}">
+					<ChildrenList>
+						<State Name="None" ID="{475BA57A-AF72-4E31-A3D0-430A149A83B0}"/>
+						<State Name="In" ID="{B3C9BCF3-4176-4DBB-AED7-C6829F46AB0E}"/>
+						<State Name="Out" ID="{7EE3D309-3467-41F1-ADD9-6F38F52B2BDF}"/>
+					</ChildrenList>
+				</StateGroup>
 			</ChildrenList>
 		</WorkUnit>
 	</States>

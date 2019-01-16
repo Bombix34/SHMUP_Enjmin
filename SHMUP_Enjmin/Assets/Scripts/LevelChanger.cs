@@ -8,6 +8,7 @@ public class LevelChanger : MonoBehaviour {
     public Animator animator;
 
     private int levelToLoad;
+
 	
 
     void OnTriggerEnter2D(Collider2D other)
@@ -27,11 +28,15 @@ public class LevelChanger : MonoBehaviour {
     {
         levelToLoad = levelIndex;
         animator.SetTrigger("FadeOut");
+        AkSoundEngine.PostEvent("Play_Play", gameObject);
     }
 
     public void OnFadeComplete()
     {
         SceneManager.LoadScene(levelToLoad);
+        AkSoundEngine.SetState("MENU", "Out");
+
+
 
     }
 }

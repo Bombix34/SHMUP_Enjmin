@@ -1,0 +1,16 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9c43ebfde90c4de4cb77ae8ded35ca5e, type: 3}
+  m_Name: 8C8BEBB2-005A-4740-B9AA-1CE17B6B35F1
+  m_EditorClassIdentifier: 
+  objectName: Innit_Menu
+  id: 2269074425
+  guid: 8C8BEBB2-005A-4740-B9AA-1CE17B6B35F1

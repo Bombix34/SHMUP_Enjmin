@@ -14,7 +14,7 @@ MonoBehaviour:
   scrollingSpeed: 1.2
   bonusAmiMisEnBulle: 1
   bonusAmiSauve: 1
-  malusBulleAmiEclatee: -1
+  malusBulleAmiEclatee: -2
   malusCollisionOursin: -1
   malusAmiMangeParKraken: -1
   pallierNormal: 5

@@ -1274,12 +1274,25 @@
 							<ChildrenList>
 								<MusicTrack Name="Monstre_Amb_Intervention_01_04_Os" ID="{17A45412-9608-4CCF-8472-ADF4AB5F64AD}" ShortID="900548650">
 									<PropertyList>
+										<Property Name="IgnoreParentMaxSoundInstance" Type="bool" Value="True"/>
+										<Property Name="IsGlobalLimit" Type="int16" Value="1"/>
 										<Property Name="MakeUpGain" Type="Real64">
 											<ValueList>
 												<Value>-4</Value>
 											</ValueList>
 										</Property>
+										<Property Name="MaxReachedBehavior" Type="int16" Value="1"/>
+										<Property Name="MaxSoundPerInstance" Type="int16">
+											<ValueList>
+												<Value>1</Value>
+											</ValueList>
+										</Property>
 										<Property Name="MusicTrackType" Type="int16" Value="1"/>
+										<Property Name="UseMaxSoundPerInstance" Type="bool">
+											<ValueList>
+												<Value>True</Value>
+											</ValueList>
+										</Property>
 										<Property Name="Volume" Type="Real64">
 											<ValueList>
 												<Value>-6</Value>
@@ -1321,7 +1334,6 @@
 														<Property Name="EndTrimOffset" Type="Real64" Value="12000"/>
 														<Property Name="FadeInMode" Type="int16" Value="0"/>
 														<Property Name="FadeOutMode" Type="int16" Value="0"/>
-														<Property Name="PlayAt" Type="Real64" Value="3000"/>
 													</PropertyList>
 													<AudioSourceRef Name="Monstre_Amb_Intervention_01_04_Os" ID="{D34C396C-6A62-485E-B11F-EFA9118EF413}"/>
 												</MusicClip>
@@ -1346,7 +1358,6 @@
 														<Property Name="EndTrimOffset" Type="Real64" Value="12000"/>
 														<Property Name="FadeInMode" Type="int16" Value="0"/>
 														<Property Name="FadeOutMode" Type="int16" Value="0"/>
-														<Property Name="PlayAt" Type="Real64" Value="1500"/>
 													</PropertyList>
 													<AudioSourceRef Name="Monstre_Amb_Intervention_01_06_Os" ID="{D71D655F-B382-4ECF-BBA5-D4CDF31904FB}"/>
 												</MusicClip>
@@ -1357,14 +1368,31 @@
 								</MusicTrack>
 								<MusicTrack Name="Main_Basse" ID="{4487F8EE-14A4-4583-9567-4C0F3DEDD604}" ShortID="355121180">
 									<PropertyList>
+										<Property Name="Highpass" Type="int16">
+											<ValueList>
+												<Value>10</Value>
+											</ValueList>
+										</Property>
+										<Property Name="IgnoreParentMaxSoundInstance" Type="bool" Value="True"/>
+										<Property Name="IsGlobalLimit" Type="int16" Value="1"/>
 										<Property Name="MakeUpGain" Type="Real64">
 											<ValueList>
 												<Value>-7</Value>
 											</ValueList>
 										</Property>
+										<Property Name="MaxSoundPerInstance" Type="int16">
+											<ValueList>
+												<Value>1</Value>
+											</ValueList>
+										</Property>
+										<Property Name="UseMaxSoundPerInstance" Type="bool">
+											<ValueList>
+												<Value>True</Value>
+											</ValueList>
+										</Property>
 										<Property Name="Volume" Type="Real64">
 											<ValueList>
-												<Value>-1</Value>
+												<Value>-3</Value>
 											</ValueList>
 										</Property>
 									</PropertyList>
