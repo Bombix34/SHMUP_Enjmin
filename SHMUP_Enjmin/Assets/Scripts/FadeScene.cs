@@ -16,6 +16,7 @@ public class FadeScene : MonoBehaviour {
     public void FadeOut()
     {
         animator.SetTrigger("FadeOut");
+
     }
 
 	

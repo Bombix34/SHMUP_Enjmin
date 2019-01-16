@@ -3,26 +3,22 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class LoadScenesMenu : MonoBehaviour {
-
-    [SerializeField] private string loadScene;
-    [SerializeField] private string loadQuit;
-    [SerializeField] FadeScene fade;
-
-
-    void OnTriggerEnter2D (Collider2D other)
+/*public class LoadScenesMenu : MonoBehaviour
+{
+    
+    void OnTriggerEnter2D(Collider2D other)
     {
-         if(other.CompareTag("ObjPlay"))
+        if (other.CompareTag("ObjPlay"))
         {
-            fade.FadeOut();
+        
             SceneManager.LoadScene(loadScene);
-
         }
 
-         else if(other.CompareTag("ObjQuit"))
+        else if (other.CompareTag("ObjQuit"))
         {
             SceneManager.LoadScene(loadQuit);
         }
     }
 
 }
+*/
