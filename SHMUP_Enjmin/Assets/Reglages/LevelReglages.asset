@@ -11,7 +11,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9618d9eac8ce9443da4e0e688468f107, type: 3}
   m_Name: LevelReglages
   m_EditorClassIdentifier: 
-  scrollingSpeed: 1.2
+  scrollingSpeed: 3
   bonusAmiMisEnBulle: 1
   bonusAmiSauve: 1
   malusBulleAmiEclatee: -1
@@ -20,11 +20,15 @@ MonoBehaviour:
   pallierNormal: 5
   pallierDifficile: 10
   levelPartsEasy:
-  - {fileID: 1423453656705982, guid: e92026df5b7204b999435b40a3ad6a22, type: 2}
+  - {fileID: 1963910383612934, guid: 0cca39a7c9f8d4a789d71d6b3f6089a7, type: 2}
+  - {fileID: 1312853325632126, guid: 7e2ae68804e154ddfa972f4a8988bae1, type: 2}
+  - {fileID: 1456742065085430, guid: 0da23a70698a349868b6a56c5dfb140f, type: 2}
+  - {fileID: 1188617374437056, guid: c23d5854e0abf4c288f5e621924a9947, type: 2}
+  - {fileID: 1963336942008666, guid: 1f983a0b7c2b9438793fa25798058f42, type: 2}
   levelPartsNormal:
-  - {fileID: 1423453656705982, guid: e92026df5b7204b999435b40a3ad6a22, type: 2}
+  - {fileID: 1262501247078230, guid: b2cf714d6ee1f41f0a32dc5300c5db22, type: 2}
   levelPartsHard:
-  - {fileID: 1423453656705982, guid: e92026df5b7204b999435b40a3ad6a22, type: 2}
+  - {fileID: 1262501247078230, guid: b2cf714d6ee1f41f0a32dc5300c5db22, type: 2}
   plafonds:
   - {fileID: 1363204610409546, guid: 4f26e5f38cc90c7499a5286d03c60f6d, type: 2}
   - {fileID: 1829984710835132, guid: c24ea04510d88f643b4f17ade4d4fb7b, type: 2}

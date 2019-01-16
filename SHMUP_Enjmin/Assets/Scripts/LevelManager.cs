@@ -47,19 +47,19 @@ public class LevelManager : MonoBehaviour
                 GameObject newSituation;
                 if (score < reglages.pallierNormal)
                 {
-                    newSituation = (GameObject)Instantiate(reglages.GetEasyLevel(), new Vector3(rightmostSituationBound, 0), transform.rotation);
+                    newSituation = (GameObject)Instantiate(reglages.GetEasyLevel(), new Vector3(0, 0), transform.rotation);
                 }
                 else if (score < reglages.pallierDifficile)
                 {
-                    newSituation = (GameObject)Instantiate(reglages.GetNormalLevel(), new Vector3(rightmostSituationBound, 0), transform.rotation);
+                    newSituation = (GameObject)Instantiate(reglages.GetNormalLevel(), new Vector3(0, 0), transform.rotation);
                 }
                 else
                 {
-                    newSituation = (GameObject)Instantiate(reglages.GetHardLevel(), new Vector3(rightmostSituationBound, 0), transform.rotation);
+                    newSituation = (GameObject)Instantiate(reglages.GetHardLevel(), new Vector3(0, 0), transform.rotation);
                 }
 
                 newSituation.transform.Translate(new Vector3(Camera.main.orthographicSize * Camera.main.aspect - GetGameObjectLeftmostBound(newSituation), 0.0f));
-                rightmostSituationBound = GetGameObjectRightmostBound(newSituation) + (Camera.main.orthographicSize * Camera.main.aspect) / 2;
+                rightmostSituationBound = GetGameObjectRightmostBound(newSituation)/*+ (Camera.main.orthographicSize * Camera.main.aspect) / 2*/;
                 detachGameObject(newSituation);
             }
         }
@@ -226,7 +226,7 @@ public class LevelManager : MonoBehaviour
         return situationHighestBound;
     }
 
-    float GetGameObjectLowestBound(GameObject gameObjectParam)
+    public float GetGameObjectLowestBound(GameObject gameObjectParam)
     {
         float situationLowestBound = gameObjectParam.transform.position.y;
 
