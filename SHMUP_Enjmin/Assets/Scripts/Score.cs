@@ -12,7 +12,7 @@ public class Score : MonoBehaviour
 	public Highscore[] highscoresList;
 
 	//contient la valeur de score globale
-	int globalScore=0;
+	int globalScore=-1;
  
 
 	void Awake() 
@@ -79,6 +79,14 @@ public class Score : MonoBehaviour
     {
         return globalScore;
     }
+
+	public string GetOnlineScoreToString()
+	{
+		if(globalScore!=-1)
+			return globalScore.ToString();
+		else
+			return "error accessing online score";
+	}
 
 }
 
