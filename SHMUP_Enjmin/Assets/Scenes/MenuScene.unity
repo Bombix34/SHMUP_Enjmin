@@ -652,7 +652,6 @@ GameObject:
   m_Component:
   - component: {fileID: 101130564}
   - component: {fileID: 101130563}
-  - component: {fileID: 101130562}
   m_Layer: 0
   m_Name: Light_Cone (4)
   m_TagString: Untagged
@@ -660,18 +659,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &101130562
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 114978294290996950, guid: b79a50cbc35c64e228228b362d3f9302,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 101130561}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 65535634a3daba24cadef691cf9c032c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!331 &101130563
 SpriteMask:
   m_ObjectHideFlags: 0
@@ -7315,7 +7302,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 309261894}
-  - component: {fileID: 309261896}
   - component: {fileID: 309261895}
   m_Layer: 11
   m_Name: ObjMenu Play Y
@@ -7355,20 +7341,6 @@ CapsuleCollider2D:
   m_Offset: {x: 0, y: 0.115067124}
   m_Size: {x: 0.35, y: 0.50005317}
   m_Direction: 0
---- !u!114 &309261896
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 114365609953916298, guid: 1bf51977053ab9e42a45e3db0911d280,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 309261893}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 604cc1a53663d4aef84343712a44ffb5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  auraPoulpe: {fileID: 0}
-  sprite: {fileID: 0}
 --- !u!1 &311570884
 GameObject:
   m_ObjectHideFlags: 0
@@ -7378,7 +7350,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 311570885}
-  - component: {fileID: 311570887}
   - component: {fileID: 311570886}
   m_Layer: 11
   m_Name: ObjMenu Play A
@@ -7418,20 +7389,6 @@ CapsuleCollider2D:
   m_Offset: {x: 0, y: 0.115067124}
   m_Size: {x: 0.35, y: 0.50005317}
   m_Direction: 0
---- !u!114 &311570887
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 114566387702786676, guid: 1bf51977053ab9e42a45e3db0911d280,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 311570884}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 604cc1a53663d4aef84343712a44ffb5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  auraPoulpe: {fileID: 0}
-  sprite: {fileID: 0}
 --- !u!1 &318709343
 GameObject:
   m_ObjectHideFlags: 0
@@ -9222,7 +9179,6 @@ GameObject:
   m_Component:
   - component: {fileID: 469181055}
   - component: {fileID: 469181054}
-  - component: {fileID: 469181053}
   m_Layer: 0
   m_Name: Light_Cone (3)
   m_TagString: Untagged
@@ -9230,18 +9186,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &469181053
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 114978294290996950, guid: b79a50cbc35c64e228228b362d3f9302,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 469181052}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 65535634a3daba24cadef691cf9c032c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!331 &469181054
 SpriteMask:
   m_ObjectHideFlags: 0
@@ -15794,7 +15738,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 697080449}
-  - component: {fileID: 697080451}
   - component: {fileID: 697080450}
   m_Layer: 11
   m_Name: ObjMenu Play T
@@ -15834,20 +15777,6 @@ CapsuleCollider2D:
   m_Offset: {x: 0, y: 0.115067124}
   m_Size: {x: 0.35, y: 0.50005317}
   m_Direction: 0
---- !u!114 &697080451
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 114733748756409062, guid: 1bf51977053ab9e42a45e3db0911d280,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 697080448}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 604cc1a53663d4aef84343712a44ffb5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  auraPoulpe: {fileID: 0}
-  sprite: {fileID: 0}
 --- !u!1 &697584370
 GameObject:
   m_ObjectHideFlags: 0
@@ -16027,7 +15956,6 @@ GameObject:
   m_Component:
   - component: {fileID: 740871982}
   - component: {fileID: 740871981}
-  - component: {fileID: 740871980}
   m_Layer: 0
   m_Name: Light_Cone (5)
   m_TagString: Untagged
@@ -16035,18 +15963,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &740871980
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 114978294290996950, guid: b79a50cbc35c64e228228b362d3f9302,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 740871979}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 65535634a3daba24cadef691cf9c032c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!331 &740871981
 SpriteMask:
   m_ObjectHideFlags: 0
@@ -17005,7 +16921,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 825814669}
-  - component: {fileID: 825814671}
   - component: {fileID: 825814670}
   m_Layer: 11
   m_Name: ObjMenu Play U
@@ -17045,20 +16960,6 @@ CapsuleCollider2D:
   m_Offset: {x: 0, y: 0.115067124}
   m_Size: {x: 0.35, y: 0.50005317}
   m_Direction: 0
---- !u!114 &825814671
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 114459272423979650, guid: 1bf51977053ab9e42a45e3db0911d280,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 825814668}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 604cc1a53663d4aef84343712a44ffb5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  auraPoulpe: {fileID: 0}
-  sprite: {fileID: 0}
 --- !u!1 &835742217
 GameObject:
   m_ObjectHideFlags: 0
@@ -17986,7 +17887,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 885046178}
-  - component: {fileID: 885046180}
   - component: {fileID: 885046179}
   m_Layer: 11
   m_Name: ObjMenu Play I
@@ -18026,20 +17926,6 @@ CapsuleCollider2D:
   m_Offset: {x: 0, y: 0.115067124}
   m_Size: {x: 0.35, y: 0.50005317}
   m_Direction: 0
---- !u!114 &885046180
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 114128546729528084, guid: 1bf51977053ab9e42a45e3db0911d280,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 885046177}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 604cc1a53663d4aef84343712a44ffb5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  auraPoulpe: {fileID: 0}
-  sprite: {fileID: 0}
 --- !u!1 &902654613
 GameObject:
   m_ObjectHideFlags: 0
@@ -18539,7 +18425,8 @@ Prefab:
       propertyPath: m_SortingOrder
       value: 12
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 114597675016877000, guid: a0afb65af456048c6b0a3660a2dc22ef, type: 2}
   m_SourcePrefab: {fileID: 100100000, guid: a0afb65af456048c6b0a3660a2dc22ef, type: 2}
   m_IsPrefabAsset: 0
 --- !u!4 &982615945 stripped
@@ -24084,6 +23971,31 @@ Prefab:
       propertyPath: m_RootOrder
       value: 7
       objectReference: {fileID: 0}
+    - target: {fileID: 1676063795348270, guid: 0c53232184961d84787a6fc6e54221e5, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 198923147194073232, guid: 0c53232184961d84787a6fc6e54221e5,
+        type: 2}
+      propertyPath: InitialModule.startColor.maxColor.r
+      value: 0.019607844
+      objectReference: {fileID: 0}
+    - target: {fileID: 198923147194073232, guid: 0c53232184961d84787a6fc6e54221e5,
+        type: 2}
+      propertyPath: InitialModule.startColor.maxColor.g
+      value: 0.019607844
+      objectReference: {fileID: 0}
+    - target: {fileID: 198923147194073232, guid: 0c53232184961d84787a6fc6e54221e5,
+        type: 2}
+      propertyPath: InitialModule.startColor.maxColor.b
+      value: 0.019607844
+      objectReference: {fileID: 0}
+    - target: {fileID: 114068879201150872, guid: 0c53232184961d84787a6fc6e54221e5,
+        type: 2}
+      propertyPath: poisonParticle
+      value: 
+      objectReference: {fileID: 198021425185400024, guid: ee9a6321e35474896880cc07cee4580c,
+        type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0c53232184961d84787a6fc6e54221e5, type: 2}
   m_IsPrefabAsset: 0
@@ -26343,7 +26255,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1372760652}
-  - component: {fileID: 1372760654}
   - component: {fileID: 1372760653}
   m_Layer: 11
   m_Name: ObjMenu Play P
@@ -26383,20 +26294,6 @@ CapsuleCollider2D:
   m_Offset: {x: 0, y: 0.115067124}
   m_Size: {x: 0.35, y: 0.50005317}
   m_Direction: 0
---- !u!114 &1372760654
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 114886001096715530, guid: 1bf51977053ab9e42a45e3db0911d280,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1372760651}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 604cc1a53663d4aef84343712a44ffb5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  auraPoulpe: {fileID: 0}
-  sprite: {fileID: 0}
 --- !u!1 &1372860055
 GameObject:
   m_ObjectHideFlags: 0
@@ -28133,6 +28030,11 @@ Prefab:
         type: 2}
       propertyPath: m_BackGroundColor.b
       value: 0.11764706
+      objectReference: {fileID: 0}
+    - target: {fileID: 20549554053815246, guid: 237bb7134d1975446938d29fa8b71c13,
+        type: 2}
+      propertyPath: m_BackGroundColor.a
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 237bb7134d1975446938d29fa8b71c13, type: 2}
@@ -32554,7 +32456,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2045251007}
-  - component: {fileID: 2045251009}
   - component: {fileID: 2045251008}
   m_Layer: 11
   m_Name: ObjMenu Play Q
@@ -32594,20 +32495,6 @@ CapsuleCollider2D:
   m_Offset: {x: 0, y: 0.115067124}
   m_Size: {x: 0.35, y: 0.50005317}
   m_Direction: 0
---- !u!114 &2045251009
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 114314206720719986, guid: 1bf51977053ab9e42a45e3db0911d280,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 2045251006}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 604cc1a53663d4aef84343712a44ffb5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  auraPoulpe: {fileID: 0}
-  sprite: {fileID: 0}
 --- !u!1 &2051562890
 GameObject:
   m_ObjectHideFlags: 0
@@ -32762,7 +32649,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2084621754}
-  - component: {fileID: 2084621756}
   - component: {fileID: 2084621755}
   m_Layer: 11
   m_Name: ObjMenu Play L
@@ -32802,20 +32688,6 @@ CapsuleCollider2D:
   m_Offset: {x: 0, y: 0.115067124}
   m_Size: {x: 0.35, y: 0.50005317}
   m_Direction: 0
---- !u!114 &2084621756
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 114453218766041724, guid: 1bf51977053ab9e42a45e3db0911d280,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 2084621753}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 604cc1a53663d4aef84343712a44ffb5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  auraPoulpe: {fileID: 0}
-  sprite: {fileID: 0}
 --- !u!1 &2092401273
 GameObject:
   m_ObjectHideFlags: 0
