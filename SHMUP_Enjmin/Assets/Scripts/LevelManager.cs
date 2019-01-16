@@ -65,7 +65,7 @@ public class LevelManager : MonoBehaviour
 
                 newSituation.transform.Translate(new Vector3(Camera.main.orthographicSize * Camera.main.aspect - GetGameObjectLeftmostBound(newSituation), 0.0f));
                 rightmostSituationBound = GetGameObjectRightmostBound(newSituation) + (Camera.main.orthographicSize * Camera.main.aspect) / 2;
-                for (int i = newSituation.transform.childCount - 1; i > 0; i--)
+                for (int i = newSituation.transform.childCount - 1; i >= 0; i--)
                 {
                     surfaceJouable -= GetGameObjectSurface(newSituation.transform.GetChild(i).gameObject) / 2;
                     newSituation.transform.GetChild(i).parent = null;
