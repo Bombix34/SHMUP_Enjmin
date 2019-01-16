@@ -87,7 +87,7 @@ public class TentaclesManager : MonoBehaviour {
     IEnumerator LaunchFishParticles()
     {
         float rand = Random.Range(0f,100f);
-        yield return new WaitForSeconds(0.75f);
+        yield return new WaitForSeconds(1f);
         if(rand>=55)
         {
             foreach(ParticleSystem particle in fishParticles)

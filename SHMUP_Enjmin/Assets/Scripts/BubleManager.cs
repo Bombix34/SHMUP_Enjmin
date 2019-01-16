@@ -34,11 +34,6 @@ public class BubleManager : MonoBehaviour {
 	{
         rtpcValue2 = (float)bubleSize;
         AkSoundEngine.SetRTPCValue("BubbleSize", rtpcValue2, gameObject);
-
-        if (curIsCreate)
-			return;
-
-        //transform.localScale = new Vector3(transform.localScale.x * 1.1f, transform.localScale.y * 1.1f, transform.localScale.z);
 	}
 
 	public virtual void DestroyBuble()
@@ -118,10 +113,10 @@ public class BubleManager : MonoBehaviour {
 				randDist = 0.05f;
 				break;
 			case 1:
-				randDist = 0.2f;
+				randDist = 0.3f;
 				break;
 			case 2:
-				randDist = 0.5f;
+				randDist = 0.4f;
 				break;
 		}
 		while(GetDistanceFromBubleCenter(obj.transform.position) > (distanceFromCenter  * randDist ))

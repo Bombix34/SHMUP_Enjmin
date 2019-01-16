@@ -122,10 +122,10 @@ public class PlayerManager : MonoBehaviour {
 	{
 		while(tempSpeedValue<reglages.speedPlayer)
 		{
-			sprite.color=new Color32(64,220,0,255);
-			yield return new WaitForSeconds(0.3f);
 			sprite.color=Color.white;
-			yield return new WaitForSeconds(0.3f);
+			yield return new WaitForSeconds(1-(tempSpeedValue/reglages.speedPlayer));
+			sprite.color=new Color32(64,220,0,0);
+			yield return new WaitForSeconds(1-(tempSpeedValue/reglages.speedPlayer));
 		}
 	}
 
@@ -174,6 +174,8 @@ public class PlayerManager : MonoBehaviour {
 			canDash=true;
 			sprite.color=Color.white;
 			tempSpeedValue=reglages.speedPlayer;
+
+			particles.ActivatePoisonPartcle(false);
 
             AkSoundEngine.SetState("Game_State", "ReadyToDestroyBuble");
 
@@ -284,6 +286,7 @@ public class PlayerManager : MonoBehaviour {
 			Vector2 forceDirection = new Vector2(this.transform.position.x-col.transform.position.x,this.transform.position.y-col.transform.position.y);
 			forceDirection.Normalize();
 			forceDirection*=30f;
+			particles.ActivatePoisonPartcle(true);
 			StartCoroutine(FlashPoison());
 			StartCoroutine(KnockbackPlayer(forceDirection));
 			StartCoroutine(Damaged());
