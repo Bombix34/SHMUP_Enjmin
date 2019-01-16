@@ -73,9 +73,9 @@
 					<ShortName>Cube_Items_Pick_02_Os.wav</ShortName>
 					<Path>SFX/Cube_Items_Pick_02_Os_56D34C19.wem</Path>
 				</File>
-				<File Id="31575492" Language="SFX">
-					<ShortName>MACK Whoosh Arrow Low.wav</ShortName>
-					<Path>SFX/MACK Whoosh Arrow Low_ACF0B30C.wem</Path>
+				<File Id="99306031" Language="SFX">
+					<ShortName>Dahs_VX_1.wav</ShortName>
+					<Path>SFX/Dahs_VX_1_726DED05.wem</Path>
 				</File>
 				<File Id="179179122" Language="SFX">
 					<ShortName>Pnj_In_Bubble.wav</ShortName>
@@ -83,7 +83,7 @@
 				</File>
 				<File Id="182596096" Language="SFX">
 					<ShortName>Underwater_03_Os.wav</ShortName>
-					<Path>SFX/Underwater_03_Os_56D34C19.wem</Path>
+					<Path>SFX/Underwater_03_Os_F48E3E87.wem</Path>
 				</File>
 				<File Id="186136371" Language="SFX">
 					<ShortName>Underwater_Parasites_01_Os.wav</ShortName>
@@ -96,6 +96,10 @@
 				<File Id="196566995" Language="SFX">
 					<ShortName>Amb_gameOver_Rnd_01_03_Os.wav</ShortName>
 					<Path>SFX/Amb_gameOver_Rnd_01_03_Os_56D34C19.wem</Path>
+				</File>
+				<File Id="197841704" Language="SFX">
+					<ShortName>Dash_04_Os.wav</ShortName>
+					<Path>SFX/Dash_04_Os_A27C1E38.wem</Path>
 				</File>
 				<File Id="213300549" Language="SFX">
 					<ShortName>Kraken_Player_Near_01_Os.wav</ShortName>
@@ -149,7 +153,7 @@
 				</File>
 				<File Id="476708979" Language="SFX">
 					<ShortName>Underwater_05_Os.wav</ShortName>
-					<Path>SFX/Underwater_05_Os_56D34C19.wem</Path>
+					<Path>SFX/Underwater_05_Os_74173D26.wem</Path>
 				</File>
 				<File Id="487742245" Language="SFX">
 					<ShortName>Ploc_03.wav</ShortName>
@@ -243,7 +247,7 @@
 				</File>
 				<File Id="1010897979" Language="SFX">
 					<ShortName>Underwater_01_Os.wav</ShortName>
-					<Path>SFX/Underwater_01_Os_56D34C19.wem</Path>
+					<Path>SFX/Underwater_01_Os_A9521F66.wem</Path>
 				</File>
 				<File Id="1018135258" Language="SFX">
 					<ShortName>Monstre_Amb_Intervention_01_04_Os.wav</ShortName>

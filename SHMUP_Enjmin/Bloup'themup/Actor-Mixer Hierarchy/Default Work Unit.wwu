@@ -24,6 +24,11 @@
 					<ChildrenList>
 						<Sound Name="Underwater_lp" ID="{C5914DA8-300A-42D4-8B19-63A133F499C5}" ShortID="893977857">
 							<PropertyList>
+								<Property Name="Highpass" Type="int16">
+									<ValueList>
+										<Value>9</Value>
+									</ValueList>
+								</Property>
 								<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
 								<Property Name="MakeUpGain" Type="Real64">
 									<ValueList>
@@ -71,7 +76,7 @@
 								</Property>
 								<Property Name="Volume" Type="Real64">
 									<ValueList>
-										<Value>-1</Value>
+										<Value>-5</Value>
 									</ValueList>
 								</Property>
 							</PropertyList>
@@ -95,11 +100,6 @@
 						</Sound>
 						<RandomSequenceContainer Name="Underwater_Rnd" ID="{4A79B598-056A-4864-B6F3-A6B4B2D28ED5}" ShortID="1024983819">
 							<PropertyList>
-								<Property Name="Lowpass" Type="int16">
-									<ValueList>
-										<Value>50</Value>
-									</ValueList>
-								</Property>
 								<Property Name="MakeUpGain" Type="Real64">
 									<ValueList>
 										<Value>3</Value>
@@ -118,7 +118,6 @@
 								</Property>
 								<Property Name="PlayMechanismLoop" Type="bool" Value="True"/>
 								<Property Name="PlayMechanismSpecialTransitions" Type="bool" Value="True"/>
-								<Property Name="PlayMechanismStepOrContinuous" Type="int16" Value="0"/>
 								<Property Name="UseMaxSoundPerInstance" Type="bool">
 									<ValueList>
 										<Value>True</Value>
@@ -150,6 +149,12 @@
 									</ReferenceList>
 									<ChildrenList>
 										<AudioFileSource Name="Underwater_01_Os" ID="{A94EABC9-B8D6-4D38-BBCF-0D6D18A4C31A}" ShortID="1010897979">
+											<PropertyList>
+												<Property Name="FadeInDuration" Type="Real64" Value="0.0929203539823009"/>
+												<Property Name="FadeOutDuration" Type="Real64" Value="0.0796460176991149"/>
+												<Property Name="TrimBegin" Type="Real64" Value="0.613938053097345"/>
+												<Property Name="TrimEnd" Type="Real64" Value="1.34734513274336"/>
+											</PropertyList>
 											<Language>SFX</Language>
 											<AudioFile>Underwater_01_Os.wav</AudioFile>
 										</AudioFileSource>
@@ -169,6 +174,12 @@
 									</ReferenceList>
 									<ChildrenList>
 										<AudioFileSource Name="Underwater_03_Os" ID="{453F088A-F2EF-4006-AF39-662C6ACE3AAA}" ShortID="182596096">
+											<PropertyList>
+												<Property Name="FadeInDuration" Type="Real64" Value="0.0248893805309734"/>
+												<Property Name="FadeOutDuration" Type="Real64" Value="0.232300884955752"/>
+												<Property Name="TrimBegin" Type="Real64" Value="0.804756637168141"/>
+												<Property Name="TrimEnd" Type="Real64" Value="1.47953539823009"/>
+											</PropertyList>
 											<Language>SFX</Language>
 											<AudioFile>Underwater_03_Os.wav</AudioFile>
 										</AudioFileSource>
@@ -188,6 +199,12 @@
 									</ReferenceList>
 									<ChildrenList>
 										<AudioFileSource Name="Underwater_05_Os" ID="{F4DD8D70-C5E3-4610-A6B5-A46D8787DA0A}" ShortID="476708979">
+											<PropertyList>
+												<Property Name="FadeInDuration" Type="Real64" Value="0.0232300884955753"/>
+												<Property Name="FadeOutDuration" Type="Real64" Value="0.0329092920353982"/>
+												<Property Name="TrimBegin" Type="Real64" Value="0.689159292035398"/>
+												<Property Name="TrimEnd" Type="Real64" Value="1.17505530973451"/>
+											</PropertyList>
 											<Language>SFX</Language>
 											<AudioFile>Underwater_05_Os.wav</AudioFile>
 										</AudioFileSource>
@@ -289,6 +306,16 @@
 								</Sound>
 								<RandomSequenceContainer Name="Amb_GameOVer_01_Rnd_01" ID="{1148CD5D-6CEC-432E-91A3-7A748CC6E5E2}" ShortID="432803257">
 									<PropertyList>
+										<Property Name="Highpass" Type="int16">
+											<ValueList>
+												<Value>18</Value>
+											</ValueList>
+										</Property>
+										<Property Name="Lowpass" Type="int16">
+											<ValueList>
+												<Value>35</Value>
+											</ValueList>
+										</Property>
 										<Property Name="PlayMechanismLoop" Type="bool" Value="True"/>
 										<Property Name="PlayMechanismSpecialTransitions" Type="bool" Value="True"/>
 										<Property Name="PlayMechanismSpecialTransitionsType" Type="int16" Value="3"/>
@@ -429,6 +456,11 @@
 							<ChildrenList>
 								<Sound Name="Amb_Drones_Lp" ID="{750BC768-05AA-4343-BCD1-04228D82F893}" ShortID="451343116">
 									<PropertyList>
+										<Property Name="Highpass" Type="int16">
+											<ValueList>
+												<Value>9</Value>
+											</ValueList>
+										</Property>
 										<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
 										<Property Name="Volume" Type="Real64">
 											<ValueList>
@@ -576,6 +608,16 @@
 								</RandomSequenceContainer>
 								<RandomSequenceContainer Name="Amb_GameOVer_01_Rnd_01" ID="{29692D4F-A334-418E-A741-CF4D250E2F07}" ShortID="7039767">
 									<PropertyList>
+										<Property Name="Highpass" Type="int16">
+											<ValueList>
+												<Value>21</Value>
+											</ValueList>
+										</Property>
+										<Property Name="Lowpass" Type="int16">
+											<ValueList>
+												<Value>3</Value>
+											</ValueList>
+										</Property>
 										<Property Name="PlayMechanismLoop" Type="bool" Value="True"/>
 										<Property Name="PlayMechanismSpecialTransitions" Type="bool" Value="True"/>
 										<Property Name="PlayMechanismSpecialTransitionsType" Type="int16" Value="3"/>
@@ -728,6 +770,11 @@
 								</Sound>
 								<Sound Name="Underwater_lp" ID="{7FC79C60-A493-4115-9C4D-193485CB3FFB}" ShortID="526035632">
 									<PropertyList>
+										<Property Name="Highpass" Type="int16">
+											<ValueList>
+												<Value>19</Value>
+											</ValueList>
+										</Property>
 										<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
 										<Property Name="MakeUpGain" Type="Real64">
 											<ValueList>
@@ -773,11 +820,6 @@
 												<Value>True</Value>
 											</ValueList>
 										</Property>
-										<Property Name="Volume" Type="Real64">
-											<ValueList>
-												<Value>-7</Value>
-											</ValueList>
-										</Property>
 									</PropertyList>
 									<ReferenceList>
 										<Reference Name="Conversion">
@@ -806,10 +848,15 @@
 							<PropertyList>
 								<Property Name="Highpass" Type="int16">
 									<ValueList>
-										<Value>18</Value>
+										<Value>23</Value>
 									</ValueList>
 								</Property>
 								<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
+								<Property Name="Lowpass" Type="int16">
+									<ValueList>
+										<Value>19</Value>
+									</ValueList>
+								</Property>
 								<Property Name="MakeUpGain" Type="Real64">
 									<ValueList>
 										<Value>10</Value>
@@ -851,7 +898,7 @@
 								</Property>
 								<Property Name="Pitch" Type="int32">
 									<ValueList>
-										<Value>-330</Value>
+										<Value>-50</Value>
 									</ValueList>
 								</Property>
 								<Property Name="UseMaxSoundPerInstance" Type="bool">
@@ -1343,18 +1390,18 @@
 												<Value>1</Value>
 											</ValueList>
 										</Property>
+										<Property Name="OverrideOutput" Type="bool" Value="True"/>
 										<Property Name="OverrideUserAuxSends" Type="bool" Value="True"/>
 										<Property Name="Pitch" Type="int32">
 											<ValueList>
-												<Value>860</Value>
+												<Value>-380</Value>
 											</ValueList>
 											<ModifierList>
 												<ModifierInfo>
 													<Modifier Name="" ID="{99F75FD5-10C2-46F1-91A5-B408860769DF}">
 														<PropertyList>
 															<Property Name="Enabled" Type="bool" Value="True"/>
-															<Property Name="Max" Type="Real64" Value="303"/>
-															<Property Name="Min" Type="Real64" Value="-404"/>
+															<Property Name="Min" Type="Real64" Value="-76"/>
 														</PropertyList>
 													</Modifier>
 												</ModifierInfo>
@@ -1367,12 +1414,17 @@
 										</Property>
 										<Property Name="UserAuxSendVolume0" Type="Real64">
 											<ValueList>
-												<Value>-9</Value>
+												<Value>-13</Value>
+											</ValueList>
+										</Property>
+										<Property Name="UserAuxSendVolume1" Type="Real64">
+											<ValueList>
+												<Value>-1</Value>
 											</ValueList>
 										</Property>
 										<Property Name="Volume" Type="Real64">
 											<ValueList>
-												<Value>-4</Value>
+												<Value>-10</Value>
 											</ValueList>
 											<ModifierList>
 												<ModifierInfo>
@@ -1478,13 +1530,6 @@
 									</ReferenceList>
 									<ChildrenList>
 										<Sound Name="Dash_04_Os" ID="{C1181EA4-96F5-4503-8960-916DC2AF7680}" ShortID="1064747337">
-											<PropertyList>
-												<Property Name="Inclusion" Type="bool">
-													<ValueList>
-														<Value>False</Value>
-													</ValueList>
-												</Property>
-											</PropertyList>
 											<ReferenceList>
 												<Reference Name="Conversion">
 													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{2BD389C3-9EC6-4637-949C-1D4A4B674147}"/>
@@ -1505,55 +1550,6 @@
 											</ChildrenList>
 											<ActiveSourceList>
 												<ActiveSource Name="Dash_04_Os" ID="{FE88DEEA-2420-4692-834D-C4295A8BEA3D}" Platform="Linked"/>
-											</ActiveSourceList>
-										</Sound>
-										<Sound Name="MACK Whoosh Arrow Low" ID="{C1C63298-4498-4064-94A5-1F53A7E05182}" ShortID="907496664">
-											<PropertyList>
-												<Property Name="Lowpass" Type="int16">
-													<ValueList>
-														<Value>38</Value>
-													</ValueList>
-												</Property>
-												<Property Name="MakeUpGain" Type="Real64">
-													<ValueList>
-														<Value>13</Value>
-													</ValueList>
-												</Property>
-												<Property Name="OverrideUserAuxSends" Type="bool" Value="True"/>
-												<Property Name="Pitch" Type="int32">
-													<ValueList>
-														<Value>-150</Value>
-													</ValueList>
-												</Property>
-											</PropertyList>
-											<ReferenceList>
-												<Reference Name="Conversion">
-													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{2BD389C3-9EC6-4637-949C-1D4A4B674147}"/>
-												</Reference>
-												<Reference Name="OutputBus">
-													<ObjectRef Name="Sfx" ID="{F2A0E619-BE8F-40E5-AAC0-7BD9305E608D}" WorkUnitID="{D1B724BB-66B6-4F55-9CB7-851DFB74B0CF}"/>
-												</Reference>
-												<Reference Name="UserAuxSend0">
-													<ObjectRef Name="Rvrb" ID="{0F444CE1-A308-4A0A-BC97-BDAD8C6462AF}" WorkUnitID="{D1B724BB-66B6-4F55-9CB7-851DFB74B0CF}"/>
-												</Reference>
-												<Reference Name="UserAuxSend1">
-													<ObjectRef Name="Delay" ID="{60CAA431-6713-44C5-B349-886C538EA77E}" WorkUnitID="{D1B724BB-66B6-4F55-9CB7-851DFB74B0CF}"/>
-												</Reference>
-											</ReferenceList>
-											<ChildrenList>
-												<AudioFileSource Name="MACK Whoosh Arrow Low" ID="{B7AF8DA1-CEA1-4482-98E3-F97DCD4A299D}" ShortID="31575492">
-													<PropertyList>
-														<Property Name="FadeInDuration" Type="Real64" Value="0.374560909845133"/>
-														<Property Name="FadeOutDuration" Type="Real64" Value="0.152598889196165"/>
-														<Property Name="TrimBegin" Type="Real64" Value="0.263579899520649"/>
-														<Property Name="TrimEnd" Type="Real64" Value="1.10981010324484"/>
-													</PropertyList>
-													<Language>SFX</Language>
-													<AudioFile>MACK Whoosh Arrow Low.wav</AudioFile>
-												</AudioFileSource>
-											</ChildrenList>
-											<ActiveSourceList>
-												<ActiveSource Name="MACK Whoosh Arrow Low" ID="{B7AF8DA1-CEA1-4482-98E3-F97DCD4A299D}" Platform="Linked"/>
 											</ActiveSourceList>
 										</Sound>
 									</ChildrenList>
@@ -1639,6 +1635,37 @@
 									</ChildrenList>
 									<ActiveSourceList>
 										<ActiveSource Name="Impact_Dash_bubble" ID="{CF0B11B1-35AB-495F-9005-FFBFCB17135A}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="Dahs_VX_1" ID="{06D4B3E0-FD4E-4864-9448-45797C37EA74}" ShortID="964475743">
+									<PropertyList>
+										<Property Name="Volume" Type="Real64">
+											<ValueList>
+												<Value>-10</Value>
+											</ValueList>
+										</Property>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{2BD389C3-9EC6-4637-949C-1D4A4B674147}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{D1B724BB-66B6-4F55-9CB7-851DFB74B0CF}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="Dahs_VX_1" ID="{ECE580FF-2111-4D6F-A4AA-3EDFE67C77C8}" ShortID="99306031">
+											<PropertyList>
+												<Property Name="FadeInDuration" Type="Real64" Value="0.0981710914454278"/>
+												<Property Name="FadeOutDuration" Type="Real64" Value="0.234100294985251"/>
+												<Property Name="TrimEnd" Type="Real64" Value="0.931870206489675"/>
+											</PropertyList>
+											<Language>SFX</Language>
+											<AudioFile>Dahs_VX_1.wav</AudioFile>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="Dahs_VX_1" ID="{ECE580FF-2111-4D6F-A4AA-3EDFE67C77C8}" Platform="Linked"/>
 									</ActiveSourceList>
 								</Sound>
 							</ChildrenList>
@@ -1936,6 +1963,13 @@
 							</ReferenceList>
 							<ChildrenList>
 								<RandomSequenceContainer Name="Kraken-Eat_Pnj_Rnd" ID="{A2324D08-9062-4648-85DD-8E955EE6CAB3}" ShortID="680464560">
+									<PropertyList>
+										<Property Name="Highpass" Type="int16">
+											<ValueList>
+												<Value>12</Value>
+											</ValueList>
+										</Property>
+									</PropertyList>
 									<ReferenceList>
 										<Reference Name="Conversion">
 											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{2BD389C3-9EC6-4637-949C-1D4A4B674147}"/>
@@ -1947,6 +1981,11 @@
 									<ChildrenList>
 										<Sound Name="Kraken_Eat_Pnj" ID="{D5AEEB6C-E1F6-44BC-8128-CF73EC6FA0D4}" ShortID="244181607">
 											<PropertyList>
+												<Property Name="Highpass" Type="int16">
+													<ValueList>
+														<Value>13</Value>
+													</ValueList>
+												</Property>
 												<Property Name="IgnoreParentMaxSoundInstance" Type="bool" Value="True"/>
 												<Property Name="MaxReachedBehavior" Type="int16" Value="1"/>
 												<Property Name="MaxSoundPerInstance" Type="int16">
@@ -2052,7 +2091,7 @@
 										</Property>
 										<Property Name="Volume" Type="Real64">
 											<ValueList>
-												<Value>-5</Value>
+												<Value>-3</Value>
 											</ValueList>
 										</Property>
 									</PropertyList>
@@ -2527,7 +2566,7 @@
 								</Property>
 								<Property Name="Volume" Type="Real64">
 									<ValueList>
-										<Value>-14</Value>
+										<Value>-8</Value>
 									</ValueList>
 								</Property>
 							</PropertyList>

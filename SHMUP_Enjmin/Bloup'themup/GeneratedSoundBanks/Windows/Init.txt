@@ -23,7 +23,6 @@ Game Parameter	ID	Name			Wwise Object Path	Notes
 	504532776	Brick			\Factory Reflect Acoustic Textures\Textures\Brick	
 	513139656	Mountain			\Factory Reflect Acoustic Textures\Textures\Mountain	
 	841620460	Concrete			\Factory Reflect Acoustic Textures\Textures\Concrete	
-	1507378905	Surface_jouable			\Default Work Unit\Surface_jouable	
 	1755085759	Wood_Deep			\Factory Reflect Acoustic Textures\Textures\Wood_Deep	
 	1873957695	Anechoic			\Factory Reflect Acoustic Textures\Textures\Anechoic	
 	1970351858	Fabric			\Factory Reflect Acoustic Textures\Textures\Fabric	
@@ -49,7 +48,7 @@ Auxiliary Bus	ID	Name			Wwise Object Path	Notes
 Effect plug-ins	ID	Name	Type				Notes
 	340688602	Wwise Meter (Custom)	Wwise Meter			
 	702543456	Tunnel1	Wwise Matrix Reverb			
-	1110677034	Underwater_Echoes	Wwise Stereo Delay			
+	1125262053	Blue_Distant_Echoes	Wwise Stereo Delay			
 
 Audio Devices	ID	Name	Type				Notes
 	2317455096	No_Output	No Output			
