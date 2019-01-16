@@ -3,24 +3,18 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class LevelChanger : MonoBehaviour {
+public class AnyKeyLoad : MonoBehaviour {
 
     public Animator animator;
 
     private int levelToLoad;
 
-	
 
-    void OnTriggerEnter2D(Collider2D other)
+    void Update()
     {
-        if (other.CompareTag("ObjPlay"))
+        if (Input.anyKeyDown)
         {
             FadeToLevel(1);
-        }
-
-        else if (other.CompareTag("ObjQuit"))
-        {
-            FadeToLevel(2);
         }
     }
 
@@ -28,15 +22,11 @@ public class LevelChanger : MonoBehaviour {
     {
         levelToLoad = levelIndex;
         animator.SetTrigger("FadeOut");
-        AkSoundEngine.PostEvent("Play_Play", gameObject);
     }
 
     public void OnFadeComplete()
     {
         SceneManager.LoadScene(levelToLoad);
-        AkSoundEngine.SetState("MENU", "Out");
-
-
 
     }
 }
