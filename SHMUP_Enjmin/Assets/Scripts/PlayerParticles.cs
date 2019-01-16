@@ -18,10 +18,14 @@ public class PlayerParticles : MonoBehaviour {
 	[SerializeField]
 	ParticleSystem stopMovementParticle;
 
+	[SerializeField]
+	ParticleSystem poisonParticle;
+
 	void Start()
 	{
 		dashParticles.Stop();
 		dashMoveParticles.Stop();
+		poisonParticle.Stop();
 	}
 
 	public void ActiveDashParticles(bool val)
@@ -53,5 +57,13 @@ public class PlayerParticles : MonoBehaviour {
 			lineMovement.Play();
 		else
 			lineMovement.Stop();
+	}
+
+	public void ActivatePoisonPartcle(bool val)
+	{
+		if(val)
+			poisonParticle.Play();
+		else
+			poisonParticle.Stop();
 	}
 }

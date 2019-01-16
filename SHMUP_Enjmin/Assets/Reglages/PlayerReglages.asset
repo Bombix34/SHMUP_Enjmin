@@ -13,8 +13,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sizePlayer: 1
   speedPlayer: 4
-  dashPower: 4
-  dashDuration: 0.2
+  dashPower: 5
+  dashDuration: 0.15
   dashCoolDown: 1
   dashKnockbackBuble: 20
   amplitude: 1
