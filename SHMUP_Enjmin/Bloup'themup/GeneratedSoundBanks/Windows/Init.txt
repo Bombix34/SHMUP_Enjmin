@@ -1,6 +1,7 @@
 State Group	ID	Name			Wwise Object Path	Notes
 	766723505	Game_State			\Default Work Unit\Game_State	
 	966917733	Lvl_Musique			\Default Work Unit\Lvl_Musique	
+	2607556080	MENU			\Default Work Unit\MENU	
 
 State	ID	Name	State Group			Notes
 	0	None	Game_State			
@@ -9,9 +10,13 @@ State	ID	Name	State Group			Notes
 	0	None	Lvl_Musique			
 	2147068365	Lvl_01	Lvl_Musique			
 	2147068366	Lvl_02	Lvl_Musique			
+	0	None	MENU			
+	645492555	Out	MENU			
+	1752637612	In	MENU			
 
 Custom State	ID	Name	State Group	Owner		Notes
 	178037871	Poisonus	Game_State	\Master-Mixer Hierarchy\Default Work Unit\Master Audio Bus		
+	308094907	In	MENU	\Master-Mixer Hierarchy\Default Work Unit\Master Audio Bus\Sfx		
 
 Game Parameter	ID	Name			Wwise Object Path	Notes
 	215492731	Profondeur			\Default Work Unit\Profondeur	

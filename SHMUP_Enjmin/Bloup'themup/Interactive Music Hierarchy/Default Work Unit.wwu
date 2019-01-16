@@ -1321,7 +1321,6 @@
 														<Property Name="EndTrimOffset" Type="Real64" Value="12000"/>
 														<Property Name="FadeInMode" Type="int16" Value="0"/>
 														<Property Name="FadeOutMode" Type="int16" Value="0"/>
-														<Property Name="PlayAt" Type="Real64" Value="3000"/>
 													</PropertyList>
 													<AudioSourceRef Name="Monstre_Amb_Intervention_01_04_Os" ID="{D34C396C-6A62-485E-B11F-EFA9118EF413}"/>
 												</MusicClip>
@@ -1346,7 +1345,6 @@
 														<Property Name="EndTrimOffset" Type="Real64" Value="12000"/>
 														<Property Name="FadeInMode" Type="int16" Value="0"/>
 														<Property Name="FadeOutMode" Type="int16" Value="0"/>
-														<Property Name="PlayAt" Type="Real64" Value="1500"/>
 													</PropertyList>
 													<AudioSourceRef Name="Monstre_Amb_Intervention_01_06_Os" ID="{D71D655F-B382-4ECF-BBA5-D4CDF31904FB}"/>
 												</MusicClip>
@@ -1357,6 +1355,11 @@
 								</MusicTrack>
 								<MusicTrack Name="Main_Basse" ID="{4487F8EE-14A4-4583-9567-4C0F3DEDD604}" ShortID="355121180">
 									<PropertyList>
+										<Property Name="Highpass" Type="int16">
+											<ValueList>
+												<Value>8</Value>
+											</ValueList>
+										</Property>
 										<Property Name="MakeUpGain" Type="Real64">
 											<ValueList>
 												<Value>-7</Value>
@@ -1364,7 +1367,7 @@
 										</Property>
 										<Property Name="Volume" Type="Real64">
 											<ValueList>
-												<Value>-1</Value>
+												<Value>-6</Value>
 											</ValueList>
 										</Property>
 									</PropertyList>

@@ -119,6 +119,7 @@
 					<CurrentStateList ShowAll="true">
 						<CurrentStateRef Name="Lvl_01" ID="{01032899-D0A3-45BB-8D55-0E7B866379FF}"/>
 						<CurrentStateRef Name="ReadyToDestroyBuble" ID="{19D7413D-8047-41A8-8DD1-4040004E6839}"/>
+						<CurrentStateRef Name="Out" ID="{7EE3D309-3467-41F1-ADD9-6F38F52B2BDF}"/>
 					</CurrentStateList>
 					<CurrentSwitchList ShowAll="true"/>
 				</SoundcasterSession>

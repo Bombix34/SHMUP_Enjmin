@@ -180,7 +180,7 @@ MonoBehaviour:
   - PhysicalPath: Master-Mixer Hierarchy/Default Work Unit.wwu
     ParentPhysicalPath: 
     guid: bb24b7d1b666554f9cb7851dfb74b0cf
-    m_lastTime: -8586541980164775808
+    m_lastTime: -8586539752854775808
     List:
     - name: Delay
       guid: 31a4ca601367c544b349886c538ea77e
@@ -223,7 +223,7 @@ MonoBehaviour:
   - PhysicalPath: Events/Default Work Unit.wwu
     ParentPhysicalPath: 
     guid: 7c843613cd65de4b82e788b2522fbb1a
-    m_lastTime: -8586541989294775808
+    m_lastTime: -8586539609274775808
     List:
     - name: Innit_Amb
       guid: 0946cc13814ff64b909268618d042f1c
@@ -351,6 +351,20 @@ MonoBehaviour:
       maxAttenuation: 0
       maxDuration: 0
       minDuration: 0
+    - name: Play_Music_Menu
+      guid: 8a6773761efb244995349b16a42d4595
+      id: 1699343283
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Ingame
+        ObjectType: 4
+      - ElementName: Play_Music_Menu
+        ObjectType: 3
+      Path: Default Work Unit/Ingame/Play_Music_Menu
+      maxAttenuation: 0
+      maxDuration: 0
+      minDuration: 0
     - name: Play_Musique
       guid: b7aefda35c7e074b98ad15b83474c0b1
       id: 206418435
@@ -390,6 +404,20 @@ MonoBehaviour:
       - ElementName: Play_Oursin_Out
         ObjectType: 3
       Path: Default Work Unit/Ingame/Play_Oursin_Out
+      maxAttenuation: 0
+      maxDuration: 0
+      minDuration: 0
+    - name: Play_Play
+      guid: ff19a3fd8e555240961414eb6363b481
+      id: 2189502264
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Ingame
+        ObjectType: 4
+      - ElementName: Play_Play
+        ObjectType: 3
+      Path: Default Work Unit/Ingame/Play_Play
       maxAttenuation: 0
       maxDuration: 0
       minDuration: 0
@@ -627,7 +655,7 @@ MonoBehaviour:
   - PhysicalPath: States/Default Work Unit.wwu
     ParentPhysicalPath: 
     guid: 038c1f17d6122848aa7b71827bd9360d
-    m_lastTime: -8586543882894775808
+    m_lastTime: -8586539752854775808
     List:
     - name: Game_State
       guid: 7517db71f9d05246b60381bff54c2f89
@@ -685,6 +713,34 @@ MonoBehaviour:
         PathAndIcons:
         - ElementName: None
           ObjectType: 8
+    - name: MENU
+      guid: 475521a24d9f624facba492d5527bc81
+      id: 2607556080
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: MENU
+        ObjectType: 9
+      Path: Default Work Unit/MENU
+      values:
+      - name: In
+        guid: f3bcc9b37641bb4daed7c6829f46ab0e
+        id: 1752637612
+        PathAndIcons:
+        - ElementName: In
+          ObjectType: 8
+      - name: None
+        guid: 7aa55b4772af314ea3d0430a149a83b0
+        id: 748895195
+        PathAndIcons:
+        - ElementName: None
+          ObjectType: 8
+      - name: Out
+        guid: 09d3e37e6734f141add96f38f52b2bdf
+        id: 645492555
+        PathAndIcons:
+        - ElementName: Out
+          ObjectType: 8
   SwitchWwu:
   - PhysicalPath: Switches/Default Work Unit.wwu
     ParentPhysicalPath: 
@@ -699,5 +755,8 @@ MonoBehaviour:
     List: []
   ExpandedItems:
   - /Bloup'themup
+  - /Bloup'themup/Events
+  - /Bloup'themup/Events/Default Work Unit
+  - /Bloup'themup/Events/Default Work Unit/Ingame
   autoPopulateEnabled: 0
   CurrentPluginConfig: 

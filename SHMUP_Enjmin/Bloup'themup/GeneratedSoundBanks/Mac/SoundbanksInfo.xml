@@ -46,9 +46,11 @@
 				<Event Id="2798840920" Name="Play_Kraken_Near_Rnd" ObjectPath="\Events\Default Work Unit\Ingame\Play_Kraken_Near_Rnd"/>
 				<Event Id="2139305897" Name="Play_Load_Shot" ObjectPath="\Events\Default Work Unit\Ingame\Play_Load_Shot"/>
 				<Event Id="619661162" Name="Play_Music_GameOver" ObjectPath="\Events\Default Work Unit\Ingame\Play_Music_GameOver"/>
+				<Event Id="1699343283" Name="Play_Music_Menu" ObjectPath="\Events\Default Work Unit\Ingame\Play_Music_Menu"/>
 				<Event Id="206418435" Name="Play_Musique" ObjectPath="\Events\Default Work Unit\Ingame\Play_Musique"/>
 				<Event Id="1942065700" Name="Play_Oursin_In" ObjectPath="\Events\Default Work Unit\Ingame\Play_Oursin_In"/>
 				<Event Id="1957308451" Name="Play_Oursin_Out" ObjectPath="\Events\Default Work Unit\Ingame\Play_Oursin_Out"/>
+				<Event Id="2189502264" Name="Play_Play" ObjectPath="\Events\Default Work Unit\Ingame\Play_Play"/>
 				<Event Id="3837926945" Name="Play_Player_Dash_os" ObjectPath="\Events\Default Work Unit\Ingame\Play_Player_Dash_os"/>
 				<Event Id="4135433440" Name="Play_Player_Shot" ObjectPath="\Events\Default Work Unit\Ingame\Play_Player_Shot"/>
 				<Event Id="2311964536" Name="Play_Pnj_Oh" ObjectPath="\Events\Default Work Unit\Ingame\Play_Pnj_Oh"/>
@@ -66,6 +68,10 @@
 				<File Id="715088" Language="SFX">
 					<ShortName>Monstre_Amb_Intervention_01_06_Os.wav</ShortName>
 					<Path>SFX/Monstre_Amb_Intervention_01_06_Os_8956FC97.wem</Path>
+				</File>
+				<File Id="5974417" Language="SFX">
+					<ShortName>Cube_Items_Pick_02_Os.wav</ShortName>
+					<Path>SFX/Cube_Items_Pick_02_Os_56D34C19.wem</Path>
 				</File>
 				<File Id="31575492" Language="SFX">
 					<ShortName>MACK Whoosh Arrow Low.wav</ShortName>
@@ -174,6 +180,10 @@
 					<ShortName>Ploc_012.wav</ShortName>
 					<Path>SFX/Ploc_012_56D34C19.wem</Path>
 				</File>
+				<File Id="628366204" Language="SFX">
+					<ShortName>Vc_Music_Play_01_Os.wav</ShortName>
+					<Path>SFX/Vc_Music_Play_01_Os_94D43AAA.wem</Path>
+				</File>
 				<File Id="745076470" Language="SFX">
 					<ShortName>Oursin_Out.wav</ShortName>
 					<Path>SFX/Oursin_Out_C313A24D.wem</Path>
@@ -182,6 +192,14 @@
 					<ShortName>Music_Main_Cordes_Lp.wav</ShortName>
 					<Path>SFX/Music_Main_Cordes_Lp_8956FC97.wem</Path>
 					<PrefetchSize>17832</PrefetchSize>
+				</File>
+				<File Id="807180952" Language="SFX">
+					<ShortName>Cube_Items_Pick_01_Os.wav</ShortName>
+					<Path>SFX/Cube_Items_Pick_01_Os_56D34C19.wem</Path>
+				</File>
+				<File Id="828515783" Language="SFX">
+					<ShortName>Cube_Items_Pick_04_Os.wav</ShortName>
+					<Path>SFX/Cube_Items_Pick_04_Os_56D34C19.wem</Path>
 				</File>
 				<File Id="842027309" Language="SFX">
 					<ShortName>Underwater_Parasites_04_Os.wav</ShortName>

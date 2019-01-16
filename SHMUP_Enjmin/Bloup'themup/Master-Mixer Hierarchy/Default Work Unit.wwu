@@ -61,6 +61,27 @@
 									<ObjectRef Name="Delay" ID="{60CAA431-6713-44C5-B349-886C538EA77E}" WorkUnitID="{D1B724BB-66B6-4F55-9CB7-851DFB74B0CF}"/>
 								</Reference>
 							</ReferenceList>
+							<StateInfo>
+								<StateGroupList>
+									<StateGroupInfo>
+										<StateGroupRef Name="MENU" ID="{A2215547-9F4D-4F62-ACBA-492D5527BC81}"/>
+									</StateGroupInfo>
+								</StateGroupList>
+								<CustomStateList>
+									<CustomState>
+										<StateRef Name="Out" ID="{7EE3D309-3467-41F1-ADD9-6F38F52B2BDF}"/>
+										<State Name="" ID="{F0DD3F16-56E9-4555-9C1B-CB55C8AFC3F6}" ShortID="531176247"/>
+									</CustomState>
+									<CustomState>
+										<StateRef Name="In" ID="{B3C9BCF3-4176-4DBB-AED7-C6829F46AB0E}"/>
+										<State Name="" ID="{9D8DA2F6-B6A8-4086-B59F-303D6ED38762}" ShortID="308094907">
+											<PropertyList>
+												<Property Name="BusVolume" Type="Real64" Value="-6"/>
+											</PropertyList>
+										</State>
+									</CustomState>
+								</CustomStateList>
+							</StateInfo>
 							<DuckingList>
 								<DuckItem>
 									<BusRef Name="Music" ID="{22627215-F271-45F9-A24D-6AB466AF1237}"/>
