@@ -4,14 +4,6 @@ using UnityEngine;
 
 public class BubleMainMenu : BubleManager 
 {
-    void Start()
-    {
-        foreach (GameObject go in GameObject.FindGameObjectsWithTag("Wall"))
-        {
-            Physics2D.IgnoreCollision(GetCollider(), go.GetComponent<BoxCollider2D>());
-        }
-    }
-
 	protected override void OnCollisionEnter2D(Collision2D col)
     {
 

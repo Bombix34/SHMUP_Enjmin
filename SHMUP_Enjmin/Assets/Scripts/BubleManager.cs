@@ -30,7 +30,15 @@ public class BubleManager : MonoBehaviour {
 		animator =GetComponent<Animator>();
 	}
 
-	protected void Update()
+    protected void Start()
+    {
+        foreach (GameObject go in GameObject.FindGameObjectsWithTag("Wall"))
+        {
+            Physics2D.IgnoreCollision(GetCollider(), go.GetComponent<BoxCollider2D>());
+        }
+    }
+
+    protected void Update()
 	{
         rtpcValue2 = (float)bubleSize;
         AkSoundEngine.SetRTPCValue("BubbleSize", rtpcValue2, gameObject);
