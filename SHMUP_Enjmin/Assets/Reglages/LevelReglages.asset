@@ -11,7 +11,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9618d9eac8ce9443da4e0e688468f107, type: 3}
   m_Name: LevelReglages
   m_EditorClassIdentifier: 
-  scrollingSpeed: 0.7
+  scrollingSpeed: 1.2
   bonusAmiMisEnBulle: 1
   bonusAmiSauve: 1
   malusBulleAmiEclatee: -1
