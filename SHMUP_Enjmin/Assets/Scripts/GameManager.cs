@@ -32,6 +32,11 @@ public class GameManager : MonoBehaviour {
 		score++;
 	}
 
+	public int GetScore()
+	{
+		return score;
+	}
+
 	public void GameOver()
 	{
 		AddMetric("Time",Mathf.Floor((chrono/60)).ToString() + ":" + Mathf.RoundToInt(chrono%60).ToString());

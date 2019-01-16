@@ -20,6 +20,9 @@ public class BubleManager : MonoBehaviour {
 	protected List<GameObject> objectInTheBuble;
 
    protected  float rtpcValue2 = (float)BubleSize.init;
+   
+
+   bool endBubble=false;
 
     protected void Awake () 
 	{
@@ -83,6 +86,27 @@ public class BubleManager : MonoBehaviour {
 			sprite.transform.position=this.transform.position;
 	}
 
+	IEnumerator WinBuble()
+	{
+		endBubble=true;
+		while((LevelManager.instance.GetGameObjectLowestBound(this.gameObject))<(Camera.main.orthographicSize))
+		{
+			transform.Translate(0f,Time.deltaTime*2f,0f);
+			yield return new WaitForSeconds(0.01f);
+		}
+		foreach(GameObject pote in objectInTheBuble)
+        {
+			GameManager.instance.AddScore();
+            TentaclesManager.instance.MoveBackward();
+            LevelManager.instance.ChangeScore(LevelManager.instance.reglages.bonusAmiSauve);
+        }
+		for (int i = objectInTheBuble.Count - 1; i >= 0; i--)
+        {
+			Destroy(objectInTheBuble[i]);
+		}
+        Destroy(this.gameObject);
+	}
+
 
 //OBJETS DANS LA BULLE_________________________________________________________________________________________
 
@@ -139,7 +163,7 @@ public class BubleManager : MonoBehaviour {
 			else
 				obj.transform.Translate(forceDirection.x*Time.deltaTime*0.6f,forceDirection.y*Time.deltaTime*0.6f,0f);
 			frameCount++;
-			if(frameCount>42&&objectInTheBuble.Count==1)
+			if(frameCount>40&&objectInTheBuble.Count==1)
 			//pour empêcher que les ptits calamars partent dans l'espace des fois
 			//je sais pas d'ou provient le bug donc je mets une petite sécurité 
 				obj.transform.position = this.transform.position;
@@ -222,6 +246,11 @@ public class BubleManager : MonoBehaviour {
 
             AkSoundEngine.PostEvent("Play_Pnj_Oh", gameObject);
         }
+		else if(col.gameObject.tag == "upBuble")
+        {
+			if(!endBubble)
+            	StartCoroutine(WinBuble());
+        }	
     }
 	
 	protected virtual void OnTriggerExit2D(Collider2D col)
@@ -231,17 +260,6 @@ public class BubleManager : MonoBehaviour {
             DestroyBuble();
             AkSoundEngine.PostEvent("Play_Bubble_Explode_Os", gameObject);
 
-        }
-        else if(col.gameObject.tag == "upBuble")
-        {
-            foreach(GameObject pote in objectInTheBuble)
-            {
-				GameManager.instance.AddScore();
-            	TentaclesManager.instance.MoveBackward();
-                Destroy(pote);
-                LevelManager.instance.ChangeScore(LevelManager.instance.reglages.bonusAmiSauve);
-            }
-            Destroy(this.gameObject);
         }
     }
 
