@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerManager : MonoBehaviour {
 
@@ -54,7 +55,8 @@ public class PlayerManager : MonoBehaviour {
 
     Vector2 targetAngle = Vector2.right;
 
-    List<SpriteRenderer> srs;
+    bool firstBubble = false;
+    bool firstDash = false;
 
     private void Awake()
     {
@@ -159,9 +161,45 @@ public class PlayerManager : MonoBehaviour {
         {
             targetAngle = controlWithSpeed;
        	    rb2D.velocity=new Vector2(controlWithSpeed.x,controlWithSpeed.y + Mathf.Sin(Time.frameCount / (30.0f / reglages.frequence)) * reglages.amplitude);
+            Color color;
+            if (!firstBubble && SceneManager.GetActiveScene().name == "MenuScene")
+            {
+                color = GameObject.Find("TutoBulle").GetComponent<SpriteRenderer>().color;
+                color.a = 0.1f;
+                GameObject.Find("TutoBulle").GetComponent<SpriteRenderer>().color = color;
+            } else if (!firstDash && firstBubble)
+            {
+                color = GameObject.Find("TutoDash").GetComponent<SpriteRenderer>().color;
+                color.a = 0.1f;
+                GameObject.Find("TutoDash").GetComponent<SpriteRenderer>().color = color;
+            } else if (SceneManager.GetActiveScene().name == "MenuScene")
+            {
+                color = GameObject.Find("TutoSauver").GetComponent<SpriteRenderer>().color;
+                color.a = 0.1f;
+                GameObject.Find("TutoSauver").GetComponent<SpriteRenderer>().color = color;
+            }
         } else
         {
             rb2D.velocity = Vector2.zero;
+            Color color;
+            if (!firstBubble && SceneManager.GetActiveScene().name == "MenuScene")
+            {
+                color = GameObject.Find("TutoBulle").GetComponent<SpriteRenderer>().color;
+                color.a = 1.0f;
+                GameObject.Find("TutoBulle").GetComponent<SpriteRenderer>().color = color;
+            }
+            else if (!firstDash && firstBubble)
+            {
+                color = GameObject.Find("TutoDash").GetComponent<SpriteRenderer>().color;
+                color.a = 1.0f;
+                GameObject.Find("TutoDash").GetComponent<SpriteRenderer>().color = color;
+            }
+            else if (SceneManager.GetActiveScene().name == "MenuScene")
+            {
+                color = GameObject.Find("TutoSauver").GetComponent<SpriteRenderer>().color;
+                color.a = 1.0f;
+                GameObject.Find("TutoSauver").GetComponent<SpriteRenderer>().color = color;
+            }
         }
 
 	   	UpdateSpeedAnim();
@@ -230,6 +268,8 @@ public class PlayerManager : MonoBehaviour {
 
 	public void Dash()
 	{
+        
+
 		dashChrono-=Time.deltaTime;
 		if((dashChrono>0)||(!canDash))
 			return;
@@ -243,6 +283,13 @@ public class PlayerManager : MonoBehaviour {
 			isDashing=true;
 			StartCoroutine(DashAction());
             AkSoundEngine.PostEvent("Play_Player_Dash_os", gameObject);
+
+            if (!firstDash && firstBubble)
+            {
+                firstDash = true;
+                GameObject.Find("TutoDash").GetComponent<SpriteRenderer>().enabled = false;
+                GameObject.Find("TutoSauver").GetComponent<SpriteRenderer>().enabled = true;
+            }
         }
 	}
 
@@ -451,7 +498,14 @@ public class PlayerManager : MonoBehaviour {
 		if(curBuble==null)
 			return;
 
-		curBuble.GetComponent<BubleManager>().SetIsCreate(false);
+        if (!firstBubble && SceneManager.GetActiveScene().name == "MenuScene")
+        {
+            GameObject.Find("TutoBulle").GetComponent<SpriteRenderer>().enabled = false;
+            GameObject.Find("TutoDash").GetComponent<SpriteRenderer>().enabled = true;
+            firstBubble = true;
+        }
+
+        curBuble.GetComponent<BubleManager>().SetIsCreate(false);
 		//tir de la bulle
 
 		nbBullesTirées++;
@@ -492,6 +546,13 @@ public class PlayerManager : MonoBehaviour {
 	{
 		if(curBuble==null)
 			return;
+
+        if (!firstBubble && SceneManager.GetActiveScene().name == "MenuScene")
+        {
+            GameObject.Find("TutoBulle").GetComponent<SpriteRenderer>().enabled = false;
+            GameObject.Find("TutoDash").GetComponent<SpriteRenderer>().enabled = true;
+            firstBubble = true;
+        }
 
 		//Hugo : j'ai ajouté ça, je ne savais pas si un event special allait être crée 
         AkSoundEngine.PostEvent("Play_Player_Shot", gameObject);
