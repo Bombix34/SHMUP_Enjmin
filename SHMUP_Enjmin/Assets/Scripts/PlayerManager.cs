@@ -52,6 +52,8 @@ public class PlayerManager : MonoBehaviour {
 
 	PlayerParticles particles;
 
+    Vector2 targetAngle = Vector2.right;
+
     private void Awake()
     {
         if(reglages == null)
@@ -88,6 +90,10 @@ public class PlayerManager : MonoBehaviour {
 
 		BubleUpdate();
 		Dash();
+        
+        transform.rotation = Quaternion.Lerp(sprite.transform.rotation, Quaternion.Euler(0, 0, Vector2.SignedAngle(Vector2.right, targetAngle)), Time.deltaTime * 12);
+
+        sprite.flipY = (targetAngle.x < 0.0f);
 		
         rtpcValue = transform.position.y;
 
@@ -133,6 +139,11 @@ public class PlayerManager : MonoBehaviour {
     {
         if((!canMove)||(isDashing))
             return;
+
+        Vector2 inputVector = controller.getLeftStickDirection();
+        if (inputVector == Vector2.zero)
+            inputVector = keyboard.GetMovement();
+
         controlWithSpeed = controller.getLeftStickDirection()*tempSpeedValue;
         if(controlWithSpeed==Vector2.zero)
             controlWithSpeed=keyboard.GetMovement()*tempSpeedValue;
@@ -140,9 +151,20 @@ public class PlayerManager : MonoBehaviour {
 		particles.LaunchBulleStop(controlWithSpeed==Vector2.zero);
 		particles.LaunchLineParticle(controlWithSpeed!=Vector2.zero);
 
-       	rb2D.velocity=new Vector2(controlWithSpeed.x,controlWithSpeed.y + Mathf.Sin(Time.frameCount / (30.0f / reglages.frequence)) * reglages.amplitude);
+        if (Mathf.Abs(inputVector.x) > 0.1f || Mathf.Abs(inputVector.y) > 0.1f)
+        {
+            targetAngle = controlWithSpeed;
+       	    rb2D.velocity=new Vector2(controlWithSpeed.x,controlWithSpeed.y + Mathf.Sin(Time.frameCount / (30.0f / reglages.frequence)) * reglages.amplitude);
+        } else
+        {
+            rb2D.velocity = Vector2.zero;
+        }
+
 	   	UpdateSpeedAnim();
         //rb2D.MovePosition(new Vector2(transform.position.x+controlWithSpeed.x,transform.position.y+controlWithSpeed.y));
+
+
+        //sprite.transform.rotation = Quaternion.Euler(0, 0, Vector2.SignedAngle(Vector2.right, controlWithSpeed));
     }
 
 	public void UpdateSpeedAnim()
@@ -233,16 +255,13 @@ public class PlayerManager : MonoBehaviour {
 		if(tempDirection==Vector2.zero)
 		{
 			rb2D.velocity=new Vector2(reglages.speedPlayer,0f)*reglages.dashPower;
+            targetAngle = Vector2.right;
 		}
 		else
         {
 			rb2D.velocity=new Vector2(tempDirection.x*reglages.speedPlayer,tempDirection.y*reglages.speedPlayer)*reglages.dashPower;
-            float angle = Vector2.Angle(Vector2.right, tempDirection);
-            if (tempDirection.y < 0.0f) 
-			{
-                angle = 360.0f - angle;
-			}
-            GetComponentInChildren<SpriteRenderer>().transform.Rotate(new Vector3(0.0f, 0.0f, angle));
+            /*float angle = Vector2.SignedAngle(Vector2.right, tempDirection);
+            GetComponentInChildren<SpriteRenderer>().transform.Rotate(new Vector3(0.0f, 0.0f, angle));*/
         }
 		
 		particles.ActiveDashParticles(true);
@@ -260,7 +279,7 @@ public class PlayerManager : MonoBehaviour {
 
 		isDashing=false;
 		rb2D.velocity=Vector2.zero;
-        GetComponentInChildren<SpriteRenderer>().transform.rotation = Quaternion.identity;
+        //GetComponentInChildren<SpriteRenderer>().transform.rotation = Quaternion.identity;
         dashChrono =reglages.dashCoolDown;
 	}
 
@@ -268,6 +287,7 @@ public class PlayerManager : MonoBehaviour {
 
     void OnCollisionEnter2D(Collision2D col)
     {
+        //rb2D.angularVelocity = 0.0f;
         if (col.gameObject.tag == "Buble")
         {
 			if(isDashing)
@@ -297,7 +317,8 @@ public class PlayerManager : MonoBehaviour {
 
 	void OnCollisionStay2D(Collision2D col)
     {
-		if (col.gameObject.tag == "Buble")
+        //rb2D.angularVelocity = 0.0f;
+        if (col.gameObject.tag == "Buble")
        	{
 			if(isDashing)
 			//pousser la bulle super fort
@@ -340,14 +361,17 @@ public class PlayerManager : MonoBehaviour {
 		if((curBuble==null)&&(!isDashing))
 		{
 			chronoIncrementSizeBuble=1f;
-			Vector2 bublePosition= new Vector2(transform.position.x + transform.localScale.x, transform.position.y);
-			curBuble = Instantiate(bublePrefab, bublePosition,Quaternion.identity) as GameObject;
+			Vector2 bublePosition= new Vector2(transform.position.x + (GetGameObjectWidth(gameObject) / 2), transform.position.y);
+            curBuble = Instantiate(bublePrefab, bublePosition,Quaternion.identity) as GameObject;
 			curBuble.GetComponent<BubleManager>().SetIsCreate(true);
 			curBuble.transform.localScale=new Vector2(0.01f,0.01f);
 			StartCoroutine(InitAnimBuble());
 			curBuble.GetComponent<BubleManager>().GetRigidbody().drag=bullesReglages.velocityDecrease;
 
 			Physics2D.IgnoreCollision(colider,curBuble.GetComponent<BubleManager>().GetCollider(),true);
+            
+            canMove = false;
+            rb2D.velocity = Vector2.zero;
 		}
 	}
 
@@ -414,7 +438,7 @@ public class PlayerManager : MonoBehaviour {
 		//quand je laisse appuyer, il faut que la bulle suive le personnage
 		if(curBuble==null)
 			return;
-		Vector2 newPos = new Vector2(transform.position.x + transform.localScale.x + (curBuble.transform.localScale.x*0.8f) , transform.position.y);
+		Vector2 newPos = new Vector2(transform.position.x + (GetGameObjectWidth(gameObject) / 2) + (GetGameObjectWidth(curBuble) / 2) , transform.position.y);
 		curBuble.transform.position=newPos;
 	}
 
@@ -428,8 +452,21 @@ public class PlayerManager : MonoBehaviour {
 
 		nbBullesTirées++;
 
-		curBuble.GetComponent<Rigidbody2D>().AddForce(new Vector2(500f,0f)*bullesReglages.speedBuble);
-		curBuble.GetComponent<BubleManager>().GetBubleAnim().SetTrigger("Shoot");
+        int bubbleSize = curBuble.GetComponent<BubleManager>().getBubbleSize();
+        Vector2 bubbleForce;
+        if (bubbleSize == 1)
+        {
+            bubbleForce = new Vector2(500f, 0f) * bullesReglages.speedBubleInit;
+        } else if (bubbleSize == 2)
+        {
+            bubbleForce = new Vector2(500f, 0f) * bullesReglages.speedBubleIntermediate;
+        } else
+        {
+            bubbleForce = new Vector2(500f, 0f) * bullesReglages.speedBubleMax;
+        }
+
+        curBuble.GetComponent<Rigidbody2D>().AddForce(bubbleForce);
+        curBuble.GetComponent<BubleManager>().GetBubleAnim().SetTrigger("Shoot");
 
         AkSoundEngine.PostEvent("Play_Player_Shot", gameObject);
        
@@ -442,7 +479,9 @@ public class PlayerManager : MonoBehaviour {
 		StartCoroutine(KnockbackPlayer(new Vector2(-30f,0f)));
 
 		curBuble=null;
-	}
+
+        canMove = true;
+    }
 
 	public void DetachBuble()
 	//pour detacher une bulle sans la tirer 
@@ -459,7 +498,9 @@ public class PlayerManager : MonoBehaviour {
 
 		Physics2D.IgnoreCollision(colider,curBuble.GetComponent<BubleManager>().GetCollider(),false);
 		curBuble=null;
-	}
+
+        canMove = true;
+    }
 
 
 //GETTER & SETTER____________________________________________________________________________________________
@@ -468,4 +509,96 @@ public class PlayerManager : MonoBehaviour {
 	{
 		return colider;
 	}
+
+    public float GetGameObjectWidth(GameObject gameObjectParam)
+    {
+        return GetGameObjectRightmostBound(gameObjectParam) - GetGameObjectLeftmostBound(gameObjectParam);
+    }
+
+    public float GetGameObjectLeftmostBound(GameObject gameObjectParam)
+    {
+        float situationLeftmostBound = gameObjectParam.transform.position.x;
+
+        Renderer renderer = gameObjectParam.GetComponent<SpriteRenderer>();
+
+        if (gameObjectParam.GetComponent<SpriteRenderer>() != null)
+        {
+            float rendererLeftmostBound = renderer.bounds.min.x;
+
+            if (rendererLeftmostBound < situationLeftmostBound)
+            {
+                situationLeftmostBound = rendererLeftmostBound;
+            }
+        }
+
+        SpriteMask mask = gameObjectParam.GetComponent<SpriteMask>();
+
+        if (gameObjectParam.GetComponent<SpriteMask>() != null)
+        {
+            float maskLeftmostBound = mask.bounds.min.x;
+
+            if (maskLeftmostBound < situationLeftmostBound)
+            {
+                situationLeftmostBound = maskLeftmostBound;
+            }
+        }
+
+        foreach (Transform child in gameObjectParam.transform)
+        {
+            if (child != gameObjectParam.transform)
+            {
+                float childLeftmostBound = GetGameObjectLeftmostBound(child.gameObject);
+
+                if (childLeftmostBound < situationLeftmostBound)
+                {
+                    situationLeftmostBound = childLeftmostBound;
+                }
+            }
+        }
+
+        return situationLeftmostBound;
+    }
+
+    public float GetGameObjectRightmostBound(GameObject gameObjectParam)
+    {
+        float situationRightmostBound = gameObjectParam.transform.position.x;
+
+        Renderer renderer = gameObjectParam.GetComponentInChildren<SpriteRenderer>();
+
+        if (gameObjectParam.GetComponent<SpriteRenderer>() != null)
+        {
+            float rendererRightmostBound = renderer.bounds.max.x;
+
+            if (rendererRightmostBound > situationRightmostBound)
+            {
+                situationRightmostBound = rendererRightmostBound;
+            }
+        }
+
+        SpriteMask mask = gameObjectParam.GetComponent<SpriteMask>();
+
+        if (gameObjectParam.GetComponent<SpriteMask>() != null)
+        {
+            float maskRightmostBound = mask.bounds.max.x;
+
+            if (maskRightmostBound > situationRightmostBound)
+            {
+                situationRightmostBound = maskRightmostBound;
+            }
+        }
+
+        foreach (Transform child in gameObjectParam.transform)
+        {
+            if (child != gameObjectParam.transform)
+            {
+                float childRightmostBound = GetGameObjectRightmostBound(child.gameObject);
+                if (childRightmostBound > situationRightmostBound)
+                {
+                    situationRightmostBound = childRightmostBound;
+                }
+            }
+        }
+
+        return situationRightmostBound;
+    }
 }
