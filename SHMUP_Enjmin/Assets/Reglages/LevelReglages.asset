@@ -10,25 +10,28 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9618d9eac8ce9443da4e0e688468f107, type: 3}
   m_Name: LevelReglages
-  m_EditorClassIdentifier: 
+  m_EditorClassIdentifier:
   scrollingSpeed: 0.7
   bonusAmiMisEnBulle: 1
   bonusAmiSauve: 1
-  malusBulleAmiEclatee: -2
+  malusBulleAmiEclatee: -1
   malusCollisionOursin: -1
   malusAmiMangeParKraken: -1
   pallierNormal: 5
   pallierDifficile: 10
   levelPartsEasy:
-  - {fileID: 1963910383612934, guid: 0cca39a7c9f8d4a789d71d6b3f6089a7, type: 2}
-  - {fileID: 1312853325632126, guid: 7e2ae68804e154ddfa972f4a8988bae1, type: 2}
-  - {fileID: 1456742065085430, guid: 0da23a70698a349868b6a56c5dfb140f, type: 2}
-  - {fileID: 1188617374437056, guid: c23d5854e0abf4c288f5e621924a9947, type: 2}
-  - {fileID: 1963336942008666, guid: 1f983a0b7c2b9438793fa25798058f42, type: 2}
+  - {fileID: 1230823378187998, guid: b39245a001ec5a94dbd324b55c4b3cfb, type: 2}
+  - {fileID: 1363275860228148, guid: 69bb4f53400309d4ebe1ba8cf99a4b99, type: 2}
+  - {fileID: 1127969859387374, guid: 6f835cbadb1ca4144806a5e73ceafd72, type: 2}
+  - {fileID: 1762960364053460, guid: 0a43edfc09e5df94a931402a2e6f15e7, type: 2}
+  - {fileID: 1699215625151132, guid: 758e1d5f540dad642a1665e12bd1a1dc, type: 2}
+  - {fileID: 1497974227036568, guid: 09004f524574eb543a55850423d7a3ec, type: 2}
   levelPartsNormal:
-  - {fileID: 1262501247078230, guid: b2cf714d6ee1f41f0a32dc5300c5db22, type: 2}
+  - {fileID: 1288026232795084, guid: 6ff5e0bcd34069048a327841c4a520d1, type: 2}
+  - {fileID: 1496916533028060, guid: 631d7e8d8f7fd7347ac4d78fa1656641, type: 2}
   levelPartsHard:
-  - {fileID: 1262501247078230, guid: b2cf714d6ee1f41f0a32dc5300c5db22, type: 2}
+  - {fileID: 1689109035751180, guid: 40f073e437bc9d54fa35ea441d09e1db, type: 2}
+  - {fileID: 1834647117897400, guid: 0644c95b35729074cad7d4bcecb53257, type: 2}
   plafonds:
   - {fileID: 1363204610409546, guid: 4f26e5f38cc90c7499a5286d03c60f6d, type: 2}
   - {fileID: 1829984710835132, guid: c24ea04510d88f643b4f17ade4d4fb7b, type: 2}

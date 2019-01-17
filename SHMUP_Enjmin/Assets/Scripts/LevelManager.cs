@@ -59,7 +59,7 @@ public class LevelManager : MonoBehaviour
                 }
 
                 newSituation.transform.Translate(new Vector3(Camera.main.orthographicSize * Camera.main.aspect - GetGameObjectLeftmostBound(newSituation), 0.0f));
-                rightmostSituationBound = GetGameObjectRightmostBound(newSituation)/*+ (Camera.main.orthographicSize * Camera.main.aspect) / 2*/;
+                rightmostSituationBound = GetGameObjectRightmostBound(newSituation)/* + (Camera.main.orthographicSize * Camera.main.aspect) / 2*/;
                 detachGameObject(newSituation);
             }
         }

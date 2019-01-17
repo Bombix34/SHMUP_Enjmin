@@ -50,6 +50,15 @@ public class BubleMainMenu : BubleManager
             if (curIsCreate)
 				GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerManager>().DetachBuble();
 
+			if(col.gameObject.GetComponent<ObjMainMenu>()!=null)
+			{
+				if(col.gameObject.GetComponent<ObjMainMenu>().GetIsInBuble())
+					return;
+				else
+					col.gameObject.GetComponent<ObjMainMenu>().SetInsBuble(true);
+			}
+
+
 			//sinon on ajoute le perso dans la bulle
             StartCoroutine(SetObjectInTheBuble(col.gameObject));
             objectInTheBuble.Add(col.gameObject);
@@ -57,12 +66,19 @@ public class BubleMainMenu : BubleManager
             AkSoundEngine.PostEvent("Play_Pnj_Oh", gameObject);
 
         }
-
-        if (col.gameObject.tag == "ObjQuit")
+        else if (col.gameObject.tag == "ObjQuit")
         //ENTRE DANS LA BULLE
         {
             if (curIsCreate)
                 GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerManager>().DetachBuble();
+		
+			if(col.gameObject.GetComponent<ObjMainMenu>()!=null)
+			{
+				if(col.gameObject.GetComponent<ObjMainMenu>().GetIsInBuble())
+					return;
+				else
+					col.gameObject.GetComponent<ObjMainMenu>().SetInsBuble(true);
+			}
 
             //sinon on ajoute le perso dans la bulle
             StartCoroutine(SetObjectInTheBuble(col.gameObject));
@@ -96,7 +112,7 @@ public class BubleMainMenu : BubleManager
 		float distanceFromCenter = GetDistanceFromBubleCenter(obj.transform.position);
 		forceDirection.Normalize();
 		int frameCount=0;
-		float randDist = Random.Range(2f,10f);
+		float randDist = Random.Range(5f,10f);
 		while(GetDistanceFromBubleCenter(obj.transform.position) > (distanceFromCenter * 1/randDist ))
 		{
 			if(frameCount>45)
