@@ -14,6 +14,7 @@ public class ScrollScript : MonoBehaviour {
 
         if (LevelManager.instance.GetGameObjectRightmostBound(this.gameObject) < -1 * Camera.main.orthographicSize * Camera.main.aspect)
         {
+            print(this.gameObject.name);
             Destroy(this.gameObject);
         }
     }
