@@ -54,6 +54,8 @@ public class PlayerManager : MonoBehaviour {
 
     Vector2 targetAngle = Vector2.right;
 
+    List<SpriteRenderer> srs;
+
     private void Awake()
     {
         if(reglages == null)
@@ -98,6 +100,8 @@ public class PlayerManager : MonoBehaviour {
         rtpcValue = transform.position.y;
 
         AkSoundEngine.SetRTPCValue("Profondeur", rtpcValue, gameObject);
+
+        
 	}
 
 //DAMAGE_________________________________________________________________________________________________________
