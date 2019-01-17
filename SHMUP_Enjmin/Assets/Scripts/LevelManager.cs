@@ -40,7 +40,7 @@ public class LevelManager : MonoBehaviour
         rightmostMiddlegroundPlafondBound -= reglages.scrollingSpeed * Time.deltaTime * 0.5f;
         rightmostForegroundPlafondBound -= reglages.scrollingSpeed * Time.deltaTime * 0.75f;
 
-        if (reglages.levelPartsEasy.Count + reglages.levelPartsNormal.Count + reglages.levelPartsHard.Count > 0)
+        if (reglages.levelPartsEasy.Count > 0 && reglages.levelPartsNormal.Count > 0 && reglages.levelPartsHard.Count > 0)
         {
             if (rightmostSituationBound < Camera.main.orthographicSize * Camera.main.aspect)
             {
@@ -58,8 +58,8 @@ public class LevelManager : MonoBehaviour
                     newSituation = (GameObject)Instantiate(reglages.GetHardLevel(), new Vector3(0, 0), transform.rotation);
                 }
 
-                newSituation.transform.Translate(new Vector3(Camera.main.orthographicSize * Camera.main.aspect - GetGameObjectLeftmostBound(newSituation), 0.0f));
-                rightmostSituationBound = GetGameObjectRightmostBound(newSituation)/* + (Camera.main.orthographicSize * Camera.main.aspect) / 2*/;
+                newSituation.transform.Translate(new Vector3(Camera.main.orthographicSize * Camera.main.aspect - newSituation.GetComponent<BoxCollider2D>().bounds.min.x, 0.0f));
+                rightmostSituationBound = newSituation.GetComponent<BoxCollider2D>().bounds.max.x;
                 detachGameObject(newSituation);
             }
         }

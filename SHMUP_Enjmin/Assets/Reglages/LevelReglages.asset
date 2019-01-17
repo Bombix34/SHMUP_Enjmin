@@ -10,8 +10,8 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9618d9eac8ce9443da4e0e688468f107, type: 3}
   m_Name: LevelReglages
-  m_EditorClassIdentifier:
-  scrollingSpeed: 0.7
+  m_EditorClassIdentifier: 
+  scrollingSpeed: 2.59
   bonusAmiMisEnBulle: 1
   bonusAmiSauve: 1
   malusBulleAmiEclatee: -1
@@ -20,9 +20,13 @@ MonoBehaviour:
   pallierNormal: 5
   pallierDifficile: 10
   levelPartsEasy:
-  - {fileID: 0}
-  levelPartsNormal: []
-  levelPartsHard: []
+  - {fileID: 1619079412937086, guid: 6f835cbadb1ca4144806a5e73ceafd72, type: 2}
+  - {fileID: 1753357302408848, guid: b39245a001ec5a94dbd324b55c4b3cfb, type: 2}
+  - {fileID: 1940483375224768, guid: 69bb4f53400309d4ebe1ba8cf99a4b99, type: 2}
+  levelPartsNormal:
+  - {fileID: 1619079412937086, guid: 6f835cbadb1ca4144806a5e73ceafd72, type: 2}
+  levelPartsHard:
+  - {fileID: 1619079412937086, guid: 6f835cbadb1ca4144806a5e73ceafd72, type: 2}
   plafonds:
   - {fileID: 1363204610409546, guid: 4f26e5f38cc90c7499a5286d03c60f6d, type: 2}
   - {fileID: 1829984710835132, guid: c24ea04510d88f643b4f17ade4d4fb7b, type: 2}
