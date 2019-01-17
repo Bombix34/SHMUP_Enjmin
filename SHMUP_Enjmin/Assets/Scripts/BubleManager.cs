@@ -306,4 +306,9 @@ public class BubleManager : MonoBehaviour {
 		intermediate=2,
 		final=3
 	}
+
+    public int getBubbleSize()
+    {
+        return (int)bubleSize;
+    }
 }
