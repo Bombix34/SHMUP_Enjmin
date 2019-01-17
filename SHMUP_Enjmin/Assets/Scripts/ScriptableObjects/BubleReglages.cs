@@ -24,9 +24,17 @@ public class BubleReglages : ScriptableObject {
 
 	[Range(5f,100f)]
 	[Tooltip("La vitesse a laquelle la bulle est tirée")]
-	public float speedBuble=5f;
+	public float speedBubleInit=5f;
 
-	[Space]
+    [Range(5f, 100f)]
+    [Tooltip("La vitesse a laquelle la bulle est tirée")]
+    public float speedBubleIntermediate = 5f;
+
+    [Range(5f, 100f)]
+    [Tooltip("La vitesse a laquelle la bulle est tirée")]
+    public float speedBubleMax = 5f;
+
+    [Space]
 
 	[Header("Forces")]
 	[Range(0.1f,3f)]

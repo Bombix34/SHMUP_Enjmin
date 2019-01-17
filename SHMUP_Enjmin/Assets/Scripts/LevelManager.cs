@@ -173,12 +173,12 @@ public class LevelManager : MonoBehaviour
         return GetGameObjectWidth(gameObjectParam) * GetGameObjectHeight(gameObjectParam);
     }
 
-    float GetGameObjectHeight(GameObject gameObjectParam)
+    public float GetGameObjectHeight(GameObject gameObjectParam)
     {
         return GetGameObjectHighestBound(gameObjectParam) - GetGameObjectLowestBound(gameObjectParam);
     }
 
-    float GetGameObjectWidth(GameObject gameObjectParam)
+    public float GetGameObjectWidth(GameObject gameObjectParam)
     {
         return GetGameObjectRightmostBound(gameObjectParam) - GetGameObjectLeftmostBound(gameObjectParam);
     }
