@@ -37,7 +37,7 @@ public class BubleReglages : ScriptableObject {
     [Space]
 
 	[Header("Forces")]
-	[Range(0.1f,3f)]
+	[Range(0.1f,6f)]
 	[Tooltip("La vitesse a laquelle la bulle va s'arrêter")]
 	public float velocityDecrease=0.4f;
 

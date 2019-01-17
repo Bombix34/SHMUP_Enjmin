@@ -11,13 +11,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b5b6a23be0d184539b867813c062f4a0, type: 3}
   m_Name: PlayerReglages
   m_EditorClassIdentifier: 
-  sizePlayer: 0.8
-  speedPlayer: 5
-  dashPower: 5
-  dashDuration: 0.03
-  dashCoolDown: 0.2
-  dashKnockbackBuble: 50
+  sizePlayer: 0.7
+  speedPlayer: 5.5
+  dashPower: 5.5
+  dashDuration: 0.04
+  dashCoolDown: 0.05
+  dashKnockbackBuble: 53
   amplitude: 0.6
   frequence: 2
-  knockback: 0.5
+  knockback: 0.3
   oursinPoisonEffect: 1
