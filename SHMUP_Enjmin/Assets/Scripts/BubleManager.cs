@@ -29,7 +29,6 @@ public class BubleManager : MonoBehaviour {
 		rb2D = GetComponent<Rigidbody2D>();
         colider = GetComponent<CircleCollider2D>();
 		objectInTheBuble = new List<GameObject>();
-		colider = GetComponent<CircleCollider2D>();
 		animator =GetComponent<Animator>();
 	}
 

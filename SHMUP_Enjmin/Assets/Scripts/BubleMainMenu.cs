@@ -25,7 +25,18 @@ public class BubleMainMenu : BubleManager
 
             AkSoundEngine.PostEvent("Play_Pnj_Oh", gameObject);
         }
-		else
+        else if (col.gameObject.tag == "oursin")
+        {
+            // si la bulle est déjà créée, on retracte l'oursin
+            if (!col.gameObject.GetComponent<UrchinManager>().GetIsRetracted())
+            {
+                col.gameObject.GetComponent<UrchinManager>().retract();
+                DestroyBuble();
+                
+            }
+            AkSoundEngine.PostEvent("Play_Bubble_Explode_Os", gameObject);
+        }
+        else
 		//BOUNCE
 		{
 			if (curIsCreate)

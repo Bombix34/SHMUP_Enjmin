@@ -178,7 +178,7 @@ public class PlayerManager : MonoBehaviour {
         } 
 		else
         {
-            rb2D.velocity = Vector2.zero;
+            rb2D.velocity = new Vector2(0.0f, Mathf.Sin(Time.frameCount / (30.0f / reglages.frequence)) * reglages.amplitude);
 
 			//tuto
 			TutoTransparencyUpdate(1f);
@@ -367,7 +367,10 @@ public class PlayerManager : MonoBehaviour {
 			StartCoroutine(KnockbackPlayer(forceDirection));
 			StartCoroutine(Damaged());
 			col.gameObject.GetComponent<UrchinManager>().retract();
-            LevelManager.instance.ChangeScore(LevelManager.instance.reglages.malusCollisionOursin);
+            if (SceneManager.GetActiveScene().name == "MainScene")
+            {
+                LevelManager.instance.ChangeScore(LevelManager.instance.reglages.malusCollisionOursin);
+            }
 		}
     }
 
