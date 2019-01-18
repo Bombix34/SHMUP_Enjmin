@@ -29,6 +29,9 @@ public class PlayerManager : MonoBehaviour {
 	SpriteRenderer sprite;
 
 	[SerializeField]
+	Transform targetShoot;
+
+	[SerializeField]
 	//prefab pour la création des bulles
 	GameObject bublePrefab;
 
@@ -55,8 +58,9 @@ public class PlayerManager : MonoBehaviour {
 
     Vector2 targetAngle = Vector2.right;
 
-    bool firstBubble = false;
-    bool firstDash = false;
+
+	//TUTO_________________________
+    bool firstBubble,firstDash = false;
 
     private void Awake()
     {
@@ -95,15 +99,22 @@ public class PlayerManager : MonoBehaviour {
 		BubleUpdate();
 		Dash();
         
-        transform.rotation = Quaternion.Lerp(sprite.transform.rotation, Quaternion.Euler(0, 0, Vector2.SignedAngle(Vector2.right, targetAngle)), Time.deltaTime * 12);
-
-        sprite.flipY = (targetAngle.x < 0.0f);
+        RotatePlayer();
 		
         rtpcValue = transform.position.y;
 
         AkSoundEngine.SetRTPCValue("Profondeur", rtpcValue, gameObject);
 
         
+	}
+
+	public void RotatePlayer()
+	{
+		if(!reglages.PlayerRotateWhenMove)
+			return;
+		transform.rotation = Quaternion.Lerp(sprite.transform.rotation, Quaternion.Euler(0, 0, Vector2.SignedAngle(Vector2.right, targetAngle)), Time.deltaTime * 12);
+
+        sprite.flipY = (targetAngle.x < 0.0f);
 	}
 
 //DAMAGE_________________________________________________________________________________________________________
@@ -161,52 +172,19 @@ public class PlayerManager : MonoBehaviour {
         {
             targetAngle = controlWithSpeed;
        	    rb2D.velocity=new Vector2(controlWithSpeed.x,controlWithSpeed.y + Mathf.Sin(Time.frameCount / (30.0f / reglages.frequence)) * reglages.amplitude);
-            Color color;
-            if (!firstBubble && SceneManager.GetActiveScene().name == "MenuScene")
-            {
-                color = GameObject.Find("TutoBulle").GetComponent<SpriteRenderer>().color;
-                color.a = 0.1f;
-                GameObject.Find("TutoBulle").GetComponent<SpriteRenderer>().color = color;
-            } else if (!firstDash && firstBubble)
-            {
-                color = GameObject.Find("TutoDash").GetComponent<SpriteRenderer>().color;
-                color.a = 0.1f;
-                GameObject.Find("TutoDash").GetComponent<SpriteRenderer>().color = color;
-            } else if (SceneManager.GetActiveScene().name == "MenuScene")
-            {
-                color = GameObject.Find("TutoSauver").GetComponent<SpriteRenderer>().color;
-                color.a = 0.1f;
-                GameObject.Find("TutoSauver").GetComponent<SpriteRenderer>().color = color;
-            }
-        } else
+			
+			//tuto
+			TutoTransparencyUpdate(0.2f);
+        } 
+		else
         {
             rb2D.velocity = Vector2.zero;
-            Color color;
-            if (!firstBubble && SceneManager.GetActiveScene().name == "MenuScene")
-            {
-                color = GameObject.Find("TutoBulle").GetComponent<SpriteRenderer>().color;
-                color.a = 1.0f;
-                GameObject.Find("TutoBulle").GetComponent<SpriteRenderer>().color = color;
-            }
-            else if (!firstDash && firstBubble)
-            {
-                color = GameObject.Find("TutoDash").GetComponent<SpriteRenderer>().color;
-                color.a = 1.0f;
-                GameObject.Find("TutoDash").GetComponent<SpriteRenderer>().color = color;
-            }
-            else if (SceneManager.GetActiveScene().name == "MenuScene")
-            {
-                color = GameObject.Find("TutoSauver").GetComponent<SpriteRenderer>().color;
-                color.a = 1.0f;
-                GameObject.Find("TutoSauver").GetComponent<SpriteRenderer>().color = color;
-            }
+
+			//tuto
+			TutoTransparencyUpdate(1f);
         }
 
 	   	UpdateSpeedAnim();
-        //rb2D.MovePosition(new Vector2(transform.position.x+controlWithSpeed.x,transform.position.y+controlWithSpeed.y));
-
-
-        //sprite.transform.rotation = Quaternion.Euler(0, 0, Vector2.SignedAngle(Vector2.right, controlWithSpeed));
     }
 
 	public void UpdateSpeedAnim()
@@ -264,6 +242,31 @@ public class PlayerManager : MonoBehaviour {
 		canDash=true;
 	}
 
+	public void TutoTransparencyUpdate(float alphaValue)
+	{
+		if(SceneManager.GetActiveScene().name != "MenuScene")
+				return;
+        Color color;
+        if (!firstBubble)
+       {
+            color = GameObject.Find("TutoBulle").GetComponent<SpriteRenderer>().color;
+            color.a = alphaValue;
+            GameObject.Find("TutoBulle").GetComponent<SpriteRenderer>().color = color;
+        }
+        else if (!firstDash && firstBubble)
+        {
+            color = GameObject.Find("TutoDash").GetComponent<SpriteRenderer>().color;
+            color.a = alphaValue;
+            GameObject.Find("TutoDash").GetComponent<SpriteRenderer>().color = color;
+        }
+        else
+        {
+            color = GameObject.Find("TutoSauver").GetComponent<SpriteRenderer>().color;
+            color.a = alphaValue;
+            GameObject.Find("TutoSauver").GetComponent<SpriteRenderer>().color = color;
+        }
+	}
+
 //DASH__________________________________________________________________________________________
 
 	public void Dash()
@@ -284,6 +287,8 @@ public class PlayerManager : MonoBehaviour {
 			StartCoroutine(DashAction());
             AkSoundEngine.PostEvent("Play_Player_Dash_os", gameObject);
 
+			if(SceneManager.GetActiveScene().name != "MenuScene")
+				return;
             if (!firstDash && firstBubble)
             {
                 firstDash = true;
@@ -412,7 +417,7 @@ public class PlayerManager : MonoBehaviour {
 		if((curBuble==null)&&(!isDashing))
 		{
 			chronoIncrementSizeBuble=1f;
-			Vector2 bublePosition= new Vector2(transform.position.x + (GetGameObjectWidth(gameObject) / 2), transform.position.y);
+			Vector2 bublePosition= new Vector2(targetShoot.position.x + (GetGameObjectWidth(gameObject) / 2), targetShoot.position.y);
             curBuble = Instantiate(bublePrefab, bublePosition,Quaternion.identity) as GameObject;
 			curBuble.GetComponent<BubleManager>().SetIsCreate(true);
 			curBuble.transform.localScale=new Vector2(0.01f,0.01f);
@@ -421,7 +426,7 @@ public class PlayerManager : MonoBehaviour {
 
 			Physics2D.IgnoreCollision(colider,curBuble.GetComponent<BubleManager>().GetCollider(),true);
             
-            canMove = false;
+           // canMove = false;
             rb2D.velocity = Vector2.zero;
 		}
 	}
@@ -486,10 +491,11 @@ public class PlayerManager : MonoBehaviour {
 
 	public void UpdateCurBublePosition()
 	{
+
 		//quand je laisse appuyer, il faut que la bulle suive le personnage
 		if(curBuble==null)
 			return;
-		Vector2 newPos = new Vector2(transform.position.x + (GetGameObjectWidth(gameObject) / 2) + (GetGameObjectWidth(curBuble) / 2) , transform.position.y);
+		Vector2 newPos = new Vector2(targetShoot.position.x, targetShoot.position.y );
 		curBuble.transform.position=newPos;
 	}
 
@@ -498,29 +504,29 @@ public class PlayerManager : MonoBehaviour {
 		if(curBuble==null)
 			return;
 
-        if (!firstBubble && SceneManager.GetActiveScene().name == "MenuScene")
-        {
-            GameObject.Find("TutoBulle").GetComponent<SpriteRenderer>().enabled = false;
-            GameObject.Find("TutoDash").GetComponent<SpriteRenderer>().enabled = true;
-            firstBubble = true;
-        }
-
         curBuble.GetComponent<BubleManager>().SetIsCreate(false);
 		//tir de la bulle
 
 		nbBullesTirées++;
 
         int bubbleSize = curBuble.GetComponent<BubleManager>().getBubbleSize();
+
+		Vector2 shootDirection;
+		/* if(controlWithSpeed!=Vector2.zero)
+			shootDirection=controlWithSpeed;
+		else*/
+			shootDirection = new Vector2(targetShoot.transform.position.x-this.transform.position.x,targetShoot.transform.position.y-this.transform.position.y);
+		shootDirection.Normalize();
         Vector2 bubbleForce;
         if (bubbleSize == 1)
         {
-            bubbleForce = new Vector2(500f, 0f) * bullesReglages.speedBubleInit;
+            bubbleForce = shootDirection * 500f * bullesReglages.speedBubleInit;
         } else if (bubbleSize == 2)
         {
-            bubbleForce = new Vector2(500f, 0f) * bullesReglages.speedBubleIntermediate;
+            bubbleForce = shootDirection * 500f * bullesReglages.speedBubleIntermediate;
         } else
         {
-            bubbleForce = new Vector2(500f, 0f) * bullesReglages.speedBubleMax;
+            bubbleForce = shootDirection * 500f * bullesReglages.speedBubleMax;
         }
 
         curBuble.GetComponent<Rigidbody2D>().AddForce(bubbleForce);
@@ -538,7 +544,16 @@ public class PlayerManager : MonoBehaviour {
 
 		curBuble=null;
 
-        canMove = true;
+        //canMove = true;
+		
+		if(SceneManager.GetActiveScene().name != "MenuScene")
+				return;
+		if (!firstBubble)
+        {
+            GameObject.Find("TutoBulle").GetComponent<SpriteRenderer>().enabled = false;
+            GameObject.Find("TutoDash").GetComponent<SpriteRenderer>().enabled = true;
+            firstBubble = true;
+        }
     }
 
 	public void DetachBuble()
@@ -546,13 +561,6 @@ public class PlayerManager : MonoBehaviour {
 	{
 		if(curBuble==null)
 			return;
-
-        if (!firstBubble && SceneManager.GetActiveScene().name == "MenuScene")
-        {
-            GameObject.Find("TutoBulle").GetComponent<SpriteRenderer>().enabled = false;
-            GameObject.Find("TutoDash").GetComponent<SpriteRenderer>().enabled = true;
-            firstBubble = true;
-        }
 
 		//Hugo : j'ai ajouté ça, je ne savais pas si un event special allait être crée 
         AkSoundEngine.PostEvent("Play_Player_Shot", gameObject);
@@ -565,6 +573,14 @@ public class PlayerManager : MonoBehaviour {
 		curBuble=null;
 
         canMove = true;
+
+		//tuto
+		if (!firstBubble && SceneManager.GetActiveScene().name == "MenuScene")
+        {
+            GameObject.Find("TutoBulle").GetComponent<SpriteRenderer>().enabled = false;
+            GameObject.Find("TutoDash").GetComponent<SpriteRenderer>().enabled = true;
+            firstBubble = true;
+        }
     }
 
 

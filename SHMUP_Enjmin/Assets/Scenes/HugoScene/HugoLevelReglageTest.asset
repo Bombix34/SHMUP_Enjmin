@@ -9,7 +9,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9618d9eac8ce9443da4e0e688468f107, type: 3}
-  m_Name: LevelReglages
+  m_Name: HugoLevelReglageTest
   m_EditorClassIdentifier: 
   scrollingSpeed: 1.2
   bonusAmiMisEnBulle: 1
@@ -20,17 +20,11 @@ MonoBehaviour:
   pallierNormal: 5
   pallierDifficile: 10
   levelPartsEasy:
-  - {fileID: 1527272702118882, guid: 52172f8042d13443faa1690a0fe5fdb7, type: 2}
-  - {fileID: 1669391320266944, guid: e7c2311ecba5b456b800b6ffd8239ad9, type: 2}
-  - {fileID: 1799398509912668, guid: 3c5630c0cee34446793f86245765e9e1, type: 2}
+  - {fileID: 1527272702118882, guid: a0cb38ee72c3e46e5a2887a8691cf614, type: 2}
   levelPartsNormal:
-  - {fileID: 1111140581384674, guid: e9cbaf7f1b5f54e0c94ccbc4b2259a8e, type: 2}
-  - {fileID: 1161005910125434, guid: a1523c97a8299489da22477394db286d, type: 2}
-  - {fileID: 1133572368263560, guid: 2c1290fd2eb09445592bba12a2166404, type: 2}
+  - {fileID: 1527272702118882, guid: a0cb38ee72c3e46e5a2887a8691cf614, type: 2}
   levelPartsHard:
-  - {fileID: 1111140581384674, guid: e9cbaf7f1b5f54e0c94ccbc4b2259a8e, type: 2}
-  - {fileID: 1161005910125434, guid: a1523c97a8299489da22477394db286d, type: 2}
-  - {fileID: 1133572368263560, guid: 2c1290fd2eb09445592bba12a2166404, type: 2}
+  - {fileID: 1527272702118882, guid: a0cb38ee72c3e46e5a2887a8691cf614, type: 2}
   plafonds:
   - {fileID: 1363204610409546, guid: 4f26e5f38cc90c7499a5286d03c60f6d, type: 2}
   - {fileID: 1829984710835132, guid: c24ea04510d88f643b4f17ade4d4fb7b, type: 2}
