@@ -497,16 +497,20 @@ Prefab:
       propertyPath: m_RootOrder
       value: 7
       objectReference: {fileID: 0}
-    - target: {fileID: 114825978028614198, guid: 45f81d3d33d002d4e89edadfc343a523,
+    - target: {fileID: 212066369092401790, guid: 45f81d3d33d002d4e89edadfc343a523,
         type: 2}
-      propertyPath: reglages
-      value: 
-      objectReference: {fileID: 11400000, guid: f7b70ff77b0174f28a49351768839f23,
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 212066369092401790, guid: 45f81d3d33d002d4e89edadfc343a523,
         type: 2}
-    - target: {fileID: 114349294156307918, guid: 45f81d3d33d002d4e89edadfc343a523,
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 212066369092401790, guid: 45f81d3d33d002d4e89edadfc343a523,
         type: 2}
-      propertyPath: distanceAtEachSave
-      value: 0.1
+      propertyPath: m_Color.b
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 45f81d3d33d002d4e89edadfc343a523, type: 2}
