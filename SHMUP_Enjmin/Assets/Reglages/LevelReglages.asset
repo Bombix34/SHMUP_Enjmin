@@ -20,13 +20,13 @@ MonoBehaviour:
   pallierNormal: 10
   pallierDifficile: 20
   levelPartsEasy:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 1302597264254956, guid: 3fdf14fac1b9d5240a9fe2eb4ef2caed, type: 2}
+  - {fileID: 1239488968041352, guid: 0f3ff1a27a2608b418fde6d6aff537e1, type: 2}
+  - {fileID: 1867790471879224, guid: 488aeae6e81a69d4dbbb2e07c1d56eee, type: 2}
+  - {fileID: 1211838640654164, guid: 59e325ebda68c1c4d9cad4013f98e48b, type: 2}
+  - {fileID: 1838790747914826, guid: 52a92943619ffac42a917018e550ff82, type: 2}
+  - {fileID: 1355315513374218, guid: 5dfc742ab02250841b435dd81cb46d3b, type: 2}
+  - {fileID: 1279261505334308, guid: 7b6dd2a20cb0c514fa779bc62eb25b92, type: 2}
   levelPartsNormal:
   - {fileID: 1169204095862420, guid: 0aa1b2dd913fdc646a1cdae573e5b5c0, type: 2}
   - {fileID: 1892939072182980, guid: 7a2e70cdc34c4124595ed108bb7693f2, type: 2}

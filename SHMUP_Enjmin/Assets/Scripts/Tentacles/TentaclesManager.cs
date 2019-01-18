@@ -137,10 +137,10 @@ public class TentaclesManager : MonoBehaviour {
 
         timeRemaining += backwardTimeAtEachSave;
 
-       /* if((Camera.main.GetComponent<CameraShaker>()!=null))
+        if((Camera.main.GetComponent<CameraShaker>()!=null))
 			Camera.main.GetComponent<CameraShaker>().LaunchShake(0.5f,0.05f);
 
-        StartCoroutine(MoveBackwardCoroutine());*/
+        //StartCoroutine(MoveBackwardCoroutine());
 
     }
 
