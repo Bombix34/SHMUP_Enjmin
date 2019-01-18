@@ -367,7 +367,10 @@ public class PlayerManager : MonoBehaviour {
 			StartCoroutine(KnockbackPlayer(forceDirection));
 			StartCoroutine(Damaged());
 			col.gameObject.GetComponent<UrchinManager>().retract();
-            LevelManager.instance.ChangeScore(LevelManager.instance.reglages.malusCollisionOursin);
+            if (SceneManager.GetActiveScene().name == "MainScene")
+            {
+                LevelManager.instance.ChangeScore(LevelManager.instance.reglages.malusCollisionOursin);
+            }
 		}
     }
 

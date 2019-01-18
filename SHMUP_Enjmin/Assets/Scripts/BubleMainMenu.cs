@@ -32,7 +32,7 @@ public class BubleMainMenu : BubleManager
             {
                 col.gameObject.GetComponent<UrchinManager>().retract();
                 DestroyBuble();
-                LevelManager.instance.ChangeScore(LevelManager.instance.reglages.malusBulleAmiEclatee);
+                
             }
             AkSoundEngine.PostEvent("Play_Bubble_Explode_Os", gameObject);
         }
