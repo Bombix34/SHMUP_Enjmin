@@ -52,7 +52,7 @@ public class TentaclesManager : MonoBehaviour {
         //bordure Gauche
         transform.position = hg;
         pos = bg - hg;
-        transform.position.Scale(new Vector3(0.5F, 0.5F, 0.5F));
+        //transform.position.Scale(new Vector3(0.5F, 0.5F, 0.5F));
         transform.Translate(pos / 2);
 
     }
@@ -79,12 +79,20 @@ public class TentaclesManager : MonoBehaviour {
     {
         if(timeRemaining > 0)
         {
-
+            if(distanceDone<0)
+            {
+                distanceDone=0;
+                timeRemaining=0;
+                return;
+            }
+            //Vector3 hg = Camera.main.ViewportToWorldPoint(new Vector3(0, 1, -dist));
+            distanceDone-=moveSpeedBackward*Time.deltaTime;
             transform.position = new Vector3(transform.position.x - moveSpeedBackward * Time.deltaTime, transform.position.y, transform.position.z);
             timeRemaining -= Time.deltaTime;
         }
         else
         {
+            distanceDone+=moveSpeedForward*Time.deltaTime;
             transform.position = new Vector3(transform.position.x + moveSpeedForward * Time.deltaTime, transform.position.y, transform.position.z);
         }
     }

@@ -234,34 +234,6 @@ Prefab:
       propertyPath: m_RootOrder
       value: 6
       objectReference: {fileID: 0}
-    - target: {fileID: 198411280248759378, guid: 45f81d3d33d002d4e89edadfc343a523,
-        type: 2}
-      propertyPath: ShapeModule.m_Scale.x
-      value: 0.6504515
-      objectReference: {fileID: 0}
-    - target: {fileID: 198722021098518636, guid: 45f81d3d33d002d4e89edadfc343a523,
-        type: 2}
-      propertyPath: ShapeModule.m_Scale.x
-      value: 0.5805123
-      objectReference: {fileID: 0}
-    - target: {fileID: 4922839131601550, guid: 45f81d3d33d002d4e89edadfc343a523, type: 2}
-      propertyPath: m_LocalPosition.x
-      value: -8.67
-      objectReference: {fileID: 0}
-    - target: {fileID: 4890184504959956, guid: 45f81d3d33d002d4e89edadfc343a523, type: 2}
-      propertyPath: m_LocalPosition.x
-      value: -8.67
-      objectReference: {fileID: 0}
-    - target: {fileID: 114349294156307918, guid: 45f81d3d33d002d4e89edadfc343a523,
-        type: 2}
-      propertyPath: moveSpeedForward
-      value: 0.33
-      objectReference: {fileID: 0}
-    - target: {fileID: 114349294156307918, guid: 45f81d3d33d002d4e89edadfc343a523,
-        type: 2}
-      propertyPath: moveSpeedBackward
-      value: 1.5
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 45f81d3d33d002d4e89edadfc343a523, type: 2}
   m_IsPrefabAsset: 0
