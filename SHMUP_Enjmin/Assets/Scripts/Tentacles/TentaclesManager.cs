@@ -6,7 +6,11 @@ public class TentaclesManager : MonoBehaviour {
 
     public static TentaclesManager instance;
 
-    public GameObject[] tentacles;
+
+    [SerializeField]
+    GameObject rightWall;
+
+   // public GameObject[] tentacles;
 
     public float distanceAtEachCapture = 2f;
     public float moveSpeedForward = 0.3f;
@@ -34,7 +38,6 @@ public class TentaclesManager : MonoBehaviour {
         }
     }
 
-    // Use this for initialization
     void Start () {
         foreach(ParticleSystem particle in fishParticles)
         {
@@ -46,7 +49,6 @@ public class TentaclesManager : MonoBehaviour {
 
         Vector3 hg = Camera.main.ViewportToWorldPoint(new Vector3(0, 1, -dist));
         Vector3 bg = Camera.main.ViewportToWorldPoint(new Vector3(0, 0, -dist));
-
         Vector3 pos;
 
         //bordure Gauche
@@ -55,13 +57,15 @@ public class TentaclesManager : MonoBehaviour {
         //transform.position.Scale(new Vector3(0.5F, 0.5F, 0.5F));
         transform.Translate(pos / 2);
 
+        //position du right wall => a tweaker
+       // rightWall.transform.position= new Vector2(Camera.main.orthographicSize * Camera.main.aspect+(LevelManager.instance.GetGameObjectWidth(rightWall)/3),0f);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-       /* if (collision.gameObject.tag == "ToSave")
+        if (collision.gameObject.tag == "ToSave")
         {
-            MoveForward();
+           // MoveForward();
 
             LevelManager.instance.ChangeScore(LevelManager.instance.reglages.malusAmiMangeParKraken);
 
@@ -69,7 +73,7 @@ public class TentaclesManager : MonoBehaviour {
 
             GetComponentInChildren<TentacleDetection>().Retract();
         }
-        else */if(collision.gameObject.tag=="Player")
+        else if(collision.gameObject.tag=="Player")
         {
             GameManager.instance.GameOver();
         }
@@ -88,26 +92,15 @@ public class TentaclesManager : MonoBehaviour {
             //Vector3 hg = Camera.main.ViewportToWorldPoint(new Vector3(0, 1, -dist));
             distanceDone-=moveSpeedBackward*Time.deltaTime;
             transform.position = new Vector3(transform.position.x - moveSpeedBackward * Time.deltaTime, transform.position.y, transform.position.z);
+            rightWall.transform.position = new Vector3(rightWall.transform.position.x + moveSpeedBackward * Time.deltaTime, rightWall.transform.position.y, rightWall.transform.position.z);
             timeRemaining -= Time.deltaTime;
         }
         else
         {
             distanceDone+=moveSpeedForward*Time.deltaTime;
             transform.position = new Vector3(transform.position.x + moveSpeedForward * Time.deltaTime, transform.position.y, transform.position.z);
+            rightWall.transform.position = new Vector3(rightWall.transform.position.x - moveSpeedForward * Time.deltaTime, rightWall.transform.position.y, rightWall.transform.position.z);
         }
-    }
-
-    public void MoveForward()
-    {
-        // TODO : animation de capture
-        if(Camera.main.GetComponent<CameraShaker>()!=null)
-			Camera.main.GetComponent<CameraShaker>().LaunchShake(1f,0.1f);
-        // deplacement des tentacules
-        distanceDone += distanceAtEachCapture;
-        
-        StartCoroutine(LaunchFishParticles());
-
-        StartCoroutine(MoveForwardCoroutine());
     }
 
     IEnumerator LaunchFishParticles()
@@ -122,6 +115,19 @@ public class TentaclesManager : MonoBehaviour {
                 particle.Play();
             }
         }
+    }
+
+    public void MoveForward()
+    {
+        // TODO : animation de capture
+        if(Camera.main.GetComponent<CameraShaker>()!=null)
+			Camera.main.GetComponent<CameraShaker>().LaunchShake(1f,0.1f);
+        // deplacement des tentacules
+        distanceDone += distanceAtEachCapture;
+        
+        StartCoroutine(LaunchFishParticles());
+
+        StartCoroutine(MoveForwardCoroutine());
     }
 
     public void MoveBackward()
