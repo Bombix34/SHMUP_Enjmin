@@ -12,7 +12,7 @@ public class RandomStart : MonoBehaviour {
     {
         anim = GetComponent<Animator>();
         
-        chrono = Random.Range(3f, 8f);
+        chrono = Random.Range(15f, 30f);
     }
 
     void Update()
@@ -22,7 +22,7 @@ public class RandomStart : MonoBehaviour {
         else
         {
             anim.SetTrigger("launch");
-            chrono = Random.Range(3f, 8f);
+            chrono = Random.Range(15f, 30f);
         }
     }
 
