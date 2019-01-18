@@ -15,9 +15,9 @@ MonoBehaviour:
   intermediateSize: 0.9
   maxSizeBuble: 1.2
   speedGrow: 0.04
-  speedBubleInit: 10
-  speedBubleIntermediate: 20
-  speedBubleMax: 30
+  speedBubleInit: 40
+  speedBubleIntermediate: 40
+  speedBubleMax: 40
   velocityDecrease: 3.4
   archimedEffect: 0.1
   bounceEffect: 20

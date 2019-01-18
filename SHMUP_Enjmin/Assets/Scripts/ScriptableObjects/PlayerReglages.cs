@@ -55,4 +55,6 @@ public class PlayerReglages : ScriptableObject
 	[Tooltip("plus elle est proche de 0 et plus le poison est lent a partir")]
 	public float oursinPoisonEffect=0.1f;
 
+	public bool PlayerRotateWhenMove=true;
+
 }

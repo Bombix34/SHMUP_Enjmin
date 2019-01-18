@@ -21,3 +21,4 @@ MonoBehaviour:
   frequence: 2
   knockback: 0.3
   oursinPoisonEffect: 1
+  PlayerRotateWhenMove: 1
