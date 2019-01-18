@@ -178,7 +178,7 @@ public class PlayerManager : MonoBehaviour {
         } 
 		else
         {
-            rb2D.velocity = Vector2.zero;
+            rb2D.velocity = new Vector2(0.0f, Mathf.Sin(Time.frameCount / (30.0f / reglages.frequence)) * reglages.amplitude);
 
 			//tuto
 			TutoTransparencyUpdate(1f);
