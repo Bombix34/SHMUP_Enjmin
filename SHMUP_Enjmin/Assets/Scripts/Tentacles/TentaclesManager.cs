@@ -9,10 +9,14 @@ public class TentaclesManager : MonoBehaviour {
     public GameObject[] tentacles;
 
     public float distanceAtEachCapture = 2f;
-    public float moveSpeedForward = 0.1f;
+    public float moveSpeedForward = 0.3f;
 
     public float distanceAtEachSave = 2f;
-    public float moveSpeedBackward = 0.1f;
+    public float moveSpeedBackward = 1.5f;
+    public float backwardTimeAtEachSave = 1f;
+
+    private float timerCooldown = 0f;
+    private float timeRemaining = 0f;
 
     private Coroutine deplacement;
 
@@ -55,7 +59,7 @@ public class TentaclesManager : MonoBehaviour {
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.tag == "ToSave")
+       /* if (collision.gameObject.tag == "ToSave")
         {
             MoveForward();
 
@@ -65,9 +69,23 @@ public class TentaclesManager : MonoBehaviour {
 
             GetComponentInChildren<TentacleDetection>().Retract();
         }
-        else if(collision.gameObject.tag=="Player")
+        else */if(collision.gameObject.tag=="Player")
         {
             GameManager.instance.GameOver();
+        }
+    }
+
+    void Update()
+    {
+        if(timeRemaining > 0)
+        {
+
+            transform.position = new Vector3(transform.position.x - moveSpeedBackward * Time.deltaTime, transform.position.y, transform.position.z);
+            timeRemaining -= Time.deltaTime;
+        }
+        else
+        {
+            transform.position = new Vector3(transform.position.x + moveSpeedForward * Time.deltaTime, transform.position.y, transform.position.z);
         }
     }
 
@@ -103,10 +121,13 @@ public class TentaclesManager : MonoBehaviour {
         // deplacement des tentacules
         distanceDone -= distanceAtEachSave;
 
-        if((Camera.main.GetComponent<CameraShaker>()!=null)&&(distanceDone==0))
+        timeRemaining += backwardTimeAtEachSave;
+
+       /* if((Camera.main.GetComponent<CameraShaker>()!=null))
 			Camera.main.GetComponent<CameraShaker>().LaunchShake(0.5f,0.05f);
 
-        StartCoroutine(MoveBackwardCoroutine());
+        StartCoroutine(MoveBackwardCoroutine());*/
+
     }
 
     IEnumerator MoveForwardCoroutine()

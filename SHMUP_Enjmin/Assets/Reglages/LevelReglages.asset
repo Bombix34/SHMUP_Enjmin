@@ -12,25 +12,28 @@ MonoBehaviour:
   m_Name: LevelReglages
   m_EditorClassIdentifier: 
   scrollingSpeed: 1.2
-  bonusAmiMisEnBulle: 1
+  bonusAmiMisEnBulle: 0
   bonusAmiSauve: 1
   malusBulleAmiEclatee: -1
   malusCollisionOursin: -1
-  malusAmiMangeParKraken: -1
+  malusAmiMangeParKraken: -3
   pallierNormal: 5
   pallierDifficile: 10
   levelPartsEasy:
-  - {fileID: 1527272702118882, guid: 52172f8042d13443faa1690a0fe5fdb7, type: 2}
-  - {fileID: 1669391320266944, guid: e7c2311ecba5b456b800b6ffd8239ad9, type: 2}
-  - {fileID: 1799398509912668, guid: 3c5630c0cee34446793f86245765e9e1, type: 2}
+  - {fileID: 1099269943947630, guid: 3fdf14fac1b9d5240a9fe2eb4ef2caed, type: 2}
+  - {fileID: 1439870827157184, guid: 0f3ff1a27a2608b418fde6d6aff537e1, type: 2}
+  - {fileID: 1938577078318674, guid: 488aeae6e81a69d4dbbb2e07c1d56eee, type: 2}
+  - {fileID: 1397770697853090, guid: 59e325ebda68c1c4d9cad4013f98e48b, type: 2}
+  - {fileID: 1175393832036540, guid: 52a92943619ffac42a917018e550ff82, type: 2}
+  - {fileID: 1358892153982512, guid: 5dfc742ab02250841b435dd81cb46d3b, type: 2}
+  - {fileID: 1523618070087968, guid: 7b6dd2a20cb0c514fa779bc62eb25b92, type: 2}
   levelPartsNormal:
-  - {fileID: 1111140581384674, guid: e9cbaf7f1b5f54e0c94ccbc4b2259a8e, type: 2}
-  - {fileID: 1161005910125434, guid: a1523c97a8299489da22477394db286d, type: 2}
-  - {fileID: 1133572368263560, guid: 2c1290fd2eb09445592bba12a2166404, type: 2}
+  - {fileID: 1169204095862420, guid: 0aa1b2dd913fdc646a1cdae573e5b5c0, type: 2}
+  - {fileID: 1892939072182980, guid: 7a2e70cdc34c4124595ed108bb7693f2, type: 2}
   levelPartsHard:
-  - {fileID: 1111140581384674, guid: e9cbaf7f1b5f54e0c94ccbc4b2259a8e, type: 2}
-  - {fileID: 1161005910125434, guid: a1523c97a8299489da22477394db286d, type: 2}
-  - {fileID: 1133572368263560, guid: 2c1290fd2eb09445592bba12a2166404, type: 2}
+  - {fileID: 1814426143736046, guid: c78bae2e324d06446b579626d18241cd, type: 2}
+  - {fileID: 1945594434880286, guid: c0e2022b9b6fec6418449e0e9e9461f0, type: 2}
+  - {fileID: 1009077699005746, guid: f13e1a884bb105542b593ce3aeade17d, type: 2}
   plafonds:
   - {fileID: 1363204610409546, guid: 4f26e5f38cc90c7499a5286d03c60f6d, type: 2}
   - {fileID: 1829984710835132, guid: c24ea04510d88f643b4f17ade4d4fb7b, type: 2}
