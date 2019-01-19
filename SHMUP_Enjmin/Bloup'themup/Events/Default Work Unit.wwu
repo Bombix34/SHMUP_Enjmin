@@ -777,6 +777,34 @@
 								</Action>
 							</ChildrenList>
 						</Event>
+						<Event Name="Play_Sauve_Pnj" ID="{A22EC506-5382-430D-B340-B43C26C8D8F9}">
+							<ChildrenList>
+								<Action Name="" ID="{75E41088-6195-4F77-A444-5A0C522937AD}" ShortID="582409848">
+									<PropertyList>
+										<Property Name="ActionType" Type="int16" Value="1"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Sauve_Pnj" ID="{313C5330-C3ED-460B-BA48-143578C36372}" WorkUnitID="{BFB9B95C-F19D-4A69-AD4E-5BA087B198AF}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="Play_Sauve_Pnj_01" ID="{DDBDC699-29FC-459F-BA49-89E8F506856A}">
+							<ChildrenList>
+								<Action Name="" ID="{E6FCAB91-3F63-4932-BEFA-6E226B70DFFA}" ShortID="593109294">
+									<PropertyList>
+										<Property Name="ActionType" Type="int16" Value="1"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Sauve_Pnj" ID="{313C5330-C3ED-460B-BA48-143578C36372}" WorkUnitID="{BFB9B95C-F19D-4A69-AD4E-5BA087B198AF}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
 					</ChildrenList>
 				</Folder>
 			</ChildrenList>
