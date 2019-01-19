@@ -138,40 +138,33 @@ public class BubleManager : MonoBehaviour {
             obj.GetComponent<PatternInterface>().enabled = false;
         }
         obj.transform.parent=this.transform;
-
-		Vector2 forceDirection = new Vector2(this.transform.position.x-obj.transform.position.x,this.transform.position.y-obj.transform.position.y);
+        
 		float distanceFromCenter = GetDistanceFromBubleCenter(obj.transform.position);
-		forceDirection.Normalize();
-		int frameCount=0;
-		float randDist = 0;
+        float distanceMin = 0;
 		switch(objectInTheBuble.Count)
 		{
 			case 0:
-				randDist = 0.05f;
+                distanceMin = distanceFromCenter * 0.05f;
 				break;
 			case 1:
-				randDist = 0.3f;
-				break;
+                distanceMin = distanceFromCenter * 0.3f;
+                break;
 			case 2:
-				randDist = 0.4f;
-				break;
+                distanceMin = distanceFromCenter * 0.4f;
+                break;
 		}
-		while(GetDistanceFromBubleCenter(obj.transform.position) > (distanceFromCenter  * randDist ))
+		while(GetDistanceFromBubleCenter(obj.transform.position) > (distanceMin))
 		{
-			if(GetDistanceFromBubleCenter(obj.transform.position) < (distanceFromCenter-0.3f ))
+            Vector2 forceDirection = new Vector2(this.transform.position.x - obj.transform.position.x, this.transform.position.y - obj.transform.position.y);
+            if (GetDistanceFromBubleCenter(obj.transform.position) < (distanceFromCenter * 0.7f))
 			{
 				//on attend un certain nombre de frame avant de le faire rentrer très vite 
 				if(obj.GetComponent<SavedManager>()!=null)
 					obj.GetComponent<SavedManager>().EnterBuble(true);
-				obj.transform.Translate(forceDirection.x*Time.deltaTime*5f,forceDirection.y*Time.deltaTime*5f,0f);
+				obj.transform.Translate(forceDirection*Time.deltaTime*20f);
 			}
 			else
-				obj.transform.Translate(forceDirection.x*Time.deltaTime*0.6f,forceDirection.y*Time.deltaTime*0.6f,0f);
-			frameCount++;
-			if(frameCount>40&&objectInTheBuble.Count==1)
-			//pour empêcher que les ptits calamars partent dans l'espace des fois
-			//je sais pas d'ou provient le bug donc je mets une petite sécurité 
-				obj.transform.position = this.transform.position;
+				obj.transform.Translate(forceDirection*Time.deltaTime);
 			yield return new WaitForSeconds(0.001f);
 		}
 		if(objectInTheBuble.Count==1)

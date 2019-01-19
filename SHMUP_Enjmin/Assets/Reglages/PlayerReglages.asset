@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Name: PlayerReglages
   m_EditorClassIdentifier: 
   sizePlayer: 0.7
-  speedPlayer: 5.5
+  speedPlayer: 4
   dashPower: 5.5
   dashDuration: 0.04
   dashCoolDown: 0.05
