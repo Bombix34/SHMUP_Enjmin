@@ -5,7 +5,7 @@ AnimatorController:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: "Fl\xE8che"
+  m_Name: "Fle\u0300che"
   serializedVersion: 5
   m_AnimatorParameters: []
   m_AnimatorLayers:
