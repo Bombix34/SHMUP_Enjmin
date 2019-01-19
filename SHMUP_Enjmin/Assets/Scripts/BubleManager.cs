@@ -88,7 +88,10 @@ public class BubleManager : MonoBehaviour {
 	IEnumerator WinBuble()
 	{
 		endBubble=true;
-		while((LevelManager.instance.GetGameObjectLowestBound(this.gameObject))<(Camera.main.orthographicSize))
+        if(objectInTheBuble.Count!=0)
+            AkSoundEngine.PostEvent("Sauve_Pnj_01", gameObject);
+
+        while ((LevelManager.instance.GetGameObjectLowestBound(this.gameObject))<(Camera.main.orthographicSize))
 		{
 			transform.Translate(0f,Time.deltaTime*2f,0f);
 			yield return new WaitForSeconds(0.01f);

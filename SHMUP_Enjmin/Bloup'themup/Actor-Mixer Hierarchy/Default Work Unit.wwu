@@ -2680,6 +2680,32 @@
 								<ActiveSource Name="Vc_Music_Play_01_Os" ID="{64E32841-EB1D-45D7-84AB-EB2432A3A5C2}" Platform="Linked"/>
 							</ActiveSourceList>
 						</Sound>
+						<Sound Name="Sauve_Pnj" ID="{313C5330-C3ED-460B-BA48-143578C36372}" ShortID="70149842">
+							<PropertyList>
+								<Property Name="Volume" Type="Real64">
+									<ValueList>
+										<Value>-7</Value>
+									</ValueList>
+								</Property>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{2BD389C3-9EC6-4637-949C-1D4A4B674147}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{D1B724BB-66B6-4F55-9CB7-851DFB74B0CF}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="Sauve_Pnj" ID="{3BA381DB-45CF-4607-96C8-40C2CD4F9E12}" ShortID="686760367">
+									<Language>SFX</Language>
+									<AudioFile>Sauve_Pnj.wav</AudioFile>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="Sauve_Pnj" ID="{3BA381DB-45CF-4607-96C8-40C2CD4F9E12}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
 					</ChildrenList>
 				</ActorMixer>
 			</ChildrenList>

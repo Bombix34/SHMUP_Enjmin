@@ -18,6 +18,10 @@
 							<Position X="0" Y="2"/>
 						</Module>
 						<Module>
+							<ObjectRef Name="Play_Sauve_Pnj" ID="{A22EC506-5382-430D-B340-B43C26C8D8F9}" WorkUnitID="{1336847C-65CD-4BDE-82E7-88B2522FBB1A}"/>
+							<Position X="1" Y="0"/>
+						</Module>
+						<Module>
 							<ObjectRef Name="Play_Music_GameOver" ID="{D45B5E01-2B49-4CDC-9C22-2B772A51DA9F}" WorkUnitID="{1336847C-65CD-4BDE-82E7-88B2522FBB1A}"/>
 							<Position X="1" Y="1"/>
 						</Module>
