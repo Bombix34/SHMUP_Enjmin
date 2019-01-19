@@ -66,6 +66,7 @@ public class TentaclesManager : MonoBehaviour {
         if (collision.gameObject.tag == "ToSave")
         {
            // MoveForward();
+           Debug.Log(collision.gameObject);
 
             LevelManager.instance.ChangeScore(LevelManager.instance.reglages.malusAmiMangeParKraken);
 
