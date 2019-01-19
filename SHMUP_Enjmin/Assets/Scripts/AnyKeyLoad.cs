@@ -14,7 +14,7 @@ public class AnyKeyLoad : MonoBehaviour {
     {
         if (Input.anyKeyDown)
         {
-            FadeToLevel(1);
+            FadeToLevel(3);
         }
     }
 
