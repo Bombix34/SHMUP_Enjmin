@@ -29,6 +29,12 @@ public class TentaclesManager : MonoBehaviour {
     [SerializeField]
     List<ParticleSystem> fishParticles;
 
+    Vector2 initPosition;
+    Vector2 initPositionRightWall;
+
+    GameManager manager;
+
+
 
     private void Awake()
     {
@@ -36,6 +42,7 @@ public class TentaclesManager : MonoBehaviour {
         {
             instance = this;
         }
+        manager=GameManager.instance;
     }
 
     void Start () {
@@ -56,6 +63,9 @@ public class TentaclesManager : MonoBehaviour {
         pos = bg - hg;
         //transform.position.Scale(new Vector3(0.5F, 0.5F, 0.5F));
         transform.Translate(pos / 2);
+
+        initPosition=transform.position;
+        initPositionRightWall=rightWall.transform.position;
 
         //position du right wall => a tweaker
        // rightWall.transform.position= new Vector2(Camera.main.orthographicSize * Camera.main.aspect+(LevelManager.instance.GetGameObjectWidth(rightWall)/3),0f);
@@ -82,10 +92,20 @@ public class TentaclesManager : MonoBehaviour {
 
     void Update()
     {
+        if(manager.IsGameOver())
+            return;
         if(timeRemaining > 0)
         {
-            if(distanceDone<0)
+           /*  if(distanceDone<0)
             {
+                distanceDone=0;
+                timeRemaining=0;
+                return;
+            }*/
+            if(transform.position.x<initPosition.x||rightWall.transform.position.x>initPositionRightWall.x)
+            {
+                transform.position=initPosition;
+                rightWall.transform.position=initPositionRightWall;
                 distanceDone=0;
                 timeRemaining=0;
                 return;
@@ -99,8 +119,17 @@ public class TentaclesManager : MonoBehaviour {
         else
         {
             distanceDone+=moveSpeedForward*Time.deltaTime;
-            transform.position = new Vector3(transform.position.x + moveSpeedForward * Time.deltaTime, transform.position.y, transform.position.z);
-            rightWall.transform.position = new Vector3(rightWall.transform.position.x - moveSpeedForward * Time.deltaTime, rightWall.transform.position.y, rightWall.transform.position.z);
+
+            float modifSpeed=1f;
+
+            if(distanceDone>6f)
+                modifSpeed=2.5f;
+
+            transform.position = new Vector3(transform.position.x + moveSpeedForward * Time.deltaTime * modifSpeed, transform.position.y, transform.position.z);
+            rightWall.transform.position = new Vector3(rightWall.transform.position.x - moveSpeedForward * Time.deltaTime * modifSpeed, rightWall.transform.position.y, rightWall.transform.position.z);    
+
+            if(distanceDone>=7f)
+                GameManager.instance.GameOver();
         }
     }
 
