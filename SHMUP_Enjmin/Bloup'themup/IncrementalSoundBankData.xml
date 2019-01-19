@@ -3,26 +3,26 @@
 	<Platform GUID="{29AAC4E2-8BC7-48C3-89CE-823BE9454D90}">
 		<Banks>
 			<Language ID="393239870">
-				<File Name="Ingame" Hash="2886353303" Timestamp="1547905347"/>
-				<File Name="Init" Hash="2140628910" Timestamp="1547904877"/>
+				<File Name="Ingame" Hash="4086716282" Timestamp="1547924071"/>
+				<File Name="Init" Hash="2140628910" Timestamp="1547921460"/>
 			</Language>
 		</Banks>
 		<XMLInfo>
 			<Language ID="-1">
-				<File Name="" Hash="1145076756" Timestamp="1547905347"/>
+				<File Name="" Hash="3037189308" Timestamp="1547924071"/>
 			</Language>
 		</XMLInfo>
 	</Platform>
 	<Platform GUID="{4CF6CF3A-A28C-49F9-B7C2-B1B19ADAB5B8}">
 		<Banks>
 			<Language ID="393239870">
-				<File Name="Ingame" Hash="2886353303" Timestamp="1547905349"/>
-				<File Name="Init" Hash="1004253565" Timestamp="1547904879"/>
+				<File Name="Ingame" Hash="4086716282" Timestamp="1547924071"/>
+				<File Name="Init" Hash="1004253565" Timestamp="1547921465"/>
 			</Language>
 		</Banks>
 		<XMLInfo>
 			<Language ID="-1">
-				<File Name="" Hash="4001663410" Timestamp="1547905349"/>
+				<File Name="" Hash="908988682" Timestamp="1547924071"/>
 			</Language>
 		</XMLInfo>
 	</Platform>

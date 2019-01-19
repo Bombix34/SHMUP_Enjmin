@@ -1,33 +1,33 @@
 <?xml version="1.0" encoding="utf-8"?>
 <SoundBanksInfo Platform="Windows" BasePlatform="Windows" SchemaVersion="11" SoundbankVersion="132">
 	<RootPaths>
-		<ProjectRoot>/Users/benjamindarmon/Library/Application Support/Wwise2018/Bottles/wwise/dosdevices/y:/Desktop/BLOOOOUUUUUUPPPPPPPPPP/SHMUP_Enjmin/SHMUP_Enjmin/Bloup'themup/</ProjectRoot>
-		<SourceFilesRoot>/Users/benjamindarmon/Library/Application Support/Wwise2018/Bottles/wwise/dosdevices/y:/Desktop/BLOOOOUUUUUUPPPPPPPPPP/SHMUP_Enjmin/SHMUP_Enjmin/Bloup'themup/.cache/Windows/</SourceFilesRoot>
-		<SoundBanksRoot>/Users/benjamindarmon/Library/Application Support/Wwise2018/Bottles/wwise/dosdevices/y:/Desktop/BLOOOOUUUUUUPPPPPPPPPP/SHMUP_Enjmin/SHMUP_Enjmin/Bloup'themup/GeneratedSoundBanks/Windows/</SoundBanksRoot>
+		<ProjectRoot>C:\Users\Florian\Documents\Programmation\SHMUP_Enjmin\SHMUP_Enjmin\Bloup'themup\</ProjectRoot>
+		<SourceFilesRoot>C:\Users\Florian\Documents\Programmation\SHMUP_Enjmin\SHMUP_Enjmin\Bloup'themup\.cache\Windows\</SourceFilesRoot>
+		<SoundBanksRoot>C:\Users\Florian\Documents\Programmation\SHMUP_Enjmin\SHMUP_Enjmin\Bloup'themup\GeneratedSoundBanks\Windows\</SoundBanksRoot>
 		<ExternalSourcesInputFile></ExternalSourcesInputFile>
-		<ExternalSourcesOutputRoot>/Users/benjamindarmon/Library/Application Support/Wwise2018/Bottles/wwise/dosdevices/y:/Desktop/BLOOOOUUUUUUPPPPPPPPPP/SHMUP_Enjmin/SHMUP_Enjmin/Bloup'themup/GeneratedSoundBanks/Windows</ExternalSourcesOutputRoot>
+		<ExternalSourcesOutputRoot>C:\Users\Florian\Documents\Programmation\SHMUP_Enjmin\SHMUP_Enjmin\Bloup'themup\GeneratedSoundBanks\Windows</ExternalSourcesOutputRoot>
 	</RootPaths>
 	<DialogueEvents/>
 	<StreamedFiles>
 		<File Id="374062965" Language="SFX">
 			<ShortName>Music_Main_Mid_Lp.wav</ShortName>
-			<Path>SFX/Music_Main_Mid_Lp_8956FC97.wem</Path>
+			<Path>SFX\Music_Main_Mid_Lp_8956FC97.wem</Path>
 		</File>
 		<File Id="376671590" Language="SFX">
 			<ShortName>Batterie_Lvl_02_Lp.wav</ShortName>
-			<Path>SFX/Batterie_Lvl_02_Lp_8956FC97.wem</Path>
+			<Path>SFX\Batterie_Lvl_02_Lp_8956FC97.wem</Path>
 		</File>
 		<File Id="541592036" Language="SFX">
 			<ShortName>Music_Main_Percussions_Lp.wav</ShortName>
-			<Path>SFX/Music_Main_Percussions_Lp_8956FC97.wem</Path>
+			<Path>SFX\Music_Main_Percussions_Lp_8956FC97.wem</Path>
 		</File>
 		<File Id="752078592" Language="SFX">
 			<ShortName>Music_Main_Cordes_Lp.wav</ShortName>
-			<Path>SFX/Music_Main_Cordes_Lp_8956FC97.wem</Path>
+			<Path>SFX\Music_Main_Cordes_Lp_8956FC97.wem</Path>
 		</File>
 		<File Id="1061159904" Language="SFX">
 			<ShortName>Music_Main_Aerie_Lp.wav</ShortName>
-			<Path>SFX/Music_Main_Aerie_Lp_8956FC97.wem</Path>
+			<Path>SFX\Music_Main_Aerie_Lp_8956FC97.wem</Path>
 		</File>
 	</StreamedFiles>
 	<MediaFilesNotInAnyBank/>
@@ -69,207 +69,207 @@
 			<IncludedMemoryFiles>
 				<File Id="715088" Language="SFX">
 					<ShortName>Monstre_Amb_Intervention_01_06_Os.wav</ShortName>
-					<Path>SFX/Monstre_Amb_Intervention_01_06_Os_8956FC97.wem</Path>
+					<Path>SFX\Monstre_Amb_Intervention_01_06_Os_8956FC97.wem</Path>
 				</File>
 				<File Id="5974417" Language="SFX">
 					<ShortName>Cube_Items_Pick_02_Os.wav</ShortName>
-					<Path>SFX/Cube_Items_Pick_02_Os_56D34C19.wem</Path>
+					<Path>SFX\Cube_Items_Pick_02_Os_56D34C19.wem</Path>
 				</File>
 				<File Id="99306031" Language="SFX">
 					<ShortName>Dahs_VX_1.wav</ShortName>
-					<Path>SFX/Dahs_VX_1_726DED05.wem</Path>
+					<Path>SFX\Dahs_VX_1_79D67CAA.wem</Path>
 				</File>
 				<File Id="179179122" Language="SFX">
 					<ShortName>Pnj_In_Bubble.wav</ShortName>
-					<Path>SFX/Pnj_In_Bubble_56D34C19.wem</Path>
+					<Path>SFX\Pnj_In_Bubble_56D34C19.wem</Path>
 				</File>
 				<File Id="182596096" Language="SFX">
 					<ShortName>Underwater_03_Os.wav</ShortName>
-					<Path>SFX/Underwater_03_Os_F48E3E87.wem</Path>
+					<Path>SFX\Underwater_03_Os_21EE5409.wem</Path>
 				</File>
 				<File Id="186136371" Language="SFX">
 					<ShortName>Underwater_Parasites_01_Os.wav</ShortName>
-					<Path>SFX/Underwater_Parasites_01_Os_56D34C19.wem</Path>
+					<Path>SFX\Underwater_Parasites_01_Os_56D34C19.wem</Path>
 				</File>
 				<File Id="194232518" Language="SFX">
 					<ShortName>Kraken_Eat_Pnj_02_Os.wav</ShortName>
-					<Path>SFX/Kraken_Eat_Pnj_02_Os_93B54F2F.wem</Path>
+					<Path>SFX\Kraken_Eat_Pnj_02_Os_0F705D96.wem</Path>
 				</File>
 				<File Id="196566995" Language="SFX">
 					<ShortName>Amb_gameOver_Rnd_01_03_Os.wav</ShortName>
-					<Path>SFX/Amb_gameOver_Rnd_01_03_Os_56D34C19.wem</Path>
+					<Path>SFX\Amb_gameOver_Rnd_01_03_Os_56D34C19.wem</Path>
 				</File>
 				<File Id="197841704" Language="SFX">
 					<ShortName>Dash_04_Os.wav</ShortName>
-					<Path>SFX/Dash_04_Os_A27C1E38.wem</Path>
+					<Path>SFX\Dash_04_Os_7AC10AE9.wem</Path>
 				</File>
 				<File Id="213300549" Language="SFX">
 					<ShortName>Kraken_Player_Near_01_Os.wav</ShortName>
-					<Path>SFX/Kraken_Player_Near_01_Os_56D34C19.wem</Path>
+					<Path>SFX\Kraken_Player_Near_01_Os_56D34C19.wem</Path>
 				</File>
 				<File Id="261343137" Language="SFX">
 					<ShortName>Pnj_Oh.wav</ShortName>
-					<Path>SFX/Pnj_Oh_632521FD.wem</Path>
+					<Path>SFX\Pnj_Oh_F3B23D1F.wem</Path>
 				</File>
 				<File Id="275245460" Language="SFX">
 					<ShortName>Amb_gameOver_Rnd_01_Os.wav</ShortName>
-					<Path>SFX/Amb_gameOver_Rnd_01_Os_56D34C19.wem</Path>
+					<Path>SFX\Amb_gameOver_Rnd_01_Os_56D34C19.wem</Path>
 				</File>
 				<File Id="318779871" Language="SFX">
 					<ShortName>Bull_SHot.wav</ShortName>
-					<Path>SFX/Bull_SHot_20817CEF.wem</Path>
+					<Path>SFX\Bull_SHot_20817CEF.wem</Path>
 				</File>
 				<File Id="357325793" Language="SFX">
 					<ShortName>Pnj_In_Bubble_02.wav</ShortName>
-					<Path>SFX/Pnj_In_Bubble_02_56D34C19.wem</Path>
+					<Path>SFX\Pnj_In_Bubble_02_56D34C19.wem</Path>
 				</File>
 				<File Id="374062965" Language="SFX">
 					<ShortName>Music_Main_Mid_Lp.wav</ShortName>
-					<Path>SFX/Music_Main_Mid_Lp_8956FC97.wem</Path>
+					<Path>SFX\Music_Main_Mid_Lp_8956FC97.wem</Path>
 					<PrefetchSize>17832</PrefetchSize>
 				</File>
 				<File Id="376671590" Language="SFX">
 					<ShortName>Batterie_Lvl_02_Lp.wav</ShortName>
-					<Path>SFX/Batterie_Lvl_02_Lp_8956FC97.wem</Path>
+					<Path>SFX\Batterie_Lvl_02_Lp_8956FC97.wem</Path>
 					<PrefetchSize>17784</PrefetchSize>
 				</File>
 				<File Id="382429217" Language="SFX">
 					<ShortName>Kraken_Player_Near_02_Os.wav</ShortName>
-					<Path>SFX/Kraken_Player_Near_02_Os_56D34C19.wem</Path>
+					<Path>SFX\Kraken_Player_Near_02_Os_56D34C19.wem</Path>
 				</File>
 				<File Id="409045576" Language="SFX">
 					<ShortName>Music_Loose.wav</ShortName>
-					<Path>SFX/Music_Loose_8956FC97.wem</Path>
+					<Path>SFX\Music_Loose_8956FC97.wem</Path>
 				</File>
 				<File Id="417209907" Language="SFX">
 					<ShortName>Kraken_Eat_Pnj.wav</ShortName>
-					<Path>SFX/Kraken_Eat_Pnj_4DE3AA7B.wem</Path>
+					<Path>SFX\Kraken_Eat_Pnj_F91B7D8E.wem</Path>
 				</File>
 				<File Id="427775264" Language="SFX">
 					<ShortName>Oursin_In.wav</ShortName>
-					<Path>SFX/Oursin_In_BBA067F0.wem</Path>
+					<Path>SFX\Oursin_In_A334FD61.wem</Path>
 				</File>
 				<File Id="470362947" Language="SFX">
 					<ShortName>Monstre_Amb_Intervention_01_05_Os.wav</ShortName>
-					<Path>SFX/Monstre_Amb_Intervention_01_05_Os_8956FC97.wem</Path>
+					<Path>SFX\Monstre_Amb_Intervention_01_05_Os_8956FC97.wem</Path>
 				</File>
 				<File Id="476708979" Language="SFX">
 					<ShortName>Underwater_05_Os.wav</ShortName>
-					<Path>SFX/Underwater_05_Os_74173D26.wem</Path>
+					<Path>SFX\Underwater_05_Os_85D78701.wem</Path>
 				</File>
 				<File Id="487742245" Language="SFX">
 					<ShortName>Ploc_03.wav</ShortName>
-					<Path>SFX/Ploc_03_56D34C19.wem</Path>
+					<Path>SFX\Ploc_03_56D34C19.wem</Path>
 				</File>
 				<File Id="498771420" Language="SFX">
 					<ShortName>Underwater_Parasites_02_Os.wav</ShortName>
-					<Path>SFX/Underwater_Parasites_02_Os_56D34C19.wem</Path>
+					<Path>SFX\Underwater_Parasites_02_Os_56D34C19.wem</Path>
 				</File>
 				<File Id="512970095" Language="SFX">
 					<ShortName>Underwater_Parasites_03_Os.wav</ShortName>
-					<Path>SFX/Underwater_Parasites_03_Os_56D34C19.wem</Path>
+					<Path>SFX\Underwater_Parasites_03_Os_56D34C19.wem</Path>
 				</File>
 				<File Id="517778700" Language="SFX">
 					<ShortName>Monstre_Amb_Intervention_05_Os.wav</ShortName>
-					<Path>SFX/Monstre_Amb_Intervention_05_Os_8956FC97.wem</Path>
+					<Path>SFX\Monstre_Amb_Intervention_05_Os_8956FC97.wem</Path>
 				</File>
 				<File Id="541592036" Language="SFX">
 					<ShortName>Music_Main_Percussions_Lp.wav</ShortName>
-					<Path>SFX/Music_Main_Percussions_Lp_8956FC97.wem</Path>
+					<Path>SFX\Music_Main_Percussions_Lp_8956FC97.wem</Path>
 					<PrefetchSize>17832</PrefetchSize>
 				</File>
 				<File Id="561392681" Language="SFX">
 					<ShortName>Amb_gameOver_Rnd_03_Os.wav</ShortName>
-					<Path>SFX/Amb_gameOver_Rnd_03_Os_56D34C19.wem</Path>
+					<Path>SFX\Amb_gameOver_Rnd_03_Os_56D34C19.wem</Path>
 				</File>
 				<File Id="612824582" Language="SFX">
 					<ShortName>Ploc_012.wav</ShortName>
-					<Path>SFX/Ploc_012_56D34C19.wem</Path>
+					<Path>SFX\Ploc_012_56D34C19.wem</Path>
 				</File>
 				<File Id="628366204" Language="SFX">
 					<ShortName>Vc_Music_Play_01_Os.wav</ShortName>
-					<Path>SFX/Vc_Music_Play_01_Os_94D43AAA.wem</Path>
+					<Path>SFX\Vc_Music_Play_01_Os_94D43AAA.wem</Path>
 				</File>
 				<File Id="686760367" Language="SFX">
 					<ShortName>Sauve_Pnj.wav</ShortName>
-					<Path>SFX/Sauve_Pnj_56D34C19.wem</Path>
+					<Path>SFX\Sauve_Pnj_56D34C19.wem</Path>
 				</File>
 				<File Id="745076470" Language="SFX">
 					<ShortName>Oursin_Out.wav</ShortName>
-					<Path>SFX/Oursin_Out_C313A24D.wem</Path>
+					<Path>SFX\Oursin_Out_27F59489.wem</Path>
 				</File>
 				<File Id="752078592" Language="SFX">
 					<ShortName>Music_Main_Cordes_Lp.wav</ShortName>
-					<Path>SFX/Music_Main_Cordes_Lp_8956FC97.wem</Path>
+					<Path>SFX\Music_Main_Cordes_Lp_8956FC97.wem</Path>
 					<PrefetchSize>17832</PrefetchSize>
 				</File>
 				<File Id="807180952" Language="SFX">
 					<ShortName>Cube_Items_Pick_01_Os.wav</ShortName>
-					<Path>SFX/Cube_Items_Pick_01_Os_56D34C19.wem</Path>
+					<Path>SFX\Cube_Items_Pick_01_Os_56D34C19.wem</Path>
 				</File>
 				<File Id="828515783" Language="SFX">
 					<ShortName>Cube_Items_Pick_04_Os.wav</ShortName>
-					<Path>SFX/Cube_Items_Pick_04_Os_56D34C19.wem</Path>
+					<Path>SFX\Cube_Items_Pick_04_Os_56D34C19.wem</Path>
 				</File>
 				<File Id="842027309" Language="SFX">
 					<ShortName>Underwater_Parasites_04_Os.wav</ShortName>
-					<Path>SFX/Underwater_Parasites_04_Os_56D34C19.wem</Path>
+					<Path>SFX\Underwater_Parasites_04_Os_56D34C19.wem</Path>
 				</File>
 				<File Id="877869285" Language="SFX">
 					<ShortName>Impact_Dash_bubble.wav</ShortName>
-					<Path>SFX/Impact_Dash_bubble_56D34C19.wem</Path>
+					<Path>SFX\Impact_Dash_bubble_56D34C19.wem</Path>
 				</File>
 				<File Id="881670788" Language="SFX">
 					<ShortName>Underwater_lp.wav</ShortName>
-					<Path>SFX/Underwater_lp_8956FC97.wem</Path>
+					<Path>SFX\Underwater_lp_8956FC97.wem</Path>
 				</File>
 				<File Id="904637434" Language="SFX">
 					<ShortName>Music_Intro_Vf.wav</ShortName>
-					<Path>SFX/Music_Intro_Vf_8956FC97.wem</Path>
+					<Path>SFX\Music_Intro_Vf_8956FC97.wem</Path>
 				</File>
 				<File Id="905875478" Language="SFX">
 					<ShortName>Bulles_Turfu.wav</ShortName>
-					<Path>SFX/Bulles_Turfu_56D34C19.wem</Path>
+					<Path>SFX\Bulles_Turfu_56D34C19.wem</Path>
 				</File>
 				<File Id="910541250" Language="SFX">
 					<ShortName>Amb_Drones_Lp.wav</ShortName>
-					<Path>SFX/Amb_Drones_Lp_8956FC97.wem</Path>
+					<Path>SFX\Amb_Drones_Lp_8956FC97.wem</Path>
 				</File>
 				<File Id="944875389" Language="SFX">
 					<ShortName>Amb_gameOver_Rnd_01_02_Os.wav</ShortName>
-					<Path>SFX/Amb_gameOver_Rnd_01_02_Os_56D34C19.wem</Path>
+					<Path>SFX\Amb_gameOver_Rnd_01_02_Os_56D34C19.wem</Path>
 				</File>
 				<File Id="956314345" Language="SFX">
 					<ShortName>Amb_Layout_Snake_Lp.wav</ShortName>
-					<Path>SFX/Amb_Layout_Snake_Lp_8956FC97.wem</Path>
+					<Path>SFX\Amb_Layout_Snake_Lp_8956FC97.wem</Path>
 				</File>
 				<File Id="961577093" Language="SFX">
 					<ShortName>Amb_gameOver_Rnd_02_Os.wav</ShortName>
-					<Path>SFX/Amb_gameOver_Rnd_02_Os_56D34C19.wem</Path>
+					<Path>SFX\Amb_gameOver_Rnd_02_Os_56D34C19.wem</Path>
 				</File>
 				<File Id="964220506" Language="SFX">
 					<ShortName>Kraken_Eat_Pnj_01_Os.wav</ShortName>
-					<Path>SFX/Kraken_Eat_Pnj_01_Os_26098A56.wem</Path>
+					<Path>SFX\Kraken_Eat_Pnj_01_Os_55143CD5.wem</Path>
 				</File>
 				<File Id="1010897979" Language="SFX">
 					<ShortName>Underwater_01_Os.wav</ShortName>
-					<Path>SFX/Underwater_01_Os_A9521F66.wem</Path>
+					<Path>SFX\Underwater_01_Os_A9521F66.wem</Path>
 				</File>
 				<File Id="1018135258" Language="SFX">
 					<ShortName>Monstre_Amb_Intervention_01_04_Os.wav</ShortName>
-					<Path>SFX/Monstre_Amb_Intervention_01_04_Os_8956FC97.wem</Path>
+					<Path>SFX\Monstre_Amb_Intervention_01_04_Os_8956FC97.wem</Path>
 				</File>
 				<File Id="1049757686" Language="SFX">
 					<ShortName>Ploc_01.wav</ShortName>
-					<Path>SFX/Ploc_01_56D34C19.wem</Path>
+					<Path>SFX\Ploc_01_56D34C19.wem</Path>
 				</File>
 				<File Id="1052222280" Language="SFX">
 					<ShortName>Amb_gameOver_Rnd_01_01_Os.wav</ShortName>
-					<Path>SFX/Amb_gameOver_Rnd_01_01_Os_56D34C19.wem</Path>
+					<Path>SFX\Amb_gameOver_Rnd_01_01_Os_56D34C19.wem</Path>
 				</File>
 				<File Id="1061159904" Language="SFX">
 					<ShortName>Music_Main_Aerie_Lp.wav</ShortName>
-					<Path>SFX/Music_Main_Aerie_Lp_8956FC97.wem</Path>
+					<Path>SFX\Music_Main_Aerie_Lp_8956FC97.wem</Path>
 					<PrefetchSize>18716</PrefetchSize>
 				</File>
 			</IncludedMemoryFiles>
