@@ -161,10 +161,10 @@ public class BubleManager : MonoBehaviour {
 				//on attend un certain nombre de frame avant de le faire rentrer très vite 
 				if(obj.GetComponent<SavedManager>()!=null)
 					obj.GetComponent<SavedManager>().EnterBuble(true);
-				obj.transform.Translate(forceDirection*Time.deltaTime*20f);
+				obj.transform.Translate(forceDirection*Time.deltaTime * 10f);
 			}
 			else
-				obj.transform.Translate(forceDirection*Time.deltaTime);
+				obj.transform.Translate(forceDirection*Time.deltaTime * 0.6f);
 			yield return new WaitForSeconds(0.001f);
 		}
 		if(objectInTheBuble.Count==1)
