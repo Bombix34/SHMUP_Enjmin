@@ -371,6 +371,10 @@ Prefab:
       propertyPath: m_RootOrder
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 1802631705264010, guid: a28bd4d83dbb6e4489b596485c46df0b, type: 2}
+      propertyPath: m_Name
+      value: StartScreenLoader
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a28bd4d83dbb6e4489b596485c46df0b, type: 2}
   m_IsPrefabAsset: 0
