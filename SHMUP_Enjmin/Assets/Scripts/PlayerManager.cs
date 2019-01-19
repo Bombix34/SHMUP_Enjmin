@@ -104,8 +104,6 @@ public class PlayerManager : MonoBehaviour {
         rtpcValue = transform.position.y;
 
         AkSoundEngine.SetRTPCValue("Profondeur", rtpcValue, gameObject);
-
-        
 	}
 
 	public void RotatePlayer()
@@ -269,8 +267,6 @@ public class PlayerManager : MonoBehaviour {
 
 	public void Dash()
 	{
-        
-
 		dashChrono-=Time.deltaTime;
 		if((dashChrono>0)||(!canDash))
 			return;

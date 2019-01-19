@@ -9,10 +9,13 @@ public class StartScreenLoad : MonoBehaviour {
 
     private int levelToLoad;
 
+    float chrono = 3f;
+
 
     void Update()
     {
-        if (Input.anyKeyDown)
+        chrono-=Time.deltaTime;
+        if ((Input.anyKeyDown)||(chrono<=0))
         {
             FadeToLevel(1);
         }
