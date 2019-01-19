@@ -166,6 +166,10 @@ public class LevelManager : MonoBehaviour
     public void ChangeScore(int change)
     {
         score += change;
+        if (score > 20)
+        {
+            score = 20;
+        }
     }
 
     float GetGameObjectSurface(GameObject gameObjectParam)

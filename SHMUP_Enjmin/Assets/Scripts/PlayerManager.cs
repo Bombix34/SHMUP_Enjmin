@@ -158,17 +158,19 @@ public class PlayerManager : MonoBehaviour {
             return;
 
         Vector2 inputVector = controller.getLeftStickDirection();
-        if (inputVector == Vector2.zero)
-            inputVector = keyboard.GetMovement();
 
         controlWithSpeed = controller.getLeftStickDirection()*tempSpeedValue;
+        bool keyboardBool = false;
         if(controlWithSpeed==Vector2.zero)
+        {
+            keyboardBool = true;
             controlWithSpeed=keyboard.GetMovement()*tempSpeedValue;
+        }
        // transform.Translate(new Vector2(controlWithSpeed.x, controlWithSpeed.y));
 		particles.LaunchBulleStop(controlWithSpeed==Vector2.zero);
 		particles.LaunchLineParticle(controlWithSpeed!=Vector2.zero);
 
-        if (Mathf.Abs(inputVector.x) > 0.5f || Mathf.Abs(inputVector.y) > 0.5f)
+        if (Mathf.Abs(inputVector.x) > 1.0f || Mathf.Abs(inputVector.y) > 1.0f || keyboardBool)
         {
             targetAngle = controlWithSpeed;
        	    rb2D.velocity=new Vector2(controlWithSpeed.x,controlWithSpeed.y + Mathf.Sin(Time.frameCount / (30.0f / reglages.frequence)) * reglages.amplitude);

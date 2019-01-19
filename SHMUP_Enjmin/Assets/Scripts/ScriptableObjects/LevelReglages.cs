@@ -35,6 +35,9 @@ public class LevelReglages : ScriptableObject
     [Range(0, 30)]
     public int pallierDifficile;
 
+    [Range(0, 30)]
+    public int maximumPoints;
+
     [Space]
 
     [Header("Portions de level design")]
