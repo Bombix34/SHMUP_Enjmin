@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class AnyKeyLoad : MonoBehaviour {
+public class StartScreenLoad : MonoBehaviour {
 
     public Animator animator;
 
@@ -14,7 +14,7 @@ public class AnyKeyLoad : MonoBehaviour {
     {
         if (Input.anyKeyDown)
         {
-            FadeToLevel(3);
+            FadeToLevel(1);
         }
     }
 
