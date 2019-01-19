@@ -5,16 +5,34 @@ using UnityEngine.SceneManagement;
 
 public class AnyKeyLoad : MonoBehaviour {
 
-    public Animator animator;
+    Animator animator;
 
     private int levelToLoad;
 
+    public GameObject pressAnyKeyText;
+
+    public float chrono;
+
+    bool cmoche = false;
+
+    private void Start()
+    {
+        animator = GetComponent<Animator>();
+        pressAnyKeyText.SetActive(false);
+    }
 
     void Update()
     {
-        if (Input.anyKeyDown)
+        if (chrono > 0)
+            chrono -= Time.deltaTime;
+        else
         {
-            FadeToLevel(3);
+            StartCoroutine(FlashText());
+            cmoche = true;
+            if (Input.anyKeyDown)
+            {
+                FadeToLevel(3);
+            }
         }
     }
 
@@ -28,5 +46,19 @@ public class AnyKeyLoad : MonoBehaviour {
     {
         SceneManager.LoadScene(levelToLoad);
 
+    }
+
+    IEnumerator FlashText()
+    {
+        if (!cmoche)
+        {
+            while (true)
+            {
+                pressAnyKeyText.SetActive(true);
+                yield return new WaitForSeconds(1.3f);
+                pressAnyKeyText.SetActive(false);
+                yield return new WaitForSeconds(1f);
+            }
+        }
     }
 }
