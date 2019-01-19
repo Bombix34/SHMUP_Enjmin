@@ -141,12 +141,12 @@ public class PlayerManager : MonoBehaviour {
 	}
 
 	IEnumerator FlashPoison()
-	{
+	{	
 		while(tempSpeedValue<reglages.speedPlayer)
 		{
-			sprite.color=Color.white;
+			sprite.color=new Color32(0x89,0xCA,0x7D,0xFF);
 			yield return new WaitForSeconds(1-(tempSpeedValue/reglages.speedPlayer));
-			sprite.color=new Color32(64,220,0,0);
+			sprite.color=Color.white;
 			yield return new WaitForSeconds(1-(tempSpeedValue/reglages.speedPlayer));
 		}
 	}

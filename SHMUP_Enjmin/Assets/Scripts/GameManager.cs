@@ -10,6 +10,9 @@ public class GameManager : MonoBehaviour {
 	[SerializeField]
 	GameObject gameOverUI;
 
+	[SerializeField]
+	GameObject whiteMask;
+
 	GameObject player;
 
 	Score highScore;
@@ -75,6 +78,11 @@ public class GameManager : MonoBehaviour {
 
 		//A CHANGER AVEC LA SCENE DU MENU PRINCIPAL
 		SceneManager.LoadScene("MenuScene");
+	}
+
+	public void LaunchFlash()
+	{
+		whiteMask.GetComponent<Animator>().SetTrigger("flash");
 	}
 
 	public void QuitGame()

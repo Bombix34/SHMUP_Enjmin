@@ -14,7 +14,7 @@ public class LevelChanger : MonoBehaviour {
     {
         if (other.CompareTag("ObjPlay"))
         {
-            FadeToLevel("MainScene");
+            FadeToLevel("LoadingScene");
         }
 
         else if (other.CompareTag("ObjQuit"))

@@ -89,7 +89,10 @@ public class BubleManager : MonoBehaviour {
 	{
 		endBubble=true;
         if(objectInTheBuble.Count!=0)
-            AkSoundEngine.PostEvent("Sauve_Pnj_01", gameObject);
+		{
+			GameManager.instance.LaunchFlash();
+           // AkSoundEngine.PostEvent("Sauve_Pnj_01", gameObject);
+		}
 
         while ((LevelManager.instance.GetGameObjectLowestBound(this.gameObject))<(Camera.main.orthographicSize))
 		{

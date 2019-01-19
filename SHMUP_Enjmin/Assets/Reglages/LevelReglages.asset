@@ -31,9 +31,9 @@ MonoBehaviour:
   - {fileID: 1169204095862420, guid: 0aa1b2dd913fdc646a1cdae573e5b5c0, type: 2}
   - {fileID: 1892939072182980, guid: 7a2e70cdc34c4124595ed108bb7693f2, type: 2}
   levelPartsHard:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 1965826644817708, guid: c78bae2e324d06446b579626d18241cd, type: 2}
+  - {fileID: 1522358786116772, guid: c0e2022b9b6fec6418449e0e9e9461f0, type: 2}
+  - {fileID: 1253859663824308, guid: 03df3e53cc93687488b9cc8f3d8137f0, type: 2}
   plafonds:
   - {fileID: 1363204610409546, guid: 4f26e5f38cc90c7499a5286d03c60f6d, type: 2}
   - {fileID: 1829984710835132, guid: c24ea04510d88f643b4f17ade4d4fb7b, type: 2}
