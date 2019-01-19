@@ -407,6 +407,18 @@ Prefab:
       propertyPath: m_Name
       value: algue3_0 (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 4208870835673104, guid: 33a886d38a5316b4282c7a51ee11e804, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 0.88
+      objectReference: {fileID: 0}
+    - target: {fileID: 4193562540171844, guid: 33a886d38a5316b4282c7a51ee11e804, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 4.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4193562540171844, guid: 33a886d38a5316b4282c7a51ee11e804, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 7.58
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a35ccc73fab56e147806f03a9746775a, type: 2}
   m_IsPrefabAsset: 0

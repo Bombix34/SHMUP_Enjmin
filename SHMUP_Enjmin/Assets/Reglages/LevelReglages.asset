@@ -19,7 +19,7 @@ MonoBehaviour:
   malusAmiMangeParKraken: -3
   pallierNormal: 10
   pallierDifficile: 20
-  maximumPoints: 0
+  maximumPoints: 27
   levelPartsEasy:
   - {fileID: 1431324961800750, guid: 524125d7a09a26047acc42db9a08d907, type: 2}
   - {fileID: 1239488968041352, guid: 0df4f2dc90eb07048a35670e5711e50a, type: 2}

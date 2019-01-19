@@ -166,9 +166,9 @@ public class LevelManager : MonoBehaviour
     public void ChangeScore(int change)
     {
         score += change;
-        if (score > 20)
+        if (score > reglages.maximumPoints)
         {
-            score = 20;
+            score = reglages.maximumPoints;
         }
     }
 
