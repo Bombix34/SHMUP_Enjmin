@@ -30,6 +30,8 @@ namespace AK
         static const AkUniqueID PLAY_PLAYER_DASH_OS = 3837926945U;
         static const AkUniqueID PLAY_PLAYER_SHOT = 4135433440U;
         static const AkUniqueID PLAY_PNJ_OH = 2311964536U;
+        static const AkUniqueID PLAY_SAUVE_PNJ = 3641945845U;
+        static const AkUniqueID PLAY_SAUVE_PNJ_01 = 2564341393U;
         static const AkUniqueID STOP_ALL = 452547817U;
         static const AkUniqueID STOP_MUSIC_GAMEOVER = 3414730868U;
     } // namespace EVENTS
