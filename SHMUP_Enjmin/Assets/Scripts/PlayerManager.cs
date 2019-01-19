@@ -163,8 +163,11 @@ public class PlayerManager : MonoBehaviour {
         bool keyboardBool = false;
         if(controlWithSpeed==Vector2.zero)
         {
-            keyboardBool = true;
             controlWithSpeed=keyboard.GetMovement()*tempSpeedValue;
+			if (controlWithSpeed != Vector2.zero)
+			{
+            	keyboardBool = true;
+			}
         }
        // transform.Translate(new Vector2(controlWithSpeed.x, controlWithSpeed.y));
 		particles.LaunchBulleStop(controlWithSpeed==Vector2.zero);
