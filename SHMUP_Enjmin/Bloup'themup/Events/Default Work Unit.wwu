@@ -775,6 +775,16 @@
 										</Reference>
 									</ReferenceList>
 								</Action>
+								<Action Name="" ID="{74E499AF-054E-4195-B247-A13B7EDAC5EB}" ShortID="894546088">
+									<PropertyList>
+										<Property Name="ActionType" Type="int16" Value="1"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Sauve_Pnj" ID="{313C5330-C3ED-460B-BA48-143578C36372}" WorkUnitID="{BFB9B95C-F19D-4A69-AD4E-5BA087B198AF}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
 							</ChildrenList>
 						</Event>
 						<Event Name="Play_Sauve_Pnj" ID="{A22EC506-5382-430D-B340-B43C26C8D8F9}">

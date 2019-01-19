@@ -150,8 +150,8 @@
 									<ChildrenList>
 										<AudioFileSource Name="Underwater_01_Os" ID="{A94EABC9-B8D6-4D38-BBCF-0D6D18A4C31A}" ShortID="1010897979">
 											<PropertyList>
-												<Property Name="FadeInDuration" Type="Real64" Value="0.0929203539823009"/>
-												<Property Name="FadeOutDuration" Type="Real64" Value="0.0796460176991149"/>
+												<Property Name="FadeInDuration" Type="Real64" Value="9.29203539823009E-02"/>
+												<Property Name="FadeOutDuration" Type="Real64" Value="7.96460176991149E-02"/>
 												<Property Name="TrimBegin" Type="Real64" Value="0.613938053097345"/>
 												<Property Name="TrimEnd" Type="Real64" Value="1.34734513274336"/>
 											</PropertyList>
@@ -175,7 +175,7 @@
 									<ChildrenList>
 										<AudioFileSource Name="Underwater_03_Os" ID="{453F088A-F2EF-4006-AF39-662C6ACE3AAA}" ShortID="182596096">
 											<PropertyList>
-												<Property Name="FadeInDuration" Type="Real64" Value="0.0248893805309734"/>
+												<Property Name="FadeInDuration" Type="Real64" Value="2.48893805309734E-02"/>
 												<Property Name="FadeOutDuration" Type="Real64" Value="0.232300884955752"/>
 												<Property Name="TrimBegin" Type="Real64" Value="0.804756637168141"/>
 												<Property Name="TrimEnd" Type="Real64" Value="1.47953539823009"/>
@@ -200,8 +200,8 @@
 									<ChildrenList>
 										<AudioFileSource Name="Underwater_05_Os" ID="{F4DD8D70-C5E3-4610-A6B5-A46D8787DA0A}" ShortID="476708979">
 											<PropertyList>
-												<Property Name="FadeInDuration" Type="Real64" Value="0.0232300884955753"/>
-												<Property Name="FadeOutDuration" Type="Real64" Value="0.0329092920353982"/>
+												<Property Name="FadeInDuration" Type="Real64" Value="2.32300884955753E-02"/>
+												<Property Name="FadeOutDuration" Type="Real64" Value="3.29092920353982E-02"/>
 												<Property Name="TrimBegin" Type="Real64" Value="0.689159292035398"/>
 												<Property Name="TrimEnd" Type="Real64" Value="1.17505530973451"/>
 											</PropertyList>
@@ -1656,7 +1656,7 @@
 									<ChildrenList>
 										<AudioFileSource Name="Dahs_VX_1" ID="{ECE580FF-2111-4D6F-A4AA-3EDFE67C77C8}" ShortID="99306031">
 											<PropertyList>
-												<Property Name="FadeInDuration" Type="Real64" Value="0.0981710914454278"/>
+												<Property Name="FadeInDuration" Type="Real64" Value="9.81710914454278E-02"/>
 												<Property Name="FadeOutDuration" Type="Real64" Value="0.234100294985251"/>
 												<Property Name="TrimEnd" Type="Real64" Value="0.931870206489675"/>
 											</PropertyList>
@@ -1886,7 +1886,7 @@
 								<AudioFileSource Name="Oursin_Out" ID="{4C3E983E-F480-47AB-A6E6-FF2AE65BEAF5}" ShortID="745076470">
 									<PropertyList>
 										<Property Name="FadeInDuration" Type="Real64" Value="0.170907079646018"/>
-										<Property Name="FadeOutDuration" Type="Real64" Value="0.0763274336283186"/>
+										<Property Name="FadeOutDuration" Type="Real64" Value="7.63274336283186E-02"/>
 										<Property Name="TrimBegin" Type="Real64" Value="0.932522123893805"/>
 										<Property Name="TrimEnd" Type="Real64" Value="1.26935840707965"/>
 									</PropertyList>
@@ -2556,7 +2556,7 @@
 								</Property>
 								<Property Name="Pitch" Type="int32">
 									<ValueList>
-										<Value>-100</Value>
+										<Value>1090</Value>
 									</ValueList>
 								</Property>
 								<Property Name="UseMaxSoundPerInstance" Type="bool">
@@ -2566,7 +2566,7 @@
 								</Property>
 								<Property Name="Volume" Type="Real64">
 									<ValueList>
-										<Value>-8</Value>
+										<Value>-21</Value>
 									</ValueList>
 								</Property>
 							</PropertyList>
@@ -2682,6 +2682,19 @@
 						</Sound>
 						<Sound Name="Sauve_Pnj" ID="{313C5330-C3ED-460B-BA48-143578C36372}" ShortID="70149842">
 							<PropertyList>
+								<Property Name="IgnoreParentMaxSoundInstance" Type="bool" Value="True"/>
+								<Property Name="IsGlobalLimit" Type="int16" Value="1"/>
+								<Property Name="MaxReachedBehavior" Type="int16" Value="1"/>
+								<Property Name="MaxSoundPerInstance" Type="int16">
+									<ValueList>
+										<Value>1</Value>
+									</ValueList>
+								</Property>
+								<Property Name="UseMaxSoundPerInstance" Type="bool">
+									<ValueList>
+										<Value>True</Value>
+									</ValueList>
+								</Property>
 								<Property Name="Volume" Type="Real64">
 									<ValueList>
 										<Value>-7</Value>

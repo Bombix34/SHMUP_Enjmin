@@ -5,7 +5,7 @@
 			<ChildrenList>
 				<SoundBank Name="Ingame" ID="{9BE30035-ABA1-444C-B83E-7333D0200D8B}">
 					<ObjectInclusionList>
-						<ObjectRef Name="Ingame" ID="{EB7AC41D-E963-4B93-84A7-3F55920B98E4}" WorkUnitID="{1336847C-65CD-4BDE-82E7-88B2522FBB1A}" Filter="7" Origin="Manual"/>
+						<ObjectRef Name="Default Work Unit" ID="{1336847C-65CD-4BDE-82E7-88B2522FBB1A}" WorkUnitID="{1336847C-65CD-4BDE-82E7-88B2522FBB1A}" Filter="7" Origin="Manual"/>
 					</ObjectInclusionList>
 					<ObjectExclusionList/>
 					<GameSyncExclusionList/>
