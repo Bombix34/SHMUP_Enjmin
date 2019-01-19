@@ -34,7 +34,7 @@ public class TentaclesManager : MonoBehaviour {
 
     GameManager manager;
 
-
+    bool playerDead = false;
 
     private void Awake()
     {
@@ -80,13 +80,15 @@ public class TentaclesManager : MonoBehaviour {
 
             LevelManager.instance.ChangeScore(LevelManager.instance.reglages.malusAmiMangeParKraken);
 
-            AkSoundEngine.PostEvent("Play_Kraken_Eat_Pnj", gameObject);
+            if (!playerDead)
+                AkSoundEngine.PostEvent("Play_Kraken_Eat_Pnj", gameObject);
 
             GetComponentInChildren<TentacleDetection>().Retract();
         }
         else if(collision.gameObject.tag=="Player")
         {
             GameManager.instance.GameOver();
+            playerDead = true;
         }
     }
 

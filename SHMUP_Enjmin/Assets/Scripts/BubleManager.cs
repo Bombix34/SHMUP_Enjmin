@@ -91,7 +91,8 @@ public class BubleManager : MonoBehaviour {
         if(objectInTheBuble.Count!=0)
 		{
 			GameManager.instance.LaunchFlash();
-            AkSoundEngine.PostEvent("Play_Play", gameObject);
+            if (!GameManager.instance.IsGameOver())
+                AkSoundEngine.PostEvent("Play_Play", gameObject);
 		}
 
         while ((LevelManager.instance.GetGameObjectLowestBound(this.gameObject))<(Camera.main.orthographicSize))
@@ -195,7 +196,8 @@ public class BubleManager : MonoBehaviour {
 				DestroyBuble();
                 LevelManager.instance.ChangeScore(LevelManager.instance.reglages.malusBulleAmiEclatee);
             }
-            AkSoundEngine.PostEvent("Play_Bubble_Explode_Os", gameObject);
+            if (!GameManager.instance.IsGameOver())
+                AkSoundEngine.PostEvent("Play_Bubble_Explode_Os", gameObject);
 		}
 		else
 		{
@@ -242,7 +244,8 @@ public class BubleManager : MonoBehaviour {
             
             LevelManager.instance.ChangeScore(LevelManager.instance.reglages.bonusAmiMisEnBulle);
 
-            AkSoundEngine.PostEvent("Play_Pnj_Oh", gameObject);
+            if (!GameManager.instance.IsGameOver())
+                AkSoundEngine.PostEvent("Play_Pnj_Oh", gameObject);
         }
 		else if(col.gameObject.tag == "upBuble")
         {
@@ -256,8 +259,8 @@ public class BubleManager : MonoBehaviour {
         if (col.gameObject.tag == "DeathBuble")
         {
             DestroyBuble();
-            AkSoundEngine.PostEvent("Play_Bubble_Explode_Os", gameObject);
-
+            if (!GameManager.instance.IsGameOver())
+                AkSoundEngine.PostEvent("Play_Bubble_Explode_Os", gameObject);
         }
     }
 
