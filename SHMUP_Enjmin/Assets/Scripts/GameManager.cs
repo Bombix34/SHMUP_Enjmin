@@ -19,6 +19,8 @@ public class GameManager : MonoBehaviour {
 
 	float chrono=0f;
 
+	bool gameOver=false;
+
 	void Start () 
 	{
 		player=GameObject.FindGameObjectWithTag("Player");
@@ -42,6 +44,8 @@ public class GameManager : MonoBehaviour {
 
 	public void GameOver()
 	{
+		gameOver=true;
+
 		AddMetric("Time",Mathf.Floor((chrono/60)).ToString() + ":" + Mathf.RoundToInt(chrono%60).ToString());
 		AddMetric("Score",score.ToString());
 		
@@ -53,8 +57,6 @@ public class GameManager : MonoBehaviour {
 		player.GetComponent<PlayerManager>().Die();
 		highScore.AddNewHighscore("world",score);
 		gameover.SetActive(true);
-
-		TentaclesManager.instance.gameObject.SetActive(false);
 
         AkSoundEngine.PostEvent("Stop_All", gameObject);
         AkSoundEngine.PostEvent("Play_Music_GameOver", gameObject);
@@ -88,8 +90,7 @@ public class GameManager : MonoBehaviour {
 	public void QuitGame()
 	{
 		GetComponent<Playtest>().Save();
-
-		Application.Quit();
+		SceneManager.LoadScene("QuitScene");
 	}
 
 	public void AddMetric(string name, string val)
@@ -97,6 +98,11 @@ public class GameManager : MonoBehaviour {
 		if(GetComponent<Playtest>()==null)
 			return;
 		GetComponent<Playtest>().AddMetric(name, val);
+	}
+
+	public bool IsGameOver()
+	{
+		return gameOver;
 	}
 
 //SINGLETON________________________________________________________________________________________________
