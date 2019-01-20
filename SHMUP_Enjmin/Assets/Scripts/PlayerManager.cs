@@ -273,10 +273,7 @@ public class PlayerManager : MonoBehaviour {
 		if(controller.pressDashBouton()||keyboard.PressDashBouton())
 		{
 			if(curBuble!=null)
-			{	
-				BubleManager tempBuble = curBuble.GetComponent<BubleManager>();
-				tempBuble.DestroyBuble();
-			}
+				DetachBuble();
 			isDashing=true;
 			StartCoroutine(DashAction());
             AkSoundEngine.PostEvent("Play_Player_Dash_os", gameObject);
