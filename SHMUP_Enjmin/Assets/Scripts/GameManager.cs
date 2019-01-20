@@ -29,7 +29,8 @@ public class GameManager : MonoBehaviour {
 	void Start () 
 	{
 		player=GameObject.FindGameObjectWithTag("Player");
-		pauseUI.SetActive(false);
+		if(pauseUI!=null)
+			pauseUI.SetActive(false);
 		highScore=GetComponent<Score>();
 
 		Cursor.visible=false;
