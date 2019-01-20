@@ -20,6 +20,9 @@ public class BubleManager : MonoBehaviour {
 	protected List<GameObject> objectInTheBuble;
 
    protected  float rtpcValue2 = (float)BubleSize.init;
+
+   [SerializeField]
+   GameObject bubleImpact;
    
 
    bool endBubble=false;
@@ -201,16 +204,30 @@ public class BubleManager : MonoBehaviour {
 		}
 		else
 		{
+			
+			Vector2 contactPoint=col.GetContact(0).point;
+			if(col.gameObject.tag!="Buble")
+			{
+				GameObject impact = Instantiate(bubleImpact,contactPoint,Quaternion.identity);
+				Destroy(impact,0.5f);
+			}
 			if (curIsCreate)
+			{
+				if(col.gameObject.tag=="Buble")
+				{//impact avec les bulles uniquement si le perso est en train de la tirer
+					GameObject impact = Instantiate(bubleImpact,contactPoint,Quaternion.identity);
+					Destroy(impact,0.5f);
+				}
 				GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerManager>().DetachBuble();
+			}
 			else
 			{
 				//les bulles bounce un peu partout
-				Vector2 contactPoint=col.GetContact(0).point;
 				Vector2 forceDirection = new Vector2(this.transform.position.x-contactPoint.x,this.transform.position.y-contactPoint.y);
 				forceDirection.Normalize();
 				forceDirection*=200f;
 				rb2D.AddForce(new Vector2(forceDirection.x,forceDirection.y)*reglages.bounceEffect);
+				animator.SetTrigger("Bounce");
 			}
 		}
     }

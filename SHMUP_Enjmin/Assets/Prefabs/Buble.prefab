@@ -139,6 +139,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   reglages: {fileID: 11400000, guid: 952773acbb64e4d3ead3c8a160f173b6, type: 2}
+  bubleImpact: {fileID: 1283571584186692, guid: c3c44a71123584a03b7192455959adab,
+    type: 2}
 --- !u!114 &114882198825220966
 MonoBehaviour:
   m_ObjectHideFlags: 1
