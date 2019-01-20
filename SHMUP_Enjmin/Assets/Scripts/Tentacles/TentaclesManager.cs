@@ -92,7 +92,9 @@ public class TentaclesManager : MonoBehaviour {
             if((Camera.main.GetComponent<CameraShaker>()!=null))
 			    Camera.main.GetComponent<CameraShaker>().LaunchShake(0.8f,0.1f);
 
-            StartCoroutine(LaunchFishParticles());
+            float rand = Random.Range(0f,100f);
+            if(rand>55)
+                StartCoroutine(LaunchFishParticles());
         }
         else if(collision.gameObject.tag=="Player")
         {
