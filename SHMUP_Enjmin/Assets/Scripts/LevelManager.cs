@@ -17,6 +17,8 @@ public class LevelManager : MonoBehaviour
 
     public LevelReglages reglages;
 
+    public GameObject level;
+
     int score;
 
     void Start()
@@ -58,7 +60,7 @@ public class LevelManager : MonoBehaviour
         if (rightmostSituationBound < Camera.main.orthographicSize * Camera.main.aspect)
         {
             GameObject newSituation;
-            if (score < reglages.pallierNormal)
+            /*if (score < reglages.pallierNormal)
             {
                 newSituation = (GameObject)Instantiate(reglages.GetEasyLevel(), new Vector3(0, 0), transform.rotation);
             }
@@ -69,10 +71,15 @@ public class LevelManager : MonoBehaviour
             else
             {
                 newSituation = (GameObject)Instantiate(reglages.GetHardLevel(), new Vector3(0, 0), transform.rotation);
-            }
+            }*/
 
-            newSituation.transform.Translate(new Vector3(Camera.main.orthographicSize * Camera.main.aspect - newSituation.GetComponent<BoxCollider2D>().bounds.min.x, 0.0f));
-            rightmostSituationBound = newSituation.GetComponent<BoxCollider2D>().bounds.max.x;
+            newSituation = (GameObject)Instantiate(level, new Vector3(0, 0), transform.rotation);
+
+            //newSituation.transform.Translate(new Vector3(Camera.main.orthographicSize * Camera.main.aspect - newSituation.GetComponent<BoxCollider2D>().bounds.min.x, 0.0f));
+            //rightmostSituationBound = newSituation.GetComponent<BoxCollider2D>().bounds.max.x;
+
+            newSituation.transform.Translate(new Vector3(Camera.main.orthographicSize * Camera.main.aspect - GetGameObjectLeftmostBound(newSituation), 0.0f));
+            rightmostSituationBound = GetGameObjectRightmostBound(newSituation);
             detachGameObject(newSituation);
         }
 

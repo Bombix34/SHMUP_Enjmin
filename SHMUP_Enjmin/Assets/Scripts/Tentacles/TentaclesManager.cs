@@ -18,8 +18,7 @@ public class TentaclesManager : MonoBehaviour {
     public float distanceAtEachSave = 2f;
     public float moveSpeedBackward = 1.5f;
     public float backwardTimeAtEachSave = 1f;
-
-    private float timerCooldown = 0f;
+    
     private float timeRemaining = 0f;
 
     private Coroutine deplacement;
