@@ -164,7 +164,7 @@ public class PlayerManager : MonoBehaviour {
 		particles.LaunchBulleStop(controlWithSpeed==Vector2.zero);
 		particles.LaunchLineParticle(controlWithSpeed!=Vector2.zero);
 
-        if (Mathf.Abs(controlWithSpeed.x) > 0.25f || Mathf.Abs(controlWithSpeed.y) > 0.25f)
+        if (controlWithSpeed != Vector2.zero)
         {
             targetAngle = controlWithSpeed;
        	    rb2D.velocity=new Vector2(controlWithSpeed.x,controlWithSpeed.y + Mathf.Sin(Time.frameCount / (30.0f / reglages.frequence)) * reglages.amplitude);

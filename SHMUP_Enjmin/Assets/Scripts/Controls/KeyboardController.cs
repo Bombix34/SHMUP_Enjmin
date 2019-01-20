@@ -18,6 +18,11 @@ public class KeyboardController : MonoBehaviour
 	}
 	public Vector2 GetMovement()
 	{
+        if (!Input.GetButton("Horizontal") && !Input.GetButton("Vertical"))
+        {
+            return Vector2.zero;
+        }
+
 		Vector2 keyboardAxis = new Vector2(Input.GetAxis("Horizontal"),Input.GetAxis("Vertical"));
 		return keyboardAxis;
 	}
