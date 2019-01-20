@@ -40,28 +40,40 @@ public class LevelManager : MonoBehaviour
         rightmostMiddlegroundPlafondBound -= reglages.scrollingSpeed * Time.deltaTime * 0.5f;
         rightmostForegroundPlafondBound -= reglages.scrollingSpeed * Time.deltaTime * 0.75f;
 
-        if (reglages.levelPartsEasy.Count > 0 && reglages.levelPartsNormal.Count > 0 && reglages.levelPartsHard.Count > 0)
+        if (reglages.levelPartsEasy.Count == 0)
         {
-            if (rightmostSituationBound < Camera.main.orthographicSize * Camera.main.aspect)
-            {
-                GameObject newSituation;
-                if (score < reglages.pallierNormal)
-                {
-                    newSituation = (GameObject)Instantiate(reglages.GetEasyLevel(), new Vector3(0, 0), transform.rotation);
-                }
-                else if (score < reglages.pallierDifficile)
-                {
-                    newSituation = (GameObject)Instantiate(reglages.GetNormalLevel(), new Vector3(0, 0), transform.rotation);
-                }
-                else
-                {
-                    newSituation = (GameObject)Instantiate(reglages.GetHardLevel(), new Vector3(0, 0), transform.rotation);
-                }
+            Debug.LogError("No easy level part to spawn.");
+        }
 
-                newSituation.transform.Translate(new Vector3(Camera.main.orthographicSize * Camera.main.aspect - newSituation.GetComponent<BoxCollider2D>().bounds.min.x, 0.0f));
-                rightmostSituationBound = newSituation.GetComponent<BoxCollider2D>().bounds.max.x;
-                detachGameObject(newSituation);
+        if (reglages.levelPartsNormal.Count == 0)
+        {
+            Debug.LogError("No normal level part to spawn.");
+        }
+
+        if (reglages.levelPartsHard.Count == 0)
+        {
+            Debug.LogError("No hard level part to spawn.");
+        }
+
+        if (rightmostSituationBound < Camera.main.orthographicSize * Camera.main.aspect)
+        {
+            GameObject newSituation;
+            if (score < reglages.pallierNormal)
+            {
+                newSituation = (GameObject)Instantiate(reglages.GetEasyLevel(), new Vector3(0, 0), transform.rotation);
             }
+            else if (score < reglages.pallierDifficile)
+            {
+                newSituation = (GameObject)Instantiate(reglages.GetNormalLevel(), new Vector3(0, 0), transform.rotation);
+            }
+            else
+            {
+                newSituation = (GameObject)Instantiate(reglages.GetHardLevel(), new Vector3(0, 0), transform.rotation);
+            }
+
+            newSituation.transform.Translate(new Vector3(Camera.main.orthographicSize * Camera.main.aspect - newSituation.GetComponent<BoxCollider2D>().bounds.min.x, 0.0f));
+            rightmostSituationBound = newSituation.GetComponent<BoxCollider2D>().bounds.max.x;
+            detachGameObject(newSituation);
         }
 
         if (rightmostBackgroundPlafondBound < Camera.main.orthographicSize * Camera.main.aspect)
