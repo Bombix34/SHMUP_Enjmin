@@ -94,7 +94,7 @@ public class PlayerManager : MonoBehaviour {
 			return;
 		
 
-		if(controller.pressPauseButton())
+		if(controller.pressPauseButton()||keyboard.pressPauseButton())
 		{
 			GameManager.instance.Pause();
 			ShootBuble();

@@ -31,4 +31,9 @@ public class KeyboardController : MonoBehaviour
 	{
 		return Input.GetButtonDown("Dash");
 	}
+
+	public bool pressPauseButton()
+	{
+		return Input.GetButtonDown("Pause");
+	}
 }
