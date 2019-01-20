@@ -44,7 +44,9 @@ public class PlayerReglages : ScriptableObject
 
 	[Space]
 
-	[Header("Knockback du tir de bulle")]
+	[Header("Tir de bulle")]
+	[Range(0.1f,1f)]
+	public float shootCooldown=0.1f;
 	[Range(0f,7f)]
 	public float knockback=0;
 

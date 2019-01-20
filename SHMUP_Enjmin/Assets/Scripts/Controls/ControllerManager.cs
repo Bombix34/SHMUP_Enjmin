@@ -93,6 +93,15 @@ public class ControllerManager : MonoBehaviour {
 		return false;
 	}
 
+	public bool pressPauseButton()
+	{
+		if(!RefreshController())
+			return false;
+		if(inputDevice.MenuWasPressed)
+			return true;
+		return false;
+	}
+
 //DETECTION PRESSION
 	public bool pressAnyButton()
 	{

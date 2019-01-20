@@ -58,6 +58,9 @@ public class PlayerManager : MonoBehaviour {
 
     Vector2 targetAngle = Vector2.right;
 
+	float shotCooldown=0;
+
+
 
 	//TUTO_________________________
     bool firstBubble,firstDash = false;
@@ -69,6 +72,7 @@ public class PlayerManager : MonoBehaviour {
             Debug.LogError("error PlayerManager : PlayerReglages not instanciated through editor");
         }
 		tempSpeedValue=reglages.speedPlayer;
+		
     }
 
     void Start () 
@@ -90,7 +94,13 @@ public class PlayerManager : MonoBehaviour {
 			return;
 		
 
-		SetPlayerSize();
+		if(controller.pressPauseButton())
+		{
+			GameManager.instance.Pause();
+			ShootBuble();
+		}
+		if(GameManager.instance.GetIsPaused())
+			return;
 
 		//Core mechanics
 		UpdateTempSpeed();
@@ -296,20 +306,14 @@ public class PlayerManager : MonoBehaviour {
 
 		particles.LaunchLineParticle(false);
 
-		Vector2 tempDirection = controlWithSpeed;
+		Vector2 tempDirection = targetAngle;
 		tempDirection.Normalize();
 
-		if(tempDirection==Vector2.zero)
-		{
-			rb2D.velocity=new Vector2(reglages.speedPlayer,0f)*reglages.dashPower;
-            targetAngle = Vector2.right;
-		}
-		else
-        {
-			rb2D.velocity=new Vector2(tempDirection.x*reglages.speedPlayer,tempDirection.y*reglages.speedPlayer)*reglages.dashPower;
+		
+		rb2D.velocity=new Vector2(tempDirection.x*reglages.speedPlayer,tempDirection.y*reglages.speedPlayer)*reglages.dashPower;
             /*float angle = Vector2.SignedAngle(Vector2.right, tempDirection);
             GetComponentInChildren<SpriteRenderer>().transform.Rotate(new Vector3(0.0f, 0.0f, angle));*/
-        }
+        
 		
 		particles.ActiveDashParticles(true);
 		
@@ -397,6 +401,9 @@ public class PlayerManager : MonoBehaviour {
 	{
 		UpdateCurBublePosition();
 
+		if(shotCooldown>0)
+			shotCooldown-=Time.deltaTime;
+
 		//controlles a la manette
 		if(controller.pressFireBouton()||keyboard.PressFireBouton())
 			CreateBuble();
@@ -408,6 +415,8 @@ public class PlayerManager : MonoBehaviour {
 
 	public void CreateBuble()
 	{
+		if(shotCooldown>0)
+			return;
 		if((curBuble==null)&&(!isDashing))
 		{
 			chronoIncrementSizeBuble=1f;
@@ -499,6 +508,8 @@ public class PlayerManager : MonoBehaviour {
 			return;
 
         curBuble.GetComponent<BubleManager>().SetIsCreate(false);
+
+		shotCooldown=reglages.shootCooldown;
 		//tir de la bulle
 
 		nbBullesTirées++;
@@ -555,6 +566,8 @@ public class PlayerManager : MonoBehaviour {
 	{
 		if(curBuble==null)
 			return;
+
+		shotCooldown=reglages.shootCooldown;
 
 		//Hugo : j'ai ajouté ça, je ne savais pas si un event special allait être crée 
         AkSoundEngine.PostEvent("Play_Player_Shot", gameObject);

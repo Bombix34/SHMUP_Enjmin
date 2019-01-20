@@ -19,6 +19,7 @@ MonoBehaviour:
   dashKnockbackBuble: 53
   amplitude: 0.6
   frequence: 2
+  shootCooldown: 0.3
   knockback: 0.3
   oursinPoisonEffect: 1
   PlayerRotateWhenMove: 1

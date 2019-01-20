@@ -8,6 +8,9 @@ public class GameManager : MonoBehaviour {
 	int score=0;
 
 	[SerializeField]
+	GameObject pauseUI;
+
+	[SerializeField]
 	GameObject gameOverUI;
 
 	[SerializeField]
@@ -21,10 +24,15 @@ public class GameManager : MonoBehaviour {
 
 	bool gameOver=false;
 
+	bool isPause=false;
+
 	void Start () 
 	{
 		player=GameObject.FindGameObjectWithTag("Player");
+		pauseUI.SetActive(false);
 		highScore=GetComponent<Score>();
+
+		Cursor.visible=false;
 	}
 
 	void Update()
@@ -40,6 +48,23 @@ public class GameManager : MonoBehaviour {
 	public int GetScore()
 	{
 		return score;
+	}
+
+	public void Pause()
+	{
+		if(SceneManager.GetActiveScene().name != "MainScene")
+				return;
+		isPause=!isPause;
+		pauseUI.SetActive(isPause);
+		if(isPause)
+			Time.timeScale=0f;
+		else
+			Time.timeScale=1f;
+	}
+
+	public bool GetIsPaused()
+	{
+		return isPause;
 	}
 
 	public void GameOver()

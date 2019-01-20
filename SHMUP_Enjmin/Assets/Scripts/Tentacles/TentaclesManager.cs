@@ -10,6 +10,10 @@ public class TentaclesManager : MonoBehaviour {
     [SerializeField]
     GameObject rightWall;
 
+    [SerializeField]
+    Transform tentaclesPosition;
+    Vector2 tentacleInitPosition;
+
    // public GameObject[] tentacles;
 
     public float distanceAtEachCapture = 2f;
@@ -42,9 +46,11 @@ public class TentaclesManager : MonoBehaviour {
             instance = this;
         }
         manager=GameManager.instance;
+        tentacleInitPosition=tentaclesPosition.position;
     }
 
     void Start () {
+        
         foreach(ParticleSystem particle in fishParticles)
         {
             particle.gameObject.SetActive(false);
@@ -66,6 +72,7 @@ public class TentaclesManager : MonoBehaviour {
         initPosition=transform.position;
         initPositionRightWall=rightWall.transform.position;
 
+        StartCoroutine(LaunchTentacles());
         //position du right wall => a tweaker
        // rightWall.transform.position= new Vector2(Camera.main.orthographicSize * Camera.main.aspect+(LevelManager.instance.GetGameObjectWidth(rightWall)/3),0f);
     }
@@ -74,15 +81,18 @@ public class TentaclesManager : MonoBehaviour {
     {
         if (collision.gameObject.tag == "ToSave")
         {
-           // MoveForward();
-           Debug.Log(collision.gameObject);
-
+            if(playerDead)
+                return;
             LevelManager.instance.ChangeScore(LevelManager.instance.reglages.malusAmiMangeParKraken);
 
-            if (!playerDead)
-                AkSoundEngine.PostEvent("Play_Kraken_Eat_Pnj", gameObject);
+            AkSoundEngine.PostEvent("Play_Kraken_Eat_Pnj", gameObject);
 
             GetComponentInChildren<TentacleDetection>().Retract();
+
+            if((Camera.main.GetComponent<CameraShaker>()!=null))
+			    Camera.main.GetComponent<CameraShaker>().LaunchShake(0.8f,0.1f);
+
+            StartCoroutine(LaunchFishParticles());
         }
         else if(collision.gameObject.tag=="Player")
         {
@@ -91,9 +101,23 @@ public class TentaclesManager : MonoBehaviour {
         }
     }
 
+    IEnumerator LaunchTentacles()
+    {
+        tentaclesPosition.position=new Vector2(tentaclesPosition.position.x-5f,tentaclesPosition.position.y);
+        while(tentaclesPosition.position.x<tentacleInitPosition.x)
+        {
+            tentaclesPosition.Translate(Time.deltaTime*2f,0f,0f);
+            yield return new WaitForSeconds(0.01f);
+        }
+        AkSoundEngine.PostEvent("Play_Kraken_Eat_Pnj", gameObject);
+        if((Camera.main.GetComponent<CameraShaker>()!=null))
+			    Camera.main.GetComponent<CameraShaker>().LaunchShake(0.8f,0.1f);
+
+    }
+
     void Update()
     {
-        if(manager.IsGameOver())
+        if(playerDead)
             return;
         if(timeRemaining > 0)
         {

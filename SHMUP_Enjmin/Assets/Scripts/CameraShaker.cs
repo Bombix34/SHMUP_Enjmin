@@ -20,6 +20,9 @@ public class CameraShaker : MonoBehaviour {
 	}
 
 	void Update() {
+		if(GameManager.instance.GetIsPaused())
+			shake=0f;
+			
 		if (shake > 0) {
 			mainCamera.transform.position =(basePosition)+ (Random.insideUnitSphere * shakeAmount);
 			shake -= Time.deltaTime * decreaseFactor;

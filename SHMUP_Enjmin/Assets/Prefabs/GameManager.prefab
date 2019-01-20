@@ -64,7 +64,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 561e8f79486cb41769169c3574bede06, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pauseUI: {fileID: 0}
   gameOverUI: {fileID: 1987574343909222, guid: e17d00d4b356549a79c3e52d6656eb71, type: 2}
+  whiteMask: {fileID: 0}
 --- !u!114 &114342130564128264
 MonoBehaviour:
   m_ObjectHideFlags: 1
