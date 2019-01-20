@@ -55,11 +55,14 @@ public class LevelReglages : ScriptableObject
             {
                 levelToProvide = (int)Random.Range(0f, levelPartsEasy.Count);
             }
+            lastEasyProvided = levelToProvide;
             return levelPartsEasy[levelToProvide];
         }
         else
         {
-            return levelPartsEasy[(int)Random.Range(0f, levelPartsEasy.Count)];
+            int levelToProvide = (int)Random.Range(0f, levelPartsEasy.Count);
+            lastEasyProvided = levelToProvide;
+            return levelPartsEasy[levelToProvide];
         }
     }
 
@@ -73,10 +76,13 @@ public class LevelReglages : ScriptableObject
             {
                 levelToProvide = (int)Random.Range(0f, levelPartsNormal.Count);
             }
+            lastNormalProvided = levelToProvide;
             return levelPartsNormal[levelToProvide];
         }
         else
         {
+            int levelToProvide = (int)Random.Range(0f, levelPartsEasy.Count);
+            lastNormalProvided = levelToProvide;
             return levelPartsNormal[(int)Random.Range(0f, levelPartsNormal.Count)];
         }
     }
@@ -91,10 +97,13 @@ public class LevelReglages : ScriptableObject
             {
                 levelToProvide = (int)Random.Range(0f, levelPartsHard.Count);
             }
+            lastHardProvided = levelToProvide;
             return levelPartsHard[levelToProvide];
         }
         else
         {
+            int levelToProvide = (int)Random.Range(0f, levelPartsEasy.Count);
+            lastHardProvided = levelToProvide;
             return levelPartsHard[(int)Random.Range(0f, levelPartsHard.Count)];
         }
     }
